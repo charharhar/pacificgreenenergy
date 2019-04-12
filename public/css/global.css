@@ -108,12 +108,14 @@ span.br-mobile {
  */
 
 h1 {
+  font-size: 26px;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: .2s all;
 }
 
 h2 {
+  font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
