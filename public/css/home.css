@@ -72,7 +72,8 @@ section.section {
     .cloud-container {
       position: relative;
       height: 100%;
-      transform: translateY(-100px);
+      transform: translateY(-15%);
+      overflow-x: hidden;
 
       .pge-cloud-img {
         width: 100%;
