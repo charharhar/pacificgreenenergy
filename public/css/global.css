@@ -33,11 +33,6 @@ html, body {
   font-family: $font-stack;
   font-weight: 400;
   color: $main-black;
-  overflow-x: hidden;
-
-  &.is-active {
-    overflow: hidden;
-  }
 }
 
 .wrapper {

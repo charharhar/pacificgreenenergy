@@ -5,7 +5,11 @@
 }
 
 section.section {
-  position: relative;
+
+  .hero-container {
+    position: fixed;
+    width: 100%;
+  }
 
   .hero-content {
     position: absolute;
@@ -30,6 +34,60 @@ section.section {
       top: 0;
       left: 0;
       width: 100%;
+    }
+  }
+
+  .full-height-hero {
+    position: relative;
+    height: 100vh;
+
+    img {
+      height: 100vh;
+      width: auto;
+    }
+  }
+
+  .full-width-placeholder {
+    position: relative;
+    padding-bottom: 56.25%;
+    width: 100%;
+  }
+
+  .full-height-placeholder {
+    position: relative;
+    height: 100vh;
+  }
+
+  .sticky-container {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    height: 100vh;
+
+    .container-padding {
+      height: 100%;
+      padding: 20px;
+    }
+
+    .cloud-container {
+      position: relative;
+      height: 100%;
+      transform: translateY(-100px);
+
+      .pge-cloud-img {
+        width: 100%;
+        transition: 1000ms all ease;
+      }
+
+      .cloud-left {
+        transform: translateX(-5%);
+      }
+
+      .cloud-right {
+        position: absolute;
+        bottom: 0;
+        transform: translateX(5%);
+      }
     }
   }
 }
