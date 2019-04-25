@@ -70,8 +70,9 @@ section.section {
     }
 
     .cloud-container {
-      position: relative;
+      position: absolute;
       height: 80%;
+      width: 100%;
       top: 10%;
       transform: translateY(-15%);
       overflow-x: hidden;
@@ -104,11 +105,53 @@ section.section {
     .taiwan-container {
       z-index: 1;
       opacity: 0;
-      width: 25%;
-      min-width: 285px;
+      width: 100%;
 
-      .pge-taiwan-img {
+      .taiwan-country {
+        position: relative;
         transform: scale(.33);
+        max-width: 285px;
+        margin: 0 auto;
+
+        .pge-taiwan-img {
+
+        }
+
+        .pge-animals {
+          position: absolute;
+          width: 100%;
+          top: 0;
+          left: 0;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+
+      .ocean-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .pge-ship {
+        position: absolute;
+        max-width: 120px;
+
+        &.pge-ship-img-l1 {
+          top: 0;
+          left: 25%;
+          animation-name: shipMovement;
+          animation-iteration-count: infinite;
+          animation-direction: normal;
+          animation-duration: 8s;
+          animation-timing-function: ease;
+        }
+
+        img { width: 100%; }
       }
     }
   }
@@ -129,4 +172,11 @@ section.section {
       background-color: #104040;
     }
   }
+}
+
+@keyframes shipMovement {
+  0%, 100% { transform: translateX(-50px) rotateY(180deg); }
+  40% { transform: translateX(50px) rotateY(180deg); }
+  50% { transform: translateX(50px) rotateY(0deg); }
+  90% { transform: translateX(-50px) rotateY(0deg); }
 }

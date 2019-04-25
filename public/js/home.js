@@ -67,34 +67,34 @@ const cloudTweenOne = fromToSceneGenerator('.cloud-container', 1, { yPercent: -3
 const cloudOptionsOne = sceneOptionsGenerator(halfHeight, fullHeight, '.hero-dummy')
 
 const cloudLeftTween = fromToSceneGenerator('.cloud-left', 1, { xPercent: -5 }, { xPercent: -45, ease: Power2.easeInOut });
-const cloudLeftOptions = sceneOptionsGenerator(fullHeight + halfHeight, 0, '.hero-dummy')
+const cloudLeftOptions = sceneOptionsGenerator(fullHeight + halfHeight, halfHeight, '.hero-dummy')
 
 const cloudRightTween = fromToSceneGenerator('.cloud-right', 1, { xPercent: 5 }, { xPercent: 45, ease: Power2.easeInOut });
-const cloudRightOptions = sceneOptionsGenerator(fullHeight + halfHeight, 0, '.hero-dummy')
+const cloudRightOptions = sceneOptionsGenerator(fullHeight + halfHeight, halfHeight, '.hero-dummy')
 
-const logoTweenOne = basicTweenGenerator('.logo-container', 1, { opacity: 1 });
-const logoOptionsOne = sceneOptionsGenerator(fullHeight + halfHeight, 0, '.hero-dummy')
+const logoFadeInTween = basicTweenGenerator('.logo-container', 1, { opacity: 1 });
+const logoFadeInOptions = sceneOptionsGenerator(fullHeight + halfHeight, halfHeight, '.hero-dummy')
 
-const logoTweenTwo = basicTweenGenerator('.logo-container', 1, { opacity: 0 });
-const logoOptionsTwo = sceneOptionsGenerator(0, 0, '.taiwan-intro-scene')
+const logoFadeOutTween = basicTweenGenerator('.logo-container', 1, { opacity: 0 });
+const logofadeOutOptions = sceneOptionsGenerator(0, 0, '.taiwan-intro-scene')
 
-const taiwanTweenOne = basicTweenGenerator('.taiwan-container', 1, { opacity: 1 });
-const taiwanOptionsOne = sceneOptionsGenerator(0, 0, '.taiwan-intro-scene')
+const taiwanFadeInTween = basicTweenGenerator('.taiwan-container', 1, { opacity: 1 });
+const taiwanFadeInOptions = sceneOptionsGenerator(0, halfHeight, '.taiwan-intro-scene')
 
-const taiwanZoomTween = basicTweenGenerator('.pge-taiwan-img', 1, { scale: 1 });
-const taiwanZoomOptions = sceneOptionsGenerator(0, 0, '.taiwan-zoom-scene')
+const taiwanZoomTween = fromToSceneGenerator('.taiwan-country', 1, { scale: .33 }, { scale: 1 });
+const taiwanZoomOptions = sceneOptionsGenerator(0, halfHeight, '.taiwan-zoom-scene')
 
-const cloudZoomTween = basicTweenGenerator('.cloud-container', .7, { scale: 4, opacity: 0, yPercent: -30 });
-const cloudZoomOptions = sceneOptionsGenerator(0, 0, '.taiwan-zoom-scene')
+const cloudZoomTween = fromToSceneGenerator('.cloud-container', 1, { scale: 1, opacity: 1, yPercent: 0 }, { scale: 3, opacity: 0, yPercent: 0 });
+const cloudZoomOptions = sceneOptionsGenerator(0, halfHeight, '.taiwan-zoom-scene')
 
 pgeController.addScene([
   sceneGenerator(heroOptionsOne, heroTweenOne),
   sceneGenerator(cloudOptionsOne, cloudTweenOne),
   sceneGenerator(cloudLeftOptions, cloudLeftTween),
   sceneGenerator(cloudRightOptions, cloudRightTween),
-  sceneGenerator(logoOptionsOne, logoTweenOne),
-  sceneGenerator(logoOptionsTwo, logoTweenTwo),
-  sceneGenerator(taiwanOptionsOne, taiwanTweenOne),
+  sceneGenerator(logoFadeInOptions, logoFadeInTween),
+  sceneGenerator(logofadeOutOptions, logoFadeOutTween),
+  sceneGenerator(taiwanFadeInOptions, taiwanFadeInTween),
   sceneGenerator(taiwanZoomOptions, taiwanZoomTween),
   sceneGenerator(cloudZoomOptions, cloudZoomTween),
 ])
