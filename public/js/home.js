@@ -82,10 +82,20 @@ const taiwanFadeInTween = basicTweenGenerator('.taiwan-container', 1, { opacity:
 const taiwanFadeInOptions = sceneOptionsGenerator(0, halfHeight, '.taiwan-intro-scene')
 
 const taiwanZoomTween = fromToSceneGenerator('.taiwan-country', 1, { scale: .33 }, { scale: 1 });
-const taiwanZoomOptions = sceneOptionsGenerator(0, halfHeight, '.taiwan-zoom-scene')
+const taiwanZoomOptions = sceneOptionsGenerator(0, fullHeight, '.taiwan-zoom-scene')
 
 const cloudZoomTween = fromToSceneGenerator('.cloud-container', 1, { scale: 1, opacity: 1, yPercent: 0 }, { scale: 3, opacity: 0, yPercent: 0 });
-const cloudZoomOptions = sceneOptionsGenerator(0, halfHeight, '.taiwan-zoom-scene')
+const cloudZoomOptions = sceneOptionsGenerator(0, fullHeight, '.taiwan-zoom-scene')
+
+const oceanFadeInTween = basicTweenGenerator('.ocean-container', 1, { opacity: 1 });
+const oceanFadeInOptions = sceneOptionsGenerator(0, halfHeight, '.ocean-intro-scene')
+
+const animalDieTween = basicTweenGenerator('.pge-animals', 1, {
+  opacity: 0 });
+const animalDieOptions = sceneOptionsGenerator(0, halfHeight, '.pollution-scene');
+
+const powerBuildTween = basicTweenGenerator('.pge-powerplants', 1, { opacity: 1 });
+const powerBuildOptions = sceneOptionsGenerator(halfHeight, halfHeight, '.pollution-scene')
 
 pgeController.addScene([
   sceneGenerator(heroOptionsOne, heroTweenOne),
@@ -97,6 +107,9 @@ pgeController.addScene([
   sceneGenerator(taiwanFadeInOptions, taiwanFadeInTween),
   sceneGenerator(taiwanZoomOptions, taiwanZoomTween),
   sceneGenerator(cloudZoomOptions, cloudZoomTween),
+  sceneGenerator(oceanFadeInOptions, oceanFadeInTween),
+  sceneGenerator(animalDieOptions, animalDieTween),
+  sceneGenerator(powerBuildOptions, powerBuildTween),
 ])
 
 /*
