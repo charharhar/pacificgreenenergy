@@ -64,6 +64,8 @@ section.section {
     top: 0;
     height: 100vh;
 
+    &.hide-overflow { overflow: hidden; }
+
     .container-padding {
       height: 100%;
       padding: 20px;
@@ -192,21 +194,25 @@ section.section {
     .taiwan-intro-scene {
       height: 50vh;
       background-color: #a1c3d9;
+      opacity: .3;
     }
 
     .taiwan-zoom-scene {
       height: 100vh;
       background-color: #9deca0;
+      opacity: .3;
     }
 
     .ocean-intro-scene {
       height: 50vh;
       background-color: #2c63d0;
+      opacity: .3;
     }
 
     .pollution-scene {
       height: 100vh;
       background-color: #9d0340;
+      opacity: .3;
     }
 
     .debugscroll {

@@ -59,6 +59,7 @@ function resizeHandler() {
 const pgeController = new ScrollMagic.Controller();
 
 // TWEENS
+const overflowOptions = sceneOptionsGenerator(fullHeight);
 
 const heroTweenOne = fromToSceneGenerator('.hero-container', 1, { opacity: 1 }, { opacity: 0 });
 const heroOptionsOne = sceneOptionsGenerator(halfHeight, fullHeight, '.hero-dummy')
@@ -98,6 +99,7 @@ const powerBuildTween = basicTweenGenerator('.pge-powerplants', 1, { opacity: 1 
 const powerBuildOptions = sceneOptionsGenerator(halfHeight, halfHeight, '.pollution-scene')
 
 pgeController.addScene([
+  new ScrollMagic.Scene(overflowOptions).setClassToggle('.stickyContainer', 'hide-overflow'),
   sceneGenerator(heroOptionsOne, heroTweenOne),
   sceneGenerator(cloudOptionsOne, cloudTweenOne),
   sceneGenerator(cloudLeftOptions, cloudLeftTween),
