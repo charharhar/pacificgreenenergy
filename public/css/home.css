@@ -318,6 +318,79 @@ section.section.scene-two {
     }
   }
 
+  .mobile-panels-container {
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    .hand-phone-container {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+
+      figure.mobile-hand-phone {
+        width: 100%;
+      }
+
+      .taipei-mobile-panels {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        .pge-mobile-panels {
+          position: absolute;
+          width: 22%;
+          left: 36.8%;
+          top: 13%;
+          opacity: 0;
+        }
+      }
+
+      .taipei-mobile-plants {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        .pge-mobile-powerplants {
+          position: absolute;
+          max-width: 60px;
+          opacity: 1;
+
+          &#pge-mobile-power1 {
+            top: 18%;
+            left: 52%;
+          }
+
+          &#pge-mobile-power2 {
+            top: 27%;
+            left: 44%;
+          }
+
+          &#pge-mobile-power3 {
+            top: 42%;
+            left: 39%;
+          }
+
+          &#pge-mobile-power4 {
+            top: 55%;
+            left: 40%;
+          }
+
+          &#pge-mobile-power5 {
+            top: 45%;
+            left: 45%;
+          }
+        }
+      }
+    }
+  }
+
   .scene-two-scrollarea {
     .taipei-intro-scene {
       height: 50vh;
@@ -330,12 +403,25 @@ section.section.scene-two {
     .city-panels-scene {
       height: 100vh;
     }
+
+    .mobile-phone-scene {
+      height: 100vh;
+    }
+
+    .mobile-panels-scene {
+      height: 100vh;
+    }
+
+    .buffer-scene {
+      height: 100vh;
+    }
   }
 }
 
 .debugscroll {
   height: 1500px;
   background-color: #104040;
+  opacity: .3;
 }
 
 @keyframes shipMovement {

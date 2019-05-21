@@ -62,9 +62,11 @@ function resizeHandler() {
 
 const pgeController = new ScrollMagic.Controller();
 
-// TWEEN
+
 //
-// Act One
+//           Act One Start
+// ==========================================
+
 const heroTweenOne = fromToSceneGenerator('.hero-container', 1, { opacity: 1 }, { opacity: 0 });
 const heroOptionsOne = sceneOptionsGenerator(halfHeight, fullHeight, '.hero-dummy')
 
@@ -103,7 +105,9 @@ const powerBuildTween = basicTweenGenerator('.pge-powerplants', 1, { opacity: 1 
 const powerBuildOptions = sceneOptionsGenerator(halfHeight, halfHeight, '.pollution-scene')
 
 //
-// Act Two
+//           City/Smog Tweens(Act 2 start)
+// ==========================================
+
 // Layer 6
 const cityOneTween = fromToSceneGenerator('#pge-city1', 1, { yPercent: 20 }, { yPercent: 0 });
 const cityOneOptions = sceneOptionsGenerator(0, fullHeight, '.scene-two-start')
@@ -166,15 +170,45 @@ const smogFourFadeOptions = sceneOptionsGenerator(0, fullHeight, '.sunrise-scene
 
 const cityPanels = sliceArray(document.querySelectorAll('.pge-city-panels'))
 const cityPanelsHeight = fullHeight;
-const dividedHeight = cityPanelsHeight / cityPanels.length;
+const cityDividedHeight = cityPanelsHeight / cityPanels.length;
 
 const cityPanelsScenes = cityPanels.map((panel, index) => {
   let panelCount = index + 1;
-  let duration = dividedHeight * index;
+  let duration = cityDividedHeight * index;
   const panelScene = {};
 
   const tween = fromToSceneGenerator(`#city-panel${panelCount}`, 1, { opacity: 0 }, { opacity: 1 })
-  const options = sceneOptionsGenerator(duration, dividedHeight, '.city-panels-scene')
+  const options = sceneOptionsGenerator(duration, cityDividedHeight, '.city-panels-scene')
+
+  const scene = sceneGenerator(options, tween);
+
+  return scene;
+})
+
+//
+//           Mobile Phone Tweens
+// ==========================================
+
+const handPhoneTween = fromToSceneGenerator('.hand-phone-container', 1, { xPercent: 100, yPercent: -50 }, { xPercent: 0, yPercent: -50 });
+const handPhoneOptions = sceneOptionsGenerator(0, halfHeight, '.mobile-phone-scene');
+
+const powerMobileTween = basicTweenGenerator('.pge-mobile-powerplants', 1, { opacity: 0 });
+const powerMobileOptions = sceneOptionsGenerator(halfHeight, halfHeight, '.mobile-phone-scene')
+
+//
+//           Mobile Panels Tweens
+// ==========================================
+const mobilePanels = sliceArray(document.querySelectorAll('.pge-mobile-panels'))
+const mobilePanelsHeight = fullHeight;
+const mobileDividedHeight = mobilePanelsHeight / mobilePanels.length;
+
+const mobilePanelsScenes = mobilePanels.map((panel, index) => {
+  let panelCount = index + 1;
+  let duration = mobileDividedHeight * index;
+  const panelScene = {};
+
+  const tween = fromToSceneGenerator(`#mobile-panel${panelCount}`, 1, { opacity: 0 }, { opacity: 1 })
+  const options = sceneOptionsGenerator(duration, mobileDividedHeight, '.mobile-panels-scene')
 
   const scene = sceneGenerator(options, tween);
 
@@ -216,6 +250,9 @@ pgeController.addScene([
   sceneGenerator(smogThreeFadeOptions, smogThreeFadeTween),
   sceneGenerator(smogFourFadeOptions, smogFourFadeTween),
   ...cityPanelsScenes,
+  sceneGenerator(handPhoneOptions, handPhoneTween),
+  sceneGenerator(powerMobileOptions, powerMobileTween),
+  ...mobilePanelsScenes,
 ])
 
 /*
