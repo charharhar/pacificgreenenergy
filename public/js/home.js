@@ -215,6 +215,9 @@ const mobilePanelsScenes = mobilePanels.map((panel, index) => {
   return scene;
 })
 
+const progressBarTween = fromToSceneGenerator('.progress-bar', 1, { xPercent: -100 }, { xPercent: 0 });
+const progressBarOptions = sceneOptionsGenerator(0, fullHeight, '.mobile-panels-scene');
+
 //
 //           Scene Controller
 // ==========================================
@@ -253,6 +256,7 @@ pgeController.addScene([
   sceneGenerator(handPhoneOptions, handPhoneTween),
   sceneGenerator(powerMobileOptions, powerMobileTween),
   ...mobilePanelsScenes,
+  sceneGenerator(progressBarOptions, progressBarTween),
 ])
 
 /*
