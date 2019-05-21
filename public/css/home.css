@@ -239,11 +239,14 @@ section.section.scene-two {
     top: 20px;
     right: 10%;
     min-width: 250px;
-    animation-name: sunRotate;
-    animation-iteration-count: infinite;
-    animation-direction: normal;
-    animation-duration: 60s;
-    animation-timing-function: linear;
+
+    img {
+      animation-name: sunRotate;
+      animation-iteration-count: infinite;
+      animation-direction: normal;
+      animation-duration: 60s;
+      animation-timing-function: linear;
+    }
   }
 
   .city-text-container {
@@ -310,6 +313,7 @@ section.section.scene-two {
         left: 0;
         width: 100%;
         z-index: 8;
+        opacity: 0;
       }
     }
   }
@@ -317,6 +321,14 @@ section.section.scene-two {
   .scene-two-scrollarea {
     .taipei-intro-scene {
       height: 50vh;
+    }
+
+    .sunrise-scene {
+      height: 100vh;
+    }
+
+    .city-panels-scene {
+      height: 100vh;
     }
   }
 }

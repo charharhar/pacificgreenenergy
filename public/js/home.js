@@ -1,15 +1,19 @@
 
 import '../css/home.css';
-import { hotReload } from './util.js'
+import { sliceArray, hotReload } from './util.js'
 import { TweenMax, TimelineLite } from "gsap/TweenMax";
 import ScrollMagic from 'scrollmagic';
 import 'animation.gsap'
 import 'debug.addIndicators'
 
+function getHeight(element) {
+  return document.querySelector(element).clientHeight;
+}
+
 /*
- * ==============================================
+ * ************************************************
  *            Sticky Handlers
- * ==============================================
+ * ************************************************
  */
 
 const stickyContainer = document.querySelector('.stickyContainer');
@@ -20,9 +24,9 @@ const figureMarginTop = (window.innerHeight - figureHeight) / 2
 stickyContainer.style.top = figureMarginTop
 
 /*
- * ==============================================
+ * ************************************************
  *            Scroll Magic
- * ==============================================
+ * ************************************************
  */
 
 let fullHeight = window.innerHeight
@@ -131,10 +135,58 @@ const smogFourOptions = sceneOptionsGenerator(0, fullHeight, '.scene-two-start')
 const skylineTween = fromToSceneGenerator('.taipei-skyline', 1, { yPercent: -35 }, { yPercent: 0 })
 const skylineOptions = sceneOptionsGenerator(0, fullHeight, '.scene-two-start')
 
-const textOneTween = fromToSceneGenerator('#text-container-one', 1, { opacity: 0 }, { opacity: 1 });
-const textOneOptions = sceneOptionsGenerator(0, 0, '.taipei-intro-scene');
+const textOneInTween = fromToSceneGenerator('#text-container-one', 1, { opacity: 0 }, { opacity: 1 });
+const textOneInOptions = sceneOptionsGenerator(0, 0, '.taipei-intro-scene');
+
+const sunRiseTween = fromToSceneGenerator('.pge-sun', 1, { yPercent: 200 }, { yPercent: 0 });
+const sunRiseOptions = sceneOptionsGenerator(0, fullHeight, '.sunrise-scene');
+
+const textOneOutTween = fromToSceneGenerator('#text-container-one', 1, { opacity: 1 }, { opacity: 0 });
+const textOneOutOptions = sceneOptionsGenerator(0, 0, '.sunrise-scene');
+
+// Layer 7 Furthest
+const smogOneFadeTween = fromToSceneGenerator('#pge-smog1', 1, { opacity: 1 }, { opacity: 0 });
+const smogOneFadeOptions = sceneOptionsGenerator(0, fullHeight, '.sunrise-scene')
+
+// Layer 5
+const smogTwoFadeTween = fromToSceneGenerator('#pge-smog2', 1, { opacity: 1 }, { opacity: 0 });
+const smogTwoFadeOptions = sceneOptionsGenerator(0, fullHeight, '.sunrise-scene')
+
+// Layer 3
+const smogThreeFadeTween = fromToSceneGenerator('#pge-smog3', 1, { opacity: 1 }, { opacity: .2 });
+const smogThreeFadeOptions = sceneOptionsGenerator(0, fullHeight, '.sunrise-scene')
+
+// Layer 1 Closest
+const smogFourFadeTween = fromToSceneGenerator('#pge-smog4', 1, { opacity: 1 }, { opacity: .2 });
+const smogFourFadeOptions = sceneOptionsGenerator(0, fullHeight, '.sunrise-scene')
+
+//
+//           City Panels Tweens
+// ==========================================
+
+const cityPanels = sliceArray(document.querySelectorAll('.pge-city-panels'))
+const cityPanelsHeight = fullHeight;
+const dividedHeight = cityPanelsHeight / cityPanels.length;
+
+const cityPanelsScenes = cityPanels.map((panel, index) => {
+  let panelCount = index + 1;
+  let duration = dividedHeight * index;
+  const panelScene = {};
+
+  const tween = fromToSceneGenerator(`#city-panel${panelCount}`, 1, { opacity: 0 }, { opacity: 1 })
+  const options = sceneOptionsGenerator(duration, dividedHeight, '.city-panels-scene')
+
+  const scene = sceneGenerator(options, tween);
+
+  return scene;
+})
+
+//
+//           Scene Controller
+// ==========================================
 
 pgeController.addScene([
+  // Act 1
   sceneGenerator(heroOptionsOne, heroTweenOne),
   sceneGenerator(cloudOptionsOne, cloudTweenOne),
   sceneGenerator(cloudLeftOptions, cloudLeftTween),
@@ -155,13 +207,21 @@ pgeController.addScene([
   sceneGenerator(smogThreeOptions, smogThreeTween),
   sceneGenerator(smogFourOptions, smogFourTween),
   sceneGenerator(skylineOptions, skylineTween),
-  sceneGenerator(textOneOptions, textOneTween),
+  // Act 2
+  sceneGenerator(textOneInOptions, textOneInTween),
+  sceneGenerator(sunRiseOptions, sunRiseTween),
+  sceneGenerator(textOneOutOptions, textOneOutTween),
+  sceneGenerator(smogOneFadeOptions, smogOneFadeTween),
+  sceneGenerator(smogTwoFadeOptions, smogTwoFadeTween),
+  sceneGenerator(smogThreeFadeOptions, smogThreeFadeTween),
+  sceneGenerator(smogFourFadeOptions, smogFourFadeTween),
+  ...cityPanelsScenes,
 ])
 
 /*
- * ==============================================
+ * ************************************************
  *            Event Listeners
- * ==============================================
+ * ************************************************
  */
 
 window.addEventListener('load', function(e) {
