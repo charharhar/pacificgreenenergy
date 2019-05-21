@@ -58,9 +58,9 @@ function resizeHandler() {
 
 const pgeController = new ScrollMagic.Controller();
 
-// TWEENS
-const overflowOptions = sceneOptionsGenerator(fullHeight);
-
+// TWEEN
+//
+// Act One
 const heroTweenOne = fromToSceneGenerator('.hero-container', 1, { opacity: 1 }, { opacity: 0 });
 const heroOptionsOne = sceneOptionsGenerator(halfHeight, fullHeight, '.hero-dummy')
 
@@ -98,8 +98,43 @@ const animalDieOptions = sceneOptionsGenerator(0, halfHeight, '.pollution-scene'
 const powerBuildTween = basicTweenGenerator('.pge-powerplants', 1, { opacity: 1 });
 const powerBuildOptions = sceneOptionsGenerator(halfHeight, halfHeight, '.pollution-scene')
 
+//
+// Act Two
+// Layer 6
+const cityOneTween = fromToSceneGenerator('#pge-city1', 1, { yPercent: 20 }, { yPercent: 0 });
+const cityOneOptions = sceneOptionsGenerator(0, fullHeight, '.scene-two-start')
+
+// Layer 4
+const cityTwoTween = fromToSceneGenerator('#pge-city2', 1, { yPercent: 40 }, { yPercent: 0 });
+const cityTwoOptions = sceneOptionsGenerator(0, fullHeight, '.scene-two-start')
+
+// Layer 2
+const cityThreeTween = fromToSceneGenerator('#pge-city3', 1, { yPercent: 60 }, { yPercent: 0 });
+const cityThreeOptions = sceneOptionsGenerator(0, fullHeight, '.scene-two-start')
+
+// Layer 7 Furthest
+const smogOneTween = fromToSceneGenerator('#pge-smog1', 1, { yPercent: 10 }, { yPercent: 0 });
+const smogOneOptions = sceneOptionsGenerator(0, fullHeight, '.scene-two-start')
+
+// Layer 5
+const smogTwoTween = fromToSceneGenerator('#pge-smog2', 1, { yPercent: 30 }, { yPercent: 0 });
+const smogTwoOptions = sceneOptionsGenerator(0, fullHeight, '.scene-two-start')
+
+// Layer 3
+const smogThreeTween = fromToSceneGenerator('#pge-smog3', 1, { yPercent: 50 }, { yPercent: 0 });
+const smogThreeOptions = sceneOptionsGenerator(0, fullHeight, '.scene-two-start')
+
+// Layer 1 Closest
+const smogFourTween = fromToSceneGenerator('#pge-smog4', 1, { yPercent: 70 }, { yPercent: 0 });
+const smogFourOptions = sceneOptionsGenerator(0, fullHeight, '.scene-two-start')
+
+const skylineTween = fromToSceneGenerator('.taipei-skyline', 1, { yPercent: -35 }, { yPercent: 0 })
+const skylineOptions = sceneOptionsGenerator(0, fullHeight, '.scene-two-start')
+
+const textOneTween = fromToSceneGenerator('#text-container-one', 1, { opacity: 0 }, { opacity: 1 });
+const textOneOptions = sceneOptionsGenerator(0, 0, '.taipei-intro-scene');
+
 pgeController.addScene([
-  new ScrollMagic.Scene(overflowOptions).setClassToggle('.stickyContainer', 'hide-overflow'),
   sceneGenerator(heroOptionsOne, heroTweenOne),
   sceneGenerator(cloudOptionsOne, cloudTweenOne),
   sceneGenerator(cloudLeftOptions, cloudLeftTween),
@@ -112,6 +147,15 @@ pgeController.addScene([
   sceneGenerator(oceanFadeInOptions, oceanFadeInTween),
   sceneGenerator(animalDieOptions, animalDieTween),
   sceneGenerator(powerBuildOptions, powerBuildTween),
+  sceneGenerator(cityOneOptions, cityOneTween),
+  sceneGenerator(cityTwoOptions, cityTwoTween),
+  sceneGenerator(cityThreeOptions, cityThreeTween),
+  sceneGenerator(smogOneOptions, smogOneTween),
+  sceneGenerator(smogTwoOptions, smogTwoTween),
+  sceneGenerator(smogThreeOptions, smogThreeTween),
+  sceneGenerator(smogFourOptions, smogFourTween),
+  sceneGenerator(skylineOptions, skylineTween),
+  sceneGenerator(textOneOptions, textOneTween),
 ])
 
 /*

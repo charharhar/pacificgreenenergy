@@ -1,11 +1,39 @@
 @import 'global';
 
-.home-heading {
-  color: limegreen;
-}
+body { overflow-x: hidden; }
 
 section.section {
+  .sticky-container {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    height: 100vh;
 
+  }
+
+  .stickyContainer {
+  }
+
+  .fixed-container {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .act-view-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    &.hide-overflow { overflow: hidden; }
+  }
+}
+
+section.section.scene-one {
   .hero-container {
     position: fixed;
     width: 100%;
@@ -58,14 +86,7 @@ section.section {
     height: 100vh;
   }
 
-  .sticky-container {
-    position: sticky;
-    z-index: 1;
-    top: 0;
-    height: 100vh;
-
-    &.hide-overflow { overflow: hidden; }
-
+  .scene-one-container {
     .container-padding {
       height: 100%;
       padding: 20px;
@@ -77,11 +98,13 @@ section.section {
       width: 100%;
       top: 10%;
       transform: translateY(-15%);
-      overflow-x: hidden;
       z-index: 2;
 
       .pge-cloud-img {
         width: 100%;
+        height: 100%;
+
+        img { height: 100%; }
       }
 
       .cloud-left {
@@ -190,36 +213,117 @@ section.section {
     }
   }
 
-  .scrollarea {
+  .scene-one-scrollarea {
     .taiwan-intro-scene {
       height: 50vh;
-      background-color: #a1c3d9;
-      opacity: .3;
     }
 
     .taiwan-zoom-scene {
       height: 100vh;
-      background-color: #9deca0;
-      opacity: .3;
     }
 
     .ocean-intro-scene {
       height: 50vh;
-      background-color: #2c63d0;
-      opacity: .3;
     }
 
     .pollution-scene {
-      height: 100vh;
-      background-color: #9d0340;
-      opacity: .3;
+      height: 150vh;
     }
 
-    .debugscroll {
-      height: 3000px;
-      background-color: #104040;
+  }
+}
+
+section.section.scene-two {
+  .pge-sun {
+    position: absolute;
+    top: 20px;
+    right: 10%;
+    min-width: 250px;
+    animation-name: sunRotate;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+  }
+
+  .city-text-container {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    padding: 5px 15px;
+    border: 1px solid #222;
+    background-color: #fff;
+    border-radius: 6px;
+    z-index: 5;
+    max-width: 320px;
+    opacity: 0;
+
+    p {
+      font-size: 18px;
+      letter-spacing: 1px;
+      text-align: center;
+      color: #444;
     }
   }
+
+  .skyline-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    min-width: 1400px;
+    width: 100%;
+
+    .taipei-skyline {
+      transform: translateY(-50%);
+
+      .pge-taipei-skyline {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+
+        img { vertical-align: bottom; }
+
+        &#pge-smog1 {
+          position: relative;
+          z-index: 1;
+        }
+
+        &#pge-smog2 { z-index: 3; }
+        &#pge-smog3 { z-index: 5; }
+        &#pge-smog4 { z-index: 7; }
+        &#pge-city1 { z-index: 2; }
+        &#pge-city2 { z-index: 4; }
+        &#pge-city3 { z-index: 6; }
+      }
+    }
+
+    .taipei-solar-panels {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      .pge-city-panels {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 8;
+      }
+    }
+  }
+
+  .scene-two-scrollarea {
+    .taipei-intro-scene {
+      height: 50vh;
+    }
+  }
+}
+
+.debugscroll {
+  height: 1500px;
+  background-color: #104040;
 }
 
 @keyframes shipMovement {
@@ -227,4 +331,9 @@ section.section {
   40% { transform: translateX(50px) rotateY(180deg); }
   50% { transform: translateX(50px) rotateY(0deg); }
   90% { transform: translateX(-50px) rotateY(0deg); }
+}
+
+@keyframes sunRotate {
+  0% { transform: rotateZ(0deg); }
+  100% { transform: rotateZ(360deg); }
 }
