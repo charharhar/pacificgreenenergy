@@ -71,7 +71,7 @@ const pgeController = new ScrollMagic.Controller();
 //           Act One Start
 // ==========================================
 
-const heroTweenOne = fromToSceneGenerator('.hero-container', 1, { opacity: 1 }, { opacity: 0 });
+const heroTweenOne = fromToSceneGenerator('.hero-container', 1, { autoAlpha: 1 }, { autoAlpha: 0 });
 const heroOptionsOne = sceneOptionsGenerator(halfHeight, fullHeight, '.hero-dummy')
 
 const cloudTweenOne = fromToSceneGenerator('.cloud-container', 1, { yPercent: -30 }, { yPercent: 0 });
@@ -83,29 +83,29 @@ const cloudLeftOptions = sceneOptionsGenerator(fullHeight + halfHeight, halfHeig
 const cloudRightTween = fromToSceneGenerator('.cloud-right', 1, { xPercent: 5 }, { xPercent: 45, ease: Power2.easeInOut });
 const cloudRightOptions = sceneOptionsGenerator(fullHeight + halfHeight, halfHeight, '.hero-dummy')
 
-const logoFadeInTween = basicTweenGenerator('.logo-container', 1, { opacity: 1 });
+const logoFadeInTween = basicTweenGenerator('.logo-container', 1, { autoAlpha: 1 });
 const logoFadeInOptions = sceneOptionsGenerator(fullHeight + halfHeight, halfHeight, '.hero-dummy')
 
-const logoFadeOutTween = basicTweenGenerator('.logo-container', 1, { opacity: 0 });
+const logoFadeOutTween = basicTweenGenerator('.logo-container', 1, { autoAlpha: 0 });
 const logofadeOutOptions = sceneOptionsGenerator(0, 0, '.taiwan-intro-scene')
 
-const taiwanFadeInTween = basicTweenGenerator('.taiwan-container', 1, { opacity: 1 });
+const taiwanFadeInTween = basicTweenGenerator('.taiwan-container', 1, { autoAlpha: 1 });
 const taiwanFadeInOptions = sceneOptionsGenerator(0, halfHeight, '.taiwan-intro-scene')
 
 const taiwanZoomTween = fromToSceneGenerator('.taiwan-country', 1, { scale: .33 }, { scale: 1 });
 const taiwanZoomOptions = sceneOptionsGenerator(0, fullHeight, '.taiwan-zoom-scene')
 
-const cloudZoomTween = fromToSceneGenerator('.cloud-container', 1, { scale: 1, opacity: 1, yPercent: 0 }, { scale: 3, opacity: 0, yPercent: 0 });
+const cloudZoomTween = fromToSceneGenerator('.cloud-container', 1, { scale: 1, autoAlpha: 1, yPercent: 0 }, { scale: 3, autoAlpha: 0, yPercent: 0 });
 const cloudZoomOptions = sceneOptionsGenerator(0, fullHeight, '.taiwan-zoom-scene')
 
-const oceanFadeInTween = basicTweenGenerator('.ocean-container', 1, { opacity: 1 });
+const oceanFadeInTween = basicTweenGenerator('.ocean-container', 1, { autoAlpha: 1 });
 const oceanFadeInOptions = sceneOptionsGenerator(0, halfHeight, '.ocean-intro-scene')
 
 const animalDieTween = basicTweenGenerator('.pge-animals', 1, {
-  opacity: 0 });
+  autoAlpha: 0 });
 const animalDieOptions = sceneOptionsGenerator(0, halfHeight, '.pollution-scene');
 
-const powerBuildTween = basicTweenGenerator('.pge-powerplants', 1, { opacity: 1 });
+const powerBuildTween = basicTweenGenerator('.pge-powerplants', 1, { autoAlpha: 1 });
 const powerBuildOptions = sceneOptionsGenerator(halfHeight, halfHeight, '.pollution-scene')
 
 //
@@ -143,29 +143,29 @@ const smogFourOptions = sceneOptionsGenerator(0, fullHeight, '.scene-two-start')
 const skylineTween = fromToSceneGenerator('.taipei-skyline', 1, { yPercent: -35 }, { yPercent: 0 })
 const skylineOptions = sceneOptionsGenerator(0, fullHeight, '.scene-two-start')
 
-const textOneInTween = fromToSceneGenerator('#text-container-one', 1, { opacity: 0 }, { opacity: 1 });
+const textOneInTween = fromToSceneGenerator('#text-container-one', 1, { autoAlpha: 0 }, { autoAlpha: 1 });
 const textOneInOptions = sceneOptionsGenerator(0, 0, '.taipei-intro-scene');
 
 const sunRiseTween = fromToSceneGenerator('.pge-sun', 1, { yPercent: 200 }, { yPercent: 0 });
 const sunRiseOptions = sceneOptionsGenerator(0, fullHeight, '.sunrise-scene');
 
-const textOneOutTween = fromToSceneGenerator('#text-container-one', 1, { opacity: 1 }, { opacity: 0 });
+const textOneOutTween = fromToSceneGenerator('#text-container-one', 1, { autoAlpha: 1 }, { autoAlpha: 0 });
 const textOneOutOptions = sceneOptionsGenerator(0, 0, '.sunrise-scene');
 
 // Layer 7 Furthest
-const smogOneFadeTween = fromToSceneGenerator('#pge-smog1', 1, { opacity: 1 }, { opacity: 0 });
+const smogOneFadeTween = fromToSceneGenerator('#pge-smog1', 1, { autoAlpha: 1 }, { autoAlpha: 0 });
 const smogOneFadeOptions = sceneOptionsGenerator(0, fullHeight, '.sunrise-scene')
 
 // Layer 5
-const smogTwoFadeTween = fromToSceneGenerator('#pge-smog2', 1, { opacity: 1 }, { opacity: 0 });
+const smogTwoFadeTween = fromToSceneGenerator('#pge-smog2', 1, { autoAlpha: 1 }, { autoAlpha: 0 });
 const smogTwoFadeOptions = sceneOptionsGenerator(0, fullHeight, '.sunrise-scene')
 
 // Layer 3
-const smogThreeFadeTween = fromToSceneGenerator('#pge-smog3', 1, { opacity: 1 }, { opacity: .2 });
+const smogThreeFadeTween = fromToSceneGenerator('#pge-smog3', 1, { autoAlpha: 1 }, { autoAlpha: .2 });
 const smogThreeFadeOptions = sceneOptionsGenerator(0, fullHeight, '.sunrise-scene')
 
 // Layer 1 Closest
-const smogFourFadeTween = fromToSceneGenerator('#pge-smog4', 1, { opacity: 1 }, { opacity: .2 });
+const smogFourFadeTween = fromToSceneGenerator('#pge-smog4', 1, { autoAlpha: 1 }, { autoAlpha: .2 });
 const smogFourFadeOptions = sceneOptionsGenerator(0, fullHeight, '.sunrise-scene')
 
 //
@@ -181,7 +181,7 @@ const cityPanelsScenes = cityPanels.map((panel, index) => {
   let duration = cityDividedHeight * index;
   const panelScene = {};
 
-  const tween = fromToSceneGenerator(`#city-panel${panelCount}`, 1, { opacity: 0, y: -70 }, { opacity: 1, y: 0 })
+  const tween = fromToSceneGenerator(`#city-panel${panelCount}`, 1, { autoAlpha: 0, y: -70 }, { autoAlpha: 1, y: 0 })
   const options = sceneOptionsGenerator(duration, cityDividedHeight, '.city-panels-scene')
 
   const scene = sceneGenerator(options, tween);
@@ -196,7 +196,7 @@ const cityPanelsScenes = cityPanels.map((panel, index) => {
 const handPhoneTween = fromToSceneGenerator('.hand-phone-container', 1, { xPercent: 100, yPercent: -50 }, { xPercent: 0, yPercent: -50 });
 const handPhoneOptions = sceneOptionsGenerator(0, halfHeight, '.mobile-phone-scene');
 
-const powerMobileTween = basicTweenGenerator('.pge-mobile-powerplants', 1, { opacity: 0 });
+const powerMobileTween = basicTweenGenerator('.pge-mobile-powerplants', 1, { autoAlpha: 0 });
 const powerMobileOptions = sceneOptionsGenerator(halfHeight, halfHeight, '.mobile-phone-scene')
 
 //
@@ -211,7 +211,7 @@ const mobilePanelsScenes = mobilePanels.map((panel, index) => {
   let duration = mobileDividedHeight * index;
   const panelScene = {};
 
-  const tween = fromToSceneGenerator(`#mobile-panel${panelCount}`, 1, { opacity: 0, y: -40 }, { opacity: 1, y: 0 })
+  const tween = fromToSceneGenerator(`#mobile-panel${panelCount}`, 1, { autoAlpha: 0, y: -20 }, { autoAlpha: 1, y: 0 })
   const options = sceneOptionsGenerator(duration, mobileDividedHeight, '.mobile-panels-scene')
 
   const scene = sceneGenerator(options, tween);
