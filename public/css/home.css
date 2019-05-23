@@ -208,7 +208,7 @@ section.section.scene-one {
 
       .pge-ship {
         position: absolute;
-        max-width: 120px;
+        width: 120px;
         animation-iteration-count: infinite;
         animation-direction: normal;
         animation-timing-function: ease;
