@@ -97,7 +97,6 @@ section.section.scene-one {
       height: 80%;
       width: 100%;
       top: 10%;
-      transform: translateY(-15%);
       z-index: 2;
 
       .pge-cloud-img {
@@ -155,7 +154,7 @@ section.section.scene-one {
 
         .pge-powerplants {
           position: absolute;
-          max-width: 80px;
+          width: 80px;
           opacity: 0;
 
           &#pge-power1 {
@@ -305,8 +304,6 @@ section.section.scene-two {
     width: 100%;
 
     .taipei-skyline {
-      transform: translateY(-50%);
-
       .pge-taipei-skyline {
         position: absolute;
         width: 100%;
@@ -458,7 +455,7 @@ section.section.scene-two {
 
         .pge-mobile-powerplants {
           position: absolute;
-          max-width: 60px;
+          width: 60px;
           opacity: 1;
 
           &#pge-mobile-power1 {

@@ -1,7 +1,7 @@
 
 import '../css/home.css';
 import { sliceArray, hotReload } from './util.js'
-import { TweenMax, TimelineLite } from "gsap/TweenMax";
+import { TweenMax } from "gsap/TweenMax";
 import ScrollMagic from 'scrollmagic';
 import 'animation.gsap'
 
@@ -224,7 +224,6 @@ const progressBarOptions = sceneOptionsGenerator(0, fullHeight, '.mobile-panels-
 //
 //           Scene Controller
 // ==========================================
-
 pgeController.addScene([
   // Act 1
   sceneGenerator(heroOptionsOne, heroTweenOne),
