@@ -197,15 +197,43 @@ section.section.scene-one {
       .pge-ship {
         position: absolute;
         max-width: 120px;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+        animation-timing-function: ease;
 
-        &.pge-ship-img-l1 {
-          top: 0;
-          left: 25%;
-          animation-name: shipMovement;
-          animation-iteration-count: infinite;
-          animation-direction: normal;
+        &#pge-ship-img-l1 {
+          top: 20%;
+          left: 15%;
+          animation-name: shipMovementOne;
           animation-duration: 8s;
-          animation-timing-function: ease;
+        }
+
+        &#pge-ship-img-l2 {
+          top: 60%;
+          left: 10%;
+          animation-name: shipMovementTwo;
+          animation-duration: 12s;
+        }
+
+        &#pge-ship-img-r1 {
+          top: 10%;
+          right: 15%;
+          animation-name: shipMovementThree;
+          animation-duration: 6s;
+        }
+
+        &#pge-ship-img-r2 {
+          top: 30%;
+          right: 20%;
+          animation-name: shipMovementFour;
+          animation-duration: 8s;
+        }
+
+        &#pge-ship-img-r3 {
+          top: 70%;
+          right: 10%;
+          animation-name: shipMovementFive;
+          animation-duration: 7s;
         }
 
         img { width: 100%; }
@@ -495,11 +523,39 @@ section.section.scene-two {
   opacity: .3;
 }
 
-@keyframes shipMovement {
+@keyframes shipMovementOne {
   0%, 100% { transform: translateX(-50px) rotateY(180deg); }
   40% { transform: translateX(50px) rotateY(180deg); }
   50% { transform: translateX(50px) rotateY(0deg); }
   90% { transform: translateX(-50px) rotateY(0deg); }
+}
+
+@keyframes shipMovementTwo {
+  0%, 100% { transform: translateX(30px) rotateY(0deg); }
+  40% { transform: translateX(-30px) rotateY(0deg); }
+  50% { transform: translateX(-30px) rotateY(180deg); }
+  90% { transform: translateX(30px) rotateY(180deg); }
+}
+
+@keyframes shipMovementThree {
+  0%, 100% { transform: translateX(-20px) rotateY(180deg); }
+  40% { transform: translateX(20px) rotateY(180deg); }
+  50% { transform: translateX(20px) rotateY(0deg); }
+  90% { transform: translateX(-20px) rotateY(0deg); }
+}
+
+@keyframes shipMovementFour {
+  0%, 100% { transform: translateX(-40px) rotateY(180deg); }
+  40% { transform: translateX(40px) rotateY(180deg); }
+  50% { transform: translateX(40px) rotateY(0deg); }
+  90% { transform: translateX(-40px) rotateY(0deg); }
+}
+
+@keyframes shipMovementFive {
+  0%, 100% { transform: translateX(50px) rotateY(0deg); }
+  40% { transform: translateX(-50px) rotateY(0deg); }
+  50% { transform: translateX(-50px) rotateY(180deg); }
+  90% { transform: translateX(50px) rotateY(180deg); }
 }
 
 @keyframes sunRotate {
