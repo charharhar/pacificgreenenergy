@@ -4,7 +4,6 @@ import { sliceArray, hotReload } from './util.js'
 import { TweenMax, TimelineLite } from "gsap/TweenMax";
 import ScrollMagic from 'scrollmagic';
 import 'animation.gsap'
-import 'debug.addIndicators'
 
 function getHeight(element) {
   return document.querySelector(element).clientHeight;
@@ -39,7 +38,7 @@ const sceneOptionsGenerator = (offset = 0, duration = 0, triggerElement = null) 
 });
 
 const sceneGenerator = (options, tween) => (
-  new ScrollMagic.Scene(options).setTween(tween).addIndicators()
+  new ScrollMagic.Scene(options).setTween(tween)
 );
 
 const fromToSceneGenerator = (target, duration, fromVar, toVar) => (
