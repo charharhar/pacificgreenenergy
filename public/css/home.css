@@ -45,10 +45,23 @@ section.section.scene-one {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-    max-width: 400px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
 
-    h1 {
-      margin-bottom: 25px;
+    .hero-text {
+      max-width: 340px;
+
+      h1 {
+        margin-bottom: 40px;
+      }
+
+      h2 {}
+    }
+
+    figure.hero-logo {
+      max-width: 170px;
+      margin-right: 60px;
     }
   }
 
@@ -344,15 +357,15 @@ section.section.scene-two {
   }
 
   .mobile-panels-container {
-    z-index: 10;
     position: absolute;
+    z-index: 10;
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
 
     .hand-phone-container {
       position: relative;
-      top: 50%;
-      transform: translateY(-50%);
       width: 100%;
 
       figure.mobile-hand-phone {

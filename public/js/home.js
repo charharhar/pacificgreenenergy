@@ -139,7 +139,7 @@ const smogThreeOptions = sceneOptionsGenerator(0, fullHeight, '.scene-two-start'
 const smogFourTween = fromToSceneGenerator('#pge-smog4', 1, { yPercent: 70 }, { yPercent: 0 });
 const smogFourOptions = sceneOptionsGenerator(0, fullHeight, '.scene-two-start')
 
-const skylineTween = fromToSceneGenerator('.taipei-skyline', 1, { yPercent: -35 }, { yPercent: 0 })
+const skylineTween = fromToSceneGenerator('.taipei-skyline', 1, { yPercent: -10 }, { yPercent: 0 })
 const skylineOptions = sceneOptionsGenerator(0, fullHeight, '.scene-two-start')
 
 const textOneInTween = fromToSceneGenerator('#text-container-one', 1, { autoAlpha: 0 }, { autoAlpha: 1 });
@@ -192,7 +192,7 @@ const cityPanelsScenes = cityPanels.map((panel, index) => {
 //           Mobile Phone Tweens
 // ==========================================
 
-const handPhoneTween = fromToSceneGenerator('.hand-phone-container', 1, { xPercent: 100, yPercent: -50 }, { xPercent: 0, yPercent: -50 });
+const handPhoneTween = fromToSceneGenerator('.hand-phone-container', 1, { xPercent: 100 }, { xPercent: 0 });
 const handPhoneOptions = sceneOptionsGenerator(0, halfHeight, '.mobile-phone-scene');
 
 const powerMobileTween = basicTweenGenerator('.pge-mobile-powerplants', 1, { autoAlpha: 0 });
