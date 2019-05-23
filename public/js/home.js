@@ -55,6 +55,10 @@ const basicTweenGenerator = (target, duration = 0, vars, delay = 0) => (
   })
 )
 
+const sceneClassToggleGenerator = (options, target, classToggle) => (
+  new ScrollMagic.Scene(options).setClassToggle(target, classToggle)
+);
+
 function resizeHandler() {
   fullHeight = window.innerHeight;
   halfHeight = (fullHeight / 2);
@@ -177,7 +181,7 @@ const cityPanelsScenes = cityPanels.map((panel, index) => {
   let duration = cityDividedHeight * index;
   const panelScene = {};
 
-  const tween = fromToSceneGenerator(`#city-panel${panelCount}`, 1, { opacity: 0 }, { opacity: 1 })
+  const tween = fromToSceneGenerator(`#city-panel${panelCount}`, 1, { opacity: 0, y: -70 }, { opacity: 1, y: 0 })
   const options = sceneOptionsGenerator(duration, cityDividedHeight, '.city-panels-scene')
 
   const scene = sceneGenerator(options, tween);
@@ -207,7 +211,7 @@ const mobilePanelsScenes = mobilePanels.map((panel, index) => {
   let duration = mobileDividedHeight * index;
   const panelScene = {};
 
-  const tween = fromToSceneGenerator(`#mobile-panel${panelCount}`, 1, { opacity: 0 }, { opacity: 1 })
+  const tween = fromToSceneGenerator(`#mobile-panel${panelCount}`, 1, { opacity: 0, y: -40 }, { opacity: 1, y: 0 })
   const options = sceneOptionsGenerator(duration, mobileDividedHeight, '.mobile-panels-scene')
 
   const scene = sceneGenerator(options, tween);
