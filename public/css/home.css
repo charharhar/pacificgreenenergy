@@ -253,22 +253,41 @@ section.section.scene-one {
   }
 
   .scene-one-scrollarea {
-    .taiwan-intro-scene {
-      height: 50vh;
-    }
-
-    .taiwan-zoom-scene {
+    .cloud-split-scene {
       height: 100vh;
     }
 
+    .logo-fade-in-scene {
+      height: 100vh;
+    }
+
+    .logo-fade-out-scene {
+      height: 100vh;
+    }
+
+    .taiwan-intro-scene {
+      height: 100vh;
+    }
+
+    .taiwan-zoom-scene {
+      height: 200vh;
+    }
+
     .ocean-intro-scene {
+      height: 100vh;
+    }
+
+    .animal-die-scene {
+      height: 100vh;
+    }
+
+    .powerplant-scene {
+      height: 100vh;
+    }
+
+    .outro-scene {
       height: 50vh;
     }
-
-    .pollution-scene {
-      height: 150vh;
-    }
-
   }
 }
 
@@ -516,11 +535,15 @@ section.section.scene-two {
       height: 100vh;
     }
 
+    .mobile-power-scene {
+      height: 100vh;
+    }
+
     .mobile-panels-scene {
       height: 100vh;
     }
 
-    .buffer-scene {
+    .outro-scene {
       height: 100vh;
     }
   }
@@ -655,10 +678,17 @@ section.section.scene-two {
         height: 50vh;
       }
 
-      .pollution-scene {
-        height: 150vh;
+      .animal-die-scene {
+        height: 100vh;
       }
 
+      .powerplant-scene {
+        height: 100vh;
+      }
+
+      .outro-scene {
+        height: 50vh;
+      }
     }
   }
 }

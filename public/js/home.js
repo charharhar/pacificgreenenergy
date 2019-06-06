@@ -70,7 +70,7 @@ window.addEventListener('load', function(e) {
     return document.querySelector(element).clientHeight;
   }
 
-  const multiSceneCreate = function(sceneClassName, nodesArray, nodeId, fromOptions, toOptions) {
+  const multiSceneCreate = function(sceneClassName, nodesArray, nodeId, tweens) {
     const sceneHeight = document.querySelector(sceneClassName).clientHeight;
     const dividedHeight = sceneHeight / nodesArray.length;
 
@@ -79,7 +79,7 @@ window.addEventListener('load', function(e) {
       let duration = dividedHeight * index;
       const scene = {};
 
-      const tween = fromToSceneGenerator(`${nodeId}${nodeCount}`, 1, fromOptions, toOptions)
+      const tween = fromToSceneGenerator(`${nodeId}${nodeCount}`, 1, tweens.from, tweens.to)
       const options = sceneOptionsGenerator(duration, dividedHeight, sceneClassName)
 
       return sceneGenerator(options, tween);
@@ -92,48 +92,96 @@ window.addEventListener('load', function(e) {
 
 
   //
-  //           Act One Start
+  //           Act One
+  //
   // ==========================================
 
   const heroTweenOne = fromToSceneGenerator('.hero-container', 1, { autoAlpha: 1 }, { autoAlpha: 0 });
-  const heroOptionsOne = sceneOptionsGenerator(halfHeight, fullHeight, '.hero-dummy')
+  const heroOptionsOne = sceneOptionsGenerator(halfHeight, fullHeight, '.scene-one-start')
 
   const cloudTweenOne = fromToSceneGenerator('.cloud-container', 1, { yPercent: -30 }, { yPercent: 0 });
-  const cloudOptionsOne = sceneOptionsGenerator(halfHeight, fullHeight, '.hero-dummy')
-
-  const cloudLeftTween = fromToSceneGenerator('.cloud-left', 1, { xPercent: -5 }, { xPercent: -45, ease: Power2.easeInOut });
-  const cloudLeftOptions = sceneOptionsGenerator(fullHeight + halfHeight, halfHeight, '.hero-dummy')
-
-  const cloudRightTween = fromToSceneGenerator('.cloud-right', 1, { xPercent: 5 }, { xPercent: 45, ease: Power2.easeInOut });
-  const cloudRightOptions = sceneOptionsGenerator(fullHeight + halfHeight, halfHeight, '.hero-dummy')
-
-  const logoFadeInTween = basicTweenGenerator('.logo-container', 1, { autoAlpha: 1 });
-  const logoFadeInOptions = sceneOptionsGenerator(fullHeight + halfHeight, halfHeight, '.hero-dummy')
-
-  const logoFadeOutTween = basicTweenGenerator('.logo-container', 1, { autoAlpha: 0 });
-  const logofadeOutOptions = sceneOptionsGenerator(0, 0, '.taiwan-intro-scene')
-
-  const taiwanFadeInTween = basicTweenGenerator('.taiwan-container', 1, { autoAlpha: 1 });
-  const taiwanFadeInOptions = sceneOptionsGenerator(0, halfHeight, '.taiwan-intro-scene')
-
-  const taiwanZoomTween = fromToSceneGenerator('.taiwan-country', 1, { scale: .33 }, { scale: 1 });
-  const taiwanZoomOptions = sceneOptionsGenerator(0, fullHeight, '.taiwan-zoom-scene')
-
-  const cloudZoomTween = fromToSceneGenerator('.cloud-container', 1, { scale: 1, autoAlpha: 1, yPercent: 0 }, { scale: 3, autoAlpha: 0, yPercent: 0 });
-  const cloudZoomOptions = sceneOptionsGenerator(0, fullHeight, '.taiwan-zoom-scene')
-
-  const oceanFadeInTween = basicTweenGenerator('.ocean-container', 1, { autoAlpha: 1 });
-  const oceanFadeInOptions = sceneOptionsGenerator(0, halfHeight, '.ocean-intro-scene')
-
-  const animalDieTween = basicTweenGenerator('.pge-animals', 1, {
-    autoAlpha: 0 });
-  const animalDieOptions = sceneOptionsGenerator(0, halfHeight, '.pollution-scene');
-
-  const powerBuildTween = fromToSceneGenerator('.pge-powerplants', 1, { scaleY: 0 }, { scaleY: 1, transformOrigin: '50% 100%', });
-  const powerBuildOptions = sceneOptionsGenerator(halfHeight, halfHeight, '.pollution-scene')
+  const cloudOptionsOne = sceneOptionsGenerator(halfHeight, fullHeight, '.scene-one-start')
 
   //
-  //           City/Smog Tweens(Act 2 start)
+  //           Cloud Split Scene
+  // ==========================================
+
+  const cloudSplitHeight = getHeight('.cloud-split-scene');
+
+  const cloudLeftTween = fromToSceneGenerator('.cloud-left', 1, { xPercent: -5 }, { xPercent: -45, ease: Power2.easeInOut });
+  const cloudLeftOptions = sceneOptionsGenerator(0, cloudSplitHeight, '.cloud-split-scene')
+
+  const cloudRightTween = fromToSceneGenerator('.cloud-right', 1, { xPercent: 5 }, { xPercent: 45, ease: Power2.easeInOut });
+  const cloudRightOptions = sceneOptionsGenerator(0, cloudSplitHeight, '.cloud-split-scene')
+
+  //
+  //           Logo Fade in/out Scene
+  // ==========================================
+
+  const logoFadeInHeight = getHeight('.logo-fade-in-scene');
+  const logoFadeOutHeight = getHeight('.logo-fade-out-scene');
+
+  const logoFadeInTween = basicTweenGenerator('.logo-container', 1, { autoAlpha: 1 });
+  const logoFadeInOptions = sceneOptionsGenerator(0, logoFadeInHeight, '.logo-fade-in-scene')
+
+  const logoFadeOutTween = basicTweenGenerator('.logo-container', 1, { autoAlpha: 0 });
+  const logofadeOutOptions = sceneOptionsGenerator(0, logoFadeOutHeight, '.logo-fade-out-scene')
+
+  //
+  //           Taiwan Fade In Scene
+  // ==========================================
+
+  const taiwanFadeHeight = getHeight('.taiwan-intro-scene');
+
+  const taiwanFadeInTween = basicTweenGenerator('.taiwan-container', 1, { autoAlpha: 1 });
+  const taiwanFadeInOptions = sceneOptionsGenerator(0, taiwanFadeHeight, '.taiwan-intro-scene')
+
+  //
+  //           Taiwan Zoom Scene
+  // ==========================================
+  const taiwanZoomHeight = getHeight('.taiwan-zoom-scene')
+
+  const taiwanZoomTween = fromToSceneGenerator('.taiwan-country', 1, { scale: .33 }, { scale: 1 });
+  const taiwanZoomOptions = sceneOptionsGenerator(0, taiwanZoomHeight, '.taiwan-zoom-scene')
+
+  const cloudZoomTween = fromToSceneGenerator('.cloud-container', 1, { scale: 1, autoAlpha: 1, yPercent: 0 }, { scale: 3, autoAlpha: 0, yPercent: 0 });
+  const cloudZoomOptions = sceneOptionsGenerator(0, taiwanZoomHeight, '.taiwan-zoom-scene')
+
+  //
+  //           Ocean Fade Scene
+  // ==========================================
+
+  const oceanSceneHeight = getHeight('.ocean-intro-scene')
+
+  const oceanFadeInTween = basicTweenGenerator('.ocean-container', 1, { autoAlpha: 1 });
+  const oceanFadeInOptions = sceneOptionsGenerator(0, oceanSceneHeight, '.ocean-intro-scene')
+
+  //
+  //           Animal Die Tweens
+  // ==========================================
+  const animalNodes = sliceArray(document.querySelectorAll('.pge-animals'))
+  const animalDieTweens = {
+    from: { autoAlpha: 1 },
+    to: { autoAlpha: 0 },
+  }
+
+  const animalDieScenes = multiSceneCreate('.animal-die-scene', animalNodes, '#pge-animal', animalDieTweens)
+
+  //
+  //           Powerplant Scene
+  // ==========================================
+  const powerplantNodes = sliceArray(document.querySelectorAll('.pge-powerplants'))
+  const powerBuildTweens = {
+    from: { scaleY: 0 },
+    to: { scaleY: 1, transformOrigin: '50% 100%', },
+  }
+
+  const powerBuildScenes = multiSceneCreate('.powerplant-scene', powerplantNodes, '#pge-power', powerBuildTweens)
+
+  //
+  //           ACT 2
+  //
+  //           City/Smog Tweens
   // ==========================================
 
   // Layer 6
@@ -196,11 +244,13 @@ window.addEventListener('load', function(e) {
   //           City Panels Tweens
   // ==========================================
 
-  const cityPanels = sliceArray(document.querySelectorAll('.pge-city-panels'))
-  const cityPanelFrom = { autoAlpha: 0, y: -70 }
-  const cityPanelTo = { autoAlpha: 1, y: 0 }
+  const cityPanelsNodes = sliceArray(document.querySelectorAll('.pge-city-panels'))
+  const cityPanelTweens = {
+    from: { autoAlpha: 0, y: -70 },
+    to: { autoAlpha: 1, y: 0 },
+  }
 
-  const cityPanelsScenes = multiSceneCreate('.city-panels-scene', cityPanels, '#city-panel', cityPanelFrom, cityPanelTo)
+  const cityPanelsScenes = multiSceneCreate('.city-panels-scene', cityPanelsNodes, '#city-panel', cityPanelTweens)
 
   //
   //           Mobile Phone Tweens
@@ -209,19 +259,31 @@ window.addEventListener('load', function(e) {
   const handPhoneTween = fromToSceneGenerator('.hand-phone-container', 1, { xPercent: 100 }, { xPercent: 0 });
   const handPhoneOptions = sceneOptionsGenerator(0, halfHeight, '.mobile-phone-scene');
 
-  const powerMobileTween = basicTweenGenerator('.pge-mobile-powerplants', 1, { autoAlpha: 0 });
-  const powerMobileOptions = sceneOptionsGenerator(halfHeight, halfHeight, '.mobile-phone-scene')
+  //
+  //           Powerplant Scene
+  // ==========================================
+  const mobilePowerplantNodes = sliceArray(document.querySelectorAll('.pge-mobile-powerplants'))
+  const mobilePowerBuildTweens = {
+    from: { scaleY: 1 },
+    to: { scaleY: 0, transformOrigin: '50% 100%', },
+  }
+
+  const mobilePowerBuildScenes = multiSceneCreate('.mobile-power-scene', mobilePowerplantNodes, '#pge-mobile-power', mobilePowerBuildTweens)
 
   //
   //           Mobile Panels Tweens
   // ==========================================
-  const mobilePanels = sliceArray(document.querySelectorAll('.pge-mobile-panels'))
-  const mobilePanelFrom = { autoAlpha: 0, y: -20 };
-  const mobilePanelTo = { autoAlpha: 1, y: 0 };
+  const mobilePanelsNodes = sliceArray(document.querySelectorAll('.pge-mobile-panels'))
+  const mobilePanelTweens = {
+    from: { autoAlpha: 0, y: -20 },
+    to: { autoAlpha: 1, y: 0 },
+  }
 
-  const mobilePanelsScenes = multiSceneCreate('.mobile-panels-scene', mobilePanels, '#mobile-panel', mobilePanelFrom, mobilePanelTo)
+  const mobilePanelsScenes = multiSceneCreate('.mobile-panels-scene', mobilePanelsNodes, '#mobile-panel', mobilePanelTweens)
+
   //
-
+  //           Mobile Progress Bar Tweens
+  // ==========================================
   const progressBarTween = fromToSceneGenerator('.progress-bar', 1, { xPercent: -100 }, { xPercent: 0 });
   const progressBarOptions = sceneOptionsGenerator(0, fullHeight, '.mobile-panels-scene');
 
@@ -229,6 +291,7 @@ window.addEventListener('load', function(e) {
   //           Scene Controller
   // ==========================================
   pgeController.addScene([
+    // TweenMax.set('.logo-container', { autoAlpha: 0 }),
     // Act 1
     sceneGenerator(heroOptionsOne, heroTweenOne),
     sceneGenerator(cloudOptionsOne, cloudTweenOne),
@@ -240,8 +303,8 @@ window.addEventListener('load', function(e) {
     sceneGenerator(taiwanZoomOptions, taiwanZoomTween),
     sceneGenerator(cloudZoomOptions, cloudZoomTween),
     sceneGenerator(oceanFadeInOptions, oceanFadeInTween),
-    sceneGenerator(animalDieOptions, animalDieTween),
-    sceneGenerator(powerBuildOptions, powerBuildTween),
+    ...animalDieScenes,
+    ...powerBuildScenes,
     sceneGenerator(cityOneOptions, cityOneTween),
     sceneGenerator(cityTwoOptions, cityTwoTween),
     sceneGenerator(cityThreeOptions, cityThreeTween),
@@ -260,7 +323,7 @@ window.addEventListener('load', function(e) {
     sceneGenerator(smogFourFadeOptions, smogFourFadeTween),
     ...cityPanelsScenes,
     sceneGenerator(handPhoneOptions, handPhoneTween),
-    sceneGenerator(powerMobileOptions, powerMobileTween),
+    ...mobilePowerBuildScenes,
     ...mobilePanelsScenes,
     sceneGenerator(progressBarOptions, progressBarTween),
   ])
