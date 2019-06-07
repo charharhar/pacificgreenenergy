@@ -35,6 +35,8 @@ section.section {
 }
 
 section.section.scene-one {
+  background: radial-gradient(#fff, #00B8CE);
+
   .hero-container {
     position: fixed;
     width: 100%;
@@ -82,10 +84,20 @@ section.section.scene-one {
   .full-height-hero {
     position: relative;
     height: 100vh;
-    background-image: url(/images/home/PGE-landing.png);
+    background-image: url(/images/home/PGE-landing.jpeg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.45);
+    }
   }
 
   .full-width-placeholder {
@@ -170,28 +182,28 @@ section.section.scene-one {
           width: 80px;
 
           &#pge-power1 {
-            top: 25px;
-            left: 195px;
+            top: 10%;
+            left: 62%;
           }
 
           &#pge-power2 {
-            top: 100px;
-            left: 75px;
+            top: 20%;
+            left: 27%;
           }
 
           &#pge-power3 {
-            top: 200px;
-            left: 20px;
+            top: 40%;
+            left: 8%;
           }
 
           &#pge-power4 {
-            top: 305px;
-            left: 50px;
+            top: 60%;
+            left: 10%;
           }
 
           &#pge-power5 {
-            top: 215px;
-            left: 110px;
+            top: 48%;
+            left: 42%;
           }
         }
       }
@@ -203,51 +215,84 @@ section.section.scene-one {
         width: 100%;
         height: 100%;
         opacity: 0;
-      }
 
-      .pge-ship {
-        position: absolute;
-        width: 120px;
-        animation-iteration-count: infinite;
-        animation-direction: normal;
-        animation-timing-function: ease;
-
-        &#pge-ship-img-l1 {
-          top: 20%;
-          left: 15%;
-          animation-name: shipMovementOne;
-          animation-duration: 8s;
-        }
-
-        &#pge-ship-img-l2 {
-          top: 60%;
-          left: 10%;
-          animation-name: shipMovementTwo;
-          animation-duration: 12s;
-        }
-
-        &#pge-ship-img-r1 {
-          top: 10%;
-          right: 15%;
-          animation-name: shipMovementThree;
-          animation-duration: 6s;
-        }
-
-        &#pge-ship-img-r2 {
-          top: 30%;
+        .whale-container {
+          position: absolute;
+          width: 100px;
+          top: 50%;
           right: 20%;
-          animation-name: shipMovementFour;
-          animation-duration: 8s;
+
+          .pge-whale {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-timing-function: ease;
+
+            &#pge-whale-1 {
+              // animation-name: whaleFadeOne;
+              // animation-duration: 8s;
+            }
+
+            &#pge-whale-2 {
+              animation-name: whaleFadeTwo;
+              animation-duration: 8s;
+              display: none;
+            }
+
+            &#pge-whale-3 {
+              animation-name: whaleFadeThree;
+              animation-duration: 8s;
+              display: none;
+            }
+          }
         }
 
-        &#pge-ship-img-r3 {
-          top: 70%;
-          right: 10%;
-          animation-name: shipMovementFive;
-          animation-duration: 7s;
-        }
+        .pge-ship {
+          position: absolute;
+          width: 120px;
+          animation-iteration-count: infinite;
+          animation-direction: normal;
+          animation-timing-function: ease;
 
-        img { width: 100%; }
+          &#pge-ship-img-l1 {
+            top: 20%;
+            left: 15%;
+            animation-name: shipMovementOne;
+            animation-duration: 8s;
+          }
+
+          &#pge-ship-img-l2 {
+            top: 60%;
+            left: 10%;
+            animation-name: shipMovementTwo;
+            animation-duration: 12s;
+          }
+
+          &#pge-ship-img-r1 {
+            top: 10%;
+            right: 15%;
+            animation-name: shipMovementThree;
+            animation-duration: 6s;
+          }
+
+          &#pge-ship-img-r2 {
+            top: 30%;
+            right: 20%;
+            animation-name: shipMovementFour;
+            animation-duration: 8s;
+          }
+
+          &#pge-ship-img-r3 {
+            top: 70%;
+            right: 10%;
+            animation-name: shipMovementFive;
+            animation-duration: 7s;
+          }
+
+          img { width: 100%; }
+        }
       }
     }
   }
@@ -292,18 +337,46 @@ section.section.scene-one {
 }
 
 section.section.scene-two {
-  .pge-sun {
-    position: absolute;
-    top: 20px;
-    right: 10%;
-    min-width: 250px;
+  .act-two-container {
+    background: linear-gradient(#005D5A, #257A77);
+  }
 
-    img {
-      animation-name: sunRotate;
-      animation-iteration-count: infinite;
-      animation-direction: normal;
-      animation-duration: 60s;
-      animation-timing-function: linear;
+  .taipei-sky-elements {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+
+    .pge-sun {
+      position: absolute;
+      top: 20px;
+      right: 10%;
+      min-width: 250px;
+      z-index: 3;
+
+      img {
+        animation-name: sunRotate;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+        animation-duration: 60s;
+        animation-timing-function: linear;
+      }
+    }
+
+    .pge-moon {
+      position: absolute;
+      top: 60px;
+      right: 15%;
+      min-width: 150px;
+      z-index: 3;
+    }
+
+    .pge-skyline-clouds {
+      position: absolute;
+      top: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 85%;
+      z-index: 2;
     }
   }
 
@@ -335,24 +408,38 @@ section.section.scene-two {
     width: 100%;
 
     .taipei-skyline {
-      .pge-taipei-skyline {
+      .taipei-day-skyline {
+        position: relative;
+      }
+
+      .taipei-night-skyline {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+
+      .pge-day-skyline,
+      .pge-night-skyline {
         position: absolute;
         width: 100%;
         bottom: 0;
 
         img { vertical-align: bottom; }
 
-        &#pge-smog1 {
+        &#pge-day-sky1,
+        &#pge-night-sky1 {
           position: relative;
-          z-index: 1;
+          z-index: 4;
         }
 
-        &#pge-smog2 { z-index: 3; }
-        &#pge-smog3 { z-index: 5; }
-        &#pge-smog4 { z-index: 7; }
-        &#pge-city1 { z-index: 2; }
-        &#pge-city2 { z-index: 4; }
-        &#pge-city3 { z-index: 6; }
+        &#pge-day-sky2, &#pge-night-sky2 { z-index: 5; }
+        &#pge-day-sky3, &#pge-night-sky3 { z-index: 6; }
+        &#pge-day-sky4, &#pge-night-sky4 { z-index: 7; }
+        &#pge-day-sky5, &#pge-night-sky5 { z-index: 8; }
+        &#pge-day-sky6, &#pge-night-sky6 { z-index: 9; }
+        &#pge-day-sky7, &#pge-night-sky7 { z-index: 10; }
+        &#pge-day-sky8, &#pge-night-sky8 { z-index: 11; }
       }
     }
 
@@ -381,6 +468,7 @@ section.section.scene-two {
     height: 100%;
     display: flex;
     align-items: center;
+    z-index: 15;
 
     .hand-phone-container {
       position: relative;
@@ -392,9 +480,10 @@ section.section.scene-two {
 
       .phone-progress-container {
         position: absolute;
-        left: 37%;
-        bottom: 9.3%;
-        width: 24%;
+        left: 50%;
+        bottom: 8%;
+        transform: translateX(-50%);
+        width: 25%;
         height: 30px;
         border: 3px solid #000;
         border-radius: 10px;
@@ -470,9 +559,9 @@ section.section.scene-two {
 
         .pge-mobile-panels {
           position: absolute;
-          width: 22%;
-          left: 36.8%;
-          top: 13%;
+          width: 30%;
+          left: 35%;
+          top: 4%;
           opacity: 0;
         }
       }
@@ -490,28 +579,28 @@ section.section.scene-two {
           opacity: 1;
 
           &#pge-mobile-power1 {
-            top: 18%;
-            left: 52%;
+            top: 21%;
+            left: 54%;
           }
 
           &#pge-mobile-power2 {
             top: 27%;
-            left: 44%;
+            left: 45%;
           }
 
           &#pge-mobile-power3 {
             top: 42%;
-            left: 39%;
+            left: 42%;
           }
 
           &#pge-mobile-power4 {
-            top: 55%;
-            left: 40%;
+            top: 57%;
+            left: 42%;
           }
 
           &#pge-mobile-power5 {
-            top: 45%;
-            left: 45%;
+            top: 49%;
+            left: 49%;
           }
         }
       }
@@ -519,12 +608,16 @@ section.section.scene-two {
   }
 
   .scene-two-scrollarea {
-    .taipei-intro-scene {
-      height: 50vh;
+    .night-skyline-scene {
+      height: 100vh;
     }
 
-    .sunrise-scene {
+    .day-skyline-scene {
       height: 100vh;
+    }
+
+    .taipei-intro-scene {
+      height: 50vh;
     }
 
     .city-panels-scene {
@@ -588,6 +681,27 @@ section.section.scene-two {
   40% { transform: translateX(-50px) rotateY(0deg); }
   50% { transform: translateX(-50px) rotateY(180deg); }
   90% { transform: translateX(50px) rotateY(180deg); }
+}
+
+@keyframes whaleFadeOne {
+  0%, 100% { opacity: 1; }
+  33% { opacity: 1; }
+  66% { opacity: 0; }
+  75% { opacity: 0; }
+}
+
+@keyframes whaleFadeTwo {
+  0%, 100% { opacity: 0; }
+  25% { opacity: 0; }
+  50% { opacity: 1; }
+  75% { opacity: 0; }
+}
+
+@keyframes whaleFadeThree {
+  0%, 100% { opacity: 0; }
+  33% { opacity: 0; }
+  66% { opacity: 0; }
+  75% { opacity: 1; }
 }
 
 @keyframes sunRotate {
