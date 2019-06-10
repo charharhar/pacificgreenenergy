@@ -118,14 +118,14 @@ window.addEventListener('load', function(e) {
   //           Logo Fade in/out Scene
   // ==========================================
 
-  const logoFadeInHeight = getHeight('.logo-fade-in-scene');
-  const logoFadeOutHeight = getHeight('.logo-fade-out-scene');
+  const logoEnterHeight = getHeight('.logo-fade-in-scene');
+  const logoExitHeight = getHeight('.logo-fade-out-scene');
 
-  const logoFadeInTween = basicTweenGenerator('.logo-container', 1, { autoAlpha: 1 });
-  const logoFadeInOptions = sceneOptionsGenerator(0, logoFadeInHeight, '.logo-fade-in-scene')
+  const logoEnterTween = basicTweenGenerator('.logo-container', 1, { autoAlpha: 1 });
+  const logoEnterOptions = sceneOptionsGenerator(0, logoEnterHeight, '.logo-fade-in-scene')
 
-  const logoFadeOutTween = basicTweenGenerator('.logo-container', 1, { autoAlpha: 0 });
-  const logofadeOutOptions = sceneOptionsGenerator(0, logoFadeOutHeight, '.logo-fade-out-scene')
+  const logoExitTween = basicTweenGenerator('.logo-container', 1, { autoAlpha: 0 });
+  const logoExitOptions = sceneOptionsGenerator(0, logoExitHeight, '.logo-fade-out-scene')
 
   //
   //           Taiwan Fade In Scene
@@ -133,8 +133,11 @@ window.addEventListener('load', function(e) {
 
   const taiwanFadeHeight = getHeight('.taiwan-intro-scene');
 
-  const taiwanFadeInTween = basicTweenGenerator('.taiwan-container', 1, { autoAlpha: 1 });
-  const taiwanFadeInOptions = sceneOptionsGenerator(0, taiwanFadeHeight, '.taiwan-intro-scene')
+  const taiwanEnterTween = basicTweenGenerator('.taiwan-container', 1, { autoAlpha: 1 });
+  const taiwanEnterOptions = sceneOptionsGenerator(0, taiwanFadeHeight, '.taiwan-intro-scene')
+
+  const supportTextEnterTween = fromToSceneGenerator('.support-container', 1, { autoAlpha: 0 }, { autoAlpha: 1 });
+  const supportTextEnterOptions =  sceneOptionsGenerator(0, 0, '.taiwan-intro-scene')
 
   //
   //           Taiwan Zoom Scene
@@ -153,8 +156,8 @@ window.addEventListener('load', function(e) {
 
   const oceanSceneHeight = getHeight('.ocean-intro-scene')
 
-  const oceanFadeInTween = basicTweenGenerator('.ocean-container', 1, { autoAlpha: 1 });
-  const oceanFadeInOptions = sceneOptionsGenerator(0, oceanSceneHeight, '.ocean-intro-scene')
+  const oceanEnterTween = basicTweenGenerator('.ocean-container', 1, { autoAlpha: 1 });
+  const oceanEnterOptions = sceneOptionsGenerator(0, oceanSceneHeight, '.ocean-intro-scene')
 
   //
   //           Animal Die Tweens
@@ -221,21 +224,21 @@ window.addEventListener('load', function(e) {
   //           Taipei Day Skyline Tweens
   // ==========================================
 
-  const daySkylineFadeInTween = fromToSceneGenerator('.taipei-day-skyline', 1, { autoAlpha: 0 }, { autoAlpha: 1 });
-  const daySkylineFadeInOptions = sceneOptionsGenerator(0, fullHeight, '.day-skyline-scene');
+  const daySkylineEnterTween = fromToSceneGenerator('.taipei-day-skyline', 1, { autoAlpha: 0 }, { autoAlpha: 1 });
+  const daySkylineEnterOptions = sceneOptionsGenerator(0, fullHeight, '.day-skyline-scene');
 
-  const nightCloudsFadeOutTween = fromToSceneGenerator('.taipei-night-clouds', 1, { autoAlpha: 1 }, { autoAlpha: 0 });
-  const nightCloudsFadeOutOptions = sceneOptionsGenerator(0, fullHeight, '.day-skyline-scene');
+  const nightCloudsExitTween = fromToSceneGenerator('.taipei-night-clouds', 1, { autoAlpha: 1 }, { autoAlpha: 0 });
+  const nightCloudsExitOptions = sceneOptionsGenerator(0, fullHeight, '.day-skyline-scene');
 
-  const dayCloudsFadeInTween = fromToSceneGenerator('.taipei-day-clouds', 1, { autoAlpha: 0 }, { autoAlpha: 1 });
-  const dayCloudsFadeInOptions = sceneOptionsGenerator(0, fullHeight, '.day-skyline-scene');
+  const dayCloudsEnterTween = fromToSceneGenerator('.taipei-day-clouds', 1, { autoAlpha: 0 }, { autoAlpha: 1 });
+  const dayCloudsEnterOptions = sceneOptionsGenerator(0, fullHeight, '.day-skyline-scene');
 
   //
   //           Night Fade Out
   // ==========================================
 
-  const nightSkylineFadeOutTween = fromToSceneGenerator('.taipei-night-skyline', 1, { autoAlpha: 1 }, { autoAlpha: 0 });
-  const nightSkylineFadeOutOptions = sceneOptionsGenerator(0, fullHeight, '.day-skyline-scene');
+  const nightSkylineExitTween = fromToSceneGenerator('.taipei-night-skyline', 1, { autoAlpha: 1 }, { autoAlpha: 0 });
+  const nightSkylineExitOptions = sceneOptionsGenerator(0, fullHeight, '.day-skyline-scene');
 
   const changeSkyTween = fromToSceneGenerator('.act-two-container', 1, { background: 'linear-gradient(#005D5A, #257A77)' } , { background: 'linear-gradient(#00B7B2, #A1E2DE)'})
   const changeSkyOptions = sceneOptionsGenerator(0, fullHeight, '.day-skyline-scene');
@@ -301,12 +304,13 @@ window.addEventListener('load', function(e) {
     sceneGenerator(cloudOptionsOne, cloudTweenOne),
     sceneGenerator(cloudLeftOptions, cloudLeftTween),
     sceneGenerator(cloudRightOptions, cloudRightTween),
-    sceneGenerator(logoFadeInOptions, logoFadeInTween),
-    sceneGenerator(logofadeOutOptions, logoFadeOutTween),
-    sceneGenerator(taiwanFadeInOptions, taiwanFadeInTween),
+    sceneGenerator(logoEnterOptions, logoEnterTween),
+    sceneGenerator(logoExitOptions, logoExitTween),
+    sceneGenerator(taiwanEnterOptions, taiwanEnterTween),
+    sceneGenerator(supportTextEnterOptions, supportTextEnterTween),
     sceneGenerator(taiwanZoomOptions, taiwanZoomTween),
     sceneGenerator(cloudZoomOptions, cloudZoomTween),
-    sceneGenerator(oceanFadeInOptions, oceanFadeInTween),
+    sceneGenerator(oceanEnterOptions, oceanEnterTween),
     ...animalDieScenes,
     ...powerBuildScenes,
     // Act 2
@@ -321,11 +325,11 @@ window.addEventListener('load', function(e) {
     sceneGenerator(nightSkylineEightOptions, nightSkylineEightTween),
     sceneGenerator(moonRiseOptions, moonRiseTween),
     // Night to Day
-    sceneGenerator(daySkylineFadeInOptions, daySkylineFadeInTween),
-    sceneGenerator(nightSkylineFadeOutOptions, nightSkylineFadeOutTween),
+    sceneGenerator(daySkylineEnterOptions, daySkylineEnterTween),
+    sceneGenerator(nightSkylineExitOptions, nightSkylineExitTween),
     sceneGenerator(changeSkyOptions, changeSkyTween),
-    sceneGenerator(nightCloudsFadeOutOptions, nightCloudsFadeOutTween),
-    sceneGenerator(dayCloudsFadeInOptions, dayCloudsFadeInTween),
+    sceneGenerator(nightCloudsExitOptions, nightCloudsExitTween),
+    sceneGenerator(dayCloudsEnterOptions, dayCloudsEnterTween),
     //
     sceneGenerator(textOneInOptions, textOneInTween),
     sceneGenerator(sunRiseOptions, sunRiseTween),

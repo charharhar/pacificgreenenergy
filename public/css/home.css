@@ -2,6 +2,40 @@
 
 body { overflow-x: hidden; }
 
+p {
+  color: #222;
+  font-size: 16px;
+  letter-spacing: 2px;
+  line-height: 170%;
+}
+
+.wrapper {
+  .support-container {
+    position: fixed;
+    z-index: 20;
+    bottom: 40px;
+    left: 40px;
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: #222;
+      background-color: #fff;
+      border-radius: 40px;
+      padding: 15px 50px;
+      border: 1px solid #222;
+      letter-spacing: 3px;
+      font-size: 16px;
+      transition: 200ms all ease;
+
+      &:hover {
+        color: #fff;
+        background-color: #222;
+      }
+    }
+  }
+}
+
 section.section {
   .sticky-container {
     position: -webkit-sticky;
@@ -13,14 +47,6 @@ section.section {
   }
 
   .stickyContainer {
-  }
-
-  .fixed-container {
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 100%;
   }
 
   .act-view-panel {
@@ -148,7 +174,23 @@ section.section.scene-one {
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 1;
+    }
+
+    .logo-container {
+      z-index: 2;
       opacity: 0;
+
+      .pge-logo-img {
+        max-width: 240px;
+        margin: 0 auto 20px;
+      }
+
+      h2 {
+        font-size: 22px;
+        color: #222;
+        letter-spacing: 3px;
+      }
+
     }
 
     .taiwan-container {
@@ -216,6 +258,17 @@ section.section.scene-one {
         height: 100%;
         opacity: 0;
 
+        .ocean-text-container {
+          position: absolute;
+          width: 240px;
+          top: 45%;
+          left: 10%;
+
+          p {
+            line-height: 200%;
+          }
+        }
+
         .whale-container {
           position: absolute;
           width: 100px;
@@ -264,7 +317,7 @@ section.section.scene-one {
           }
 
           &#pge-ship-img-l2 {
-            top: 60%;
+            top: 80%;
             left: 10%;
             animation-name: shipMovementTwo;
             animation-duration: 12s;
@@ -339,6 +392,17 @@ section.section.scene-one {
 section.section.scene-two {
   .act-two-container {
     background: linear-gradient(#005D5A, #257A77);
+  }
+
+  .skyline-text-container {
+    position: absolute;
+    top: 15%;
+    left: 40px;
+    max-width: 300px;
+    z-index: 20;
+
+    p {
+    }
   }
 
   .taipei-sky-elements {
