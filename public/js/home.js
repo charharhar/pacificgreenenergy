@@ -76,11 +76,11 @@ window.addEventListener('load', function(e) {
 
     const scenes = nodesArray.map((node, index) => {
       let nodeCount = index + 1;
-      let duration = dividedHeight * index;
+      let offset = dividedHeight * index;
       const scene = {};
 
       const tween = fromToSceneGenerator(`${nodeId}${nodeCount}`, 1, tweens.from, tweens.to)
-      const options = sceneOptionsGenerator(duration, dividedHeight, sceneClassName)
+      const options = sceneOptionsGenerator(offset, dividedHeight, sceneClassName)
 
       return sceneGenerator(options, tween);
     })
@@ -156,30 +156,47 @@ window.addEventListener('load', function(e) {
 
   const oceanSceneHeight = getHeight('.ocean-intro-scene')
 
+  const taiwanTextExitTween = basicTweenGenerator('.taiwan-text', 1, { autoAlpha: 0 });
+  const taiwanTextExitOptions = sceneOptionsGenerator(0, oceanSceneHeight, '.ocean-intro-scene');
+
   const oceanEnterTween = basicTweenGenerator('.ocean-container', 1, { autoAlpha: 1 });
   const oceanEnterOptions = sceneOptionsGenerator(0, oceanSceneHeight, '.ocean-intro-scene')
 
   //
-  //           Animal Die Tweens
+  //           Pollution Scene
   // ==========================================
-  const animalNodes = sliceArray(document.querySelectorAll('.pge-animals'))
-  const animalDieTweens = {
-    from: { autoAlpha: 1 },
-    to: { autoAlpha: 0 },
-  }
+  const pollutionSceneHeight = document.querySelector('.pollution-scene').clientHeight;
 
-  const animalDieScenes = multiSceneCreate('.animal-die-scene', animalNodes, '#pge-animal', animalDieTweens)
+  const polluteNodes = sliceArray(document.querySelectorAll('.pge-pollute'))
 
-  //
-  //           Powerplant Scene
-  // ==========================================
-  const powerplantNodes = sliceArray(document.querySelectorAll('.pge-powerplants'))
-  const powerBuildTweens = {
-    from: { scaleY: 0 },
-    to: { scaleY: 1, transformOrigin: '50% 100%', },
-  }
+  const polluteDividedHeight = pollutionSceneHeight / polluteNodes.length;
 
-  const powerBuildScenes = multiSceneCreate('.powerplant-scene', powerplantNodes, '#pge-power', powerBuildTweens)
+  const polluteScenes = polluteNodes.sort((a, b) => {
+    return parseInt(a.getAttribute('data-order')) - parseInt(b.getAttribute('data-order'))
+  }).map((node, index) => {
+    const nodeCount = index + 1;
+    const offset = polluteDividedHeight * index;
+    const nodeId = node.getAttribute('id')
+    const type = node.getAttribute('data-type')
+    const animalDieTweens = {
+      from: { autoAlpha: 1 },
+      to: { autoAlpha: 0 },
+    }
+
+    const powerBuildTweens = {
+      from: { scaleY: 0 },
+      to: { scaleY: 1, transformOrigin: '50% 100%', },
+    }
+
+    const variableTween = type === 'animal' ? animalDieTweens : powerBuildTweens
+
+    const tween = fromToSceneGenerator(`#${nodeId}`, 1, variableTween.from, variableTween.to)
+    const options = sceneOptionsGenerator(offset, polluteDividedHeight, '.pollution-scene')
+
+    return sceneGenerator(options, tween);
+  })
+
+  console.log(polluteScenes);
 
   //
   //           ACT 2
@@ -310,9 +327,9 @@ window.addEventListener('load', function(e) {
     sceneGenerator(supportTextEnterOptions, supportTextEnterTween),
     sceneGenerator(taiwanZoomOptions, taiwanZoomTween),
     sceneGenerator(cloudZoomOptions, cloudZoomTween),
+    sceneGenerator(taiwanTextExitOptions, taiwanTextExitTween),
     sceneGenerator(oceanEnterOptions, oceanEnterTween),
-    ...animalDieScenes,
-    ...powerBuildScenes,
+    ...polluteScenes,
     // Act 2
     // Night Skyline
     sceneGenerator(nightSkylineOneOptions, nightSkylineOneTween),

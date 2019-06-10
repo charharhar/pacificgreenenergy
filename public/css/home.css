@@ -84,9 +84,12 @@ section.section.scene-one {
 
       h1 {
         margin-bottom: 40px;
+        font-weight: bold;
       }
 
-      h2 {}
+      h2 {
+        font-weight: bold;
+      }
     }
 
     figure.hero-logo {
@@ -194,14 +197,38 @@ section.section.scene-one {
     }
 
     .taiwan-container {
-      z-index: 1;
+      z-index: 2;
       opacity: 0;
       width: 100%;
+
+      .taiwan-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-flow: row;
+
+        &:before {
+          content: '';
+          display: block;
+          max-width: 370px;
+          width: 370px;
+        }
+
+        h2 {
+          position: absolute;
+          top: -96px;
+          right: -20px;
+          transform: translateX(100%);
+          text-align: center;
+        }
+      }
 
       .taiwan-country {
         position: relative;
         transform: scale(.33);
-        max-width: 285px;
+        max-width: 370px;
         margin: 0 auto;
 
         .pge-taiwan-img {
@@ -223,30 +250,31 @@ section.section.scene-one {
           position: absolute;
           width: 80px;
 
-          &#pge-power1 {
-            top: 10%;
-            left: 62%;
+          &.pge-power1 {
+            top: 12%;
+            left: 66%;
           }
 
-          &#pge-power2 {
-            top: 20%;
-            left: 27%;
+          &.pge-power2 {
+            top: 22%;
+            left: 29%;
           }
 
-          &#pge-power3 {
-            top: 40%;
-            left: 8%;
+          &.pge-power3 {
+            top: 36%;
+            left: 12%;
           }
 
-          &#pge-power4 {
+          &.pge-power4 {
+            top: 52%;
+            left: 46%;
+          }
+
+          &.pge-power5 {
             top: 60%;
-            left: 10%;
+            left: 12%;
           }
 
-          &#pge-power5 {
-            top: 48%;
-            left: 42%;
-          }
         }
       }
 
@@ -375,18 +403,24 @@ section.section.scene-one {
       height: 100vh;
     }
 
-    .animal-die-scene {
-      height: 100vh;
-    }
-
-    .powerplant-scene {
-      height: 100vh;
+    .pollution-scene {
+      height: 200vh;
     }
 
     .outro-scene {
       height: 50vh;
     }
   }
+}
+
+.overlay-test {
+  z-index: 13;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, .8));
 }
 
 section.section.scene-two {
