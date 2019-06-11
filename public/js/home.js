@@ -18,13 +18,6 @@ window.addEventListener('load', function(e) {
    * ************************************************
    */
 
-  const stickyContainer = document.querySelector('.stickyContainer');
-
-  const figureHeight = window.innerHeight / 2
-  const figureMarginTop = (window.innerHeight - figureHeight) / 2
-
-  stickyContainer.style.top = figureMarginTop
-
   /*
    * ************************************************
    *            Scroll Magic
@@ -206,7 +199,7 @@ window.addEventListener('load', function(e) {
   const smogEnterSceneHeight = getHeight('.smog-enter-scene');
   const nightCloudIntroSceneHeight = getHeight('.night-cloud-intro-scene');
 
-  const smogEnterSceneTween = fromToSceneGenerator('#pge-night-sky1', 1, { yPercent: 100 }, { yPercent: 0 });
+  const smogEnterSceneTween = fromToSceneGenerator('#pge-night-sky1', 1, { autoAlpha: 0,  yPercent: 100 }, { autoAlpha: 1, yPercent: 0 });
   const smogEnterSceneOptions = sceneOptionsGenerator(0, smogEnterSceneHeight, '.smog-enter-scene');
 
   const backgroundFadeTween = fromToSceneGenerator('.scene-two-background', 1, { autoAlpha: 0 }, { autoAlpha: 1 })
@@ -390,6 +383,10 @@ window.addEventListener('load', function(e) {
   TweenMax.set('#text-container-one', { autoAlpha: 0 })
   TweenMax.set('.taipei-night-clouds', { autoAlpha: 0 })
   TweenMax.set('.pge-moon', { autoAlpha: 0 })
+  TweenMax.set('.mobile-phone-overlay', { autoAlpha: 0 })
+  TweenMax.set('#pge-night-sky1', { autoAlpha: 0 });
+  TweenMax.set('.skyline-text-container', { autoAlpha: 0 });
+  TweenMax.set('.form-scene-container', { autoAlpha: 0 });
 
   pgeController.addScene([
     // Act 1

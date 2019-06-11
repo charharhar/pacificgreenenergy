@@ -502,6 +502,10 @@ section.section.scene-one {
 
           img { vertical-align: bottom; }
 
+          &#pge-night-sky1 {
+            opacity: 0;
+          }
+
           &#pge-day-sky1,
           &#pge-night-sky1 {
             position: relative;
