@@ -9,12 +9,18 @@ p {
   line-height: 170%;
 }
 
+h2 {
+  font-size: 20px;
+  word-spacing: 2px;
+}
+
 .wrapper {
   .support-container {
     position: fixed;
     z-index: 20;
-    bottom: 40px;
-    left: 40px;
+    bottom: 3%;
+    left: 3%;
+    opacity: 0;
 
     a {
       display: block;
@@ -61,6 +67,7 @@ section.section {
 }
 
 section.section.scene-one {
+  z-index: 1;
   background: radial-gradient(#fff, #00B8CE);
 
   .hero-container {
@@ -152,6 +159,10 @@ section.section.scene-one {
       width: 100%;
       top: 10%;
       z-index: 2;
+
+      &.kill-clouds {
+        display: none;
+      }
 
       .pge-cloud-img {
         width: 100%;
@@ -378,6 +389,470 @@ section.section.scene-one {
     }
   }
 
+  .act-two-container {
+    z-index: 2;
+
+    .scene-two-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      z-index: 1;
+      background: linear-gradient(#005D5A, #257A77);
+    }
+
+    .skyline-text-container {
+      position: absolute;
+      top: 15%;
+      left: 40px;
+      max-width: 300px;
+      z-index: 20;
+
+      p {
+      }
+    }
+
+    .taipei-sky-elements {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      z-index: 3;
+
+      .pge-sun {
+        position: absolute;
+        top: 6%;
+        right: 15%;
+        max-width: 200px;
+        z-index: 3;
+
+        img {
+          animation-name: sunRotate;
+          animation-iteration-count: infinite;
+          animation-direction: normal;
+          animation-duration: 60s;
+          animation-timing-function: linear;
+        }
+      }
+
+      .pge-moon {
+        position: absolute;
+        top: 60px;
+        right: 15%;
+        min-width: 150px;
+        z-index: 3;
+      }
+
+      .pge-skyline-clouds {
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 85%;
+        z-index: 2;
+      }
+    }
+
+    .city-text-container {
+      position: absolute;
+      top: 10%;
+      right: 10%;
+      padding: 5px 15px;
+      border: 1px solid #222;
+      background-color: #fff;
+      border-radius: 6px;
+      z-index: 5;
+      max-width: 320px;
+      opacity: 0;
+
+      p {
+        font-size: 18px;
+        letter-spacing: 1px;
+        text-align: center;
+        color: #444;
+      }
+    }
+
+    .skyline-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      min-width: 1400px;
+      width: 100%;
+      z-index: 4;
+
+      .taipei-skyline {
+        .taipei-night-skyline {
+          position: relative;
+        }
+
+        .taipei-day-skyline {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+        .pge-day-skyline,
+        .pge-night-skyline {
+          position: absolute;
+          width: 100%;
+          bottom: 0;
+
+          img { vertical-align: bottom; }
+
+          &#pge-day-sky1,
+          &#pge-night-sky1 {
+            position: relative;
+            z-index: 4;
+          }
+
+          &#pge-day-sky2, &#pge-night-sky2 { z-index: 5; }
+          &#pge-day-sky3, &#pge-night-sky3 { z-index: 6; }
+          &#pge-day-sky4, &#pge-night-sky4 { z-index: 7; }
+          &#pge-day-sky5, &#pge-night-sky5 { z-index: 8; }
+          &#pge-day-sky6, &#pge-night-sky6 { z-index: 9; }
+          &#pge-day-sky7, &#pge-night-sky7 { z-index: 10; }
+          &#pge-day-sky8, &#pge-night-sky8 { z-index: 11; }
+        }
+      }
+
+      .taipei-solar-panels {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 12;
+
+        .pge-city-panels {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          opacity: 0;
+        }
+      }
+    }
+
+    .mobile-phone-overlay {
+      z-index: 13;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: radial-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, .8));
+    }
+
+    .mobile-panels-container {
+      position: absolute;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      z-index: 15;
+
+      .hand-phone-container {
+        position: relative;
+        width: 100%;
+
+        figure.mobile-hand-phone {
+          width: 100%;
+        }
+
+        .phone-progress-container {
+          position: absolute;
+          left: 50%;
+          bottom: 8%;
+          transform: translateX(-50%);
+          width: 25%;
+          height: 30px;
+          border: 3px solid #000;
+          border-radius: 10px;
+
+          p {
+            position: absolute;
+            right: -25px;
+            top: -55px;
+            color: #37B6FF;
+            text-transform: uppercase;
+            font-size: 24px;
+            line-height: 65%;
+            font-weight: 500;
+            display: inline-block;
+
+            &:after {
+              content: '';
+              display: block;
+              width: 0;
+              height: 0;
+              border-left: 7px solid transparent;
+              border-right: 7px solid transparent;
+              border-top: 7px solid #37B6FF;
+              margin: 7px auto 0;
+            }
+
+            span {
+              font-size: 12px;
+            }
+          }
+
+          .phone-progress {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 7px;
+            overflow: hidden;
+            padding: 1%;
+
+            .progress-container {
+              width: 100%;
+              height: 100%;
+              border-radius: 7px;
+              overflow: hidden;
+
+              &:before {
+                content: '';
+                position: absolute;
+                z-index: 5;
+                top: 50%;
+                right: 3%;
+                height: 80%;
+                transform: translateY(-50%);
+                border-left: 3px dotted #000;
+              }
+
+              .progress-bar {
+                background-color: #37b6ff;
+                width: 100%;
+                height: 100%;
+                border-radius: 7px;
+              }
+            }
+          }
+        }
+
+        .taipei-mobile-panels {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+
+          .pge-mobile-panels {
+            position: absolute;
+            width: 30%;
+            left: 35%;
+            top: 4%;
+            opacity: 0;
+          }
+        }
+
+        .taipei-mobile-plants {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+
+          .pge-mobile-powerplants {
+            position: absolute;
+            width: 60px;
+            opacity: 1;
+
+            &#pge-mobile-power1 {
+              top: 21%;
+              left: 54%;
+            }
+
+            &#pge-mobile-power2 {
+              top: 27%;
+              left: 45%;
+            }
+
+            &#pge-mobile-power3 {
+              top: 42%;
+              left: 42%;
+            }
+
+            &#pge-mobile-power4 {
+              top: 57%;
+              left: 42%;
+            }
+
+            &#pge-mobile-power5 {
+              top: 49%;
+              left: 49%;
+            }
+          }
+        }
+      }
+    }
+
+    .people-scene-container {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 100vh;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-flow: column;
+
+      .people-text-container {
+        margin: auto 0;
+        padding-top: 60px;
+
+        h2 {
+          text-align: center;
+          font-weight: bold;
+        }
+      }
+
+      .people-container {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        .pge-people {
+          max-width: 150px;
+        }
+      }
+    }
+
+    .form-scene-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .full-height-hero {
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+      }
+
+      .form-container {
+        width: 100%;
+
+        h1 {
+          text-align: center;
+          font-size: 32px;
+        }
+
+        form {
+          max-width: 520px;
+          margin: 30px auto;
+
+          .form-group {
+            input[type="text"],
+            input[type="email"],
+            input[type="phone"],
+            input[type="number"],
+            textarea {
+              padding: 10px 20px;
+              font-size: 18px;
+              letter-spacing: 1px;
+              border-radius: 10px;
+              width: 100%;
+              background-color: #eee;
+              background-image: none;
+              border: 1px solid #222;
+              resize: none;
+              margin-bottom: 10px;
+              -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+              box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+              -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+              -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+              transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+
+              &:focus {
+                outline: 0 none;
+              }
+            }
+
+            span {
+              margin-right: 20px;
+            }
+
+            [type="radio"]:checked,
+            [type="radio"]:not(:checked) {
+                position: absolute;
+                left: -9999px;
+            }
+            [type="radio"]:checked + label,
+            [type="radio"]:not(:checked) + label
+            {
+                position: relative;
+                padding-left: 24px;
+                cursor: pointer;
+                line-height: 20px;
+                display: inline-block;
+                color: #222;
+            }
+            [type="radio"]:checked + label:before,
+            [type="radio"]:not(:checked) + label:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 18px;
+                height: 18px;
+                border: 1px solid #ddd;
+                border-radius: 100%;
+                background: #fff;
+            }
+            [type="radio"]:checked + label:after,
+            [type="radio"]:not(:checked) + label:after {
+                content: '';
+                width: 12px;
+                height: 12px;
+                background: #00B8CE;
+                position: absolute;
+                top: 3px;
+                left: 3px;
+                border-radius: 100%;
+                -webkit-transition: all 0.2s ease;
+                transition: all 0.2s ease;
+            }
+            [type="radio"]:not(:checked) + label:after {
+                opacity: 0;
+                -webkit-transform: scale(0);
+                transform: scale(0);
+            }
+            [type="radio"]:checked + label:after {
+                opacity: 1;
+                -webkit-transform: scale(1);
+                transform: scale(1);
+            }
+
+            input[type="submit"] {
+              display: block;
+              margin: 0 auto;
+            }
+
+            input::-webkit-input-placeholder,
+            textarea::-webkit-input-placeholder {
+              text-transform: uppercase;
+              color: #aaa;
+            }
+          }
+        }
+      }
+    }
+  }
+
   .scene-one-scrollarea {
     .cloud-split-scene {
       height: 100vh;
@@ -407,307 +882,30 @@ section.section.scene-one {
       height: 200vh;
     }
 
-    .outro-scene {
-      height: 50vh;
-    }
-  }
-}
-
-.overlay-test {
-  z-index: 13;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: radial-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, .8));
-}
-
-section.section.scene-two {
-  .act-two-container {
-    background: linear-gradient(#005D5A, #257A77);
-  }
-
-  .skyline-text-container {
-    position: absolute;
-    top: 15%;
-    left: 40px;
-    max-width: 300px;
-    z-index: 20;
-
-    p {
-    }
-  }
-
-  .taipei-sky-elements {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-
-    .pge-sun {
-      position: absolute;
-      top: 20px;
-      right: 10%;
-      min-width: 250px;
-      z-index: 3;
-
-      img {
-        animation-name: sunRotate;
-        animation-iteration-count: infinite;
-        animation-direction: normal;
-        animation-duration: 60s;
-        animation-timing-function: linear;
-      }
-    }
-
-    .pge-moon {
-      position: absolute;
-      top: 60px;
-      right: 15%;
-      min-width: 150px;
-      z-index: 3;
-    }
-
-    .pge-skyline-clouds {
-      position: absolute;
-      top: 5%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 85%;
-      z-index: 2;
-    }
-  }
-
-  .city-text-container {
-    position: absolute;
-    top: 10%;
-    right: 10%;
-    padding: 5px 15px;
-    border: 1px solid #222;
-    background-color: #fff;
-    border-radius: 6px;
-    z-index: 5;
-    max-width: 320px;
-    opacity: 0;
-
-    p {
-      font-size: 18px;
-      letter-spacing: 1px;
-      text-align: center;
-      color: #444;
-    }
-  }
-
-  .skyline-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    min-width: 1400px;
-    width: 100%;
-
-    .taipei-skyline {
-      .taipei-day-skyline {
-        position: relative;
-      }
-
-      .taipei-night-skyline {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-      }
-
-      .pge-day-skyline,
-      .pge-night-skyline {
-        position: absolute;
-        width: 100%;
-        bottom: 0;
-
-        img { vertical-align: bottom; }
-
-        &#pge-day-sky1,
-        &#pge-night-sky1 {
-          position: relative;
-          z-index: 4;
-        }
-
-        &#pge-day-sky2, &#pge-night-sky2 { z-index: 5; }
-        &#pge-day-sky3, &#pge-night-sky3 { z-index: 6; }
-        &#pge-day-sky4, &#pge-night-sky4 { z-index: 7; }
-        &#pge-day-sky5, &#pge-night-sky5 { z-index: 8; }
-        &#pge-day-sky6, &#pge-night-sky6 { z-index: 9; }
-        &#pge-day-sky7, &#pge-night-sky7 { z-index: 10; }
-        &#pge-day-sky8, &#pge-night-sky8 { z-index: 11; }
-      }
-    }
-
-    .taipei-solar-panels {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-
-      .pge-city-panels {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        z-index: 8;
-        opacity: 0;
-      }
-    }
-  }
-
-  .mobile-panels-container {
-    position: absolute;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    z-index: 15;
-
-    .hand-phone-container {
-      position: relative;
-      width: 100%;
-
-      figure.mobile-hand-phone {
-        width: 100%;
-      }
-
-      .phone-progress-container {
-        position: absolute;
-        left: 50%;
-        bottom: 8%;
-        transform: translateX(-50%);
-        width: 25%;
-        height: 30px;
-        border: 3px solid #000;
-        border-radius: 10px;
-
-        p {
-          position: absolute;
-          right: -25px;
-          top: -55px;
-          color: #37B6FF;
-          text-transform: uppercase;
-          font-size: 24px;
-          line-height: 65%;
-          font-weight: 500;
-          display: inline-block;
-
-          &:after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 0;
-            border-left: 7px solid transparent;
-            border-right: 7px solid transparent;
-            border-top: 7px solid #37B6FF;
-            margin: 7px auto 0;
-          }
-
-          span {
-            font-size: 12px;
-          }
-        }
-
-        .phone-progress {
-          position: relative;
-          width: 100%;
-          height: 100%;
-          border-radius: 7px;
-          overflow: hidden;
-          padding: 1%;
-
-          .progress-container {
-            width: 100%;
-            height: 100%;
-            border-radius: 7px;
-            overflow: hidden;
-
-            &:before {
-              content: '';
-              position: absolute;
-              z-index: 5;
-              top: 50%;
-              right: 3%;
-              height: 80%;
-              transform: translateY(-50%);
-              border-left: 3px dotted #000;
-            }
-
-            .progress-bar {
-              background-color: #37b6ff;
-              width: 100%;
-              height: 100%;
-              border-radius: 7px;
-            }
-          }
-        }
-      }
-
-      .taipei-mobile-panels {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-
-        .pge-mobile-panels {
-          position: absolute;
-          width: 30%;
-          left: 35%;
-          top: 4%;
-          opacity: 0;
-        }
-      }
-
-      .taipei-mobile-plants {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-
-        .pge-mobile-powerplants {
-          position: absolute;
-          width: 60px;
-          opacity: 1;
-
-          &#pge-mobile-power1 {
-            top: 21%;
-            left: 54%;
-          }
-
-          &#pge-mobile-power2 {
-            top: 27%;
-            left: 45%;
-          }
-
-          &#pge-mobile-power3 {
-            top: 42%;
-            left: 42%;
-          }
-
-          &#pge-mobile-power4 {
-            top: 57%;
-            left: 42%;
-          }
-
-          &#pge-mobile-power5 {
-            top: 49%;
-            left: 49%;
-          }
-        }
-      }
+    .kill-clouds-scene {
+      height: 10vh;
     }
   }
 
   .scene-two-scrollarea {
+    .smog-enter-scene {
+      height: 300vh;
+    }
+
+    .night-cloud-intro-scene {
+      height: 100vh;
+    }
+
+    .skyline-enter-scene {
+      height: 300vh;
+    }
+
     .night-skyline-scene {
       height: 100vh;
+    }
+
+    .city-panels-scene {
+      height: 200vh;
     }
 
     .day-skyline-scene {
@@ -716,10 +914,6 @@ section.section.scene-two {
 
     .taipei-intro-scene {
       height: 50vh;
-    }
-
-    .city-panels-scene {
-      height: 100vh;
     }
 
     .mobile-phone-scene {
@@ -734,10 +928,26 @@ section.section.scene-two {
       height: 100vh;
     }
 
+    .city-exit-scene {
+      height: 150vh;
+    }
+
+    .people-popup-scene {
+      height: 150vh;
+    }
+
+    .form-intro-scene {
+      height: 100vh;
+    }
+
     .outro-scene {
       height: 100vh;
     }
   }
+}
+
+section.section.scene-two {
+
 }
 
 .debugscroll {
