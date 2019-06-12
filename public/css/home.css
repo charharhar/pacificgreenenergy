@@ -2,18 +2,6 @@
 
 body { overflow-x: hidden; }
 
-p {
-  color: #222;
-  font-size: 16px;
-  letter-spacing: 2px;
-  line-height: 170%;
-}
-
-h2 {
-  font-size: 20px;
-  word-spacing: 2px;
-}
-
 .wrapper {
   .support-container {
     position: fixed;
@@ -37,6 +25,45 @@ h2 {
       &:hover {
         color: #fff;
         background-color: #222;
+      }
+    }
+  }
+
+  .chevron-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 3;
+  }
+
+  .chevron-border {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    .chevron {
+      position: relative;
+      top: -5px;
+      transform: rotate(135deg);
+      border-style: solid;
+      border-width: 4px 4px 0 0;
+      border-color: $main-black;
+      vertical-align: top;
+      width: 40px;
+      height: 40px;
+
+      &.bounce {
+        animation: bouncing .5s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(.5, .05, 1, .5);
       }
     }
   }
@@ -68,7 +95,7 @@ section.section {
 
 section.section.scene-one {
   z-index: 1;
-  background: radial-gradient(#fff, #00B8CE);
+  background: radial-gradient(#fff, #00B7B2);
 
   .hero-container {
     position: fixed;
@@ -84,10 +111,10 @@ section.section.scene-one {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    width: 550px;
+    width: 570px;
 
     .hero-text {
-      max-width: 340px;
+      max-width: 365px;
 
       h1 {
         margin-bottom: 40px;
@@ -296,12 +323,48 @@ section.section.scene-one {
         width: 100%;
         height: 100%;
         opacity: 0;
+        display: flex;
+        flex-flow: row;
+
+        .waves-container {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+
+          .pge-wave {
+            position: absolute;
+            width: 80px;
+
+            &#pge-wave1 { top: 13%; left: 20%; }
+            &#pge-wave2 { top: 73%; left: 10%; }
+            &#pge-wave3 { top: 30%; left: 12%; }
+            &#pge-wave4 { top: 90%; left: 18%; }
+            &#pge-wave5 { top: 23%; left: 90%; }
+            &#pge-wave6 { top: 40%; left: 75%; }
+            &#pge-wave7 { top: 57%; left: 68%; }
+            &#pge-wave8 { top: 80%; left: 72%; }
+          }
+        }
+
+        .taiwan-placehold {
+          height: 100%;
+          max-width: 370px;
+          width: 100%;
+        }
+
+        .ocean-partition {
+          position: relative;
+          flex-grow: 1;
+        }
 
         .ocean-text-container {
           position: absolute;
           width: 240px;
           top: 45%;
-          left: 10%;
+          left: 50%;
+          transform: translateX(-50%);
 
           p {
             line-height: 200%;
@@ -350,37 +413,32 @@ section.section.scene-one {
 
           &#pge-ship-img-l1 {
             top: 20%;
-            left: 15%;
             animation-name: shipMovementOne;
             animation-duration: 8s;
           }
 
           &#pge-ship-img-l2 {
             top: 80%;
-            left: 10%;
             animation-name: shipMovementTwo;
             animation-duration: 12s;
           }
 
           &#pge-ship-img-r1 {
             top: 10%;
-            right: 15%;
             animation-name: shipMovementThree;
-            animation-duration: 6s;
+            animation-duration: 10s;
           }
 
           &#pge-ship-img-r2 {
             top: 30%;
-            right: 20%;
             animation-name: shipMovementFour;
             animation-duration: 8s;
           }
 
           &#pge-ship-img-r3 {
             top: 70%;
-            right: 10%;
             animation-name: shipMovementFive;
-            animation-duration: 7s;
+            animation-duration: 12s;
           }
 
           img { width: 100%; }
@@ -504,6 +562,7 @@ section.section.scene-one {
 
           &#pge-night-sky1 {
             opacity: 0;
+            visibility: hidden;
           }
 
           &#pge-day-sky1,
@@ -548,6 +607,8 @@ section.section.scene-one {
       height: 100%;
       width: 100%;
       background: radial-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, .8));
+      opacity: 0;
+      visibility: hidden;
     }
 
     .mobile-panels-container {
@@ -558,6 +619,8 @@ section.section.scene-one {
       display: flex;
       align-items: center;
       z-index: 15;
+      opacity: 0;
+      visibility: hidden;
 
       .hand-phone-container {
         position: relative;
@@ -579,24 +642,26 @@ section.section.scene-one {
 
           p {
             position: absolute;
+            display: inline-block;
             right: -25px;
-            top: -55px;
-            color: #37B6FF;
+            top: -75px;
             text-transform: uppercase;
-            font-size: 24px;
+            font-size: 30px;
             line-height: 65%;
             font-weight: 500;
-            display: inline-block;
+            text-align: center;
 
             &:after {
               content: '';
               display: block;
               width: 0;
               height: 0;
-              border-left: 7px solid transparent;
-              border-right: 7px solid transparent;
-              border-top: 7px solid #37B6FF;
-              margin: 7px auto 0;
+              border-left: 10px solid transparent;
+              border-right: 10px solid transparent;
+              border-top: 10px solid #222;
+              margin: 10px auto 0;
+              position: relative;
+              left: 10px;
             }
 
             span {
@@ -713,9 +778,8 @@ section.section.scene-one {
         margin: auto 0;
         padding-top: 60px;
 
-        h2 {
+        h1 {
           text-align: center;
-          font-weight: bold;
         }
       }
 
@@ -725,7 +789,7 @@ section.section.scene-one {
         justify-content: space-between;
 
         .pge-people {
-          max-width: 150px;
+          max-width: 190px;
         }
       }
     }
@@ -740,6 +804,8 @@ section.section.scene-one {
       display: flex;
       align-items: center;
       justify-content: center;
+      opacity: 0;
+      visibility: hidden;
 
       .full-height-hero {
         position: absolute;
@@ -748,11 +814,12 @@ section.section.scene-one {
       }
 
       .form-container {
+        padding: 0 20px;
         width: 100%;
 
         h1 {
           text-align: center;
-          font-size: 32px;
+          font-size: 42px;
         }
 
         form {
@@ -905,7 +972,7 @@ section.section.scene-one {
     }
 
     .night-skyline-scene {
-      height: 100vh;
+      height: 150vh;
     }
 
     .city-panels-scene {
@@ -940,6 +1007,10 @@ section.section.scene-one {
       height: 150vh;
     }
 
+    .people-popup-delay {
+      height: 100vh;
+    }
+
     .form-intro-scene {
       height: 100vh;
     }
@@ -960,39 +1031,44 @@ section.section.scene-two {
   opacity: .3;
 }
 
+@keyframes bouncing {
+  from { transform: translate3d(0, 0, 0) rotate(135deg); }
+  to { transform: translate3d(0, 5px, 0) rotate(135deg); }
+}
+
 @keyframes shipMovementOne {
-  0%, 100% { transform: translateX(-50px) rotateY(180deg); }
-  40% { transform: translateX(50px) rotateY(180deg); }
-  50% { transform: translateX(50px) rotateY(0deg); }
-  90% { transform: translateX(-50px) rotateY(0deg); }
+  0%, 100% { left: 10%; transform: rotateY(0deg); }
+  40% { left: 70%; transform: rotateY(0deg); }
+  50% { left: 70%; transform: rotateY(180deg); }
+  90% { left: 10%; transform: rotateY(180deg); }
 }
 
 @keyframes shipMovementTwo {
-  0%, 100% { transform: translateX(30px) rotateY(0deg); }
-  40% { transform: translateX(-30px) rotateY(0deg); }
-  50% { transform: translateX(-30px) rotateY(180deg); }
-  90% { transform: translateX(30px) rotateY(180deg); }
+  0%, 100% { left: 80%; transform: rotateY(0deg); }
+  40% { left: 10%; transform: rotateY(0deg); }
+  50% { left: 10%; transform: rotateY(180deg); }
+  90% { left: 80%; transform: rotateY(180deg); }
 }
 
 @keyframes shipMovementThree {
-  0%, 100% { transform: translateX(-20px) rotateY(180deg); }
-  40% { transform: translateX(20px) rotateY(180deg); }
-  50% { transform: translateX(20px) rotateY(0deg); }
-  90% { transform: translateX(-20px) rotateY(0deg); }
+  0%, 100% { right: 10%; transform: rotateY(180deg); }
+  40% { right: 50%; transform: rotateY(180deg); }
+  50% { right: 50%; transform: rotateY(0deg); }
+  90% { right: 10%; transform: rotateY(0deg); }
 }
 
 @keyframes shipMovementFour {
-  0%, 100% { transform: translateX(-40px) rotateY(180deg); }
-  40% { transform: translateX(40px) rotateY(180deg); }
-  50% { transform: translateX(40px) rotateY(0deg); }
-  90% { transform: translateX(-40px) rotateY(0deg); }
+  0%, 100% { right: 10%; transform: rotateY(180deg); }
+  40% { right: 70%; transform: rotateY(180deg); }
+  50% { right: 70%; transform: rotateY(0deg); }
+  90% { right: 10%; transform: rotateY(0deg); }
 }
 
 @keyframes shipMovementFive {
-  0%, 100% { transform: translateX(50px) rotateY(0deg); }
-  40% { transform: translateX(-50px) rotateY(0deg); }
-  50% { transform: translateX(-50px) rotateY(180deg); }
-  90% { transform: translateX(50px) rotateY(180deg); }
+  0%, 100% { right: 80%; transform: rotateY(0deg); }
+  40% { right: 10%; transform: rotateY(0deg); }
+  50% { right: 10%; transform: rotateY(180deg); }
+  90% { right: 80%; transform: rotateY(180deg); }
 }
 
 @keyframes whaleFadeOne {

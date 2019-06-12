@@ -1,6 +1,7 @@
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css);
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
 
-$font-stack: "Arial", sans-serif;
+$noto-reg: 'NotoSans-TC', sans-serif;
 $main-white: #ffffff;
 $main-black: #222;
 
@@ -30,7 +31,7 @@ time, mark, audio, video {
 
 html, body {
   width: 100%;
-  font-family: $font-stack;
+  font-family: $noto-reg;
   font-weight: 400;
   color: $main-black;
 }
@@ -102,15 +103,19 @@ span.br-mobile {
  * Text styles
  */
 
+h1, h2, h3, p {
+  font-family: $noto-reg;
+}
+
 h1 {
-  font-size: 26px;
+  font-size: 32px;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: .2s all;
 }
 
 h2 {
-  font-size: 18px;
+  font-size: 22px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -121,10 +126,10 @@ h3 {
 }
 
 p {
-  font-size: 14px;
+  font-size: 18px;
   letter-spacing: 1px;
   font-weight: 300;
-  line-height: 150%;
+  line-height: 170%;
 }
 
 /**
