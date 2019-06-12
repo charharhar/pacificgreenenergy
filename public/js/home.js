@@ -90,8 +90,12 @@ window.addEventListener('load', function(e) {
   const heroTweenOne = fromToSceneGenerator('.hero-main', 1, { autoAlpha: 1 }, { autoAlpha: 0 });
   const heroOptionsOne = sceneOptionsGenerator(halfHeight, sceneOneStartHeight, '.scene-one-start')
 
+
   const cloudTweenOne = fromToSceneGenerator('.cloud-container', 1, { yPercent: -30 }, { yPercent: 0 });
   const cloudOptionsOne = sceneOptionsGenerator(halfHeight, sceneOneStartHeight, '.scene-one-start')
+
+  const chevronExitTween = basicTweenGenerator('.chevron-container', 1, { autoAlpha: 0 });
+  const chevronExitOptions = sceneOptionsGenerator(halfHeight, sceneOneStartHeight, '.scene-one-start');
 
   //
   //           Cloud Split Scene
@@ -385,6 +389,7 @@ window.addEventListener('load', function(e) {
   //
   //           Scene Controller
   // ==========================================
+  TweenMax.set('.cloud-container', { yPercent: -30 });
   TweenMax.set('#text-container-one', { autoAlpha: 0 })
   TweenMax.set('#taipei-night-clouds', { autoAlpha: 0 })
   TweenMax.set('.pge-moon', { autoAlpha: 0 })
@@ -395,6 +400,7 @@ window.addEventListener('load', function(e) {
 
   pgeController.addScene([
     // Act 1
+    sceneGenerator(chevronExitOptions, chevronExitTween),
     sceneGenerator(heroOptionsOne, heroTweenOne),
     sceneGenerator(cloudOptionsOne, cloudTweenOne),
     sceneGenerator(cloudLeftOptions, cloudLeftTween),

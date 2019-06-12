@@ -30,19 +30,14 @@ body { overflow-x: hidden; }
   }
 
   .chevron-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    z-index: 3;
-  }
-
-  .chevron-border {
-    position: absolute;
+    position: fixed;
     bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 20;
+  }
+
+  .chevron-border {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -928,19 +923,19 @@ section.section.scene-one {
 
   .scene-one-scrollarea {
     .cloud-split-scene {
-      height: 100vh;
+      height: 200vh;
     }
 
     .logo-fade-in-scene {
-      height: 100vh;
+      height: 200vh;
     }
 
     .logo-fade-out-scene {
-      height: 100vh;
+      height: 200vh;
     }
 
     .taiwan-intro-scene {
-      height: 100vh;
+      height: 200vh;
     }
 
     .taiwan-zoom-scene {
@@ -948,7 +943,7 @@ section.section.scene-one {
     }
 
     .ocean-intro-scene {
-      height: 100vh;
+      height: 200vh;
     }
 
     .pollution-scene {
@@ -956,7 +951,7 @@ section.section.scene-one {
     }
 
     .kill-clouds-scene {
-      height: 10vh;
+      height: 5vh;
     }
   }
 
@@ -978,35 +973,35 @@ section.section.scene-one {
     }
 
     .city-panels-scene {
-      height: 200vh;
+      height: 300vh;
     }
 
     .day-skyline-scene {
-      height: 100vh;
+      height: 200vh;
     }
 
     .taipei-intro-scene {
-      height: 50vh;
+      height: 100vh;
     }
 
     .mobile-phone-scene {
-      height: 100vh;
+      height: 200vh;
     }
 
     .mobile-power-scene {
-      height: 100vh;
+      height: 200vh;
     }
 
     .mobile-panels-scene {
-      height: 100vh;
+      height: 300vh;
     }
 
     .city-exit-scene {
-      height: 150vh;
+      height: 200vh;
     }
 
     .people-popup-scene {
-      height: 150vh;
+      height: 200vh;
     }
 
     .people-popup-delay {
@@ -1014,7 +1009,7 @@ section.section.scene-one {
     }
 
     .form-intro-scene {
-      height: 100vh;
+      height: 150vh;
     }
 
     .outro-scene {
