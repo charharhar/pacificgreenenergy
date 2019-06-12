@@ -27,6 +27,9 @@ window.addEventListener('load', function(e) {
   let fullHeight = window.innerHeight
   let halfHeight = (fullHeight / 2)
 
+  function resizeHandler() {
+  }
+
   const sceneOptionsGenerator = (offset = 0, duration = 0, triggerElement = null) => ({
     offset,
     duration,
@@ -53,12 +56,6 @@ window.addEventListener('load', function(e) {
   const sceneClassToggleGenerator = (options, target, classToggle) => (
     new ScrollMagic.Scene(options).setClassToggle(target, classToggle)
   );
-
-  function resizeHandler() {
-    fullHeight = window.innerHeight;
-    halfHeight = (fullHeight / 2);
-  }
-
   function getHeight(element) {
     return document.querySelector(element).clientHeight;
   }
@@ -88,12 +85,13 @@ window.addEventListener('load', function(e) {
   //           Act One
   //
   // ==========================================
+  const sceneOneStartHeight = getHeight('.hero-dummy')
 
-  const heroTweenOne = fromToSceneGenerator('.hero-container', 1, { autoAlpha: 1 }, { autoAlpha: 0 });
-  const heroOptionsOne = sceneOptionsGenerator(halfHeight, fullHeight, '.scene-one-start')
+  const heroTweenOne = fromToSceneGenerator('.hero-main', 1, { autoAlpha: 1 }, { autoAlpha: 0 });
+  const heroOptionsOne = sceneOptionsGenerator(halfHeight, sceneOneStartHeight, '.scene-one-start')
 
   const cloudTweenOne = fromToSceneGenerator('.cloud-container', 1, { yPercent: -30 }, { yPercent: 0 });
-  const cloudOptionsOne = sceneOptionsGenerator(halfHeight, fullHeight, '.scene-one-start')
+  const cloudOptionsOne = sceneOptionsGenerator(halfHeight, sceneOneStartHeight, '.scene-one-start')
 
   //
   //           Cloud Split Scene
@@ -161,7 +159,6 @@ window.addEventListener('load', function(e) {
   const pollutionSceneHeight = document.querySelector('.pollution-scene').clientHeight;
 
   const polluteNodes = sliceArray(document.querySelectorAll('.pge-pollute'))
-
   const polluteDividedHeight = pollutionSceneHeight / polluteNodes.length;
 
   const polluteScenes = polluteNodes.sort((a, b) => {
@@ -188,6 +185,10 @@ window.addEventListener('load', function(e) {
 
     return sceneGenerator(options, tween);
   })
+
+  // Pollute Sky
+  const oceanPolluteTweens = fromToSceneGenerator('.scene-one-background', 1, { background: 'radial-gradient(#fff, #00B8CE)' }, { background: 'radial-gradient(#fff, #257A77)' })
+  const oceanPolluteOptions = sceneOptionsGenerator(0, pollutionSceneHeight, '.pollution-scene');
 
   // Kill Clouds
   const killCloudsOptions = sceneOptionsGenerator(0, 0, '.kill-clouds-scene')
@@ -265,6 +266,8 @@ window.addEventListener('load', function(e) {
   //
   //           Taipei Day Skyline Tweens
   // ==========================================
+  const daySkylineSceneHeight = getHeight('.day-skyline-scene');
+
   const skylineTextEnterTween = fromToSceneGenerator('.skyline-text-container', 1, { autoAlpha: 0 }, { autoAlpha: 1 });
   const skylineTextEnterOptions = sceneOptionsGenerator(0, halfHeight, '.day-skyline-scene');
 
@@ -272,26 +275,26 @@ window.addEventListener('load', function(e) {
   const textOneExitOptions = sceneOptionsGenerator(0, halfHeight, '.day-skyline-scene');
 
   const daySkylineEnterTween = fromToSceneGenerator('.taipei-day-skyline', 1, { autoAlpha: 0 }, { autoAlpha: 1 });
-  const daySkylineEnterOptions = sceneOptionsGenerator(0, fullHeight, '.day-skyline-scene');
+  const daySkylineEnterOptions = sceneOptionsGenerator(0, daySkylineSceneHeight, '.day-skyline-scene');
 
   const nightCloudsExitTween = fromToSceneGenerator('.taipei-night-clouds', 1, { autoAlpha: 1 }, { autoAlpha: 0 });
-  const nightCloudsExitOptions = sceneOptionsGenerator(0, fullHeight, '.day-skyline-scene');
+  const nightCloudsExitOptions = sceneOptionsGenerator(0, daySkylineSceneHeight, '.day-skyline-scene');
 
   const dayCloudsEnterTween = fromToSceneGenerator('.taipei-day-clouds', 1, { autoAlpha: 0 }, { autoAlpha: 1 });
-  const dayCloudsEnterOptions = sceneOptionsGenerator(0, fullHeight, '.day-skyline-scene');
+  const dayCloudsEnterOptions = sceneOptionsGenerator(0, daySkylineSceneHeight, '.day-skyline-scene');
 
   //
   //           Night Fade Out
   // ==========================================
 
   const nightSkylineExitTween = fromToSceneGenerator('.taipei-night-skyline', 1, { autoAlpha: 1 }, { autoAlpha: 0 });
-  const nightSkylineExitOptions = sceneOptionsGenerator(0, fullHeight, '.day-skyline-scene');
+  const nightSkylineExitOptions = sceneOptionsGenerator(0, daySkylineSceneHeight, '.day-skyline-scene');
 
   const changeSkyTween = fromToSceneGenerator('.scene-two-background', 1, { background: 'linear-gradient(#005D5A, #257A77)' } , { background: 'linear-gradient(#00B8CE, #A1E2DE)'})
-  const changeSkyOptions = sceneOptionsGenerator(0, fullHeight, '.day-skyline-scene');
+  const changeSkyOptions = sceneOptionsGenerator(0, daySkylineSceneHeight, '.day-skyline-scene');
 
   const sunRiseTween = fromToSceneGenerator('.pge-sun', 1, { yPercent: 200, autoAlpha: 0 }, { yPercent: 0, autoAlpha: 1 });
-  const sunRiseOptions = sceneOptionsGenerator(0, fullHeight, '.day-skyline-scene');
+  const sunRiseOptions = sceneOptionsGenerator(0, daySkylineSceneHeight, '.day-skyline-scene');
 
   //
   //           Mobile Phone Scene
@@ -330,8 +333,10 @@ window.addEventListener('load', function(e) {
   //
   //           Mobile Progress Bar Scene
   // ==========================================
+  const mobilePanelsSceneHeight = getHeight('.mobile-panels-scene')
+
   const progressBarTween = fromToSceneGenerator('.progress-bar', 1, { xPercent: -100 }, { xPercent: 0 });
-  const progressBarOptions = sceneOptionsGenerator(0, fullHeight, '.mobile-panels-scene');
+  const progressBarOptions = sceneOptionsGenerator(0, mobilePanelsSceneHeight, '.mobile-panels-scene');
 
   //
   //           City Exit Scene
@@ -403,6 +408,7 @@ window.addEventListener('load', function(e) {
     sceneGenerator(taiwanTextExitOptions, taiwanTextExitTween),
     sceneGenerator(oceanEnterOptions, oceanEnterTween),
     ...polluteScenes,
+    sceneGenerator(oceanPolluteOptions, oceanPolluteTweens),
     killCloudsScene,
     // Act 2
     // Night Skyline

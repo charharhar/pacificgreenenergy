@@ -94,12 +94,13 @@ section.section {
 }
 
 section.section.scene-one {
-  z-index: 1;
-  background: radial-gradient(#fff, #00B7B2);
-
   .hero-container {
     position: fixed;
     width: 100%;
+  }
+
+  .scene-one-background {
+    background: radial-gradient(#fff, #00B8CE);
   }
 
   .hero-content {
@@ -107,11 +108,11 @@ section.section.scene-one {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     width: 570px;
+    z-index: 3;
 
     .hero-text {
       max-width: 365px;
@@ -151,6 +152,7 @@ section.section.scene-one {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    z-index: 2;
 
     &:before {
       content: '';
