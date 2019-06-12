@@ -206,7 +206,7 @@ window.addEventListener('load', function(e) {
   const backgroundFadeOptions = sceneOptionsGenerator(0, smogEnterSceneHeight, '.smog-enter-scene');
 
   // Night Sky Enter
-  const nightSkyEnterTween = fromToSceneGenerator('.taipei-night-clouds', 1, { autoAlpha: 0, xPercent: -20 }, { autoAlpha: 1, xPercent: 0 });
+  const nightSkyEnterTween = fromToSceneGenerator('#taipei-night-clouds', 1, { autoAlpha: 0, xPercent: -30 }, { autoAlpha: 1, xPercent: 0 });
   const nightSkyEnterOptions = sceneOptionsGenerator(0, nightCloudIntroSceneHeight, '.night-cloud-intro-scene');
 
   const nightMoonEnterTween = fromToSceneGenerator('.pge-moon', 1, { autoAlpha: 0 }, { autoAlpha: 1 })
@@ -381,7 +381,7 @@ window.addEventListener('load', function(e) {
   //           Scene Controller
   // ==========================================
   TweenMax.set('#text-container-one', { autoAlpha: 0 })
-  TweenMax.set('.taipei-night-clouds', { autoAlpha: 0 })
+  TweenMax.set('#taipei-night-clouds', { autoAlpha: 0 })
   TweenMax.set('.pge-moon', { autoAlpha: 0 })
   TweenMax.set('.mobile-phone-overlay', { autoAlpha: 0 })
   TweenMax.set('#pge-night-sky1', { autoAlpha: 0 });
