@@ -90,7 +90,7 @@ window.addEventListener('load', function(e) {
   const heroTweenOne = fromToSceneGenerator('.hero-main', 1, { autoAlpha: 1 }, { autoAlpha: 0 });
   const heroOptionsOne = sceneOptionsGenerator(halfHeight, sceneOneStartHeight, '.scene-one-start')
 
-  const stickyContainerOptions = sceneOptionsGenerator(fullHeight+halfHeight, 0, '.scene-one-start')
+  const stickyContainerOptions = sceneOptionsGenerator(halfHeight + fullHeight, 0, '.scene-one-start')
   const stickyContainerScene = sceneClassToggleGenerator(stickyContainerOptions, '.sticky-container', 'activated')
 
   const cloudTweenOne = fromToSceneGenerator('.cloud-container', 1, { yPercent: -30 }, { yPercent: 0 });

@@ -181,9 +181,9 @@ section.section.story-board {
 
     .cloud-container {
       position: absolute;
-      height: 80%;
+      height: 100%;
       width: 100%;
-      top: 10%;
+      top: 0;
       z-index: 2;
 
       &.kill-clouds {
@@ -191,8 +191,11 @@ section.section.story-board {
       }
 
       .pge-cloud-img {
+        position: relative;
         width: 100%;
-        height: 100%;
+        height: 80%;
+        left: 0;
+        top: 10%;
 
         img { height: 100%; }
       }
@@ -228,8 +231,6 @@ section.section.story-board {
 
       h2 {
         font-size: 22px;
-        color: #222;
-        letter-spacing: 3px;
       }
 
     }
@@ -312,7 +313,6 @@ section.section.story-board {
             top: 60%;
             left: 12%;
           }
-
         }
       }
 
@@ -365,10 +365,6 @@ section.section.story-board {
           top: 45%;
           left: 50%;
           transform: translateX(-50%);
-
-          p {
-            line-height: 200%;
-          }
         }
 
         .whale-container {
@@ -1120,21 +1116,100 @@ section.section.story-board {
       }
 
       .cloud-container {
-        height: 80%;
+        height: 100%;
         width: 100%;
+
+        .pge-cloud-img {
+          width: 200%;
+          height: 80%;
+          top: 10%;
+          left: -50%;
+        }
+      }
+
+      .logo-container {
+        .pge-logo-img {
+          max-width: 150px;
+          margin: 0 auto 20px;
+        }
+
+        h2 {
+          font-size: 22px;
+        }
+
       }
 
       .taiwan-container {
-        padding: 20px;
+        padding: 0 20px;
 
         .taiwan-country {
+          max-width: 230px;
 
           .pge-powerplants {
+            width: 55px;
+
+            &.pge-power1 {
+              top: 12%;
+              left: 66%;
+            }
+
+            &.pge-power2 {
+              top: 22%;
+              left: 29%;
+            }
+
+            &.pge-power3 {
+              top: 36%;
+              left: 12%;
+            }
+
+            &.pge-power4 {
+              top: 52%;
+              left: 46%;
+            }
+
+            &.pge-power5 {
+              top: 60%;
+              left: 12%;
+            }
+          }
+        }
+
+        .taiwan-text {
+          top: -60px;
+          left: 50%;
+          transform: translate(-50%, 0);
+
+          &:before {
+            display: none;
+          }
+
+          h2 {
+            position: relative;
+            top: 0;
+            right: 0;
+            left: 0;
+            transform: translateX(0);
+            white-space: nowrap;
           }
         }
 
         .ocean-container {
-          opacity: 0 !important;
+          .pge-ship,
+          .waves-container,
+          .whale-container   {
+            opacity: 0;
+            visibility: hidden;
+          }
+
+          .ocean-partition {
+            position: absolute;
+            width: 100%;
+          }
+
+          .ocean-text-container {
+            top: -80px;
+          }
         }
       }
     }
