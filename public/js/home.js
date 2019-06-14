@@ -90,6 +90,8 @@ window.addEventListener('load', function(e) {
   const heroTweenOne = fromToSceneGenerator('.hero-main', 1, { autoAlpha: 1 }, { autoAlpha: 0 });
   const heroOptionsOne = sceneOptionsGenerator(halfHeight, sceneOneStartHeight, '.scene-one-start')
 
+  const stickyContainerOptions = sceneOptionsGenerator(fullHeight+halfHeight, 0, '.scene-one-start')
+  const stickyContainerScene = sceneClassToggleGenerator(stickyContainerOptions, '.sticky-container', 'activated')
 
   const cloudTweenOne = fromToSceneGenerator('.cloud-container', 1, { yPercent: -30 }, { yPercent: 0 });
   const cloudOptionsOne = sceneOptionsGenerator(halfHeight, sceneOneStartHeight, '.scene-one-start')
@@ -217,6 +219,9 @@ window.addEventListener('load', function(e) {
   const nightMoonEnterTween = fromToSceneGenerator('.pge-moon', 1, { autoAlpha: 0 }, { autoAlpha: 1 })
   const nightMoonEnterOptions = sceneOptionsGenerator(0, nightCloudIntroSceneHeight, '.night-cloud-intro-scene');
 
+  const textOneEnterTween = fromToSceneGenerator('#night-text-container', 1, { autoAlpha: 0 }, { autoAlpha: 1 });
+  const textOneEnterOptions = sceneOptionsGenerator(0, nightCloudIntroSceneHeight, '.night-text-scene');
+
   //
   //           Taipei Night Skyline Tweens
   // ==========================================
@@ -264,9 +269,6 @@ window.addEventListener('load', function(e) {
   const moonExitTween = fromToSceneGenerator('.pge-moon', 1, { yPercent: 0, autoAlpha: 1 }, { yPercent: 200, autoAlpha: 0 });
   const moonExitOptions = sceneOptionsGenerator(0, nightSkylineSceneHeight, '.night-skyline-scene');
 
-  const textOneEnterTween = fromToSceneGenerator('#text-container-one', 1, { autoAlpha: 0 }, { autoAlpha: 1 });
-  const textOneEnterOptions = sceneOptionsGenerator(halfHeight, halfHeight, '.night-skyline-scene');
-
   //
   //           Taipei Day Skyline Tweens
   // ==========================================
@@ -275,7 +277,7 @@ window.addEventListener('load', function(e) {
   const skylineTextEnterTween = fromToSceneGenerator('.skyline-text-container', 1, { autoAlpha: 0 }, { autoAlpha: 1 });
   const skylineTextEnterOptions = sceneOptionsGenerator(0, halfHeight, '.day-skyline-scene');
 
-  const textOneExitTween = fromToSceneGenerator('#text-container-one', 1, { autoAlpha: 1 }, { autoAlpha: 0 });
+  const textOneExitTween = fromToSceneGenerator('#night-text-container', 1, { autoAlpha: 1 }, { autoAlpha: 0 });
   const textOneExitOptions = sceneOptionsGenerator(0, halfHeight, '.day-skyline-scene');
 
   const daySkylineEnterTween = fromToSceneGenerator('.taipei-day-skyline', 1, { autoAlpha: 0 }, { autoAlpha: 1 });
@@ -369,8 +371,8 @@ window.addEventListener('load', function(e) {
 
   const peopleNodes = sliceArray(document.querySelectorAll('.pge-people'))
   const peopleTweens = {
-    from: { yPercent: 100 },
-    to: { yPercent: 0 },
+    from: { autoAlpha: 0, yPercent: 100 },
+    to: { autoAlpha: 1, yPercent: 0 },
   }
 
   const peopleScenes = multiSceneCreate('.people-popup-scene', peopleNodes, '#pge-people', peopleTweens)
@@ -390,7 +392,7 @@ window.addEventListener('load', function(e) {
   //           Scene Controller
   // ==========================================
   TweenMax.set('.cloud-container', { yPercent: -30 });
-  TweenMax.set('#text-container-one', { autoAlpha: 0 })
+  TweenMax.set('#night-text-container', { autoAlpha: 0 })
   TweenMax.set('#taipei-night-clouds', { autoAlpha: 0 })
   TweenMax.set('.pge-moon', { autoAlpha: 0 })
   TweenMax.set('.mobile-phone-overlay', { autoAlpha: 0 })
@@ -400,6 +402,7 @@ window.addEventListener('load', function(e) {
 
   pgeController.addScene([
     // Act 1
+    stickyContainerScene,
     sceneGenerator(chevronExitOptions, chevronExitTween),
     sceneGenerator(heroOptionsOne, heroTweenOne),
     sceneGenerator(cloudOptionsOne, cloudTweenOne),

@@ -34,6 +34,7 @@ html, body {
   font-family: $noto-reg;
   font-weight: 400;
   color: $main-black;
+  overflow-x: hidden;
 }
 
 .wrapper {
@@ -109,6 +110,7 @@ h1, h2, h3, p {
 
 h1 {
   font-size: 32px;
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: .2s all;
@@ -116,6 +118,7 @@ h1 {
 
 h2 {
   font-size: 22px;
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
