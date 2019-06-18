@@ -86,8 +86,6 @@ section.section {
     left: 0;
     height: 100%;
     width: 100%;
-
-    &.hide-overflow { overflow: hidden; }
   }
 }
 
@@ -195,8 +193,16 @@ section.section.story-board {
         position: absolute;
         width: 100%;
         height: auto;
-        left: 0;
+        max-width: 1200px;
         top: 50%;
+
+        &.cloud-right {
+          right: 0;
+        }
+
+        &.cloud-left {
+          left: 0;
+        }
 
         img { height: 100%; }
       }
@@ -963,8 +969,8 @@ section.section.story-board {
       height: 200vh;
     }
 
-    .taipei-intro-scene {
-      height: 100vh;
+    .smog-fade-scene {
+      height: 200vh;
     }
 
     .mobile-phone-scene {
@@ -1514,7 +1520,7 @@ section.section.story-board {
         height: 100vh;
       }
 
-      .taipei-intro-scene {
+      .smog-fade-scene {
         height: 100vh;
       }
 

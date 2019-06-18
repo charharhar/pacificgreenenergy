@@ -21,7 +21,25 @@ window.addEventListener('load', function(e) {
    $('#form-button').click(function() {
       const submitReady = $(this).hasClass('submit-ready');
       if (submitReady) {
+        const formNames = {
+          name: '姓名',
+          phone: '聯絡電話',
+          email: '電子信箱',
+          estate: '我有',
+          city: '縣市',
+          town: '鎮市區',
+          lot: '地段',
+          number: '地號'
+        }
+        const formData = $('#pge-form').serializeArray()
+        const mailTarget = 'charleslee90@gmail.com';
+        const mailSubject = `們臺地個 - ${formData[0].value}`;
+        const mailBody = formData.reduce((acc, cur) => {
+          return acc + `${formNames[cur.name]}: ${cur.value}\n`;
+        }, '')
 
+        $('#pge-form').attr('action', `mailto:${mailTarget}?subject=${mailSubject}&body=${mailBody}`);
+        // $('#pge-form').submit();
       } else {
         $('html,body').animate({
           scrollTop: $('#form-outro-scene').offset().top
@@ -98,11 +116,12 @@ window.addEventListener('load', function(e) {
   //
   // ==========================================
   const sceneOneStartHeight = getHeight('.hero-dummy')
+  const wrapperHeight = getHeight('.wrapper') - (fullHeight + halfHeight)
 
   const heroTweenOne = fromToSceneGenerator('.hero-main', 1, { autoAlpha: 1 }, { autoAlpha: 0 });
   const heroOptionsOne = sceneOptionsGenerator(halfHeight, sceneOneStartHeight, '.scene-one-start')
 
-  const stickyContainerOptions = sceneOptionsGenerator(halfHeight + fullHeight, 0, '.scene-one-start')
+  const stickyContainerOptions = sceneOptionsGenerator(halfHeight + fullHeight, wrapperHeight, '.scene-one-start')
   const stickyContainerScene = sceneClassToggleGenerator(stickyContainerOptions, '.sticky-container', 'activated')
 
   const cloudTweenOne = fromToSceneGenerator('.cloud-container', 1, { yPercent: -15 }, { yPercent: 0 });
@@ -315,6 +334,20 @@ window.addEventListener('load', function(e) {
   const sunRiseOptions = sceneOptionsGenerator(0, daySkylineSceneHeight, '.day-skyline-scene');
 
   //
+  //           Smog Fade Scene
+  // ==========================================
+
+  const smogFadeSceneHeight = getHeight('.smog-fade-scene');
+
+  const smogFadeOneTween = fromToSceneGenerator('#pge-day-sky3', 1, {
+    autoAlpha: 1, yPercent: 0 }, { autoAlpha: 0, yPercent: 30 });
+  const smogFadeOneOptions = sceneOptionsGenerator(0, smogFadeSceneHeight, '.smog-fade-scene');
+
+  const smogFadeTwoTween = fromToSceneGenerator('#pge-day-sky7', 1, {
+    autoAlpha: 1, yPercent: 0 }, { autoAlpha: 0, yPercent: 30 });
+  const smogFadeTwoOptions = sceneOptionsGenerator(0, smogFadeSceneHeight, '.smog-fade-scene');
+
+  //
   //           Mobile Phone Scene
   // ==========================================
 
@@ -461,6 +494,8 @@ window.addEventListener('load', function(e) {
     sceneGenerator(sunRiseOptions, sunRiseTween),
     sceneGenerator(textOneExitOptions, textOneExitTween),
     ...cityPanelsScenes,
+    sceneGenerator(smogFadeOneOptions, smogFadeOneTween),
+    sceneGenerator(smogFadeTwoOptions, smogFadeTwoTween),
     sceneGenerator(handPhoneOptions, handPhoneTween),
     sceneGenerator(handPhoneOverlayOptions, handPhoneOverlayTween),
     ...mobilePowerBuildScenes,
