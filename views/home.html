@@ -26,7 +26,7 @@
 
     <div class="wrapper">
         <div class="support-container">
-            <a href="/beta">我要支持綠能</a>
+            <span id="form-button">我要支持綠能</span>
         </div>
 
         <div class="chevron-container">
@@ -43,7 +43,7 @@
                         </figure>
                         <div class="hero-text">
                             <h1>迈向更光明未来的小步骤</h1>
-                            <h2>前受組的錢轉高聲驚麼了人小表. 以了老，們輕行們法要只言黃用場 而她城建</h2>
+                            <h2 class="align-left">前受組的錢轉高聲驚麼了人小表. 以了老，們輕行們法要只言黃用場 而她城建</h2>
                         </div>
                     </div>
 
@@ -161,7 +161,7 @@
 
                             <div class="ocean-partition ocean-left">
                                 <div class="ocean-text-container">
-                                    <p>台灣每一年的能源需求98％是依賴國外進口。造成大家每一年超過一兆人的負擔。</p>
+                                    <h2 class="align-left">台灣每一年的能源需求98％是依賴國外進口。造成大家每一年超過一兆人的負擔。</h2>
                                 </div>
 
                                 <figure class="pge-ship" id="pge-ship-img-l1">
@@ -228,11 +228,11 @@
                     </div>
 
                     <div class="skyline-text-container">
-                        <p>台灣的農地總面積是579,900公頃地但1/3（193,300公傾）的農地是休耕沒有種植的。台灣只有需要20,000公傾就可以達成 2025年建置20GW太陽能的目標。</p>
+                        <h2 class="align-left">台灣的農地總面積是579,900公頃地但1/3（193,300公傾）的農地是休耕沒有種植的。台灣只有需要20,000公傾就可以達成 2025年建置20GW太陽能的目標。</h2>
                     </div>
 
                     <div class="night-text-container" id="night-text-container">
-                        <p>根據台大公衛學院的研究，空汙在台灣國人死亡負擔要危險因子中，排名名列第四。</p>
+                        <h2 class="align-left">根據台大公衛學院的研究，空汙在台灣國人死亡負擔要危險因子中，排名名列第四。</h2>
                     </div>
 
                     <div class="skyline-container">
@@ -395,7 +395,7 @@
 
                     <div class="people-scene-container">
                         <div class="people-text-container">
-                            <h1>我們的寶島，我們的捍衛。<br>我要支持綠能</h1>
+                            <h2>我們的寶島，我們的捍衛。<br>我要支持綠能</h2>
                         </div>
 
                         <div class="people-container">
@@ -481,6 +481,8 @@
                     <div class="pollution-scene"></div>
 
                     <div class="kill-clouds-scene"></div>
+
+                    <div class="outro-scene"></div>
                 </div>
 
                 <div class="scene-two-scrollarea">
@@ -514,12 +516,16 @@
 
                     <div class="form-intro-scene"></div>
 
-                    <div class="outro-scene"></div>
+                    <div class="outro-scene" id="form-outro-scene"></div>
                 </div>
             </div>
 
         </section>
 
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
     <script src="<%= assetsMap.home.js %>"></script>
     <!-- <script src="/js/home.js"></script> -->
 </body>

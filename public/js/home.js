@@ -18,6 +18,18 @@ window.addEventListener('load', function(e) {
    * ************************************************
    */
 
+   $('#form-button').click(function() {
+      const submitReady = $(this).hasClass('submit-ready');
+      if (submitReady) {
+
+      } else {
+        $('html,body').animate({
+          scrollTop: $('#form-outro-scene').offset().top
+        }, 'slow');
+      }
+
+   });
+
   /*
    * ************************************************
    *            Scroll Magic
@@ -93,7 +105,7 @@ window.addEventListener('load', function(e) {
   const stickyContainerOptions = sceneOptionsGenerator(halfHeight + fullHeight, 0, '.scene-one-start')
   const stickyContainerScene = sceneClassToggleGenerator(stickyContainerOptions, '.sticky-container', 'activated')
 
-  const cloudTweenOne = fromToSceneGenerator('.cloud-container', 1, { yPercent: -30 }, { yPercent: 0 });
+  const cloudTweenOne = fromToSceneGenerator('.cloud-container', 1, { yPercent: -15 }, { yPercent: 0 });
   const cloudOptionsOne = sceneOptionsGenerator(halfHeight, sceneOneStartHeight, '.scene-one-start')
 
   const chevronExitTween = basicTweenGenerator('.chevron-container', 1, { autoAlpha: 0 });
@@ -105,10 +117,10 @@ window.addEventListener('load', function(e) {
 
   const cloudSplitHeight = getHeight('.cloud-split-scene');
 
-  const cloudLeftTween = fromToSceneGenerator('.cloud-left', 1, { xPercent: -5 }, { xPercent: -45, ease: Power2.easeInOut });
+  const cloudLeftTween = fromToSceneGenerator('.cloud-left', 1, { yPercent: -50, xPercent: -5 }, { yPercent: -50, xPercent: -45, ease: Power2.easeInOut });
   const cloudLeftOptions = sceneOptionsGenerator(0, cloudSplitHeight, '.cloud-split-scene')
 
-  const cloudRightTween = fromToSceneGenerator('.cloud-right', 1, { xPercent: 5 }, { xPercent: 45, ease: Power2.easeInOut });
+  const cloudRightTween = fromToSceneGenerator('.cloud-right', 1, { yPercent: -50, xPercent: 5 }, { yPercent: -50, xPercent: 45, ease: Power2.easeInOut });
   const cloudRightOptions = sceneOptionsGenerator(0, cloudSplitHeight, '.cloud-split-scene')
 
   //
@@ -388,10 +400,13 @@ window.addEventListener('load', function(e) {
   const supportTextExitTween = fromToSceneGenerator('.support-container', 1, { xPercent: 0, left: '3%' }, { xPercent: -50, left: '50%' });
   const supportTextExitOptions =  sceneOptionsGenerator(0, formIntroSceneHeight, '.form-intro-scene')
 
+  const formButtonOptions = sceneOptionsGenerator(0, 0, '#form-outro-scene')
+  const formButtonScene = sceneClassToggleGenerator(formButtonOptions, '#form-button', 'submit-ready')
+
   //
   //           Scene Controller
   // ==========================================
-  TweenMax.set('.cloud-container', { yPercent: -30 });
+  TweenMax.set('.cloud-container', { yPercent: -15 });
   TweenMax.set('#night-text-container', { autoAlpha: 0 })
   TweenMax.set('#taipei-night-clouds', { autoAlpha: 0 })
   TweenMax.set('.pge-moon', { autoAlpha: 0 })
@@ -459,6 +474,7 @@ window.addEventListener('load', function(e) {
     sceneGenerator(peopleTextIntroOptions, peopleTextIntroTween),
     sceneGenerator(formIntroOptions, formIntroTween),
     sceneGenerator(supportTextExitOptions, supportTextExitTween),
+    formButtonScene,
   ])
 
   resizeHandler()

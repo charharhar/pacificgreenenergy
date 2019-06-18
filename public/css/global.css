@@ -1,7 +1,6 @@
-@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css);
-@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 
-$noto-reg: 'NotoSans-TC', sans-serif;
+$noto-reg: 'Noto Sans TC';
 $main-white: #ffffff;
 $main-black: #222;
 
@@ -121,6 +120,10 @@ h2 {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
+
+  &.align-left {
+    text-align: left;
+  }
 }
 
 h3 {

@@ -11,21 +11,22 @@
     width: 216px;
     opacity: 0;
 
-    a {
+    span {
       display: block;
       text-decoration: none;
-      color: #222;
+      color: #4A86E8;
       background-color: #fff;
       border-radius: 40px;
       padding: 15px 50px;
-      border: 1px solid #222;
+      border: 1px solid #4A86E8;
       letter-spacing: 3px;
       font-size: 16px;
+      cursor: pointer;
       transition: 200ms all ease;
 
       &:hover {
         color: #fff;
-        background-color: #222;
+        background-color: #4A86E8;
       }
     }
   }
@@ -106,25 +107,25 @@ section.section.story-board {
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
-    width: 570px;
+    flex-direction: column;
+    width: 550px;
     z-index: 3;
 
     .hero-text {
-      width: 365px;
+      width: 370px;
 
       h1 {
-        margin-bottom: 40px;
-        font-weight: bold;
+        margin-bottom: 20px;
       }
 
       h2 {
-        font-weight: bold;
       }
     }
 
     figure.hero-logo {
+      margin-bottom: 40px;
       max-width: 170px;
     }
   }
@@ -191,23 +192,13 @@ section.section.story-board {
       }
 
       .pge-cloud-img {
-        position: relative;
+        position: absolute;
         width: 100%;
-        height: 80%;
+        height: auto;
         left: 0;
-        top: 10%;
+        top: 50%;
 
         img { height: 100%; }
-      }
-
-      .cloud-left {
-        transform: translateX(-5%);
-      }
-
-      .cloud-right {
-        position: absolute;
-        bottom: 0;
-        transform: translateX(5%);
       }
     }
 
@@ -228,11 +219,6 @@ section.section.story-board {
         max-width: 240px;
         margin: 0 auto 20px;
       }
-
-      h2 {
-        font-size: 22px;
-      }
-
     }
 
     .taiwan-container {
@@ -615,10 +601,10 @@ section.section.story-board {
 
         .phone-progress-container {
           position: absolute;
-          left: 50%;
+          left: 49%;
           bottom: 8%;
           transform: translateX(-50%);
-          width: 25%;
+          width: 23%;
           height: 30px;
           border: 3px solid #000;
           border-radius: 10px;
@@ -626,7 +612,7 @@ section.section.story-board {
           p {
             position: absolute;
             display: inline-block;
-            right: -25px;
+            right: -13px;
             top: -75px;
             text-transform: uppercase;
             font-size: 30px;
@@ -644,7 +630,7 @@ section.section.story-board {
               border-top: 10px solid #222;
               margin: 10px auto 0;
               position: relative;
-              left: 10px;
+              left: 20px;
             }
 
             span {
@@ -696,9 +682,9 @@ section.section.story-board {
 
           .pge-mobile-panels {
             position: absolute;
-            width: 30%;
+            width: 27%;
             left: 35%;
-            top: 4%;
+            top: 5%;
             opacity: 0;
           }
         }
@@ -717,27 +703,27 @@ section.section.story-board {
 
             &#pge-mobile-power1 {
               top: 21%;
-              left: 54%;
+              left: 51%;
             }
 
             &#pge-mobile-power2 {
-              top: 27%;
-              left: 45%;
+              top: 28%;
+              left: 44%;
             }
 
             &#pge-mobile-power3 {
-              top: 42%;
-              left: 42%;
+              top: 44%;
+              left: 40%;
             }
 
             &#pge-mobile-power4 {
-              top: 57%;
-              left: 42%;
+              top: 56%;
+              left: 41%;
             }
 
             &#pge-mobile-power5 {
-              top: 49%;
-              left: 49%;
+              top: 46%;
+              left: 47%;
             }
           }
         }
@@ -800,9 +786,12 @@ section.section.story-board {
         padding: 0 20px;
         width: 100%;
 
+        .form-group {
+          margin-bottom: 15px;
+        }
+
         h1 {
           text-align: center;
-          font-size: 42px;
         }
 
         form {
@@ -938,6 +927,10 @@ section.section.story-board {
 
     .kill-clouds-scene {
       height: 5vh;
+    }
+
+    .outro-scene {
+      height: 100vh;
     }
   }
 
@@ -1090,24 +1083,41 @@ section.section.story-board {
     font-size: 16px;
   }
 
+  .wrapper {
+    .support-container {
+      width: 170px;
+
+      span {
+        font-size: 14px;
+        padding: 10px 20px;
+        text-align: center;
+
+        &:hover {
+          color: #4A86E8;
+          background-color: #fff;
+        }
+      }
+    }
+
+    .chevron-container {
+      bottom: 3%;
+    }
+  }
+
   section.section.story-board {
     .hero-content {
-      align-items: center;
-      flex-direction: column;
-      width: 550px;
+      top: 45%;
 
       .hero-text {
         max-width: 340px;
 
         h1 {
-          margin-bottom: 20px;
+          margin-bottom: 10px;
         }
-
-        h2 {}
       }
 
       figure.hero-logo {
-        margin-bottom: 40px;
+        margin-bottom: 20px;
       }
     }
 
@@ -1120,10 +1130,8 @@ section.section.story-board {
         width: 100%;
 
         .pge-cloud-img {
-          width: 200%;
-          height: 80%;
-          top: 10%;
-          left: -50%;
+          width: 250%;
+          left: -75%;
         }
       }
 
@@ -1132,11 +1140,6 @@ section.section.story-board {
           max-width: 150px;
           margin: 0 auto 20px;
         }
-
-        h2 {
-          font-size: 22px;
-        }
-
       }
 
       .taiwan-container {
@@ -1334,13 +1337,14 @@ section.section.story-board {
           }
 
           .phone-progress-container {
-            width: 55%;
+            width: 50%;
+            left: 47%;
             height: 30px;
             border: 2px solid #000;
 
             p {
-              right: -15px;
-              top: -60px;
+              right: -10px;
+              top: -54px;
               font-size: 24px;
 
               &:after {
@@ -1348,6 +1352,7 @@ section.section.story-board {
                 border-right: 8px solid transparent;
                 border-top: 8px solid #222;
                 margin: 5px auto 0;
+                left: 15px;
               }
 
               span {
@@ -1361,39 +1366,39 @@ section.section.story-board {
 
           .taipei-mobile-panels {
             .pge-mobile-panels {
-              width: 66%;
-              left: 17%;
-              top: 3%;
+              width: 60%;
+              left: 16%;
+              top: 5%;
             }
           }
 
           .taipei-mobile-plants {
             .pge-mobile-powerplants {
-              width: 50px;
+              width: 45px;
 
               &#pge-mobile-power1 {
-                top: 18%;
-                left: 55%;
+                top: 19%;
+                left: 52%;
               }
 
               &#pge-mobile-power2 {
                 top: 26%;
-                left: 38%;
+                left: 36%;
               }
 
               &#pge-mobile-power3 {
-                top: 44%;
-                left: 29%;
+                top: 42%;
+                left: 28%;
               }
 
               &#pge-mobile-power4 {
-                top: 57%;
-                left: 31%;
+                top: 55%;
+                left: 30%;
               }
 
               &#pge-mobile-power5 {
-                top: 46%;
-                left: 46%;
+                top: 44%;
+                left: 43%;
               }
             }
           }
@@ -1420,13 +1425,10 @@ section.section.story-board {
         }
 
         .form-container {
-
-          h1 {
-            font-size: 32px;
-          }
-
           form {
             .form-group {
+              margin-bottom: 10px;
+
               input[type="text"],
               input[type="email"],
               input[type="phone"],
@@ -1437,11 +1439,115 @@ section.section.story-board {
                 letter-spacing: 1px;
                 border-radius: 10px;
                 border: 1px solid #222;
-                margin-bottom: 10px;
+                margin-bottom: 0px;
               }
             }
           }
         }
+      }
+    }
+
+    .scene-one-scrollarea {
+      .cloud-split-scene {
+        height: 100vh;
+      }
+
+      .logo-fade-in-scene {
+        height: 100vh;
+      }
+
+      .logo-fade-out-scene {
+        height: 100vh;
+      }
+
+      .taiwan-intro-scene {
+        height: 100vh;
+      }
+
+      .taiwan-zoom-scene {
+        height: 100vh;
+      }
+
+      .ocean-intro-scene {
+        height: 100vh;
+      }
+
+      .pollution-scene {
+        height: 100vh;
+      }
+
+      .kill-clouds-scene {
+        height: 5vh;
+      }
+
+      .outro-scene {
+        height: 100vh;
+      }
+    }
+
+    .scene-two-scrollarea {
+      .smog-enter-scene {
+        height: 150vh;
+      }
+
+      .night-cloud-intro-scene {
+        height: 100vh;
+      }
+
+      .night-text-scene {
+        height: 20vh;
+      }
+
+      .skyline-enter-scene {
+        height: 150vh;
+      }
+
+      .night-skyline-scene {
+        height: 150vh;
+      }
+
+      .city-panels-scene {
+        height: 150vh;
+      }
+
+      .day-skyline-scene {
+        height: 100vh;
+      }
+
+      .taipei-intro-scene {
+        height: 100vh;
+      }
+
+      .mobile-phone-scene {
+        height: 100vh;
+      }
+
+      .mobile-power-scene {
+        height: 100vh;
+      }
+
+      .mobile-panels-scene {
+        height: 150vh;
+      }
+
+      .city-exit-scene {
+        height: 100vh;
+      }
+
+      .people-popup-scene {
+        height: 100vh;
+      }
+
+      .people-popup-delay {
+        height: 100vh;
+      }
+
+      .form-intro-scene {
+        height: 100vh;
+      }
+
+      .outro-scene {
+        height: 100vh;
       }
     }
   }
