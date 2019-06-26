@@ -20,8 +20,6 @@
   }
 
   &.pge-powerplant-sprite {
-    width: 80px;
-    height: 88px;
     background-size: 300%;
     background-image: url(/images/home/pge-powerplant-sprite.png);
 
@@ -414,8 +412,8 @@ section.section.story-board {
 
         .pge-powerplants {
           position: absolute;
-          width: 80px;
-          height: 88px;
+          width: 23%;
+          height: 13.9%;
 
           &.pge-power1 {
             top: 12%;
