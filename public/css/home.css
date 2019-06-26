@@ -1,5 +1,118 @@
 @import 'global';
 
+.sprite-img {
+  background-repeat: no-repeat;
+
+  &.pge-animal-sprite {
+    width: 33.82%;
+    height: 18.65%;
+    background-size: 400%;
+    background-image: url(/images/home/pge-animal-sprite.png);
+
+    &.animal1 { background-position: 0% 0%; }
+    &.animal2 { background-position: 33.333% 0%; }
+    &.animal3 { background-position: 66.666% 0%; }
+    &.animal4 { background-position: 100% 0%; }
+    &.animal5 { background-position: 0% 100%; }
+    &.animal6 { background-position: 33.333% 100%; }
+    &.animal7 { background-position: 66.666% 100%; }
+    &.animal8 { background-position: 100% 100%; }
+  }
+
+  &.pge-powerplant-sprite {
+    width: 80px;
+    height: 88px;
+    background-size: 300%;
+    background-image: url(/images/home/pge-powerplant-sprite.png);
+
+    &.pge-power1 { background-position: 0% 0%; }
+    &.pge-power2 { background-position: 50% 0%; }
+    &.pge-power3 { background-position: 100% 0%; }
+    &.pge-power4 { background-position: 0% 100%; }
+    &.pge-power5 { background-position: 50% 100%; }
+  }
+
+  &.pge-wave-sprite {
+    width: 122px;
+    height: 10px;
+    background-size: 400%;
+    background-image: url(/images/home/pge-wave-sprite.png);
+
+    &#pge-wave1 { background-position: 0% 0%; }
+    &#pge-wave2 { background-position: 33.333% 0%; }
+    &#pge-wave3 { background-position: 66.666% 0%; }
+    &#pge-wave4 { background-position: 100% 0%; }
+    &#pge-wave5 { background-position: 0% 0%; }
+    &#pge-wave6 { background-position: 33.333% 0%; }
+    &#pge-wave7 { background-position: 66.666% 0%; }
+    &#pge-wave8 { background-position: 100% 0%; }
+  }
+
+  &.pge-ship-sprite {
+    width: 120px;
+    height: 43px;
+    background-size: 200%;
+    background-image: url(/images/home/pge-ship-sprite.png);
+
+    &#pge-ship-img-l1 { background-position: 0% 0%; }
+    &#pge-ship-img-l2 { background-position: 0% 100%; }
+    &#pge-ship-img-r1 { background-position: 100% 0%; }
+    &#pge-ship-img-r2 { background-position: 100% 100%; }
+    &#pge-ship-img-r3 { background-position: 0% 0%; }
+  }
+
+  &.pge-people-sprite {
+    width: 190px;
+    height: 402px;
+    background-size: 500%;
+    background-image: url(/images/home/pge-people-sprite.png);
+
+    &#pge-people1 { background-position: 0% 0%; }
+    &#pge-people2 { background-position: 25% 0%; }
+    &#pge-people3 { background-position: 50% 0%; }
+    &#pge-people4 { background-position: 75% 0%; }
+    &#pge-people5 { background-position: 100% 0%; }
+  }
+
+  &.pge-city-panel-sprite {
+    width: 100%;
+    height: 40.82%;
+    background-size: 800%;
+    background-image: url(/images/home/pge-city-panel-sprite.png);
+
+    &#city-panel1 { background-position: 0% 0%; }
+    &#city-panel2 { background-position: 14.285% 0%; }
+    &#city-panel3 { background-position: 28.57% 0%; }
+    &#city-panel4 { background-position: 42.855% 0%; }
+    &#city-panel5 { background-position: 57.14% 0%; }
+    &#city-panel6 { background-position: 71.425% 0%; }
+    &#city-panel7 { background-position: 85.71% 0%; }
+    &#city-panel8 { background-position: 100% 0%; }
+    &#city-panel9 { background-position: 0% 100%; }
+    &#city-panel10 { background-position: 14.285% 100%; }
+    &#city-panel11 { background-position: 28.57% 100%; }
+    &#city-panel12 { background-position: 42.855% 100%; }
+    &#city-panel13 { background-position: 57.14% 100%; }
+    &#city-panel14 { background-position: 71.425% 100%; }
+  }
+
+  &.pge-mobile-panel-sprite {
+    width: 27%;
+    height: 90%;
+    background-size: 400%;
+    background-image: url(/images/home/pge-mobile-panel-sprite.png);
+
+    &#mobile-panel1 { background-position: 0% 0%; }
+    &#mobile-panel2 { background-position: 33.333% 0%; }
+    &#mobile-panel3 { background-position: 66.666% 0%; }
+    &#mobile-panel4 { background-position: 100% 0%; }
+    &#mobile-panel5 { background-position: 0% 100%; }
+    &#mobile-panel6 { background-position: 33.333% 100%; }
+    &#mobile-panel7 { background-position: 66.666% 100%; }
+    &#mobile-panel8 { background-position: 100% 100%; }
+  }
+}
+
 .wrapper {
   overflow-x: hidden;
 
@@ -262,24 +375,47 @@ section.section.story-board {
         max-width: 370px;
         margin: 0 auto;
 
-        .pge-taiwan-img {
-
-        }
-
         .pge-animals {
           position: absolute;
-          width: 100%;
-          top: 0;
-          left: 0;
 
-          img {
-            width: 100%;
+          &.animal1 {
+            top: 3%;
+            left: 58%;
+          }
+          &.animal2 {
+            top: 16%;
+            left: 64%;
+          }
+          &.animal3 {
+            top: 21%;
+            left: 29%;
+          }
+          &.animal4 {
+            top: 35%;
+            left: 6%;
+          }
+          &.animal5 {
+            top: 48%;
+            left: 11%;
+          }
+          &.animal6 {
+            top: 50%;
+            left: 42%;
+          }
+          &.animal7 {
+            top: 59%;
+            left: 8%;
+          }
+          &.animal8 {
+            top: 70%;
+            left: 24%;
           }
         }
 
         .pge-powerplants {
           position: absolute;
           width: 80px;
+          height: 88px;
 
           &.pge-power1 {
             top: 12%;
@@ -327,16 +463,39 @@ section.section.story-board {
 
           .pge-wave {
             position: absolute;
-            width: 80px;
 
-            &#pge-wave1 { top: 13%; left: 20%; }
-            &#pge-wave2 { top: 73%; left: 10%; }
-            &#pge-wave3 { top: 30%; left: 12%; }
-            &#pge-wave4 { top: 90%; left: 18%; }
-            &#pge-wave5 { top: 23%; left: 90%; }
-            &#pge-wave6 { top: 40%; left: 75%; }
-            &#pge-wave7 { top: 57%; left: 68%; }
-            &#pge-wave8 { top: 80%; left: 72%; }
+            &#pge-wave1 {
+              top: 13%;
+              left: 20%;
+            }
+            &#pge-wave2 {
+              top: 73%;
+              left: 10%;
+            }
+            &#pge-wave3 {
+              top: 30%;
+              left: 12%;
+            }
+            &#pge-wave4 {
+              top: 90%;
+              left: 18%;
+            }
+            &#pge-wave5 {
+              top: 23%;
+              left: 90%;
+            }
+            &#pge-wave6 {
+              top: 40%;
+              left: 75%;
+            }
+            &#pge-wave7 {
+              top: 57%;
+              left: 68%;
+            }
+            &#pge-wave8 {
+              top: 80%;
+              left: 72%;
+            }
           }
         }
 
@@ -369,32 +528,31 @@ section.section.story-board {
             position: absolute;
             width: 100%;
             height: 100%;
-            animation-iteration-count: infinite;
-            animation-direction: normal;
-            animation-timing-function: ease;
+            // animation-iteration-count: infinite;
+            // animation-direction: normal;
+            // animation-timing-function: ease;
 
-            &#pge-whale-1 {
-              // animation-name: whaleFadeOne;
-              // animation-duration: 8s;
-            }
+            // &#pge-whale-1 {
+            //   animation-name: whaleFadeOne;
+            //   animation-duration: 8s;
+            // }
 
-            &#pge-whale-2 {
-              animation-name: whaleFadeTwo;
-              animation-duration: 8s;
-              display: none;
-            }
+            // &#pge-whale-2 {
+            //   animation-name: whaleFadeTwo;
+            //   animation-duration: 8s;
+            //   display: none;
+            // }
 
-            &#pge-whale-3 {
-              animation-name: whaleFadeThree;
-              animation-duration: 8s;
-              display: none;
-            }
+            // &#pge-whale-3 {
+            //   animation-name: whaleFadeThree;
+            //   animation-duration: 8s;
+            //   display: none;
+            // }
           }
         }
 
         .pge-ship {
           position: absolute;
-          width: 120px;
           animation-iteration-count: infinite;
           animation-direction: normal;
           animation-timing-function: ease;
@@ -568,7 +726,6 @@ section.section.story-board {
           position: absolute;
           bottom: 0;
           left: 0;
-          width: 100%;
           opacity: 0;
         }
       }
@@ -688,7 +845,6 @@ section.section.story-board {
 
           .pge-mobile-panels {
             position: absolute;
-            width: 27%;
             left: 35%;
             top: 5%;
             opacity: 0;
@@ -705,6 +861,7 @@ section.section.story-board {
           .pge-mobile-powerplants {
             position: absolute;
             width: 60px;
+            height: 66px;
             opacity: 1;
 
             &#pge-mobile-power1 {
@@ -762,10 +919,6 @@ section.section.story-board {
         display: flex;
         align-items: flex-end;
         justify-content: space-between;
-
-        .pge-people {
-          max-width: 190px;
-        }
       }
     }
 
@@ -1020,10 +1173,10 @@ section.section.story-board {
 }
 
 @keyframes shipMovementTwo {
-  0%, 100% { left: 80%; transform: rotateY(0deg); }
+  0%, 100% { left: 81%; transform: rotateY(0deg); }
   40% { left: 10%; transform: rotateY(0deg); }
   50% { left: 10%; transform: rotateY(180deg); }
-  90% { left: 80%; transform: rotateY(180deg); }
+  90% { left: 81%; transform: rotateY(180deg); }
 }
 
 @keyframes shipMovementThree {
@@ -1041,10 +1194,10 @@ section.section.story-board {
 }
 
 @keyframes shipMovementFive {
-  0%, 100% { right: 80%; transform: rotateY(0deg); }
+  0%, 100% { right: 81%; transform: rotateY(0deg); }
   40% { right: 10%; transform: rotateY(0deg); }
   50% { right: 10%; transform: rotateY(180deg); }
-  90% { right: 80%; transform: rotateY(180deg); }
+  90% { right: 81%; transform: rotateY(180deg); }
 }
 
 @keyframes whaleFadeOne {
@@ -1087,6 +1240,13 @@ section.section.story-board {
 
   p {
     font-size: 16px;
+  }
+
+  .sprite-img {
+    &.pge-people-sprite {
+      width: 60px;
+      height: 128px;
+    }
   }
 
   .wrapper {
@@ -1156,6 +1316,7 @@ section.section.story-board {
 
           .pge-powerplants {
             width: 55px;
+            height: 60px;
 
             &.pge-power1 {
               top: 12%;
@@ -1260,77 +1421,9 @@ section.section.story-board {
       .skyline-container {
         min-width: 950px;
         transform: translateX(-24%);
-
-        .taipei-skyline {
-          .taipei-night-skyline {
-            position: relative;
-          }
-
-          .taipei-day-skyline {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-          }
-
-          .pge-day-skyline,
-          .pge-night-skyline {
-            position: absolute;
-            width: 100%;
-            bottom: 0;
-
-            img { vertical-align: bottom; }
-
-            &#pge-night-sky1 {
-              opacity: 0;
-              visibility: hidden;
-            }
-
-            &#pge-day-sky1,
-            &#pge-night-sky1 {
-              position: relative;
-              z-index: 4;
-            }
-
-            &#pge-day-sky2, &#pge-night-sky2 { z-index: 5; }
-            &#pge-day-sky3, &#pge-night-sky3 { z-index: 6; }
-            &#pge-day-sky4, &#pge-night-sky4 { z-index: 7; }
-            &#pge-day-sky5, &#pge-night-sky5 { z-index: 8; }
-            &#pge-day-sky6, &#pge-night-sky6 { z-index: 9; }
-            &#pge-day-sky7, &#pge-night-sky7 { z-index: 10; }
-            &#pge-day-sky8, &#pge-night-sky8 { z-index: 11; }
-          }
-        }
-
-        .taipei-solar-panels {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: 12;
-
-          .pge-city-panels {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            opacity: 0;
-          }
-        }
       }
 
       .mobile-phone-overlay {
-        z-index: 13;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background: radial-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, .8));
-        opacity: 0;
-        visibility: hidden;
       }
 
       .mobile-panels-container {
@@ -1381,6 +1474,7 @@ section.section.story-board {
           .taipei-mobile-plants {
             .pge-mobile-powerplants {
               width: 45px;
+              height: 49px;
 
               &#pge-mobile-power1 {
                 top: 19%;
@@ -1419,9 +1513,6 @@ section.section.story-board {
 
         .people-container {
           margin-bottom: 70px;
-
-          .pge-people {
-          }
         }
       }
 
@@ -1560,16 +1651,26 @@ section.section.story-board {
 }
 
 // Small devices (landscape phones, less than 768px)
-@media (max-width: 767.98px) {
-
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .sprite-img {
+    &.pge-people-sprite {
+      width: 110px;
+      height: 234px;
+    }
+  }
 }
 
 // Medium devices (tablets, less than 992px)
-@media (max-width: 991.98px) {
-
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .sprite-img {
+    &.pge-people-sprite {
+      width: 139px;
+      height: 295px;
+    }
+  }
 }
 
 // Large devices (desktops, less than 1200px)
-@media (max-width: 1199.98px) {
+@media (min-width: 992px) and (max-width: 1199.98px) {
 
 }
