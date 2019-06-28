@@ -18,35 +18,40 @@ window.addEventListener('load', function(e) {
    * ************************************************
    */
 
-   $('#form-button').click(function() {
-      const submitReady = $(this).hasClass('submit-ready');
-      if (submitReady) {
-        const formNames = {
-          name: '姓名',
-          phone: '聯絡電話',
-          email: '電子信箱',
-          estate: '我有',
-          city: '縣市',
-          town: '鎮市區',
-          lot: '地段',
-          number: '地號'
-        }
-        const formData = $('#pge-form').serializeArray()
-        const mailTarget = 'charleslee90@gmail.com';
-        const mailSubject = `們臺地個 - ${formData[0].value}`;
-        const mailBody = formData.reduce((acc, cur) => {
-          return acc + `${formNames[cur.name]}: ${cur.value}\n`;
-        }, '')
-
-        $('#pge-form').attr('action', `mailto:${mailTarget}?subject=${mailSubject}&body=${mailBody}`);
-        // $('#pge-form').submit();
-      } else {
-        $('html,body').animate({
-          scrollTop: $('#form-outro-scene').offset().top
-        }, 'slow');
+  $('#form-button').click(function() {
+    const submitReady = $(this).hasClass('submit-ready');
+    if (submitReady) {
+      const formNames = {
+        name: '姓名',
+        phone: '聯絡電話',
+        email: '電子信箱',
+        estate: '我有',
+        city: '縣市',
+        town: '鎮市區',
+        lot: '地段',
+        number: '地號'
       }
+      const formData = $('#pge-form').serializeArray()
+      const mailTarget = 'charleslee90@gmail.com';
+      const mailSubject = `們臺地個 - ${formData[0].value}`;
+      const mailBody = formData.reduce((acc, cur) => {
+        return acc + `${formNames[cur.name]}: ${cur.value}\n`;
+      }, '')
 
-   });
+      $('#pge-form').attr('action', `mailto:${mailTarget}?subject=${mailSubject}&body=${mailBody}`);
+      // $('#pge-form').submit();
+    } else {
+      $('html,body').animate({
+        scrollTop: $('#form-outro-scene').offset().top
+      }, 'slow');
+    }
+  });
+
+  $('.back-top-container').click(() => {
+    $('html,body').animate({
+      scrollTop: 0,
+    }, 'slow');
+  })
 
   /*
    * ************************************************
@@ -166,6 +171,9 @@ window.addEventListener('load', function(e) {
 
   const supportTextEnterTween = fromToSceneGenerator('.support-container', 1, { autoAlpha: 0 }, { autoAlpha: 1 });
   const supportTextEnterOptions =  sceneOptionsGenerator(0, taiwanFadeHeight, '.taiwan-intro-scene')
+
+  const backTopEnterTween = fromToSceneGenerator('.back-top-container', 1, { autoAlpha: 0 }, { autoAlpha: 1 });
+  const backTopEnterOptions =  sceneOptionsGenerator(0, taiwanFadeHeight, '.taiwan-intro-scene')
 
   //
   //           Taiwan Zoom Scene
@@ -460,6 +468,7 @@ window.addEventListener('load', function(e) {
     sceneGenerator(logoExitOptions, logoExitTween),
     sceneGenerator(taiwanEnterOptions, taiwanEnterTween),
     sceneGenerator(supportTextEnterOptions, supportTextEnterTween),
+    sceneGenerator(backTopEnterOptions, backTopEnterTween),
     sceneGenerator(taiwanZoomOptions, taiwanZoomTween),
     sceneGenerator(cloudZoomOptions, cloudZoomTween),
     sceneGenerator(taiwanTextExitOptions, taiwanTextExitTween),

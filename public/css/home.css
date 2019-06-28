@@ -111,6 +111,95 @@
   }
 }
 
+.arrow-container {
+  position: relative;
+  overflow: hidden;
+  width: 60px;
+  height: 60px;
+
+  .arrows {
+    position: absolute;
+    border-right-width: 15px;
+    border-right-style: solid;
+    border-bottom-width: 15px;
+    border-bottom-style: solid;
+    width: 58px;
+    height: 58px;
+    animation: arrow-move 4s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    &.bright-arrow {
+      border-right-color: #f69220;
+      border-bottom-color: #f69220;
+    }
+
+    &.dark-arrow {
+      border-right-color: #f66a20;
+      border-bottom-color: #f66a20;
+    }
+
+    &.first-arrow {
+      top: 0;
+      left: 0;
+    }
+
+    &.second-arrow {
+      top: -28px;
+      left: -28px;
+    }
+
+    &.third-arrow {
+      top: -56px;
+      left: -56px;
+    }
+
+    &.fourth-arrow {
+      top: -84px;
+      left: -84px;
+    }
+  }
+
+  &.orange {
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+
+    .arrows {
+      &.bright-arrow {
+        border-right-color: #f69220;
+        border-bottom-color: #f69220;
+      }
+
+      &.dark-arrow {
+        border-right-color: #f66a20;
+        border-bottom-color: #f66a20;
+      }
+    }
+  }
+
+  &.green {
+    transform: translateX(-50%) rotate(225deg);
+
+    .arrows {
+      &.bright-arrow {
+        border-right-color: #006a2c;
+        border-bottom-color: #006a2c;
+      }
+
+      &.dark-arrow {
+        border-right-color: #004e2c;
+        border-bottom-color: #004e2c;
+      }
+    }
+  }
+}
+
+@keyframes arrow-move {
+  0% { transform: translate(0, 0)}
+  100% { transform: translate(56px, 56px)}
+}
+
 .wrapper {
   overflow-x: hidden;
 
@@ -150,30 +239,13 @@
     z-index: 20;
   }
 
-  .chevron-border {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .back-top-container {
+    position: fixed;
+    z-index: 20;
+    bottom: 3%;
+    right: 3%;
     cursor: pointer;
-
-    .chevron {
-      position: relative;
-      top: -5px;
-      transform: rotate(135deg);
-      border-style: solid;
-      border-width: 4px 4px 0 0;
-      border-color: $main-black;
-      vertical-align: top;
-      width: 40px;
-      height: 40px;
-
-      &.bounce {
-        animation: bouncing .5s;
-        animation-direction: alternate;
-        animation-iteration-count: infinite;
-        animation-timing-function: cubic-bezier(.5, .05, 1, .5);
-      }
-    }
+    opacity: 0;
   }
 }
 
