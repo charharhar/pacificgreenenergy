@@ -1,5 +1,10 @@
 @import 'global';
 
+$text-blue: #000d54;
+$ocean-blue: #00B8CE;
+$polluted-blue: #257A77;
+$daySky-blue: #A1E2DE;
+
 .sprite-img {
   background-repeat: no-repeat;
 
@@ -20,14 +25,17 @@
   }
 
   &.pge-powerplant-sprite {
-    background-size: 300%;
+    background-size: 800%;
     background-image: url(/images/home/pge-powerplant-sprite.png);
 
-    &.pge-power1 { background-position: 0% 0%; }
-    &.pge-power2 { background-position: 50% 0%; }
-    &.pge-power3 { background-position: 100% 0%; }
-    &.pge-power4 { background-position: 0% 100%; }
-    &.pge-power5 { background-position: 50% 100%; }
+    &.pge-power-on1 { background-position: 0% 0%; }
+    &.pge-power-on2 { background-position: 14.285% 0%; }
+    &.pge-power-on3 { background-position: 28.57% 0%; }
+    &.pge-power-on4 { background-position: 42.855% 0%; }
+    &.pge-power-off1 { background-position: 57.14% 0%; }
+    &.pge-power-off2 { background-position: 71.425% 0%; }
+    &.pge-power-off3 { background-position: 85.71% 0%; }
+    &.pge-power-off4 { background-position: 100% 0%; }
   }
 
   &.pge-wave-sprite {
@@ -57,6 +65,14 @@
     &#pge-ship-img-r1 { background-position: 100% 0%; }
     &#pge-ship-img-r2 { background-position: 100% 100%; }
     &#pge-ship-img-r3 { background-position: 0% 0%; }
+  }
+
+  &.pge-commodity-sprite {
+    height: 50px;
+    width: 50px;
+    background-size: 200%;
+    background-image: url(/images/home/pge-commodity-sprite.png);
+    background-position: 0% 0%;
   }
 
   &.pge-people-sprite {
@@ -100,265 +116,124 @@
     background-size: 400%;
     background-image: url(/images/home/pge-mobile-panel-sprite.png);
 
-    &#mobile-panel1 { background-position: 0% 0%; }
-    &#mobile-panel2 { background-position: 33.333% 0%; }
-    &#mobile-panel3 { background-position: 66.666% 0%; }
-    &#mobile-panel4 { background-position: 100% 0%; }
-    &#mobile-panel5 { background-position: 0% 100%; }
-    &#mobile-panel6 { background-position: 33.333% 100%; }
-    &#mobile-panel7 { background-position: 66.666% 100%; }
-    &#mobile-panel8 { background-position: 100% 100%; }
+    &.mobile-panel1 { background-position: 0% 0%; }
+    &.mobile-panel2 { background-position: 33.333% 0%; }
+    &.mobile-panel3 { background-position: 66.666% 0%; }
+    &.mobile-panel4 { background-position: 100% 0%; }
+    &.mobile-panel5 { background-position: 0% 100%; }
+    &.mobile-panel6 { background-position: 33.333% 100%; }
+    &.mobile-panel7 { background-position: 66.666% 100%; }
+    &.mobile-panel8 { background-position: 100% 100%; }
   }
 }
 
-.arrow-container {
-  position: relative;
-  overflow: hidden;
-  width: 60px;
-  height: 60px;
-
-  .arrows {
-    position: absolute;
-    border-right-width: 15px;
-    border-right-style: solid;
-    border-bottom-width: 15px;
-    border-bottom-style: solid;
-    width: 58px;
-    height: 58px;
-    animation: arrow-move 4s;
-    animation-direction: normal;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-
-    &.bright-arrow {
-      border-right-color: #f69220;
-      border-bottom-color: #f69220;
-    }
-
-    &.dark-arrow {
-      border-right-color: #f66a20;
-      border-bottom-color: #f66a20;
-    }
-
-    &.first-arrow {
-      top: 0;
-      left: 0;
-    }
-
-    &.second-arrow {
-      top: -28px;
-      left: -28px;
-    }
-
-    &.third-arrow {
-      top: -56px;
-      left: -56px;
-    }
-
-    &.fourth-arrow {
-      top: -84px;
-      left: -84px;
-    }
+div.section {
+  h1, h2, h3, p, span {
+    color: $text-blue;
   }
 
-  &.orange {
-    left: 50%;
-    transform: translateX(-50%) rotate(45deg);
-
-    .arrows {
-      &.bright-arrow {
-        border-right-color: #f69220;
-        border-bottom-color: #f69220;
-      }
-
-      &.dark-arrow {
-        border-right-color: #f66a20;
-        border-bottom-color: #f66a20;
-      }
-    }
+  h1.large-heading {
+    font-weight: bold;
+    font-size: 50px;
   }
 
-  &.green {
-    transform: translateX(-50%) rotate(225deg);
-
-    .arrows {
-      &.bright-arrow {
-        border-right-color: #006a2c;
-        border-bottom-color: #006a2c;
-      }
-
-      &.dark-arrow {
-        border-right-color: #004e2c;
-        border-bottom-color: #004e2c;
-      }
-    }
-  }
-}
-
-@keyframes arrow-move {
-  0% { transform: translate(0, 0)}
-  100% { transform: translate(56px, 56px)}
-}
-
-.wrapper {
-  overflow-x: hidden;
-
-  .support-container {
-    position: fixed;
-    z-index: 20;
-    bottom: 3%;
-    left: 3%;
-    width: 216px;
-    opacity: 0;
-
-    span {
-      display: block;
-      text-decoration: none;
-      color: #4A86E8;
-      background-color: #fff;
-      border-radius: 40px;
-      padding: 15px 50px;
-      border: 1px solid #4A86E8;
-      letter-spacing: 3px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 200ms all ease;
-
-      &:hover {
-        color: #fff;
-        background-color: #4A86E8;
-      }
-    }
+  h2.medium-bold {
+    font-size: 30px;
+    font-weight: bold;
   }
 
-  .chevron-container {
-    position: fixed;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 20;
+  p.typewrite {
+    clip-path: inset(0% 100% 0% 0%);
   }
 
-  .back-top-container {
-    position: fixed;
-    z-index: 20;
-    bottom: 3%;
-    right: 3%;
-    cursor: pointer;
-    opacity: 0;
-  }
-}
-
-section.section {
-  .sticky-container {
-    position: relative;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-
-    &.activated {
-      position: fixed;
-    }
+  .large-red {
+    color: red;
+    font-size: 50px;
+    font-weight: bold;
   }
 
   .act-view-panel {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     height: 100%;
     width: 100%;
-  }
-}
+    overflow: hidden;
 
-section.section.story-board {
-  .hero-container {
-    position: fixed;
-    width: 100%;
-  }
+    &.ocean-clean-background {
+      background: radial-gradient(#fff, $ocean-blue);
+    }
 
-  .scene-one-background {
-    background: radial-gradient(#fff, #00B8CE);
-  }
+    &.day-sky-background {
+      background: linear-gradient(#00B8CE, #A1E2DE);
+    }
 
-  .hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    width: 550px;
-    z-index: 3;
+    &.solar-panel-background {
+      position: relative;
+      background-image: url(/images/home/PGE-landing.jpeg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
 
-    .hero-text {
-      width: 370px;
-
-      h1 {
-        margin-bottom: 20px;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, .45);
       }
+    }
+
+    .flex-text-container {
+      display: flex;
+      align-items: center;
+      flex-flow: row wrap;
+      z-index: 13;
+
+      span.flex-new-line {
+        flex: 1 0 100%;
+      }
+
+      p, h2, span {
+        line-height: 1;
+      }
+
+      span.large-red {
+        padding-right: 8px;
+      }
+    }
+
+    .center-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+
+    figure.pge-logo-img {
+      margin: 0 auto 20px;
+
+      &.large-logo {
+        max-width: 240px;
+      }
+
+      &.small-logo {
+        max-width: 170px;
+      }
+    }
+
+    .logo-container {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      z-index: 4;
 
       h2 {
+        font-size: 22px;
+        font-weight: bold;
       }
-    }
-
-    figure.hero-logo {
-      margin-bottom: 40px;
-      max-width: 170px;
-    }
-  }
-
-  .full-width-hero {
-    position: relative;
-    padding-bottom: 56.25%;
-    width: 100%;
-
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-    }
-  }
-
-  .full-height-hero {
-    position: relative;
-    height: 100vh;
-    background-image: url(/images/home/PGE-landing.jpeg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    z-index: 2;
-
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.45);
-    }
-  }
-
-  .full-width-placeholder {
-    position: relative;
-    padding-bottom: 56.25%;
-    width: 100%;
-  }
-
-  .full-height-placeholder {
-    position: relative;
-    height: 100vh;
-  }
-
-  .act-one-container {
-    .container-padding {
-      height: 100%;
-      padding: 20px;
     }
 
     .cloud-container {
@@ -368,16 +243,13 @@ section.section.story-board {
       top: 0;
       z-index: 2;
 
-      &.kill-clouds {
-        display: none;
-      }
-
       .pge-cloud-img {
         position: absolute;
         width: 100%;
         height: auto;
         max-width: 1200px;
         top: 50%;
+        transform: translateY(-50%);
 
         &.cloud-right {
           right: 0;
@@ -391,57 +263,12 @@ section.section.story-board {
       }
     }
 
-    .center-container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1;
-    }
-
-    .logo-container {
-      z-index: 2;
-      opacity: 0;
-      width: 100%;
-
-      .pge-logo-img {
-        max-width: 240px;
-        margin: 0 auto 20px;
-      }
-    }
-
     .taiwan-container {
-      z-index: 2;
-      opacity: 0;
+      position: relative;
       width: 100%;
-
-      .taiwan-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        display: flex;
-        flex-flow: row;
-
-        &:before {
-          content: '';
-          display: block;
-          max-width: 370px;
-          width: 370px;
-        }
-
-        h2 {
-          position: absolute;
-          top: -96px;
-          right: -20px;
-          transform: translateX(100%);
-          text-align: center;
-        }
-      }
 
       .taiwan-country {
         position: relative;
-        transform: scale(.33);
         max-width: 370px;
         margin: 0 auto;
 
@@ -484,43 +311,270 @@ section.section.story-board {
 
         .pge-powerplants {
           position: absolute;
-          width: 23%;
-          height: 13.9%;
+          width: 24%;
+          height: 20%;
+
+          .pge-powerplant-sprite {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+
+            &.power-on {
+              opacity: 0;
+              z-index: 2;
+            }
+
+            &.power-off {
+              opacity: 1;
+              z-index: 1;
+            }
+          }
 
           &.pge-power1 {
-            top: 12%;
-            left: 66%;
+            top: 7%;
+            left: 64%;
           }
 
           &.pge-power2 {
-            top: 22%;
-            left: 29%;
+            top: 17%;
+            left: 25%;
           }
 
           &.pge-power3 {
-            top: 36%;
-            left: 12%;
+            top: 33%;
+            left: 4%;
           }
 
           &.pge-power4 {
-            top: 52%;
-            left: 46%;
+            top: 47%;
+            left: 41%;
           }
 
           &.pge-power5 {
-            top: 60%;
-            left: 12%;
+            top: 55%;
+            left: 10%;
           }
         }
       }
+    }
 
+    .taipei-sky-elements {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      z-index: 3;
+      bottom: 0;
+      left: 0;
+
+      .pge-sun {
+        position: absolute;
+        top: 6%;
+        right: 15%;
+        max-width: 200px;
+        z-index: 3;
+
+        img {
+          animation-name: sunRotate;
+          animation-iteration-count: infinite;
+          animation-direction: normal;
+          animation-duration: 60s;
+          animation-timing-function: linear;
+        }
+      }
+
+      .pge-skyline-clouds {
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 110%;
+        z-index: 2;
+      }
+    }
+
+    .skyline-container {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      min-width: 1400px;
+      width: 100%;
+      z-index: 4;
+      overflow: hidden;
+      transform: translateX(-50%);
+
+      .taipei-skyline {
+        position: relative;
+        z-index: 4;
+
+        .taipei-day-skyline {
+          position: relative;
+        }
+
+        .pge-night-skyline {
+          position: relative;
+          width: 100%;
+          bottom: 0;
+          left: 0;
+
+          img { vertical-align: bottom; }
+        }
+
+        .pge-day-skyline {
+          position: absolute;
+          width: 100%;
+          bottom: 0;
+
+          img { vertical-align: bottom; }
+
+          &#pge-day-sky2 { z-index: 5; }
+          &#pge-day-sky3 { z-index: 6; }
+          &#pge-day-sky4 { z-index: 7; }
+          &#pge-day-sky5 { z-index: 8; }
+          &#pge-day-sky6 { z-index: 9; }
+          &#pge-day-sky7 { z-index: 10; }
+          &#pge-day-sky8 { z-index: 11; }
+        }
+      }
+
+      .taipei-solar-panels {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 12;
+
+        .pge-city-panels {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          opacity: 0;
+        }
+      }
+    }
+
+  }
+}
+
+div.chapter-one {
+  .act-view-panel {
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      width: 550px;
+      z-index: 3;
+
+      .hero-text {
+        h1 {
+          font-size: 32px;
+          margin-bottom: 20px;
+        }
+
+        h2 {
+          max-width: 370px;
+          font-size: 22px;
+        }
+      }
+
+      figure.hero-logo {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+div.chapter-two {
+  .act-view-panel {
+    .logo-container {
+      opacity: 0;
+    }
+
+    .cloud-container {
+      .pge-cloud-img {
+        &.cloud-right { transform: translate(0, -50%); }
+        &.cloud-left { transform: translate(0, -50%); }
+      }
+    }
+
+    .clouds-header-container {
+      position: absolute;
+      left: 25%;
+      top: 10%;
+
+      #heading-tw {
+        span {
+          display: inline-block;
+        }
+      }
+    }
+
+    .clouds-text-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-left: 290px;
+    }
+  }
+
+  .taiwan-container {
+    .taiwan-country {
+      transform: scale(.33);
+      opacity: 0;
+    }
+  }
+}
+
+div.chapter-three {
+  .act-view-panel {
+    .pge-ocean-smog {
+      position: absolute;
+      z-index: 12;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      opacity: .75
+    }
+
+    .ocean-text-container {
+      position: absolute;
+      height: 100px;
+
+      &#ocean-text-container-one {
+        top: 40%;
+        left: 3%;
+      }
+
+      &#ocean-text-container-two {
+        top: 40%;
+        right: 3%;
+
+        p:first-of-type {
+          align-self: flex-end;
+          margin-bottom: 15px;
+        }
+      }
+
+      p:first-of-type {
+        margin-bottom: 25px;
+      }
+    }
+
+    .taiwan-container {
       .ocean-container {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        opacity: 0;
         display: flex;
         flex-flow: row;
 
@@ -580,44 +634,16 @@ section.section.story-board {
           flex-grow: 1;
         }
 
-        .ocean-text-container {
-          position: absolute;
-          width: 240px;
-          top: 45%;
-          left: 50%;
-          transform: translateX(-50%);
-        }
-
         .whale-container {
           position: absolute;
-          width: 100px;
-          top: 50%;
-          right: 20%;
+          width: 80px;
+          top: 80%;
+          right: 90%;
 
           .pge-whale {
             position: absolute;
             width: 100%;
             height: 100%;
-            // animation-iteration-count: infinite;
-            // animation-direction: normal;
-            // animation-timing-function: ease;
-
-            // &#pge-whale-1 {
-            //   animation-name: whaleFadeOne;
-            //   animation-duration: 8s;
-            // }
-
-            // &#pge-whale-2 {
-            //   animation-name: whaleFadeTwo;
-            //   animation-duration: 8s;
-            //   display: none;
-            // }
-
-            // &#pge-whale-3 {
-            //   animation-name: whaleFadeThree;
-            //   animation-duration: 8s;
-            //   display: none;
-            // }
           }
         }
 
@@ -646,174 +672,101 @@ section.section.story-board {
           }
 
           &#pge-ship-img-r2 {
-            top: 30%;
-            animation-name: shipMovementFour;
-            animation-duration: 8s;
-          }
-
-          &#pge-ship-img-r3 {
             top: 70%;
-            animation-name: shipMovementFive;
+            animation-name: shipMovementFour;
             animation-duration: 12s;
           }
 
           img { width: 100%; }
+
+          .ship-commodity {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -100%);
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-timing-function: ease;
+
+            &#comm-l1 {
+              animation-name: commodityOne;
+              animation-duration: 8s;
+            }
+
+            &#comm-l2 {
+              animation-name: commodityTwo;
+              animation-duration: 12s;
+            }
+
+            &#comm-r1 {
+              animation-name: commodityThree;
+              animation-duration: 10s;
+            }
+
+            &#comm-r2 {
+              animation-name: commodityFour;
+              animation-duration: 12s;
+            }
+          }
         }
       }
     }
   }
+}
 
-  .act-two-container {
-    z-index: 2;
-
-    .scene-two-background {
+div.chapter-four {
+  .act-view-panel {
+    .city-text-container {
       position: absolute;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      width: 100%;
-      z-index: 1;
-      background: linear-gradient(#005D5A, #257A77);
-    }
+      height: 180px;
+      top: 45%;
+      right: 17%;
+      transform: translateY(-50%);
+      width: 456px;
 
-    .skyline-text-container {
-      position: absolute;
-      top: 15%;
-      left: 4%;
-      max-width: 300px;
-      z-index: 20;
-    }
-
-    .taipei-sky-elements {
-      position: absolute;
-      width: 100%;
-      height: 100vh;
-      z-index: 3;
-
-      .pge-sun {
-        position: absolute;
-        top: 6%;
-        right: 15%;
-        max-width: 200px;
-        z-index: 3;
-
-        img {
-          animation-name: sunRotate;
-          animation-iteration-count: infinite;
-          animation-direction: normal;
-          animation-duration: 60s;
-          animation-timing-function: linear;
-        }
+      .city-text {
+        color: #fff;
       }
 
-      .pge-moon {
-        position: absolute;
-        top: 7%;
-        right: 15%;
-        min-width: 150px;
-        z-index: 3;
+      #city-text-one {
+        margin: 0 auto;
       }
-
-      .pge-skyline-clouds {
-        position: absolute;
-        top: 5%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 85%;
-        z-index: 2;
+      #city-red-three {
+        margin-left: auto;
       }
     }
+  }
+}
 
-    .night-text-container {
-      position: absolute;
-      top: 15%;
-      left: 4%;
-      z-index: 5;
-      max-width: 320px;
-      opacity: 0;
-      color: #fff;
-    }
-
-    .skyline-container {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      min-width: 1400px;
-      width: 100%;
-      z-index: 4;
-
-      .taipei-skyline {
-        .taipei-night-skyline {
-          position: relative;
-        }
-
-        .taipei-day-skyline {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-        }
-
-        .pge-day-skyline,
-        .pge-night-skyline {
-          position: absolute;
-          width: 100%;
-          bottom: 0;
-
-          img { vertical-align: bottom; }
-
-          &#pge-night-sky1 {
-            opacity: 0;
-            visibility: hidden;
-          }
-
-          &#pge-day-sky1,
-          &#pge-night-sky1 {
-            position: relative;
-            z-index: 4;
-          }
-
-          &#pge-day-sky2, &#pge-night-sky2 { z-index: 5; }
-          &#pge-day-sky3, &#pge-night-sky3 { z-index: 6; }
-          &#pge-day-sky4, &#pge-night-sky4 { z-index: 7; }
-          &#pge-day-sky5, &#pge-night-sky5 { z-index: 8; }
-          &#pge-day-sky6, &#pge-night-sky6 { z-index: 9; }
-          &#pge-day-sky7, &#pge-night-sky7 { z-index: 10; }
-          &#pge-day-sky8, &#pge-night-sky8 { z-index: 11; }
-        }
-      }
-
-      .taipei-solar-panels {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 12;
-
-        .pge-city-panels {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          opacity: 0;
-        }
-      }
-    }
-
-    .mobile-phone-overlay {
-      z-index: 13;
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background: radial-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, .8));
+div.chapter-five {
+  .act-view-panel {
+    .pge-night-skyline {
       opacity: 0;
       visibility: hidden;
+      z-index: -1;
     }
 
-    .mobile-panels-container {
+    .phone-text-container {
+      position: absolute;
+      margin-left: 15px;
+      max-width: 320px;
+      // max-width: 420px;
+
+      p {
+        line-height: 1.1;
+      }
+
+      &#phone-text-container-one {
+        top: 30%;
+        height: 125px;
+      }
+      &#phone-text-container-two {
+        top: 45%;
+        height: 95px;
+      }
+    }
+
+    .mobile-phone-container {
       position: absolute;
       z-index: 10;
       width: 100%;
@@ -821,8 +774,6 @@ section.section.story-board {
       display: flex;
       align-items: center;
       z-index: 15;
-      opacity: 0;
-      visibility: hidden;
 
       .hand-phone-container {
         position: relative;
@@ -852,6 +803,7 @@ section.section.story-board {
             line-height: 65%;
             font-weight: 500;
             text-align: center;
+            transform-origin: 50% 100%;
 
             &:after {
               content: '';
@@ -877,7 +829,8 @@ section.section.story-board {
             height: 100%;
             border-radius: 7px;
             overflow: hidden;
-            padding: 1%;
+            // padding: 1%;
+            background-color: #fff;
 
             .progress-container {
               width: 100%;
@@ -885,19 +838,19 @@ section.section.story-board {
               border-radius: 7px;
               overflow: hidden;
 
-              &:before {
-                content: '';
-                position: absolute;
-                z-index: 5;
-                top: 50%;
-                right: 3%;
-                height: 80%;
-                transform: translateY(-50%);
-                border-left: 3px dotted #000;
-              }
+              // &:before {
+              //   content: '';
+              //   position: absolute;
+              //   z-index: 5;
+              //   top: 50%;
+              //   right: 3%;
+              //   height: 80%;
+              //   transform: translateY(-50%);
+              //   border-left: 3px dotted #000;
+              // }
 
               .progress-bar {
-                background-color: #37b6ff;
+                background-color: #009A93;
                 width: 100%;
                 height: 100%;
                 border-radius: 7px;
@@ -923,44 +876,54 @@ section.section.story-board {
 
         .taipei-mobile-plants {
           position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
+          top: 5%;
+          left: 35%;
+          width: 27%;
+          height: 90%;
 
           .pge-mobile-powerplants {
             position: absolute;
-            width: 60px;
-            height: 66px;
+            width: 21%;
+            height: 18%;
             opacity: 1;
 
-            &#pge-mobile-power1 {
-              top: 21%;
-              left: 51%;
+            &.pge-mobile-power1 {
+              top: 10%;
+              left: 57%;
             }
 
-            &#pge-mobile-power2 {
+            &.pge-mobile-power2 {
+              top: 17%;
+              left: 28%;
+            }
+
+            &.pge-mobile-power3 {
               top: 28%;
-              left: 44%;
+              left: 17%;
             }
 
-            &#pge-mobile-power3 {
-              top: 44%;
-              left: 40%;
-            }
-
-            &#pge-mobile-power4 {
-              top: 56%;
+            &.pge-mobile-power4 {
+              top: 39%;
               left: 41%;
             }
 
-            &#pge-mobile-power5 {
-              top: 46%;
-              left: 47%;
+            &.pge-mobile-power5 {
+              top: 50%;
+              left: 20%;
             }
           }
         }
       }
+    }
+
+  }
+}
+
+div.chapter-six {
+  .act-view-panel {
+
+    .logo-container {
+      top: 30%;
     }
 
     .people-scene-container {
@@ -992,755 +955,225 @@ section.section.story-board {
       }
     }
 
-    .form-scene-container {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      z-index: 30;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      visibility: hidden;
+  }
+}
 
-      .full-height-hero {
-        position: absolute;
-        width: 100%;
-        z-index: -1;
+div.chapter-seven {
+  .act-view-panel {
+    display: flex;
+    align-items: center;
+
+    .form-container {
+      position: relative;
+      padding: 0 20px;
+      width: 100%;
+
+      .form-group {
+        margin-bottom: 15px;
       }
 
-      .form-container {
-        padding: 0 20px;
-        width: 100%;
+      h1 {
+        text-align: center;
+      }
+
+      form {
+        max-width: 520px;
+        margin: 30px auto;
 
         .form-group {
-          margin-bottom: 15px;
-        }
+          &.hidden {
+            height: 0;
+            margin: 0;
 
-        h1 {
-          text-align: center;
-        }
+            input[type="text"] {
+              background-color: #666;
+              height: 0;
+              padding: 0;
+              margin: 0;
+              border: none;
+            }
+          }
 
-        form {
-          max-width: 520px;
-          margin: 30px auto;
+          &.radio-inputs {
+            input[type="text"] { transition: 1.3s background-color ease-in; }
+          }
 
-          .form-group {
-            input[type="text"],
-            input[type="email"],
-            input[type="phone"],
-            input[type="number"],
-            textarea {
-              padding: 10px 20px;
-              font-size: 18px;
-              letter-spacing: 1px;
-              border-radius: 10px;
-              width: 100%;
-              background-color: #eee;
-              background-image: none;
-              border: 1px solid #222;
-              resize: none;
-              margin-bottom: 10px;
-              -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-              box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-              -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-              -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-              transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+          input[type="text"],
+          input[type="email"],
+          input[type="phone"],
+          input[type="number"],
+          textarea {
+            padding: 10px 20px;
+            font-size: 18px;
+            letter-spacing: 1px;
+            border-radius: 10px;
+            width: 100%;
+            background-color: #eee;
+            background-image: none;
+            border: 1px solid #222;
+            resize: none;
+            margin-bottom: 10px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 
-              &:focus {
-                outline: 0 none;
-              }
+            &:focus {
+              outline: 0 none;
             }
+          }
 
-            span {
-              margin-right: 20px;
-            }
+          span {
+            margin-right: 20px;
+          }
 
-            [type="radio"]:checked,
-            [type="radio"]:not(:checked) {
-                position: absolute;
-                left: -9999px;
-            }
-            [type="radio"]:checked + label,
-            [type="radio"]:not(:checked) + label
-            {
-                position: relative;
-                padding-left: 24px;
-                cursor: pointer;
-                line-height: 20px;
-                display: inline-block;
-                color: #222;
-            }
-            [type="radio"]:checked + label:before,
-            [type="radio"]:not(:checked) + label:before {
-                content: '';
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 18px;
-                height: 18px;
-                border: 1px solid #ddd;
-                border-radius: 100%;
-                background: #fff;
-            }
-            [type="radio"]:checked + label:after,
-            [type="radio"]:not(:checked) + label:after {
-                content: '';
-                width: 12px;
-                height: 12px;
-                background: #00B8CE;
-                position: absolute;
-                top: 3px;
-                left: 3px;
-                border-radius: 100%;
-                -webkit-transition: all 0.2s ease;
-                transition: all 0.2s ease;
-            }
-            [type="radio"]:not(:checked) + label:after {
-                opacity: 0;
-                -webkit-transform: scale(0);
-                transform: scale(0);
-            }
-            [type="radio"]:checked + label:after {
-                opacity: 1;
-                -webkit-transform: scale(1);
-                transform: scale(1);
-            }
+          [type="radio"]:checked,
+          [type="radio"]:not(:checked) {
+              position: absolute;
+              left: -9999px;
+          }
+          [type="radio"]:checked + label,
+          [type="radio"]:not(:checked) + label
+          {
+              position: relative;
+              padding-left: 24px;
+              cursor: pointer;
+              line-height: 20px;
+              display: inline-block;
+              color: #222;
+          }
+          [type="radio"]:checked + label:before,
+          [type="radio"]:not(:checked) + label:before {
+              content: '';
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 18px;
+              height: 18px;
+              border: 1px solid #ddd;
+              border-radius: 100%;
+              background: #fff;
+          }
+          [type="radio"]:checked + label:after,
+          [type="radio"]:not(:checked) + label:after {
+              content: '';
+              width: 12px;
+              height: 12px;
+              background: #00B8CE;
+              position: absolute;
+              top: 3px;
+              left: 3px;
+              border-radius: 100%;
+              -webkit-transition: all 0.2s ease;
+              transition: all 0.2s ease;
+          }
+          [type="radio"]:not(:checked) + label:after {
+              opacity: 0;
+              -webkit-transform: scale(0);
+              transform: scale(0);
+          }
+          [type="radio"]:checked + label:after {
+              opacity: 1;
+              -webkit-transform: scale(1);
+              transform: scale(1);
+          }
 
-            input[type="submit"] {
-              display: block;
-              margin: 0 auto;
-            }
+          input[type="submit"] {
+            display: block;
+            margin: 0 auto;
+          }
 
-            input::-webkit-input-placeholder,
-            textarea::-webkit-input-placeholder {
-              text-transform: uppercase;
-              color: #aaa;
+          input::-webkit-input-placeholder,
+          textarea::-webkit-input-placeholder {
+            text-transform: uppercase;
+            color: #aaa;
+          }
+
+          span#form-button {
+            display: block;
+            text-decoration: none;
+            color: #4A86E8;
+            background-color: #fff;
+            text-align: center;
+            max-width: 200px;
+            border-radius: 40px;
+            margin: 0 auto;
+            padding: 15px 50px;
+            border: 1px solid #4A86E8;
+            letter-spacing: 3px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 200ms all ease;
+
+            &:hover {
+              color: #fff;
+              background-color: #4A86E8;
             }
           }
         }
       }
     }
   }
-
-  .scene-one-scrollarea {
-    .cloud-split-scene {
-      height: 200vh;
-    }
-
-    .logo-fade-in-scene {
-      height: 200vh;
-    }
-
-    .logo-fade-out-scene {
-      height: 200vh;
-    }
-
-    .taiwan-intro-scene {
-      height: 200vh;
-    }
-
-    .taiwan-zoom-scene {
-      height: 200vh;
-    }
-
-    .ocean-intro-scene {
-      height: 200vh;
-    }
-
-    .pollution-scene {
-      height: 200vh;
-    }
-
-    .kill-clouds-scene {
-      height: 5vh;
-    }
-
-    .outro-scene {
-      height: 100vh;
-    }
-  }
-
-  .scene-two-scrollarea {
-    .smog-enter-scene {
-      height: 300vh;
-    }
-
-    .night-cloud-intro-scene {
-      height: 100vh;
-    }
-
-    .night-text-scene {
-      height: 20vh;
-    }
-
-    .skyline-enter-scene {
-      height: 300vh;
-    }
-
-    .night-skyline-scene {
-      height: 150vh;
-    }
-
-    .city-panels-scene {
-      height: 300vh;
-    }
-
-    .day-skyline-scene {
-      height: 200vh;
-    }
-
-    .smog-fade-scene {
-      height: 200vh;
-    }
-
-    .mobile-phone-scene {
-      height: 200vh;
-    }
-
-    .mobile-power-scene {
-      height: 200vh;
-    }
-
-    .mobile-panels-scene {
-      height: 300vh;
-    }
-
-    .city-exit-scene {
-      height: 200vh;
-    }
-
-    .people-popup-scene {
-      height: 200vh;
-    }
-
-    .people-popup-delay {
-      height: 100vh;
-    }
-
-    .form-intro-scene {
-      height: 150vh;
-    }
-
-    .outro-scene {
-      height: 100vh;
-    }
-  }
-}
-
-@keyframes bouncing {
-  from { transform: translate3d(0, 0, 0) rotate(135deg); }
-  to { transform: translate3d(0, 5px, 0) rotate(135deg); }
 }
 
 @keyframes shipMovementOne {
-  0%, 100% { left: 10%; transform: rotateY(0deg); }
+  0%, 100% { left: -30%; transform: rotateY(0deg); }
   40% { left: 70%; transform: rotateY(0deg); }
   50% { left: 70%; transform: rotateY(180deg); }
-  90% { left: 10%; transform: rotateY(180deg); }
+  90% { left: -30%; transform: rotateY(180deg); }
 }
 
 @keyframes shipMovementTwo {
   0%, 100% { left: 81%; transform: rotateY(0deg); }
-  40% { left: 10%; transform: rotateY(0deg); }
-  50% { left: 10%; transform: rotateY(180deg); }
+  40% { left: -30%; transform: rotateY(0deg); }
+  50% { left: -30%; transform: rotateY(180deg); }
   90% { left: 81%; transform: rotateY(180deg); }
 }
 
 @keyframes shipMovementThree {
-  0%, 100% { right: 10%; transform: rotateY(180deg); }
+  0%, 100% { right: -30%; transform: rotateY(180deg); }
   40% { right: 50%; transform: rotateY(180deg); }
   50% { right: 50%; transform: rotateY(0deg); }
-  90% { right: 10%; transform: rotateY(0deg); }
+  90% { right: -30%; transform: rotateY(0deg); }
 }
 
 @keyframes shipMovementFour {
-  0%, 100% { right: 10%; transform: rotateY(180deg); }
-  40% { right: 70%; transform: rotateY(180deg); }
-  50% { right: 70%; transform: rotateY(0deg); }
-  90% { right: 10%; transform: rotateY(0deg); }
-}
-
-@keyframes shipMovementFive {
   0%, 100% { right: 81%; transform: rotateY(0deg); }
-  40% { right: 10%; transform: rotateY(0deg); }
-  50% { right: 10%; transform: rotateY(180deg); }
+  40% { right: -30%; transform: rotateY(0deg); }
+  50% { right: -30%; transform: rotateY(180deg); }
   90% { right: 81%; transform: rotateY(180deg); }
 }
 
-@keyframes whaleFadeOne {
-  0%, 100% { opacity: 1; }
-  33% { opacity: 1; }
-  66% { opacity: 0; }
-  75% { opacity: 0; }
+@keyframes commodityOne {
+  0%, 100% { background-position: 0% 0%; }
+  49.9999% { background-position: 0% 0%; }
+  50% { background-position: 100% 0%; }
+  99.9999% { background-position: 100% 0%; }
 }
 
-@keyframes whaleFadeTwo {
-  0%, 100% { opacity: 0; }
-  25% { opacity: 0; }
-  50% { opacity: 1; }
-  75% { opacity: 0; }
+@keyframes commodityTwo {
+  0%, 100% { background-position: 100% 0%; }
+  49.9999% { background-position: 100% 0%; }
+  50% { background-position: 0% 0%; }
+  99.9999% { background-position: 0% 0%; }
 }
 
-@keyframes whaleFadeThree {
-  0%, 100% { opacity: 0; }
-  33% { opacity: 0; }
-  66% { opacity: 0; }
-  75% { opacity: 1; }
+@keyframes commodityThree {
+  0%, 100% { background-position: 0% 0%; }
+  49.9999% { background-position: 0% 0%; }
+  50% { background-position: 100% 0%; }
+  99.9999% { background-position: 100% 0%; }
+}
+
+@keyframes commodityFour {
+  0%, 100% { background-position: 100% 0%; }
+  49.9999% { background-position: 100% 0%; }
+  50% { background-position: 0% 0%; }
+  99.9999% { background-position: 0% 0%; }
 }
 
 @keyframes sunRotate {
   0% { transform: rotateZ(0deg); }
   100% { transform: rotateZ(360deg); }
-}
-
-@media (max-width: 575.98px) {
-  h1 {
-    font-size: 24px;
-  }
-
-  h2 {
-    font-size: 18px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-align: center;
-  }
-
-  p {
-    font-size: 16px;
-  }
-
-  .sprite-img {
-    &.pge-people-sprite {
-      width: 60px;
-      height: 128px;
-    }
-  }
-
-  .wrapper {
-    .support-container {
-      width: 170px;
-
-      span {
-        font-size: 14px;
-        padding: 10px 20px;
-        text-align: center;
-
-        &:hover {
-          color: #4A86E8;
-          background-color: #fff;
-        }
-      }
-    }
-
-    .chevron-container {
-      bottom: 3%;
-    }
-  }
-
-  section.section.story-board {
-    .hero-content {
-      top: 45%;
-
-      .hero-text {
-        max-width: 340px;
-
-        h1 {
-          margin-bottom: 10px;
-        }
-      }
-
-      figure.hero-logo {
-        margin-bottom: 20px;
-      }
-    }
-
-    .act-one-container {
-      .container-padding {
-      }
-
-      .cloud-container {
-        height: 100%;
-        width: 100%;
-
-        .pge-cloud-img {
-          width: 250%;
-          left: -75%;
-        }
-      }
-
-      .logo-container {
-        .pge-logo-img {
-          max-width: 150px;
-          margin: 0 auto 20px;
-        }
-      }
-
-      .taiwan-container {
-        padding: 0 20px;
-
-        .taiwan-country {
-          max-width: 230px;
-
-          .pge-powerplants {
-            width: 55px;
-            height: 60px;
-
-            &.pge-power1 {
-              top: 12%;
-              left: 66%;
-            }
-
-            &.pge-power2 {
-              top: 22%;
-              left: 29%;
-            }
-
-            &.pge-power3 {
-              top: 36%;
-              left: 12%;
-            }
-
-            &.pge-power4 {
-              top: 52%;
-              left: 46%;
-            }
-
-            &.pge-power5 {
-              top: 60%;
-              left: 12%;
-            }
-          }
-        }
-
-        .taiwan-text {
-          top: -60px;
-          left: 50%;
-          transform: translate(-50%, 0);
-
-          &:before {
-            display: none;
-          }
-
-          h2 {
-            position: relative;
-            top: 0;
-            right: 0;
-            left: 0;
-            transform: translateX(0);
-            white-space: nowrap;
-          }
-        }
-
-        .ocean-container {
-          .pge-ship,
-          .waves-container,
-          .whale-container   {
-            opacity: 0;
-            visibility: hidden;
-          }
-
-          .ocean-partition {
-            position: absolute;
-            width: 100%;
-          }
-
-          .ocean-text-container {
-            top: -80px;
-          }
-        }
-      }
-    }
-
-    .act-two-container {
-      .skyline-text-container {
-        top: 10%;
-        left: 4%;
-        max-width: 230px;
-      }
-
-      .taipei-sky-elements {
-        .pge-sun {
-          top: 6%;
-          right: 7%;
-          max-width: 130px;
-        }
-
-        .pge-moon {
-          top: 7%;
-          right: 7%;
-          min-width: 50px;
-          max-width: 100px;
-        }
-
-        .pge-skyline-clouds {
-          width: 150%;
-          top: 10%;
-        }
-      }
-
-      .night-text-container {
-        top: 12%;
-        left: 4%;
-        max-width: 230px;
-        opacity: 0;
-      }
-
-      .skyline-container {
-        min-width: 950px;
-        transform: translateX(-24%);
-      }
-
-      .mobile-phone-overlay {
-      }
-
-      .mobile-panels-container {
-        z-index: 20;
-
-        .hand-phone-container {
-          figure.mobile-hand-phone {
-            width: 220%;
-            transform: translateX(-27.5%);
-          }
-
-          .phone-progress-container {
-            width: 50%;
-            left: 47%;
-            height: 30px;
-            border: 2px solid #000;
-
-            p {
-              right: -10px;
-              top: -54px;
-              font-size: 24px;
-
-              &:after {
-                border-left: 8px solid transparent;
-                border-right: 8px solid transparent;
-                border-top: 8px solid #222;
-                margin: 5px auto 0;
-                left: 15px;
-              }
-
-              span {
-                font-size: 12px;
-              }
-            }
-
-            .phone-progress {
-            }
-          }
-
-          .taipei-mobile-panels {
-            .pge-mobile-panels {
-              width: 60%;
-              left: 16%;
-              top: 5%;
-            }
-          }
-
-          .taipei-mobile-plants {
-            .pge-mobile-powerplants {
-              width: 45px;
-              height: 49px;
-
-              &#pge-mobile-power1 {
-                top: 19%;
-                left: 52%;
-              }
-
-              &#pge-mobile-power2 {
-                top: 26%;
-                left: 36%;
-              }
-
-              &#pge-mobile-power3 {
-                top: 42%;
-                left: 28%;
-              }
-
-              &#pge-mobile-power4 {
-                top: 55%;
-                left: 30%;
-              }
-
-              &#pge-mobile-power5 {
-                top: 44%;
-                left: 43%;
-              }
-            }
-          }
-        }
-      }
-
-      .people-scene-container {
-        .people-text-container {
-          h1 {
-          }
-        }
-
-        .people-container {
-          margin-bottom: 70px;
-        }
-      }
-
-      .form-scene-container {
-
-        .full-height-hero {
-        }
-
-        .form-container {
-          form {
-            .form-group {
-              margin-bottom: 10px;
-
-              input[type="text"],
-              input[type="email"],
-              input[type="phone"],
-              input[type="number"],
-              textarea {
-                padding: 10px 20px;
-                font-size: 18px;
-                letter-spacing: 1px;
-                border-radius: 10px;
-                border: 1px solid #222;
-                margin-bottom: 0px;
-              }
-            }
-          }
-        }
-      }
-    }
-
-    .scene-one-scrollarea {
-      .cloud-split-scene {
-        height: 100vh;
-      }
-
-      .logo-fade-in-scene {
-        height: 100vh;
-      }
-
-      .logo-fade-out-scene {
-        height: 100vh;
-      }
-
-      .taiwan-intro-scene {
-        height: 100vh;
-      }
-
-      .taiwan-zoom-scene {
-        height: 100vh;
-      }
-
-      .ocean-intro-scene {
-        height: 100vh;
-      }
-
-      .pollution-scene {
-        height: 100vh;
-      }
-
-      .kill-clouds-scene {
-        height: 5vh;
-      }
-
-      .outro-scene {
-        height: 100vh;
-      }
-    }
-
-    .scene-two-scrollarea {
-      .smog-enter-scene {
-        height: 150vh;
-      }
-
-      .night-cloud-intro-scene {
-        height: 100vh;
-      }
-
-      .night-text-scene {
-        height: 20vh;
-      }
-
-      .skyline-enter-scene {
-        height: 150vh;
-      }
-
-      .night-skyline-scene {
-        height: 150vh;
-      }
-
-      .city-panels-scene {
-        height: 150vh;
-      }
-
-      .day-skyline-scene {
-        height: 100vh;
-      }
-
-      .smog-fade-scene {
-        height: 100vh;
-      }
-
-      .mobile-phone-scene {
-        height: 100vh;
-      }
-
-      .mobile-power-scene {
-        height: 100vh;
-      }
-
-      .mobile-panels-scene {
-        height: 150vh;
-      }
-
-      .city-exit-scene {
-        height: 100vh;
-      }
-
-      .people-popup-scene {
-        height: 100vh;
-      }
-
-      .people-popup-delay {
-        height: 100vh;
-      }
-
-      .form-intro-scene {
-        height: 100vh;
-      }
-
-      .outro-scene {
-        height: 100vh;
-      }
-    }
-  }
-}
-
-// Small devices (landscape phones, less than 768px)
-@media (min-width: 576px) and (max-width: 767.98px) {
-  .sprite-img {
-    &.pge-people-sprite {
-      width: 110px;
-      height: 234px;
-    }
-  }
-}
-
-// Medium devices (tablets, less than 992px)
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .sprite-img {
-    &.pge-people-sprite {
-      width: 139px;
-      height: 295px;
-    }
-  }
-}
-
-// Large devices (desktops, less than 1200px)
-@media (min-width: 992px) and (max-width: 1199.98px) {
-
 }

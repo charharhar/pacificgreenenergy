@@ -103,7 +103,7 @@ span.br-mobile {
  * Text styles
  */
 
-h1, h2, h3, p {
+h1, h2, h3, p, span {
   font-family: $noto-reg;
 }
 
@@ -111,12 +111,12 @@ h1 {
   font-size: 32px;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   transition: .2s all;
 }
 
 h2 {
-  font-size: 22px;
+  font-size: 30px;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -126,16 +126,11 @@ h2 {
   }
 }
 
-h3 {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
 p {
-  font-size: 18px;
-  letter-spacing: 1px;
-  font-weight: 300;
+  font-size: 20px;
+  letter-spacing: 4px;
   line-height: 170%;
+  text-align: left;
 }
 
 /**
