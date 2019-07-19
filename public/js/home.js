@@ -211,6 +211,7 @@ const timelineMaster = {
 
       timeline.add([
         TweenMax.fromTo('#hand-phone-skyline', 1.5, { filter: 'blur(0)' }, { filter: 'blur(5px)' }),
+        TweenMax.fromTo('#phone-sky-elements', 1.5, { filter: 'blur(0)' }, { filter: 'blur(5px)' }),
         TweenMax.fromTo('.hand-phone-container', 1.5, { xPercent: 100 }, { xPercent: 0 }),
       ])
         .add([
@@ -293,6 +294,34 @@ sliceArray(document.querySelectorAll('.pge-radio')).forEach(radio => {
     })
 
   })
+})
+
+/**
+ * Form button submit handler
+ */
+window.addEventListener('load', function(e) {
+
+  $('#form-button').click(function() {
+     const formNames = {
+      name: '姓名',
+      phone: '聯絡電話',
+      email: '電子信箱',
+      estate: '我有',
+      city: '縣市',
+      town: '鎮市區',
+      lot: '地段',
+      number: '地號'
+    }
+    const formData = $('#pge-form').serializeArray()
+    const mailTarget = 'charleslee90@gmail.com';
+    const mailSubject = `們臺地個 - ${formData[0].value}`;
+    const mailBody = formData.reduce((acc, cur) => {
+      return acc + `${formNames[cur.name]}: ${cur.value}\n`;
+    }, '')
+
+    $('#pge-form').attr('action', `mailto:${mailTarget}?subject=${mailSubject}&body=${mailBody}`);
+    // $('#pge-form').submit();
+  });
 })
 
 /**

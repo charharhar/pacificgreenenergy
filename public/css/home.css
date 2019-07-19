@@ -391,6 +391,7 @@ div.section {
         transform: translateX(-50%);
         width: 110%;
         z-index: 2;
+        opacity: .65;
       }
     }
 
@@ -474,7 +475,6 @@ div.chapter-one {
 
       .hero-text {
         h1 {
-          font-size: 32px;
           margin-bottom: 20px;
         }
 
@@ -507,7 +507,8 @@ div.chapter-two {
     .clouds-header-container {
       position: absolute;
       left: 25%;
-      top: 10%;
+      top: 20%;
+      z-index: 14;
 
       #heading-tw {
         span {
@@ -521,7 +522,9 @@ div.chapter-two {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      margin-left: 290px;
+      margin-left: 270px;
+      width: 185px;
+      z-index: 14;
     }
   }
 
@@ -547,15 +550,19 @@ div.chapter-three {
     .ocean-text-container {
       position: absolute;
       height: 100px;
+      left: 50%;
+      transform: translateX(-50%);
 
       &#ocean-text-container-one {
         top: 40%;
-        left: 3%;
+        width: 295px;
+        margin-left: -400px;
       }
 
       &#ocean-text-container-two {
         top: 40%;
-        right: 3%;
+        width: 355px;
+        margin-left: 400px;
 
         p:first-of-type {
           align-self: flex-end;
@@ -720,9 +727,10 @@ div.chapter-four {
       position: absolute;
       height: 180px;
       top: 45%;
-      right: 17%;
-      transform: translateY(-50%);
+      left: 50%;
+      transform: translate(-50%, -50%);
       width: 456px;
+      margin-left: 180px;
 
       .city-text {
         color: #fff;
@@ -748,8 +756,10 @@ div.chapter-five {
 
     .phone-text-container {
       position: absolute;
-      margin-left: 15px;
       max-width: 320px;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-left: -32%;
       // max-width: 420px;
 
       p {
@@ -1176,4 +1186,354 @@ div.chapter-seven {
 @keyframes sunRotate {
   0% { transform: rotateZ(0deg); }
   100% { transform: rotateZ(360deg); }
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+  .sprite-img {
+    &.pge-people-sprite {
+      width: 125px;
+      height: 265px;
+    }
+  }
+
+  div.section .act-view-panel {
+    .taiwan-container .taiwan-country {
+      max-width: 230px;
+     }
+
+     figure.pge-logo-img {
+       margin: 0 auto 20px;
+
+       &.large-logo {
+         max-width: 150px;
+       }
+
+       &.small-logo {
+         max-width: 150px;
+       }
+    }
+
+    .taipei-sky-elements {
+      .pge-sun {
+        top: 3%;
+        right: 4%;
+        max-width: 130px;
+      }
+
+      .pge-skyline-clouds {
+        top: 10%;
+        width: 150%;
+      }
+    }
+
+    .skyline-container {
+      min-width: 850px;
+    }
+  }
+
+  div.chapter-one .act-view-panel {
+    .hero-content {
+      figure.hero-logo {
+        margin-bottom: 20px;
+      }
+
+      .hero-text {
+        max-width: 340px;
+      }
+    }
+  }
+
+  div.chapter-two .act-view-panel {
+    .clouds-header-container {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: -250px;
+    }
+
+    .clouds-text-container {
+      margin-left: 0;
+      margin-top: 260px;
+    }
+  }
+
+  div.chapter-three .act-view-panel {
+    .ocean-text-container {
+      justify-content: center;
+
+      p:first-of-type {
+        margin-bottom: 0;
+      }
+
+      &#ocean-text-container-one {
+        top: 8%;
+        margin-left: 0;
+        width: 100%;
+        height: 80px;
+      }
+
+      &#ocean-text-container-two {
+        top: 18%;
+        margin-left: 0;
+        width: 100%;
+        height: 20px;
+
+        p:first-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  div.chapter-four .act-view-panel {
+    .city-text-container {
+      margin-left: 0;
+    }
+  }
+
+  div.chapter-five .act-view-panel {
+    .phone-text-container {
+      margin-left: 0;
+      width: 100%;
+
+      &#phone-text-container-one {
+        top: 6%;
+        height: 135px;
+      }
+
+      &#phone-text-container-two {
+        top: auto;
+        bottom: 7%;
+        height: 100px;
+      }
+    }
+
+    .mobile-phone-container {
+      .hand-phone-container {
+        figure.mobile-hand-phone {
+          width: 120%;
+          transform: translateX(-7.5%);
+        }
+
+        .taipei-mobile-panels .pge-mobile-panels,
+        .taipei-mobile-plants {
+          width: 32%;
+          left: 33%;
+          top: 5%;
+        }
+
+        .phone-progress-container {
+          width: 27.5%;
+          left: 49.5%;
+          height: 30px;
+          border: 2px solid #000;
+
+          p {
+            &:after {
+              border-left: 8px solid transparent;
+              border-right: 8px solid transparent;
+              border-top: 8px solid #222;
+              margin: 5px auto 0;
+              left: 15px;
+            }
+
+            right: -10px;
+            top: -54px;
+            font-size: 24px;
+
+            span {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  div.section {
+    span.large-red {
+      font-size: 34px;
+    }
+
+    h2.medium-bold {
+      font-size: 24px;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    h2 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  div.chapter-one .act-view-panel .hero-content .hero-text h2 {
+    font-size: 18px;
+  }
+
+  div.chapter-three .act-view-panel {
+    .ocean-text-container {
+      &#ocean-text-container-one {
+        height: 60px;
+      }
+
+      &#ocean-text-container-two {
+        height: 16px;
+      }
+    }
+
+    .taiwan-container {
+      top: 55%;
+
+      .ocean-container {
+        .taiwan-placehold {
+          max-width: 230px;
+        }
+
+        .ocean-partition {
+          width: 350px;
+          &.ocean-left {
+            right: 25%;
+          }
+
+          &.ocean-right {
+            left: 25%;
+          }
+        }
+
+        .waves-container {
+          display: none;
+        }
+      }
+    }
+  }
+
+  div.chapter-four .act-view-panel {
+    .city-text-container {
+      height: 170px;
+      width: 300px;
+      top: 35%;
+
+      #city-text-one { margin: 0 }
+      #city-red-one, #city-red-two { margin-left: 40px; }
+    }
+  }
+
+  div.chapter-five .act-view-panel {
+    .phone-text-container {
+      margin-left: 0;
+
+      &#phone-text-container-one {
+        top: 3%;
+        height: 95px;
+        width: 100%;
+      }
+      &#phone-text-container-two {
+        top: auto;
+        bottom: 5%;
+        height: 75px;
+        width: 100%;
+      }
+    }
+
+    .mobile-phone-container {
+      .hand-phone-container {
+        figure.mobile-hand-phone {
+          width: 220%;
+          transform: translateX(-27.5%);
+        }
+
+        .taipei-mobile-panels .pge-mobile-panels,
+        .taipei-mobile-plants {
+          width: 60%;
+          left: 16%;
+          top: 5%;
+        }
+
+        .phone-progress-container {
+          width: 50%;
+          left: 47%;
+          height: 30px;
+          border: 2px solid #000;
+        }
+      }
+    }
+  }
+
+  div.chapter-seven .act-view-panel {
+    .form-container {
+      form {
+        margin: 15px auto;
+
+        .form-group {
+          margin-bottom: 10px;
+
+          input[type="text"],
+          input[type="email"],
+          input[type="phone"],
+          input[type="number"],
+          textarea {
+            padding: 10px 20px;
+            font-size: 18px;
+            letter-spacing: 1px;
+            border-radius: 10px;
+            margin-bottom: 0;
+          }
+
+          span#form-button {
+            font-size: 14px;
+            padding: 10px 20px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Medium devices (tablets, less than 992px)
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .sprite-img {
+    &.pge-people-sprite {
+      width: 139px;
+      height: 295px;
+    }
+  }
+
+  div.chapter-three .act-view-panel {
+    .ocean-text-container {
+      &#ocean-text-container-one {
+        top: 3%;
+        margin-left: -190px;
+      }
+
+      &#ocean-text-container-two {
+        top: 3%;
+        margin-left: 190px;
+      }
+    }
+  }
+}
+
+// Large devices (desktops, less than 1200px)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  div.chapter-three .act-view-panel {
+    .ocean-text-container {
+      &#ocean-text-container-one {
+        margin-left: -320px;
+      }
+
+      &#ocean-text-container-two {
+        margin-left: 320px;
+      }
+    }
+  }
 }

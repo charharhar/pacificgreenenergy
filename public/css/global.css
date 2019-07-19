@@ -69,6 +69,16 @@ span.br-mobile {
   margin: 0 3px;
 }
 
+span.br-flex-mobile {
+  flex: 1 0 0%;
+}
+
+@media (max-width: 575.98px) {
+  span.br-flex-mobile {
+    flex: 1 0 100%;
+  }
+}
+
 @media (max-width: 768px) {
   span.br {
     display: inline-block;
@@ -128,7 +138,7 @@ h2 {
 
 p {
   font-size: 20px;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   line-height: 170%;
   text-align: left;
 }
