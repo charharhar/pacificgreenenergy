@@ -249,7 +249,6 @@ div.section {
         height: auto;
         max-width: 1200px;
         top: 50%;
-        transform: translateY(-50%);
 
         &.cloud-right {
           right: 0;
@@ -499,8 +498,6 @@ div.chapter-two {
 
     .cloud-container {
       .pge-cloud-img {
-        &.cloud-right { transform: translate(0, -50%); }
-        &.cloud-left { transform: translate(0, -50%); }
       }
     }
 
