@@ -4,6 +4,10 @@ import { sliceArray } from './util.js';
 import fullpage from 'fullpage.js';
 import { TweenMax, TimelineMax } from "gsap/TweenMax";
 
+/**
+ * Tween Full page Handlers
+ */
+
 const tweenClipPath = function(element, duration) {
   return TweenMax.to(element, duration, {
     clipPath: 'inset(0 0 0 0)',
@@ -302,34 +306,51 @@ sliceArray(document.querySelectorAll('.pge-radio')).forEach(radio => {
  * Form button submit handler
  */
 window.addEventListener('load', function(e) {
-
   $('#form-button').click(function() {
-     const formNames = {
+     const formBase = {
       name: '姓名',
       phone: '聯絡電話',
       email: '電子信箱',
-      estate: '我有',
       city: '縣市',
+      estate: '我有',
+    }
+
+    const formLand = {
       town: '鎮市區',
       lot: '地段',
-      number: '地號'
+      number: '地號',
     }
+
+    const formStructure = {
+      address: '門牌地址',
+    }
+
+    const captchaResponse = grecaptcha.getResponse();
+    const checkedRadio = document.querySelector('.pge-radio:checked').getAttribute('id');
+
+    const formNames = checkedRadio === 'land' ? {...formBase, ...formLand} : {...formBase, ...formStructure}
     const formData = $('#pge-form').serializeArray()
     const mailTarget = 'charleslee90@gmail.com';
-    const mailSubject = `們臺地個 - ${formData[0].value}`;
+    const mailSubject = `我要支持綠能 - ${formData[0].value}`;
     const mailBody = formData.reduce((acc, cur) => {
-      return acc + `${formNames[cur.name]}: ${cur.value}\n`;
+      return formNames.hasOwnProperty(cur.name)
+        ? acc + `${formNames[cur.name]}: ${cur.value}\n`
+        : acc;
     }, '')
 
-    $('#pge-form').attr('action', `mailto:${mailTarget}?subject=${mailSubject}&body=${mailBody}`);
-    // $('#pge-form').submit();
+    if (captchaResponse) {
+      console.log(mailBody);
+      $('#pge-form').attr('action', `mailto:${mailTarget}?subject=${mailSubject}&body=${mailBody}`);
+      // $('#pge-form').submit();
+    } else {
+      alert('Error')
+    }
   });
 })
 
 /**
  * Init all timelines
  */
-
 Object.keys(timelineMaster).forEach((key, index) => {
   timelineMaster[key].init()
 })

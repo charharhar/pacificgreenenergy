@@ -735,7 +735,7 @@ div.chapter-four {
       top: 45%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 456px;
+      width: 480px;
       margin-left: 180px;
 
       .city-text {
@@ -1530,6 +1530,12 @@ div.chapter-seven {
         top: 3%;
         margin-left: 190px;
       }
+    }
+  }
+
+  div.chapter-four .act-view-panel {
+    .city-text-container {
+      left: 40%;
     }
   }
 }
