@@ -260,6 +260,8 @@ const timelineMaster = {
 const pgeFullpage = new fullpage('#fullpage', {
   anchors: ['chapterOne', 'chapterTwo', 'chapterThree', 'chapterFour', 'chapterFive', 'chapterSix', 'chapterSeven'],
   recordHistory: false,
+  navigation: true,
+  navigationPosition: 'right',
   afterLoad: function(origin, destination, direction) {
     const { anchor: destinationAnchor } = destination;
     const originAnchor = origin && origin.anchor || null;
