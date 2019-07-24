@@ -136,6 +136,14 @@ $daySky-blue: #A1E2DE;
   border-radius: 0;
 }
 
+.g-recaptcha {
+  margin: -15px 0 -10px 0;
+  div {
+    transform: scale(.8);
+    margin: 0 auto;
+  }
+}
+
 div.section {
   h1, h2, h3, p, span {
     color: $text-blue;
@@ -371,7 +379,7 @@ div.section {
     .taipei-sky-elements {
       position: absolute;
       width: 100%;
-      height: 100vh;
+      height: 100%;
       z-index: 3;
       bottom: 0;
       left: 0;
@@ -948,7 +956,7 @@ div.chapter-six {
       left: 50%;
       transform: translateX(-50%);
       width: 100%;
-      height: 100vh;
+      height: 100%;
       z-index: 3;
       display: flex;
       align-items: center;
@@ -1481,6 +1489,14 @@ div.chapter-seven {
 
   div.chapter-seven .act-view-panel {
     .form-container {
+      h2 {
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
       form {
         margin: 15px auto;
 
@@ -1492,8 +1508,8 @@ div.chapter-seven {
           input[type="phone"],
           input[type="number"],
           textarea {
-            padding: 10px 20px;
-            font-size: 18px;
+            padding: 6px 14px;
+            font-size: 16px;
             letter-spacing: 1px;
             border-radius: 10px;
             margin-bottom: 0;
