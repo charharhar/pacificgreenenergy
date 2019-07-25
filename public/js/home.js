@@ -279,6 +279,7 @@ const pgeFullpage = new fullpage('#fullpage', {
   recordHistory: false,
   navigation: true,
   navigationPosition: 'right',
+  navigationTooltips: ['第一章', '第二章', '第三章', '第四章', '第五章', '第六章', '第七章', ],
   afterLoad: function(origin, destination, direction) {
     const { anchor: destinationAnchor } = destination;
     const originAnchor = origin && origin.anchor || null;
