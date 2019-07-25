@@ -171,6 +171,7 @@ a.button {
 figure {
   img {
     width: 100%;
+    vertical-align: bottom;
   }
 }
 
@@ -179,4 +180,45 @@ figure {
  */
 section.section {
   position: relative;
+
+  .chevron-container {
+    position: absolute;
+    display: block;
+    background-color: transparent;
+    height: 40px;
+    width: 40px;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+
+    .chevron {
+      display: flex;
+      border-right: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      transform: rotate(45deg);
+      animation: bouncing .5s;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+      animation-timing-function: cubic-bezier(.5, .05, 1, .5);
+
+      &.right {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+
+      &.left {
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-225deg);
+      }
+    }
+  }
+}
+
+@keyframes bouncing {
+  from { transform: translate3d(0, 0, 0) rotate(45deg); }
+  to { transform: translate3d(0, 8px, 0) rotate(45deg); }
 }

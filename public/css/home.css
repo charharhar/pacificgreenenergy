@@ -68,8 +68,8 @@ $daySky-blue: #A1E2DE;
   }
 
   &.pge-commodity-sprite {
-    height: 50px;
-    width: 50px;
+    height: 80px;
+    width: 80px;
     background-size: 200%;
     background-image: url(/images/home/pge-commodity-sprite.png);
     background-position: 0% 0%;
@@ -94,20 +94,20 @@ $daySky-blue: #A1E2DE;
     background-size: 800%;
     background-image: url(/images/home/pge-city-panel-sprite.png);
 
-    &#city-panel1 { background-position: 0% 0%; }
-    &#city-panel2 { background-position: 14.285% 0%; }
-    &#city-panel3 { background-position: 28.57% 0%; }
-    &#city-panel4 { background-position: 42.855% 0%; }
-    &#city-panel5 { background-position: 57.14% 0%; }
-    &#city-panel6 { background-position: 71.425% 0%; }
-    &#city-panel7 { background-position: 85.71% 0%; }
-    &#city-panel8 { background-position: 100% 0%; }
-    &#city-panel9 { background-position: 0% 100%; }
-    &#city-panel10 { background-position: 14.285% 100%; }
-    &#city-panel11 { background-position: 28.57% 100%; }
-    &#city-panel12 { background-position: 42.855% 100%; }
-    &#city-panel13 { background-position: 57.14% 100%; }
-    &#city-panel14 { background-position: 71.425% 100%; }
+    &.city-panel1 { background-position: 0% 0%; }
+    &.city-panel2 { background-position: 14.285% 0%; }
+    &.city-panel3 { background-position: 28.57% 0%; }
+    &.city-panel4 { background-position: 42.855% 0%; }
+    &.city-panel5 { background-position: 57.14% 0%; }
+    &.city-panel6 { background-position: 71.425% 0%; }
+    &.city-panel7 { background-position: 85.71% 0%; }
+    &.city-panel8 { background-position: 100% 0%; }
+    &.city-panel9 { background-position: 0% 100%; }
+    &.city-panel10 { background-position: 14.285% 100%; }
+    &.city-panel11 { background-position: 28.57% 100%; }
+    &.city-panel12 { background-position: 42.855% 100%; }
+    &.city-panel13 { background-position: 57.14% 100%; }
+    &.city-panel14 { background-position: 71.425% 100%; }
   }
 
   &.pge-mobile-panel-sprite {
@@ -144,7 +144,7 @@ $daySky-blue: #A1E2DE;
   }
 }
 
-div.section {
+section.section {
   h1, h2, h3, p, span {
     color: $text-blue;
   }
@@ -467,7 +467,6 @@ div.section {
           position: absolute;
           bottom: 0;
           left: 0;
-          opacity: 0;
         }
       }
     }
@@ -475,49 +474,13 @@ div.section {
   }
 }
 
-div.chapter-one {
+section.chapter-one {
   .act-view-panel {
-    .hero-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-direction: column;
-      width: 550px;
-      z-index: 3;
-
-      .hero-text {
-        h1 {
-          margin-bottom: 20px;
-        }
-
-        h2 {
-          max-width: 370px;
-          font-size: 22px;
-        }
-      }
-
-      figure.hero-logo {
-        margin-bottom: 40px;
-      }
-    }
   }
 }
 
-div.chapter-two {
+section.chapter-two {
   .act-view-panel {
-    .logo-container {
-      opacity: 0;
-    }
-
-    .cloud-container {
-      .pge-cloud-img {
-      }
-    }
-
     .clouds-header-container {
       position: absolute;
       left: 25%;
@@ -545,20 +508,18 @@ div.chapter-two {
   .taiwan-container {
     .taiwan-country {
       transform: scale(.33);
-      opacity: 0;
     }
   }
 }
 
-div.chapter-three {
+section.chapter-three {
   .act-view-panel {
     .pge-ocean-smog {
       position: absolute;
       z-index: 12;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      opacity: .75
+      bottom: 0;
+      opacity: .75;
+      // display: none;
     }
 
     .ocean-text-container {
@@ -659,7 +620,7 @@ div.chapter-three {
           position: absolute;
           width: 80px;
           top: 80%;
-          right: 90%;
+          right: 30%;
 
           .pge-whale {
             position: absolute;
@@ -677,7 +638,7 @@ div.chapter-three {
           &#pge-ship-img-l1 {
             top: 20%;
             animation-name: shipMovementOne;
-            animation-duration: 8s;
+            animation-duration: 14s;
           }
 
           &#pge-ship-img-l2 {
@@ -711,7 +672,7 @@ div.chapter-three {
 
             &#comm-l1 {
               animation-name: commodityOne;
-              animation-duration: 8s;
+              animation-duration: 14s;
             }
 
             &#comm-l2 {
@@ -735,7 +696,7 @@ div.chapter-three {
   }
 }
 
-div.chapter-four {
+section.chapter-four {
   .act-view-panel {
     .city-text-container {
       position: absolute;
@@ -760,7 +721,7 @@ div.chapter-four {
   }
 }
 
-div.chapter-five {
+section.chapter-five {
   .act-view-panel {
     .pge-night-skyline {
       opacity: 0;
@@ -943,7 +904,7 @@ div.chapter-five {
   }
 }
 
-div.chapter-six {
+section.chapter-six {
   .act-view-panel {
 
     .logo-container {
@@ -982,7 +943,7 @@ div.chapter-six {
   }
 }
 
-div.chapter-seven {
+section.chapter-seven {
   .act-view-panel {
     display: flex;
     align-items: center;
@@ -1148,36 +1109,36 @@ div.chapter-seven {
 
 @keyframes shipMovementOne {
   0%, 100% { left: -30%; transform: rotateY(0deg); }
-  40% { left: 70%; transform: rotateY(0deg); }
-  50% { left: 70%; transform: rotateY(180deg); }
+  40% { left: 103%; transform: rotateY(0deg); }
+  50% { left: 103%; transform: rotateY(180deg); }
   90% { left: -30%; transform: rotateY(180deg); }
 }
 
 @keyframes shipMovementTwo {
-  0%, 100% { left: 81%; transform: rotateY(0deg); }
+  0%, 100% { left: 90%; transform: rotateY(0deg); }
   40% { left: -30%; transform: rotateY(0deg); }
   50% { left: -30%; transform: rotateY(180deg); }
-  90% { left: 81%; transform: rotateY(180deg); }
+  90% { left: 90%; transform: rotateY(180deg); }
 }
 
 @keyframes shipMovementThree {
   0%, 100% { right: -30%; transform: rotateY(180deg); }
-  40% { right: 50%; transform: rotateY(180deg); }
-  50% { right: 50%; transform: rotateY(0deg); }
+  40% { right: 75%; transform: rotateY(180deg); }
+  50% { right: 75%; transform: rotateY(0deg); }
   90% { right: -30%; transform: rotateY(0deg); }
 }
 
 @keyframes shipMovementFour {
-  0%, 100% { right: 81%; transform: rotateY(0deg); }
-  40% { right: -30%; transform: rotateY(0deg); }
-  50% { right: -30%; transform: rotateY(180deg); }
-  90% { right: 81%; transform: rotateY(180deg); }
+  0%, 100% { right: 103%; transform: rotateY(180deg); }
+  40% { right: -30%; transform: rotateY(180deg); }
+  50% { right: -30%; transform: rotateY(0deg); }
+  90% { right: 103%; transform: rotateY(0deg); }
 }
 
 @keyframes commodityOne {
   0%, 100% { background-position: 0% 0%; }
-  49.9999% { background-position: 0% 0%; }
-  50% { background-position: 100% 0%; }
+  39.9999% { background-position: 0% 0%; }
+  40% { background-position: 100% 0%; }
   99.9999% { background-position: 100% 0%; }
 }
 
@@ -1185,13 +1146,14 @@ div.chapter-seven {
   0%, 100% { background-position: 100% 0%; }
   49.9999% { background-position: 100% 0%; }
   50% { background-position: 0% 0%; }
-  99.9999% { background-position: 0% 0%; }
+  89.9999% { background-position: 0% 0%; }
+  90% { background-position: 100% 0%; }
 }
 
 @keyframes commodityThree {
   0%, 100% { background-position: 0% 0%; }
-  49.9999% { background-position: 0% 0%; }
-  50% { background-position: 100% 0%; }
+  39.9999% { background-position: 0% 0%; }
+  40% { background-position: 100% 0%; }
   99.9999% { background-position: 100% 0%; }
 }
 
@@ -1199,7 +1161,8 @@ div.chapter-seven {
   0%, 100% { background-position: 100% 0%; }
   49.9999% { background-position: 100% 0%; }
   50% { background-position: 0% 0%; }
-  99.9999% { background-position: 0% 0%; }
+  89.9999% { background-position: 0% 0%; }
+  90% { background-position: 100% 0%; }
 }
 
 @keyframes sunRotate {
@@ -1213,10 +1176,15 @@ div.chapter-seven {
     &.pge-people-sprite {
       width: 125px;
       height: 265px;
+
+      &#pge-people1,
+      &#pge-people5 {
+        display: none;
+      }
     }
   }
 
-  div.section .act-view-panel {
+  section.section .act-view-panel {
     .taiwan-container .taiwan-country {
       max-width: 230px;
      }
@@ -1251,7 +1219,7 @@ div.chapter-seven {
     }
   }
 
-  div.chapter-one .act-view-panel {
+  section.chapter-one .act-view-panel {
     .hero-content {
       figure.hero-logo {
         margin-bottom: 20px;
@@ -1263,7 +1231,7 @@ div.chapter-seven {
     }
   }
 
-  div.chapter-two .act-view-panel {
+  section.chapter-two .act-view-panel {
     .clouds-header-container {
       top: 50%;
       left: 50%;
@@ -1277,7 +1245,7 @@ div.chapter-seven {
     }
   }
 
-  div.chapter-three .act-view-panel {
+  section.chapter-three .act-view-panel {
     .ocean-text-container {
       justify-content: center;
 
@@ -1305,13 +1273,13 @@ div.chapter-seven {
     }
   }
 
-  div.chapter-four .act-view-panel {
+  section.chapter-four .act-view-panel {
     .city-text-container {
       margin-left: 0;
     }
   }
 
-  div.chapter-five .act-view-panel {
+  section.chapter-five .act-view-panel {
     .phone-text-container {
       margin-left: 0;
       width: 100%;
@@ -1372,33 +1340,32 @@ div.chapter-seven {
 }
 
 @media (max-width: 575.98px) {
-  div.section {
+  section.section {
     span.large-red {
       font-size: 34px;
     }
 
     h2.medium-bold {
-      font-size: 24px;
+      font-size: 26px;
     }
 
     h1 {
-      font-size: 24px;
+      font-size: 34px;
     }
 
     h2 {
-      font-size: 18px;
+      font-size: 26px;
     }
 
     p {
-      font-size: 16px;
+      font-size: 18px;
     }
   }
 
-  div.chapter-one .act-view-panel .hero-content .hero-text h2 {
-    font-size: 18px;
+  section.chapter-one .act-view-panel {
   }
 
-  div.chapter-three .act-view-panel {
+  section.chapter-three .act-view-panel {
     .ocean-text-container {
       &#ocean-text-container-one {
         height: 60px;
@@ -1435,7 +1402,7 @@ div.chapter-seven {
     }
   }
 
-  div.chapter-four .act-view-panel {
+  section.chapter-four .act-view-panel {
     .city-text-container {
       height: 170px;
       width: 300px;
@@ -1446,19 +1413,19 @@ div.chapter-seven {
     }
   }
 
-  div.chapter-five .act-view-panel {
+  section.chapter-five .act-view-panel {
     .phone-text-container {
       margin-left: 0;
 
       &#phone-text-container-one {
         top: 3%;
-        height: 95px;
+        height: 100px;
         width: 100%;
       }
       &#phone-text-container-two {
         top: auto;
-        bottom: 5%;
-        height: 75px;
+        bottom: 4%;
+        height: 80px;
         width: 100%;
       }
     }
@@ -1487,7 +1454,7 @@ div.chapter-seven {
     }
   }
 
-  div.chapter-seven .act-view-panel {
+  section.chapter-seven .act-view-panel {
     .form-container {
       h2 {
         margin-bottom: 10px;
@@ -1535,7 +1502,7 @@ div.chapter-seven {
     }
   }
 
-  div.chapter-three .act-view-panel {
+  section.chapter-three .act-view-panel {
     .ocean-text-container {
       &#ocean-text-container-one {
         top: 3%;
@@ -1549,7 +1516,7 @@ div.chapter-seven {
     }
   }
 
-  div.chapter-four .act-view-panel {
+  section.chapter-four .act-view-panel {
     .city-text-container {
       left: 40%;
     }
@@ -1558,7 +1525,7 @@ div.chapter-seven {
 
 // Large devices (desktops, less than 1200px)
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  div.chapter-three .act-view-panel {
+  section.chapter-three .act-view-panel {
     .ocean-text-container {
       &#ocean-text-container-one {
         margin-left: -320px;
