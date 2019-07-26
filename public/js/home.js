@@ -10,8 +10,9 @@ import { TweenMax, TimelineMax } from "gsap/TweenMax";
 
 const tweenClipPath = function(element, duration) {
   return TweenMax.to(element, duration, {
-    clipPath: 'inset(0 0 0 0)',
+    clipPath: 'inset(0% 0% 0% 0%)',
     webkitClipPath: 'inset(0% 0% 0% 0%)',
+    mozClipPath: 'inset(0% 0% 0% 0%)',
   });
 }
 
@@ -76,6 +77,18 @@ const timelineMaster = {
       from: { scaleY: 0 },
       to: { scaleY: 1, transformOrigin: '50% 100%', },
     },
+    backgroundTweens: {
+      from: {
+        backgroundImage: 'radial-gradient(circle, #fff, #00B8CE)',
+        webkitBackgroundImage: 'radial-gradient(circle, #fff, #00B8CE)',
+        mozBackgroundImage: 'radial-gradient(circle, #fff, #00B8CE)',
+      },
+      to: {
+        backgroundImage: 'radial-gradient(circle, #fff, #257A77)',
+        webkitBackgroundImage: 'radial-gradient(circle, #fff, #257A77)',
+        mozBackgroundImage: 'radial-gradient(circle, #fff, #257A77)',
+      },
+    },
     elements: {
       polluteNodes: sliceArray(document.querySelectorAll('.pge-pollute')),
       powerOnNodes: sliceArray(document.querySelectorAll('.power-on')),
@@ -89,6 +102,7 @@ const timelineMaster = {
         },
         animalDieTweens,
         powerBuildTweens,
+        backgroundTweens,
       } = this;
 
       const POWER_OFF_BASE_DURATION = 0.3;
@@ -120,7 +134,7 @@ const timelineMaster = {
         ], '-=3', 'sequence')
         .add(TweenMax.fromTo('.whale-container', POWER_OFF_BASE_DURATION, animalDieTweens.from, animalDieTweens.to))
         .add(powerOnTweens, 'powerOnLabel', 'sequence')
-        .add(TweenMax.fromTo('#act-three-view', powerOnDuration, { background: 'radial-gradient(#fff, #00B8CE)' }, { background: 'radial-gradient(#fff, #257A77)' }), 'powerOnLabel')
+        .add(TweenMax.fromTo('#act-three-view', powerOnDuration, backgroundTweens.from, backgroundTweens.to), 'powerOnLabel')
         .add([
           TweenMax.fromTo('.ocean-right', 1, { autoAlpha: 0 }, { autoAlpha: 1 }),
           TweenMax.fromTo('.ocean-left', 1, { autoAlpha: 0 }, { autoAlpha: 1 }),

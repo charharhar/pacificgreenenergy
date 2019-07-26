@@ -70,6 +70,14 @@ body#pge-body {
   }
 }
 
+@media (max-width: 768px) {
+  body#pge-body {
+    #fp-nav ul li .fp-tooltip {
+      display: none;
+    }
+  }
+}
+
 .sprite-img {
   background-repeat: no-repeat;
 
@@ -208,7 +216,15 @@ section.section {
   }
 
   p.typewrite {
+    -webkit-clip-path: inset(0% 100% 0% 0%);
+    -moz-clip-path: inset(0% 100% 0% 0%);
     clip-path: inset(0% 100% 0% 0%);
+
+    &.animated {
+      -webkit-clip-path: inset(0% 0% 0% 0%);
+      -moz-clip-path: inset(0% 0% 0% 0%);
+      clip-path: inset(0% 0% 0% 0%);
+    }
   }
 
   .large-red {
@@ -567,6 +583,7 @@ section.chapter-three {
       z-index: 12;
       bottom: 0;
       opacity: .75;
+      width: 100%;
       // display: none;
     }
 
