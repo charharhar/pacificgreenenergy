@@ -591,7 +591,6 @@ section.chapter-three {
       bottom: 0;
       opacity: .75;
       width: 100%;
-      // display: none;
     }
 
     .ocean-text-container {
@@ -1412,6 +1411,18 @@ section.chapter-seven {
 }
 
 @media (max-width: 575.98px) {
+  .sprite-img {
+    &.pge-ship-sprite {
+      width: 80px;
+      height: 30px;
+    }
+
+    &.pge-commodity-sprite {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
   section.section {
     span.large-red {
       font-size: 34px;
@@ -1438,6 +1449,10 @@ section.chapter-seven {
   }
 
   section.chapter-three .act-view-panel {
+    .pge-ocean-smog {
+      width: 155%;
+    }
+
     .ocean-text-container {
       &#ocean-text-container-one {
         height: 60px;
@@ -1505,21 +1520,21 @@ section.chapter-seven {
     .mobile-phone-container {
       .hand-phone-container {
         figure.mobile-hand-phone {
-          width: 220%;
-          transform: translateX(-27.5%);
+          width: 200%;
+          transform: translateX(-23.5%);
         }
 
         .taipei-mobile-panels .pge-mobile-panels,
         .taipei-mobile-plants {
-          width: 60%;
-          left: 16%;
+          width: 54%;
+          left: 23%;
           top: 5%;
         }
 
         .phone-progress-container {
-          width: 50%;
-          left: 47%;
-          height: 30px;
+          width: 46%;
+          left: 50%;
+          height: 23px;
           border: 2px solid #000;
         }
       }
