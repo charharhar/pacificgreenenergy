@@ -794,6 +794,18 @@ section.chapter-four {
 
 section.chapter-five {
   .act-view-panel {
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+      z-index: 5;
+    }
+
     .pge-night-skyline {
       opacity: 0;
       visibility: hidden;
@@ -1446,11 +1458,25 @@ section.chapter-seven {
   }
 
   section.chapter-one .act-view-panel {
+    .cloud-container {
+      .pge-cloud-img {
+        width: 250%;
+        max-width: 1200px;
+
+        &.cloud-right {
+          right: -50%;
+        }
+
+        &.cloud-left {
+          left: -50%;
+        }
+      }
+    }
   }
 
   section.chapter-three .act-view-panel {
     .pge-ocean-smog {
-      width: 155%;
+      width: 200%;
     }
 
     .ocean-text-container {
@@ -1501,6 +1527,10 @@ section.chapter-seven {
   }
 
   section.chapter-five .act-view-panel {
+    &:before {
+      background: linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.7)) 100%;
+    }
+
     .phone-text-container {
       margin-left: 0;
 
