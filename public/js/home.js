@@ -139,12 +139,18 @@ const timelineMaster = {
           TweenMax.fromTo('.ocean-right', 1, { autoAlpha: 0 }, { autoAlpha: 1 }),
           TweenMax.fromTo('.ocean-left', 1, { autoAlpha: 0 }, { autoAlpha: 1 }),
         ])
-        .add(tweenClipPath('#ocean-text-three', 1))
+        .add([
+          tweenClipPath('#ocean-text-three', 1),
+          tweenLargeRed('#ocean-red-two', 1),
+          tweenClipPath('#ocean-text-four', 1),
+        ], 'oceanTextTwoLabel', 'sequence')
         .fromTo('#ocean-smog', 4, { yPercent: 100 }, { yPercent: 0, ease: Power2.easeOut }, 'smogEnterLabel+=1')
         .add([
+          TweenMax.to('#ocean-text-one span', 1, { color: '#fff' }),
           TweenMax.to('#ocean-text-one', 1, { color: '#fff' }),
           TweenMax.to('#ocean-text-two', 1, { color: '#fff' }),
           TweenMax.to('#ocean-text-three', 1, { color: '#fff' }),
+          TweenMax.to('#ocean-text-four', 1, { color: '#fff' }),
         ], 'smogEnterLabel+=1')
         .fromTo('#chevron-three', 1, { autoAlpha: 0 }, { autoAlpha: 1 })
     }
@@ -197,6 +203,7 @@ const timelineMaster = {
           TweenMax.to('#pge-day-sky7', cityPanelDuration, { autoAlpha: 0 }),
         ], 'cityPanelLabel')
         .to('.city-text', cityPanelDuration, { color: '#000d54' }, 'cityPanelLabel')
+        .to('.city-text span', cityPanelDuration, { color: '#000d54' }, 'cityPanelLabel')
         .fromTo('#chevron-four', 1, { autoAlpha: 0 }, { autoAlpha: 1 })
     },
   },
