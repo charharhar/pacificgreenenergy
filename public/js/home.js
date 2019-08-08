@@ -136,7 +136,7 @@ const timelineMaster = {
         .add([
           TweenMax.fromTo('.ocean-right', 1, { autoAlpha: 0 }, { autoAlpha: 1 }),
           TweenMax.fromTo('.ocean-left', 1, { autoAlpha: 0 }, { autoAlpha: 1 }),
-          TweenMax.to('.pge-ship', 1, { className: '+=animate' }),
+          TweenMax.to('.pge-ship', 0, { className: '+=animate' }),
         ])
         .add([
           tweenClipPath('#ocean-text-three', 1),
