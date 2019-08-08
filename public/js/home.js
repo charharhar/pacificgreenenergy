@@ -9,11 +9,9 @@ import { TweenMax, TimelineMax } from "gsap/TweenMax";
  */
 
 const tweenClipPath = function(element, duration) {
-  return TweenMax.to(element, duration, {
-    clipPath: 'inset(0% 0% 0% 0%)',
-    webkitClipPath: 'inset(0% 0% 0% 0%)',
-    mozClipPath: 'inset(0% 0% 0% 0%)',
-  });
+  const targetElem = `${element} .text-wrapper`
+
+  return TweenMax.fromTo(targetElem, duration, { xPercent: -100 }, { xPercent: 0 });
 }
 
 const tweenLargeRed = function(element, duration) {
@@ -138,6 +136,7 @@ const timelineMaster = {
         .add([
           TweenMax.fromTo('.ocean-right', 1, { autoAlpha: 0 }, { autoAlpha: 1 }),
           TweenMax.fromTo('.ocean-left', 1, { autoAlpha: 0 }, { autoAlpha: 1 }),
+          TweenMax.to('.pge-ship', 1, { className: '+=animate' }),
         ])
         .add([
           tweenClipPath('#ocean-text-three', 1),
@@ -147,10 +146,10 @@ const timelineMaster = {
         .fromTo('#ocean-smog', 4, { yPercent: 100 }, { yPercent: 0, ease: Power2.easeOut }, 'smogEnterLabel+=1')
         .add([
           TweenMax.to('#ocean-text-one span', 1, { color: '#fff' }),
-          TweenMax.to('#ocean-text-one', 1, { color: '#fff' }),
-          TweenMax.to('#ocean-text-two', 1, { color: '#fff' }),
-          TweenMax.to('#ocean-text-three', 1, { color: '#fff' }),
-          TweenMax.to('#ocean-text-four', 1, { color: '#fff' }),
+          TweenMax.to('#ocean-text-one span', 1, { color: '#fff' }),
+          TweenMax.to('#ocean-text-two span', 1, { color: '#fff' }),
+          TweenMax.to('#ocean-text-three span', 1, { color: '#fff' }),
+          TweenMax.to('#ocean-text-four span', 1, { color: '#fff' }),
         ], 'smogEnterLabel+=1')
         .fromTo('#chevron-three', 1, { autoAlpha: 0 }, { autoAlpha: 1 })
     }
@@ -159,7 +158,7 @@ const timelineMaster = {
   chapterFour: {
     timeline: new TimelineMax({ paused: true }),
     elements: {
-      daySkylineNodes: sliceArray(document.querySelectorAll('.pge-day-skyline')),
+      daySkylineNodes: sliceArray(document.querySelectorAll('.skyline-animate')),
       cityPanelNodes: sliceArray(document.querySelectorAll('.pge-city-panels-animate')),
     },
     init: function() {
@@ -170,7 +169,7 @@ const timelineMaster = {
           cityPanelNodes,
         }
       } = this;
-      const SKYLINE_BASE_DURATION = 0.25;
+      const SKYLINE_BASE_DURATION = 0.4;
       const cityPanelDuration = SKYLINE_BASE_DURATION * cityPanelNodes.length
       const daySkylineLength = daySkylineNodes.length;
 
@@ -202,7 +201,7 @@ const timelineMaster = {
           TweenMax.to('#pge-day-sky3', cityPanelDuration, { autoAlpha: 0 }),
           TweenMax.to('#pge-day-sky7', cityPanelDuration, { autoAlpha: 0 }),
         ], 'cityPanelLabel')
-        .to('.city-text', cityPanelDuration, { color: '#000d54' }, 'cityPanelLabel')
+        .to('.city-text span', cityPanelDuration, { color: '#000d54' }, 'cityPanelLabel')
         .to('.city-text span', cityPanelDuration, { color: '#000d54' }, 'cityPanelLabel')
         .fromTo('#chevron-four', 1, { autoAlpha: 0 }, { autoAlpha: 1 })
     },

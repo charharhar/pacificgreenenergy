@@ -217,14 +217,10 @@ section.section {
   }
 
   p.typewrite {
-    -webkit-clip-path: inset(0% 100% 0% 0%);
-    -moz-clip-path: inset(0% 100% 0% 0%);
-    clip-path: inset(0% 100% 0% 0%);
-
-    &.animated {
-      -webkit-clip-path: inset(0% 0% 0% 0%);
-      -moz-clip-path: inset(0% 0% 0% 0%);
-      clip-path: inset(0% 0% 0% 0%);
+    overflow: hidden;
+    span.text-wrapper {
+      position: relative;
+      display: block;
     }
   }
 
@@ -699,28 +695,68 @@ section.chapter-three {
           animation-direction: normal;
           animation-timing-function: ease;
 
+          &.animate {
+            &#pge-ship-img-l1 {
+              animation-name: shipMovementOne;
+              animation-duration: 14s;
+            }
+
+            &#pge-ship-img-l2 {
+              animation-name: shipMovementTwo;
+              animation-duration: 12s;
+            }
+
+            &#pge-ship-img-r1 {
+              animation-name: shipMovementThree;
+              animation-duration: 10s;
+            }
+
+            &#pge-ship-img-r2 {
+              animation-name: shipMovementFour;
+              animation-duration: 12s;
+            }
+
+            .ship-commodity {
+              &#comm-l1 {
+                animation-name: commodityAnimate;
+                animation-duration: 14s;
+              }
+
+              &#comm-l2 {
+                animation-name: commodityAnimate;
+                animation-duration: 12s;
+              }
+
+              &#comm-r1 {
+                animation-name: commodityAnimate;
+                animation-duration: 10s;
+              }
+
+              &#comm-r2 {
+                animation-name: commodityAnimate;
+                animation-duration: 12s;
+              }
+            }
+          }
+
           &#pge-ship-img-l1 {
             top: 20%;
-            animation-name: shipMovementOne;
-            animation-duration: 14s;
+            left: -30%;
           }
 
           &#pge-ship-img-l2 {
             top: 80%;
-            animation-name: shipMovementTwo;
-            animation-duration: 12s;
+            left: -30%;
           }
 
           &#pge-ship-img-r1 {
             top: 10%;
-            animation-name: shipMovementThree;
-            animation-duration: 10s;
+            right: -30%;
           }
 
           &#pge-ship-img-r2 {
             top: 70%;
-            animation-name: shipMovementFour;
-            animation-duration: 12s;
+            right: -30%;
           }
 
           img { width: 100%; }
@@ -733,26 +769,6 @@ section.chapter-three {
             animation-iteration-count: infinite;
             animation-direction: normal;
             animation-timing-function: ease;
-
-            &#comm-l1 {
-              animation-name: commodityOne;
-              animation-duration: 14s;
-            }
-
-            &#comm-l2 {
-              animation-name: commodityTwo;
-              animation-duration: 12s;
-            }
-
-            &#comm-r1 {
-              animation-name: commodityThree;
-              animation-duration: 10s;
-            }
-
-            &#comm-r2 {
-              animation-name: commodityFour;
-              animation-duration: 12s;
-            }
           }
         }
       }
@@ -768,7 +784,7 @@ section.chapter-four {
       top: 40%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 480px;
+      width: 500px;
       margin-left: 180px;
 
       .city-text,
@@ -1206,10 +1222,10 @@ section.chapter-seven {
 }
 
 @keyframes shipMovementTwo {
-  0%, 100% { left: 90%; transform: rotateY(0deg); }
-  40% { left: -30%; transform: rotateY(0deg); }
-  50% { left: -30%; transform: rotateY(180deg); }
-  90% { left: 90%; transform: rotateY(180deg); }
+  0%, 100% { left: -30%; transform: rotateY(0deg); }
+  40% { left: 90%; transform: rotateY(0deg); }
+  50% { left: 90%; transform: rotateY(180deg); }
+  90% { left: -30%; transform: rotateY(180deg); }
 }
 
 @keyframes shipMovementThree {
@@ -1220,40 +1236,17 @@ section.chapter-seven {
 }
 
 @keyframes shipMovementFour {
-  0%, 100% { right: 103%; transform: rotateY(180deg); }
-  40% { right: -30%; transform: rotateY(180deg); }
-  50% { right: -30%; transform: rotateY(0deg); }
-  90% { right: 103%; transform: rotateY(0deg); }
+  0%, 100% { right: -30%; transform: rotateY(180deg); }
+  40% { right: 103%; transform: rotateY(180deg); }
+  50% { right: 103%; transform: rotateY(0deg); }
+  90% { right: -30%; transform: rotateY(0deg); }
 }
 
-@keyframes commodityOne {
+@keyframes commodityAnimate {
   0%, 100% { background-position: 0% 0%; }
   39.9999% { background-position: 0% 0%; }
   40% { background-position: 100% 0%; }
   99.9999% { background-position: 100% 0%; }
-}
-
-@keyframes commodityTwo {
-  0%, 100% { background-position: 100% 0%; }
-  49.9999% { background-position: 100% 0%; }
-  50% { background-position: 0% 0%; }
-  89.9999% { background-position: 0% 0%; }
-  90% { background-position: 100% 0%; }
-}
-
-@keyframes commodityThree {
-  0%, 100% { background-position: 0% 0%; }
-  39.9999% { background-position: 0% 0%; }
-  40% { background-position: 100% 0%; }
-  99.9999% { background-position: 100% 0%; }
-}
-
-@keyframes commodityFour {
-  0%, 100% { background-position: 100% 0%; }
-  49.9999% { background-position: 100% 0%; }
-  50% { background-position: 0% 0%; }
-  89.9999% { background-position: 0% 0%; }
-  90% { background-position: 100% 0%; }
 }
 
 @keyframes sunRotate {
