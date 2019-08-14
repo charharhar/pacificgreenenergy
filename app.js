@@ -30,6 +30,7 @@ const homeController = require('./controllers/home');
 const aboutController = require('./controllers/about');
 const projectsController = require('./controllers/projects');
 const faqController = require('./controllers/faq');
+const contactController = require('./controllers/contact');
 
 /**
  * Create Express server.
@@ -92,6 +93,10 @@ app.get('/projects', (req, res) => {
 
 app.get('/faq', (req, res) => {
   faqController.index(req, res, assetsMap);
+});
+
+app.get('/contact', (req, res) => {
+  contactController.index(req, res, assetsMap);
 });
 
 /**

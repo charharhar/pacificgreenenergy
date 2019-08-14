@@ -56,6 +56,10 @@ function configFactory() {
         ifDev('webpack-hot-middleware/client'),
         path.resolve(appRootDir.get(), './public/js/faq')
       ]),
+      contact: removeEmpty([
+        ifDev('webpack-hot-middleware/client'),
+        path.resolve(appRootDir.get(), './public/js/contact')
+      ]),
     },
 
     output: {
