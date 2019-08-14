@@ -1,1 +1,17 @@
 @import 'global';
+
+section.contact-section-one {
+  padding-top: 380px;
+
+  .section-content {
+    position: absolute;
+    top: -290px;
+    width: 100%;
+  }
+
+  .form-container {
+    h2, p {
+      color: $text-blue;
+    }
+  }
+}

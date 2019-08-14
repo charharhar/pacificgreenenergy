@@ -35,6 +35,126 @@
 <body>
 
     <div class="wrapper">
+        <header class="section-header aspect-5625">
+            <nav class="main-navigation">
+                <div class="navigation-logo-wrapper">
+                    <a href="/">
+                        <figure class="heading-logo-image">
+                            <img src="/images/pge-white-logo.png" alt="">
+                        </figure>
+                    </a>
+                </div>
+
+                <div class="navigation-list-wrapper">
+                    <ul>
+                        <li>
+                            <a class="navLink" data-hover-text="經營理念" href="/about">經營理念</a>
+                        </li>
+                        <li>
+                            <a class="navLink" data-hover-text="工程實績" href="/projects">工程實績</a>
+                        </li>
+                        <li>
+                            <a class="navLink" data-hover-text="FAQ" href="/faq">FAQ</a>
+                        </li>
+                        <li>
+                            <a class="navLink" data-hover-text="聯繫我們" href="/contact">聯繫我們</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <button class="hamburger hamburger--elastic">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+            </nav>
+
+            <div class="hero-content">
+                <h1 class="underline">JOIN US FOR A GREENER TAIWAN<br>我們的寶島，我們來守護。我支持綠能</h1>
+            </div>
+
+            <div class="aspect-hero">
+                <figure class="home-hero">
+                    <img src="/images/contact-hero.png" alt="">
+                </figure>
+            </div>
+        </header>
+
+        <section class="section contact-section-one">
+
+            <div class="section-content">
+                <div class="form-container">
+                    <h2 class="medium-bold">聯繫我們</h2>
+                    <p>若欲索取詳細評估報告，<span class="br-mobile"></span>請務必填寫完整門牌地址或地號</p>
+                    <p>請留下您的資料，我們將有專人與您聯繫</p>
+
+                    <form action="" id="pge-form">
+                        <div class="form-group">
+                            <input placeholder="姓名" class="pge-form-input" id="name" name="name" type="text">
+                        </div>
+                        <div class="form-group">
+                            <input placeholder="聯絡電話" class="pge-form-input" id="phone" name="phone" type="phone">
+                        </div>
+                        <div class="form-group">
+                            <input placeholder="電子信箱" class="pge-form-input" id="email" name="email" type="email">
+                        </div>
+                        <div class="form-group">
+                            <input placeholder="縣市" class="pge-form-input" id="city" name="city" type="text">
+                        </div>
+                        <div class="form-group">
+                            <span>我有：</span>
+                            <span>
+                                <input class="pge-radio" type="radio" name="estate" id="structure" value="建築" checked>
+                                <label for="structure">建築</label>
+
+                            </span>
+                            <span>
+                                <input class="pge-radio" type="radio" name="estate" id="land" value="土地" >
+                                <label for="land">土地</label>
+                            </span>
+                        </div>
+                        <div class="form-group shared-inputs radio-inputs land-inputs hidden">
+                            <input placeholder="鎮市區" class="pge-form-input" id="town" name="town" type="text">
+
+                            <input placeholder="地段" class="pge-form-input" id="lot" name="lot" type="text">
+                        </div>
+                        <div class="form-group radio-inputs land-inputs hidden">
+                            <input placeholder="地號" class="pge-form-input" id="number" name="number" type="text">
+                        </div>
+                        <div class="form-group radio-inputs structure-inputs">
+                            <input placeholder="門牌地址" class="pge-form-input" id="address" name="address" type="text">
+                        </div>
+                        <!-- <div class="form-group">
+                            <div class="g-recaptcha" data-sitekey="6LdOMa8UAAAAAKk760zxJcWuGXJ32Ba2Y5ITRRyh"></div>
+                        </div> -->
+                        <div class="form-group">
+                            <span id="form-button">送出</span>
+                            <a style="display:none;" href="" id="pge-form-submit"></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer class="section-footer">
+            <div class="footer-left">
+                <figure class="heading-logo-image">
+                    <img src="/images/pge-white-logo.png" alt="">
+                </figure>
+            </div>
+
+            <div class="footer-center">
+                <p>2019 pacific green energy limited all rights reserved</p>
+            </div>
+
+            <div class="footer-right">
+                <ul class="footer-nav">
+                    <li><a href="" class="footer-social" id="linkedin"><img src="/images/icons/facebook.svg" alt=""></a></li>
+                    <li><a href="" class="footer-social" id="linkedin"><img src="/images/icons/instagram.svg" alt=""></a></li>
+                    <li><a href="" class="footer-social" id="linkedin"><img src="/images/icons/linkedin.svg" alt=""></a></li>
+                </ul>
+            </div>
+        </footer>
     </div>
 
     <script
