@@ -193,6 +193,7 @@ a.button {
  */
 
 figure {
+  position: relative;
   img {
     width: 100%;
     vertical-align: bottom;

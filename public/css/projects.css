@@ -1,1 +1,17 @@
 @import 'global';
+
+header.section-header {
+  &.aspect-5625 .aspect-hero {
+    background-color: $ocean-blue;
+
+    .project-hero {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50%;
+
+      img { position: relative; }
+    }
+  }
+}
