@@ -245,6 +245,12 @@ section.section {
 header.section-header {
   position: relative;
 
+  &.aspect-natural {
+    position: relative;
+
+    .aspect-hero img { position: relative; }
+  }
+
   &.aspect-2811 {
     .aspect-hero {
       padding-bottom: 28.11%;

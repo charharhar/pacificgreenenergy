@@ -1,5 +1,5 @@
 
-import '../css/about.css';
+import '../css/projects.css';
 import { sliceArray, hotReload } from './util.js'
 
 window.addEventListener('load', function(e) {
