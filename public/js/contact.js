@@ -107,7 +107,6 @@ window.addEventListener('load', function(e) {
  * Event Handlers
  */
 window.addEventListener('load', function(e) {
-  console.log('--> Application started  |  Current route: /contact')
 })
 
 hotReload();

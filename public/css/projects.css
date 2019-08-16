@@ -4,7 +4,7 @@ header.section-header {
   &.aspect-5625 .aspect-hero {
     background-color: $ocean-blue;
 
-    .project-hero {
+    .projects-hero {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -12,6 +12,218 @@ header.section-header {
       width: 50%;
 
       img { position: relative; }
+    }
+  }
+}
+
+section.section {
+
+  .projects-accordion {
+    margin: 80px auto;
+  }
+
+  input[type="radio"] {
+    position: absolute;
+    left: -9999px;
+    display: none;
+  }
+
+  input[type="radio"]:not(:checked) + label,
+  input[type="radio"]:checked + label {
+    position: relative;
+    padding-left: 1.7em;
+    cursor: pointer;
+    font-size: 13px;
+    color: #727272;
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
+
+  input[type="radio"]:not(:checked) + label:after,
+  input[type="radio"]:checked + label:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    border-right: 3px solid orange;
+    border-bottom: 3px solid orange;
+    width: 15px;
+    height: 15px;
+
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+  }
+
+  input[type="radio"]:not(:checked) + label:after {
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  input[type="radio"]:checked + label:after {
+    transform: translateY(-50%) rotate(225deg);
+  }
+
+  input[type="radio"] ~ .project-details {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: all 600ms cubic-bezier(.25, .1, .25, 1);
+  }
+
+  input[type="radio"]:checked ~ .project-details {
+    max-height: 1500px;
+    margin-bottom: 40px;
+    opacity: 1;
+  }
+
+  .project-container {
+    label.project-tab {
+      position: relative;
+      padding: 15px;
+      border-bottom: 1px solid #000;
+      max-width: 960px;
+      width: 85%;
+      margin: 0 auto;
+      display: block;
+
+      span {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+
+        &.project-name {
+          font-size: 24px;
+          padding-right: 20px;
+        }
+
+        &.project-description {
+          font-weight: 300;
+        }
+      }
+    }
+
+    .project-details {
+      .project-content {}
+
+      .project-header {
+        display: flex;
+        flex-flow: row nowrap;
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+
+        h2.project-number {
+          font-size: 100px;
+          font-weight: bold;
+          color: #777;
+          line-height: 1;
+          margin-right: 40px;
+          padding: 0;
+        }
+
+        span.project-title {
+          display: flex;
+          flex-flow: column nowrap;
+          align-items: flex-start;
+          justify-content: flex-end;
+          font-size: 20px;
+          padding-bottom: 5px;
+
+          span:first-of-type {
+            margin-bottom: 15px;
+          }
+        }
+      }
+
+      .project-carousel {
+        position: relative;
+        width: 100%;
+        margin: 50px auto 100px;
+
+        .slick-track {
+          display: flex;
+          align-items: center;
+        }
+
+        figure.project-img {
+          &:focus {
+            outline: none;
+          }
+
+          img {
+            padding: 20px 50px;
+            opacity: .5;
+            transition: 300ms all ease;
+          }
+
+          &.slick-center img {
+            padding: 0;
+            opacity: 1;
+          }
+        }
+
+        .slick-next:before,
+        .slick-prev:before {
+          content: '';
+        }
+
+        .slick-next,
+        .slick-prev {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          width: 15%; //centerPadding %
+          z-index: 999;
+        }
+
+        .slick-next {
+          right: 0;
+          .chevron-border {
+            margin-left: auto;
+            margin-right: 25px;
+          }
+        }
+
+        .slick-prev {
+          left: 0;
+          .chevron-border {
+            margin-right: auto;
+            margin-left: 25px;
+          }
+        }
+
+        .chevron-border {
+          position: relative;
+          top: auto;
+          bottom: auto;
+          left: auto;
+          right: auto;
+          transform: none;
+          padding: 12px;
+
+          .chevron {
+            border-bottom-width: 6px;
+            border-right-width: 6px;
+          }
+        }
+      }
+
+      .project-map {
+        position: relative;
+        width: 100%;
+        z-index: -1;
+        padding-bottom: 25%;
+        background-color: #a24830;
+
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+        }
+      }
     }
   }
 }
