@@ -1,1 +1,185 @@
 @import 'global';
+
+header.section-header {
+  .hero-content {
+    h1 {
+      line-height: 1.4;
+      font-size: 50px;
+    }
+  }
+}
+
+section.section {
+  h1.underline {
+    display: inline-block;
+    &:after {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  .section-content {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+
+    .content-wrapper {
+      display: flex;
+      flex-flow: column wrap;
+      flex: 0 0 50%;
+      align-items: center;
+      justify-content: center;
+
+      .content-text {
+        h1.underline {
+          margin-bottom: 30px;
+          font-size: 42px;
+
+          &:after {
+            width: 120px;
+          }
+        }
+      }
+    }
+  }
+
+  &.about-section-one {
+    background: rgb(229, 229, 229);
+
+    .section-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 0 20px;
+    }
+
+    figure.about-smog {
+      position: relative;
+      padding-top: 100px;
+    }
+
+    .content-text {
+      p {
+        max-width: 580px;
+      }
+    }
+
+    .content-media {
+      position: relative;
+      height: 100%;
+      width: 100%;
+
+      .pge-powerplants {
+        position: absolute;
+        width: 50%;
+        height: 62.5%;
+
+        .pge-powerplant-sprite {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+
+          &.power-on {
+            opacity: 1;
+            z-index: 2;
+          }
+
+          &.power-off {
+            opacity: 1;
+            z-index: 1;
+          }
+        }
+
+        &.pge-power1 {
+          top: 10%;
+          left: -5%;
+        }
+
+        &.pge-power2 {
+          top: 16%;
+          left: 21%;
+          z-index: 2;
+        }
+
+        &.pge-power3 {
+          top: 23%;
+          left: 45%;
+          z-index: 3;
+        }
+      }
+
+    }
+  }
+
+  &.about-section-two {
+    .section-content {
+      background: radial-gradient(#fff, #00B8CE);
+      padding: 80px 20px;
+    }
+
+    .content-text {
+      align-self: flex-start;
+
+      p {
+        font-weight: bold;
+      }
+
+      .founder-profiles {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        margin-top: 50px;
+
+        .profile-container {
+          display: flex;
+          flex-flow: column nowrap;
+          margin: 0 30px;
+        }
+
+        figure {
+          display: block;
+          background-color: #aaa;
+          border-radius: 50%;
+          height: 200px;
+          width: 200px;
+          margin-bottom: 20px;
+        }
+
+        p {
+          text-align: center;
+          margin-bottom: 7px;
+
+          &.profile-name {
+            font-size: 22px;
+            letter-spacing: 3px;
+          }
+
+          &.profile-title {
+            font-size: 18px;
+            color: #666;
+          }
+        }
+      }
+    }
+
+    .content-media {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      figure.taiwan-full {
+        max-width: 500px;
+      }
+    }
+
+  }
+}

@@ -312,7 +312,7 @@ header.section-header {
 }
 
 footer.section-footer {
-  padding: 20px 80px;
+  padding: 30px 80px;
   background-color: $footer-blue;
   position: relative;
   display: flex;
@@ -381,6 +381,43 @@ footer.section-footer {
 @keyframes bouncing {
   from { transform: translate3d(0, 0, 0) rotate(45deg); }
   to { transform: translate3d(0, 8px, 0) rotate(45deg); }
+}
+
+@media (max-width: 575.98px) {
+  footer.section-footer {
+    padding: 40px 65px;
+
+    .footer-left {
+      .footer-social {
+        &#linkedin {
+        }
+      }
+    }
+
+    .footer-center {
+      bottom: 5px;
+      width: 100%;
+
+      p {
+        text-align: center;
+        font-size: 9px;
+      }
+    }
+
+    .footer-right {
+      ul.footer-nav {
+        li {
+          margin: 0 8px;
+
+          a.footer-social {
+            img {
+              width: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 /**
@@ -858,12 +895,12 @@ section.section {
     background-image: url(/images/pge-powerplant-sprite.png);
 
     &.pge-power-on1 { background-position: 0% 0%; }
-    &.pge-power-on2 { background-position: 14.285% 0%; }
-    &.pge-power-on3 { background-position: 28.57% 0%; }
-    &.pge-power-on4 { background-position: 42.855% 0%; }
-    &.pge-power-off1 { background-position: 57.14% 0%; }
-    &.pge-power-off2 { background-position: 71.425% 0%; }
-    &.pge-power-off3 { background-position: 85.71% 0%; }
+    &.pge-power-on2 { background-position: 14.35% 0%; }
+    &.pge-power-on3 { background-position: 28.7% 0%; }
+    &.pge-power-on4 { background-position: 43.05% 0%; }
+    &.pge-power-off1 { background-position: 57.4% 0%; }
+    &.pge-power-off2 { background-position: 71.75% 0%; }
+    &.pge-power-off3 { background-position: 86.1% 0%; }
     &.pge-power-off4 { background-position: 100% 0%; }
   }
 
