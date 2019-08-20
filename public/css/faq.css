@@ -1,5 +1,22 @@
 @import 'global';
 
+header.section-header {
+  .hero-content {
+    h1 {
+      line-height: 1.4;
+      font-size: 50px;
+    }
+  }
+
+  figure.mobile-sun {
+    display: none;
+    position: absolute;
+    top: 55px;
+    right: 30px;
+    max-width: 130px;
+  }
+}
+
 section.section {
   .section-content {
     padding: 40px 20px;
@@ -13,9 +30,8 @@ section.section {
     width: 100%;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 8px 0px, rgba(0, 0, 0, 0.14) 0px 3px 4px 0px, rgba(0, 0, 0, 0.12) 0px 3px 3px -2px;
 
-
     .faq-content {
-      margin-bottom: 20px;
+      margin-bottom: 25px;
 
       span {
         display: block;
@@ -25,12 +41,59 @@ section.section {
         &.faq-question {
           font-size: 16px;
           letter-spacing: 2px;
+          margin-bottom: 7px;
         }
 
         &.faq-answer {
           padding-left: 30px;
           font-size: 14px;
           letter-spacing: 1px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  header.section-header {
+    .aspect-hero {
+      width: 500%;
+      left: -180%;
+
+    }
+
+    figure.mobile-sun {
+      display: block;
+    }
+
+    .hero-content {
+      h1 {
+        font-size: 30px;
+      }
+    }
+  }
+
+  section.section {
+    .section-content {
+      padding: 40px 20px;
+    }
+
+    .faq-container {
+      padding: 20px;
+
+      .faq-content {
+        span {
+          &.faq-question {
+            font-size: 16px;
+            letter-spacing: 2px;
+          }
+
+          &.faq-answer {
+            padding-left: 20px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            font-weight: 400;
+          }
         }
       }
     }
