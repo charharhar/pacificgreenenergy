@@ -66,8 +66,12 @@ section.section {
     }
 
     .content-text {
+      margin-left: 8%;
+      padding: 0 20px;
+
       p {
         max-width: 580px;
+        text-align: justify;
       }
     }
 
@@ -75,6 +79,23 @@ section.section {
       position: relative;
       height: 100%;
       width: 100%;
+
+      .powerplant-wrapper {
+        position: relative;
+        max-width: 200px;
+
+        .powerplants {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+
+          &.powerplant-off {
+            position: relative;
+          }
+        }
+      }
 
       .pge-powerplants {
         position: absolute;
