@@ -82,7 +82,7 @@ section.section {
 
       .powerplant-wrapper {
         position: absolute;
-        width: 40%;
+        width: 48%;
 
         &#pge-power1 {
           top: 10%;
@@ -146,15 +146,17 @@ section.section {
         .profile-container {
           display: flex;
           flex-flow: column nowrap;
-          margin: 0 30px;
+          justify-content: center;
+          align-items: center;
+          flex: 0 1 45%;
         }
 
         figure {
           display: block;
           background-color: #aaa;
           border-radius: 50%;
-          height: 200px;
-          width: 200px;
+          height: 150px;
+          width: 150px;
           margin-bottom: 20px;
         }
 
@@ -185,5 +187,95 @@ section.section {
       }
     }
 
+  }
+}
+
+@media (max-width: 575.98px) {
+  header.section-header {
+    .aspect-hero {
+      width: 318%;
+    }
+
+    .hero-content h1 {
+      font-size: 32px;
+    }
+  }
+
+  section.section {
+    .section-content {
+      flex-flow: column nowrap;
+      padding: 40px 20px;
+
+      .content-wrapper {
+        .content-text h1.underline {
+          font-size: 32px;
+        }
+      }
+    }
+
+    &.about-section-one {
+      .section-content {
+        padding: 40px 20px;
+      }
+
+      .content-text {
+        margin-left: 0;
+
+        p {
+          font-size: 15px;
+        }
+      }
+
+      figure.about-smog {
+        width: 420%;
+        margin-left: -40%;
+        padding-top: 50px;
+      }
+    }
+
+    &.about-section-two {
+      .section-content {
+        padding: 40px 20px;
+      }
+
+      .content-media {
+        margin-bottom: 40px;
+
+        figure.taiwan-full {
+          width: 60%;
+        }
+      }
+
+      .content-text {
+        p {
+          font-size: 15px;
+          font-weight: 400;
+        }
+
+        .founder-profiles {
+          margin-top: 50px;
+
+          .profile-container {
+          }
+
+          figure {
+            height: 100px;
+            width: 100px;
+            margin-bottom: 20px;
+          }
+
+          p {
+            &.profile-name {
+              font-weight: bold;
+              font-size: 18px;
+            }
+
+            &.profile-title {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
   }
 }
