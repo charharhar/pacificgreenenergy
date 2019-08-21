@@ -11,7 +11,8 @@ header.section-header {
   &.aspect-5625 .aspect-hero {
     background-color: $ocean-blue;
 
-    .projects-hero {
+    .projects-hero,
+    .projects-dots {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -240,17 +241,6 @@ section.section {
         position: relative;
         width: 100%;
         z-index: -1;
-        padding-bottom: 25%;
-        background-color: #a24830;
-
-        &:before {
-          content: '';
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-        }
       }
     }
   }
@@ -262,7 +252,8 @@ section.section {
       .aspect-hero {
         padding-bottom: 178%;
 
-        .projects-hero {
+        .projects-hero,
+        .projects-dots {
           width: 100%;
         }
       }

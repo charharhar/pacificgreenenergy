@@ -81,8 +81,25 @@ section.section {
       width: 100%;
 
       .powerplant-wrapper {
-        position: relative;
-        max-width: 200px;
+        position: absolute;
+        width: 40%;
+
+        &#pge-power1 {
+          top: 10%;
+          left: 0%;
+        }
+
+        &#pge-power2 {
+          top: 16%;
+          left: 26%;
+          z-index: 2;
+        }
+
+        &#pge-power3 {
+          top: 23%;
+          left: 50%;
+          z-index: 3;
+        }
 
         .powerplants {
           position: absolute;
@@ -93,48 +110,14 @@ section.section {
 
           &.powerplant-off {
             position: relative;
-          }
-        }
-      }
-
-      .pge-powerplants {
-        position: absolute;
-        width: 50%;
-        height: 62.5%;
-
-        .pge-powerplant-sprite {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0;
-
-          &.power-on {
-            opacity: 1;
-            z-index: 2;
-          }
-
-          &.power-off {
             opacity: 1;
             z-index: 1;
           }
-        }
 
-        &.pge-power1 {
-          top: 10%;
-          left: -5%;
-        }
-
-        &.pge-power2 {
-          top: 16%;
-          left: 21%;
-          z-index: 2;
-        }
-
-        &.pge-power3 {
-          top: 23%;
-          left: 45%;
-          z-index: 3;
+          &.powerplants-on {
+            opacity: 1;
+            z-index: 2;
+          }
         }
       }
 
