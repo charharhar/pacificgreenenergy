@@ -1,5 +1,12 @@
 @import 'global';
 
+header.section-header,
+section.section {
+  .odometer.odometer-auto-theme, .odometer.odometer-auto-theme .odometer-digit, .odometer.odometer-theme-default, .odometer.odometer-theme-default .odometer-digit {
+    vertical-align: initial;
+  }
+}
+
 header.section-header {
   &.aspect-5625 .aspect-hero {
     background-color: $ocean-blue;
@@ -14,10 +21,36 @@ header.section-header {
       img { position: relative; }
     }
   }
+
+  .hero-content {
+    top: 38%;
+    left: 20%;
+
+    h1 {
+      font-size: 50px;
+      line-height: 1.4;
+      color: $main-white;
+
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+
+  .hero-subcontent {
+    position: absolute;
+    bottom: 10%;
+    right: 8%;
+
+    h2 {
+      color: $main-white;
+      text-transform: none;
+      font-size: 24px;
+    }
+  }
 }
 
 section.section {
-
   .projects-accordion {
     margin: 80px auto;
   }
@@ -49,11 +82,6 @@ section.section {
     border-bottom: 3px solid orange;
     width: 15px;
     height: 15px;
-
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
   }
 
   input[type="radio"]:not(:checked) + label:after {
@@ -151,7 +179,7 @@ section.section {
           }
 
           img {
-            padding: 20px 50px;
+            padding: 0 50px;
             opacity: .5;
             transition: 300ms all ease;
           }
@@ -222,6 +250,141 @@ section.section {
           top: 0;
           left: 0;
           width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  header.section-header {
+    &.aspect-5625 {
+      .aspect-hero {
+        padding-bottom: 178%;
+
+        .projects-hero {
+          width: 100%;
+        }
+      }
+
+      .hero-content {
+        top: 18%;
+        left: 50%;
+
+        h1.underline {
+          font-size: 38px;
+        }
+      }
+    }
+
+    .hero-subcontent h2 {
+      font-size: 18px;
+    }
+  }
+
+  section.section {
+    .projects-accordion {
+      margin: 40px auto 80px;
+    }
+
+    input[type="radio"]:not(:checked) + label:after,
+    input[type="radio"]:checked + label:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      border-right: 3px solid orange;
+      border-bottom: 3px solid orange;
+      width: 15px;
+      height: 15px;
+    }
+
+    input[type="radio"]:checked ~ .project-details {
+      max-height: 900px;
+    }
+
+    .project-container {
+      label.project-tab {
+        padding-right: 50px;
+        width: 100%;
+
+        span {
+          text-transform: none;
+
+          &.project-name {
+            font-size: 20px;
+            padding-right: 0;
+          }
+
+          &.project-description {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .project-details {
+        .project-content {}
+
+        .project-header {
+          display: flex;
+          flex-flow: row nowrap;
+          padding: 20px;
+          max-width: 800px;
+          margin: 0 auto;
+
+          h2.project-number {
+            margin-right: 40px;
+          }
+
+          span.project-title {
+            font-size: 16px;
+
+            span:first-of-type {
+              margin-bottom: 5px;
+            }
+          }
+        }
+
+        .project-carousel {
+          position: relative;
+          width: 100%;
+          margin: 50px auto 100px;
+
+          figure.project-img {
+            img {
+              padding: 0 30px;
+            }
+          }
+
+          .slick-next,
+          .slick-prev {
+            width: 15%; //centerPadding %
+          }
+
+          .slick-next {
+            .chevron-border {
+              margin-right: 25px;
+            }
+          }
+
+          .slick-prev {
+            .chevron-border {
+              margin-left: 25px;
+            }
+          }
+
+          .chevron-border {
+            padding: 14px 13px;
+
+            .chevron {
+              border-bottom-width: 5px;
+              border-right-width: 5px;
+            }
+          }
+        }
+
+        .project-map {
+          padding-bottom: 80%;
         }
       }
     }

@@ -20,9 +20,23 @@ function slickHelper(target) {
   return slider;
 }
 
-const slickOne = slickHelper('#project-one')
-const slickTwo = slickHelper('#project-two')
-const slickThree = slickHelper('#project-three')
+const projectCarousel = sliceArray(document.querySelectorAll('.project-carousel'))
+
+projectCarousel.forEach(carousel => {
+  slickHelper(carousel)
+})
+
+/**
+ * Odometer Options
+ */
+
+const totalKW = document.querySelector('#total-kw');
+const od = new Odometer({
+  el: totalKW,
+});
+
+od.update(555)
+
 
 /**
  * Event Handlers
