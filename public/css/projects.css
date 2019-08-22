@@ -337,9 +337,7 @@ section.section {
         }
 
         .project-carousel {
-          position: relative;
-          width: 100%;
-          margin: 50px auto 100px;
+          margin: 50px auto 50px;
 
           figure.project-img {
             img {
@@ -349,23 +347,29 @@ section.section {
 
           .slick-next,
           .slick-prev {
-            width: 15%; //centerPadding %
+            width: 15%;
           }
 
           .slick-next {
             .chevron-border {
-              margin-right: 25px;
+              margin-right: 10px;
             }
           }
 
           .slick-prev {
             .chevron-border {
-              margin-left: 25px;
+              margin-left: 10px;
             }
           }
 
           .chevron-border {
-            padding: 14px 13px;
+            padding: 12px 13px;
+
+            &.black {
+              .chevron {
+                border-color: $main-white;
+              }
+            }
 
             .chevron {
               border-bottom-width: 5px;
@@ -375,7 +379,11 @@ section.section {
         }
 
         .project-map {
-          padding-bottom: 80%;
+          .project-map-img {
+            width: 300%;
+            left: 50%;
+            transform: translateX(-50%);
+          }
         }
       }
     }
