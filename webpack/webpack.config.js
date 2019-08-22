@@ -119,6 +119,8 @@ function configFactory() {
       alias: {
         "TweenMax": path.resolve('node_modules', 'gsap/src/uncompressed/TweenMax.js'),
         "TimelineMax": path.resolve('node_modules', 'gsap/src/uncompressed/TimelineMax.js'),
+        "ScrollMagic": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/ScrollMagic.js'),
+        "animation.gsap": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'),
       }
     },
 

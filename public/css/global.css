@@ -912,6 +912,48 @@ section.section {
 /**
  * Sprite Styles
  */
+
+.taiwan-country {
+  position: relative;
+
+  .pge-animals {
+    position: absolute;
+
+    &.animal1 {
+      top: 3%;
+      left: 58%;
+    }
+    &.animal2 {
+      top: 16%;
+      left: 64%;
+    }
+    &.animal3 {
+      top: 21%;
+      left: 29%;
+    }
+    &.animal4 {
+      top: 35%;
+      left: 6%;
+    }
+    &.animal5 {
+      top: 48%;
+      left: 11%;
+    }
+    &.animal6 {
+      top: 50%;
+      left: 42%;
+    }
+    &.animal7 {
+      top: 59%;
+      left: 8%;
+    }
+    &.animal8 {
+      top: 70%;
+      left: 24%;
+    }
+  }
+}
+
 .sprite-img {
   background-repeat: no-repeat;
 

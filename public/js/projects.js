@@ -1,5 +1,7 @@
 
 import '../css/projects.css';;
+import 'animation.gsap';
+import ScrollMagic from 'scrollmagic';
 import {
   sliceArray,
   hotReload,
@@ -51,6 +53,29 @@ const od = new Odometer({
 
 od.update(555)
 
+/**
+ * Scroll Magic Handlers
+ */
+
+const timelineMaster = {
+  timelineA: function() {
+    const timeline = new TimelineMax();
+
+    const carouselTween = TweenMax.fromTo('#project-carousel-one', 1, { autoAlpha: 0 }, { autoAlpha: 1 });
+    const mapTween = TweenMax.fromTo('#project-map-one', .4, { autoAlpha: 0 }, { autoAlpha: 1 })
+
+    timeline.add([
+      carouselTween,
+      mapTween,
+    ], 0, 'sequence');
+
+    return timeline;
+  },
+}
+
+const controller = new ScrollMagic.Controller({
+  globalSceneOptions: { reverse: false }
+});
 
 /**
  * Event Handlers
@@ -61,6 +86,10 @@ window.addEventListener('load', function(e) {
   projectCarousel.forEach(carousel => {
     slickHelper(carousel)
   })
+
+  controller.addScene([
+    new ScrollMagic.Scene({ triggerElement: '#project-details-one' }).setTween(timelineMaster.timelineA()),
+  ])
 })
 
 hotReload();

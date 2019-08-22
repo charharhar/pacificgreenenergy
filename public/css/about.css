@@ -82,22 +82,24 @@ section.section {
 
       .powerplant-wrapper {
         position: absolute;
-        width: 48%;
 
         &#pge-power1 {
           top: 10%;
           left: 0%;
+          width: 35%;
         }
 
         &#pge-power2 {
-          top: 16%;
-          left: 26%;
+          top: 10%;
+          left: 19%;
+          width: 42%;
           z-index: 2;
         }
 
         &#pge-power3 {
-          top: 23%;
-          left: 50%;
+          top: 11%;
+          left: 42%;
+          width: 50%;
           z-index: 3;
         }
 
@@ -114,8 +116,8 @@ section.section {
             z-index: 1;
           }
 
-          &.powerplants-on {
-            opacity: 1;
+          &.powerplant-on {
+            opacity: 0;
             z-index: 2;
           }
         }
@@ -182,7 +184,7 @@ section.section {
       align-items: center;
       justify-content: center;
 
-      figure.taiwan-full {
+      .taiwan-country {
         max-width: 500px;
       }
     }
@@ -241,7 +243,7 @@ section.section {
       .content-media {
         margin-bottom: 40px;
 
-        figure.taiwan-full {
+        .taiwan-country {
           width: 60%;
         }
       }
