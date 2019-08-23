@@ -64,7 +64,7 @@ const controller = new ScrollMagic.Controller({
  */
 window.addEventListener('load', function(e) {
   controller.addScene([
-    new ScrollMagic.Scene({ triggerElement: '.about-section-one' }).setTween(timelineMaster.timelineA()),
+    new ScrollMagic.Scene({ triggerElement: '#powerplants-trigger' }).setTween(timelineMaster.timelineA()),
     new ScrollMagic.Scene({ triggerElement: '.about-section-two' }).setTween(timelineMaster.timelineB()),
   ])
 })

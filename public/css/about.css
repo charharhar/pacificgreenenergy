@@ -5,6 +5,7 @@ header.section-header {
     h1 {
       line-height: 1.4;
       font-size: 50px;
+      white-space: nowrap;
     }
   }
 }
@@ -134,10 +135,7 @@ section.section {
 
     .content-text {
       align-self: flex-start;
-
-      p {
-        font-weight: bold;
-      }
+      padding: 0 25px;
 
       .founder-profiles {
         display: flex;
@@ -165,6 +163,7 @@ section.section {
         p {
           text-align: center;
           margin-bottom: 7px;
+          font-weight: 600;
 
           &.profile-name {
             font-size: 22px;
@@ -268,7 +267,6 @@ section.section {
 
           p {
             &.profile-name {
-              font-weight: bold;
               font-size: 18px;
             }
 
