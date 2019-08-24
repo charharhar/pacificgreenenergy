@@ -417,6 +417,12 @@ section.section {
 
 section.chapter-one {
   .act-view-panel {
+    .logo-container {
+      .slogan-text {
+        position: relative;
+        display: inline-block;
+      }
+    }
   }
 }
 

@@ -34,13 +34,18 @@ const timelineMaster = {
         elements: {},
       } = this;
 
-      timeline.add([
-        TweenMax.fromTo('.cloud-left', 2, { yPercent: -50, xPercent: 0 }, { yPercent: -50, xPercent: -50, ease: Power2.easeInOut }),
-        TweenMax.fromTo('.cloud-right', 2, { yPercent: -50, xPercent: 0 }, { yPercent: -50, xPercent: 50, ease: Power2.easeInOut })
-      ])
+      timeline
+        .add([
+          TweenMax.fromTo('.cloud-left', 2, { yPercent: -50, xPercent: 0 }, { yPercent: -50, xPercent: -50, ease: Power2.easeInOut }),
+          TweenMax.fromTo('.cloud-right', 2, { yPercent: -50, xPercent: 0 }, { yPercent: -50, xPercent: 50, ease: Power2.easeInOut })
+        ])
+        .add([
+          TweenMax.fromTo('#slogan-1-1', 1, { autoAlpha: 0, scale: 3 }, { autoAlpha: 1, scale: 1 }),
+          TweenMax.fromTo('#slogan-1-2', 1, { autoAlpha: 0, scale: 3 }, { autoAlpha: 1, scale: 1 }),
+          TweenMax.fromTo('#slogan-1-3', 1, { autoAlpha: 0, scale: 3 }, { autoAlpha: 1, scale: 1 }),
+        ], 'labelA', 'sequence')
         .fromTo('#cloud-logo', 1.5, { y: 100, autoAlpha: 0 }, { y: 0, autoAlpha: 1 })
         .add([
-          tweenLargeRed('#cloud-text', 1.5),
           TweenMax.fromTo('.cloud-container', 1.5, { autoAlpha: 1, scale: 1 }, { autoAlpha: 0, scale: 2 }),
           TweenMax.fromTo('#cloud-logo', 1.5, { scale: .7 }, { scale: 1 }),
         ])
@@ -56,7 +61,8 @@ const timelineMaster = {
         elements: {},
       } = this;
 
-      timeline.fromTo('#taiwan-one', 5, { scale: .33 }, { scale: 1, ease: Back.easeOut }, 'taiwanZoomLabel')
+      timeline
+        .fromTo('#taiwan-one', 5, { scale: .33 }, { scale: 1, ease: Back.easeOut }, 'taiwanZoomLabel')
         .fromTo('#tw-one', 1.5, { autoAlpha: 0, x: -50, y: -50 }, { autoAlpha: 1, x: 0, y: 0, ease: Back.easeOut }, 'taiwanZoomLabel')
         .fromTo('#tw-two', 1.5, { autoAlpha: 0, x: -50, y: -50 }, { autoAlpha: 1, x: 0, y: 0, ease: Back.easeOut }, 'taiwanZoomLabel+=1')
         .add(tweenClipPath('#text-one', 1.25), 'taiwanZoomLabel+=2.75')
@@ -124,7 +130,8 @@ const timelineMaster = {
         return TweenMax.fromTo(`#${nodeId}`, POWER_ON_BASE_DURATION, { autoAlpha: 0}, { autoAlpha: 1 })
       })
 
-      timeline.add(polluteTweens, 0, 'sequence')
+      timeline
+        .add(polluteTweens, 0, 'sequence')
         .add([
           tweenClipPath('#ocean-text-one', 1),
           tweenLargeRed('#ocean-red-one', 1),
@@ -186,7 +193,8 @@ const timelineMaster = {
         return TweenMax.fromTo(`#${nodeId}`, SKYLINE_BASE_DURATION, { autoAlpha: 0, y: -70 }, { autoAlpha: 1, y: 0 });
       })
 
-      timeline.add(daySkylineTweens, 0)
+      timeline
+        .add(daySkylineTweens, 0)
         .add([
           tweenClipPath('#city-text-one', 1),
           tweenLargeRed('#city-red-one', 1),
@@ -244,11 +252,12 @@ const timelineMaster = {
         return TweenMax.fromTo(`#${nodeId}`, PROGRESS_BASE_DURATION, variableTween.from, variableTween.to);
       })
 
-      timeline.add([
-        TweenMax.fromTo('#hand-phone-skyline', 1.5, { filter: 'blur(0)' }, { filter: 'blur(5px)' }),
-        TweenMax.fromTo('#phone-sky-elements', 1.5, { filter: 'blur(0)' }, { filter: 'blur(5px)' }),
-        TweenMax.fromTo('.hand-phone-container', 1.5, { xPercent: 100 }, { xPercent: 0 }),
-      ])
+      timeline
+        .add([
+          TweenMax.fromTo('#hand-phone-skyline', 1.5, { filter: 'blur(0)' }, { filter: 'blur(5px)' }),
+          TweenMax.fromTo('#phone-sky-elements', 1.5, { filter: 'blur(0)' }, { filter: 'blur(5px)' }),
+          TweenMax.fromTo('.hand-phone-container', 1.5, { xPercent: 100 }, { xPercent: 0 }),
+        ])
         .add([
           tweenClipPath('#phone-text-one', 1),
           tweenLargeRed('#phone-bold-one', 1),
@@ -285,7 +294,8 @@ const timelineMaster = {
         return TweenMax.fromTo(`#${nodeId}`, PEOPLE_BASE_DURATION, { yPercent: 100 }, { yPercent: 0 });
       })
 
-      timeline.add(peopleTweens, 0, 'sequence')
+      timeline
+        .add(peopleTweens, 0, 'sequence')
         .fromTo('#people-logo', 1.5, { y: 100, autoAlpha: 0 }, { y: 0, autoAlpha: 1 })
         .add(tweenLargeRed('#people-text', 1.5))
         .fromTo('#chevron-six', 1, { autoAlpha: 0 }, { autoAlpha: 1 })
