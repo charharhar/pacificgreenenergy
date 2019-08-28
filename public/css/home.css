@@ -1291,18 +1291,27 @@ section.chapter-seven {
       background: linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.7)) 100%;
     }
 
+    h2.medium-bold,
+    span.medium-bold {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
     .phone-text-container {
       margin: 0;
 
       &#phone-text-container-one {
-        top: 5%;
-        height: 100px;
+        top: 13%;
+        height: 75px;
         width: 100%;
       }
       &#phone-text-container-two {
         top: auto;
-        bottom: 5%;
-        height: 80px;
+        bottom: 8%;
+        height: 55px;
         width: 100%;
       }
     }
@@ -1337,6 +1346,8 @@ section.chapter-seven {
   section.chapter-five .act-view-panel {
     .mobile-phone-container {
       .hand-phone-container {
+        top: 4%;
+
         figure.mobile-hand-phone {
           width: 160%;
           transform: translateX(-18.5%);
@@ -1412,13 +1423,13 @@ section.chapter-seven {
       max-width: 320px;
 
       &#phone-text-container-one {
-        top: 6%;
+        top: 15%;
         height: 135px;
         margin-left: -180px;
       }
 
       &#phone-text-container-two {
-        top: 6%;
+        top: 15%;
         height: 100px;
         margin-left: 180px;
       }
