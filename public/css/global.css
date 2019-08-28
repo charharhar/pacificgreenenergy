@@ -460,17 +460,18 @@ footer.section-footer {
         position: relative;
         text-align: center;
 
-        &:last-of-type a.navLink {
+        &:last-of-type a.navLink span,
+        &:last-of-type a.navLink:after {
           padding-right: 0;
         }
 
         a.navLink {
           position: relative;
+          display: block;
           color: $main-white;
-          font-weight: 400;
-          font-size: 15px;
-          transition: .2s all ease;
-          padding: 0 20px;
+          font-weight: 600;
+          font-size: 18px;
+          overflow: hidden;
 
           &:after {
             content: attr(data-hover-text);
@@ -478,16 +479,31 @@ footer.section-footer {
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, 50%);
             color: $main-black;
-            padding: 0 12px;
-            font-size: 15px;
+            padding: 0 20px;
+            font-size: inherit;
             font-weight: 600;
             white-space: nowrap;
-            display: none;
+            transition: 400ms all ease;
           }
 
+          span {
+            position: relative;
+            display: block;
+            padding: 0 20px;
+            transition: 400ms all ease;
+          }
+
+          &.current,
           &:hover {
+            span {
+              transform: translateY(-100%);
+            }
+
+            &:after {
+              transform: translate(-50%, -50%);
+            }
           }
         }
       }
