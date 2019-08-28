@@ -149,14 +149,16 @@ section.section {
           justify-content: center;
           align-items: center;
           flex: 0 1 45%;
+
+          &.profile-one {
+            margin-right: 10%;
+          }
         }
 
         figure {
           display: block;
           background-color: #aaa;
           border-radius: 50%;
-          height: 150px;
-          width: 150px;
           margin-bottom: 20px;
         }
 
@@ -260,9 +262,6 @@ section.section {
           }
 
           figure {
-            height: 100px;
-            width: 100px;
-            margin-bottom: 20px;
           }
 
           p {
