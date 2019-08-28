@@ -8,11 +8,10 @@ header.section-header {
     }
   }
 
-  figure.mobile-sun {
-    display: none;
+  figure.pge-sun {
     position: absolute;
     top: 55px;
-    right: 30px;
+    right: 60px;
     max-width: 130px;
   }
 }
@@ -63,8 +62,8 @@ section.section {
 
     }
 
-    figure.mobile-sun {
-      display: block;
+    figure.pge-sun {
+      right: 30px;
     }
 
     .hero-content {

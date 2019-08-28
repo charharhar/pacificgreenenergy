@@ -348,14 +348,6 @@ section.section {
         right: 10%;
         max-width: 200px;
         z-index: 3;
-
-        img {
-          animation-name: sunRotate;
-          animation-iteration-count: infinite;
-          animation-direction: normal;
-          animation-duration: 60s;
-          animation-timing-function: linear;
-        }
       }
 
       .pge-skyline-clouds {
@@ -976,11 +968,6 @@ section.chapter-seven {
   39.9999% { background-position: 0% 0%; }
   40% { background-position: 100% 0%; }
   99.9999% { background-position: 100% 0%; }
-}
-
-@keyframes sunRotate {
-  0% { transform: rotateZ(0deg); }
-  100% { transform: rotateZ(360deg); }
 }
 
 // Small devices (landscape phones, less than 768px)

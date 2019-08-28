@@ -1,6 +1,8 @@
 @import 'global';
 
 header.section-header {
+  background: radial-gradient(#fff, #00B8CE);
+
   .aspect-hero {
     position: absolute;
     top: 0;
@@ -31,21 +33,70 @@ header.section-header {
     transform: none;
     padding-top: 12%;
 
+    h1.underline {
+      z-index: 2;
+    }
+
+    figure.form-clouds {
+      position: absolute;
+      z-index: 1;
+      width: 95%;
+      top: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    figure.pge-sun {
+      position: absolute;
+      max-width: 200px;
+      z-index: 2;
+      top: 15%;
+      right: 5%;
+    }
+
+    .people-container {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      flex-flow: row nowrap;
+
+      &.people-container-left {
+        left: 0;
+        transform: translateX(-100%);
+      }
+
+      &.people-container-right {
+        right: 0;
+        transform: translateX(100%);
+      }
+
+      .sprite-img.pge-people-sprite {
+        width: 165px;
+        height: 348px;
+      }
+    }
+
     .form-container {
-      padding: 30px 0 50px;
+      padding: 30px 0 120px;
 
       h2, p {
+        position: relative;
         color: $text-blue;
+        z-index: 3;
       }
 
       form {
+        position: relative;
+        margin-top: 80px;
+        z-index: 3;
+
         .form-group {
           input[type="text"],
           input[type="email"],
           input[type="phone"],
-          input[type="number"],
-          textarea {
+          input[type="number"] {
             background: #fff;
+            border: none;
           }
         }
       }
@@ -55,25 +106,38 @@ header.section-header {
 
 @media (max-width: 575.98px) {
   header.section-header {
-    background: radial-gradient(#fff, #00B8CE);
 
     .aspect-hero {
       display: none;
     }
 
     .hero-content {
-      h1.underline {
+      h1.underline,
+      figure.form-clouds,
+      figure.pge-sun {
         display: none;
       }
 
+      .people-container {
+        &.people-container-left,
+        &.people-container-right {
+          transform: translate(0);
+        }
+
+        .sprite-img.pge-people-sprite {
+          width: 80px;
+          height: 169px;
+        }
+      }
+
       .form-container {
-        padding: 100px 40px;
+        padding: 70px 40px 180px;
 
         form {
           margin: 15px auto;
 
           .form-group {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
 
             &.hidden {
               margin-bottom: 0;
@@ -86,14 +150,12 @@ header.section-header {
             input[type="text"],
             input[type="email"],
             input[type="phone"],
-            input[type="number"],
-            textarea {
+            input[type="number"] {
               padding: 10px 16px;
               font-size: 16px;
               letter-spacing: 1px;
               border-radius: 10px;
               margin-bottom: 0;
-              border: none;
               background: #fff;
             }
 
