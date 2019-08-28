@@ -104,6 +104,8 @@ section.section {
   }
 
   .chevron-container {
+    cursor: pointer;
+
     .chevron {
       border-right: 5px solid #fff;
       border-bottom: 5px solid #fff;
@@ -200,6 +202,21 @@ section.section {
       width: 100%;
       top: 0;
       z-index: 2;
+
+      &#cloud-container-2 {
+        .pge-cloud-img {
+          transform: translateY(-50%);
+          opacity: .5;
+
+          &.cloud-right {
+            right: -40%;
+          }
+
+          &.cloud-left {
+            left: -40%;
+          }
+        }
+      }
 
       .pge-cloud-img {
         position: absolute;
@@ -1214,6 +1231,20 @@ section.chapter-seven {
     }
   }
 
+  section.chapter-one .act-view-panel {
+    .cloud-container {
+      .pge-cloud-img {
+        &.cloud-right {
+          right: -50%;
+        }
+
+        &.cloud-left {
+          left: -50%;
+        }
+      }
+    }
+  }
+
   section.chapter-three .act-view-panel {
     .pge-ocean-smog {
       width: 200%;
@@ -1274,16 +1305,16 @@ section.chapter-seven {
     }
 
     .phone-text-container {
-      margin-left: 0;
+      margin: 0;
 
       &#phone-text-container-one {
-        top: 3%;
+        top: 5%;
         height: 100px;
         width: 100%;
       }
       &#phone-text-container-two {
         top: auto;
-        bottom: 4%;
+        bottom: 5%;
         height: 80px;
         width: 100%;
       }

@@ -56,14 +56,14 @@ section.section {
     margin: 80px auto;
   }
 
-  input[type="radio"] {
+  input[type="checkbox"] {
     position: absolute;
     left: -9999px;
     display: none;
   }
 
-  input[type="radio"]:not(:checked) + label,
-  input[type="radio"]:checked + label {
+  input[type="checkbox"]:not(:checked) + label,
+  input[type="checkbox"]:checked + label {
     position: relative;
     padding-left: 1.7em;
     cursor: pointer;
@@ -73,8 +73,8 @@ section.section {
     font-weight: 500;
   }
 
-  input[type="radio"]:not(:checked) + label:after,
-  input[type="radio"]:checked + label:after {
+  input[type="checkbox"]:not(:checked) + label:after,
+  input[type="checkbox"]:checked + label:after {
     content: '';
     position: absolute;
     top: 50%;
@@ -85,22 +85,22 @@ section.section {
     height: 15px;
   }
 
-  input[type="radio"]:not(:checked) + label:after {
+  input[type="checkbox"]:not(:checked) + label:after {
     transform: translateY(-50%) rotate(45deg);
   }
 
-  input[type="radio"]:checked + label:after {
+  input[type="checkbox"]:checked + label:after {
     transform: translateY(-50%) rotate(225deg);
   }
 
-  input[type="radio"] ~ .project-details {
+  input[type="checkbox"] ~ .project-details {
     overflow: hidden;
     max-height: 0;
     opacity: 0;
     transition: all 600ms cubic-bezier(.25, .1, .25, 1);
   }
 
-  input[type="radio"]:checked ~ .project-details {
+  input[type="checkbox"]:checked ~ .project-details {
     max-height: 1500px;
     margin-bottom: 40px;
     opacity: 1;
@@ -167,7 +167,7 @@ section.section {
       .project-carousel {
         position: relative;
         width: 100%;
-        margin: 50px auto 100px;
+        margin: 50px auto;
 
         .slick-track {
           display: flex;
@@ -236,12 +236,6 @@ section.section {
           }
         }
       }
-
-      .project-map {
-        position: relative;
-        width: 100%;
-        z-index: -1;
-      }
     }
   }
 }
@@ -278,8 +272,8 @@ section.section {
       margin: 40px auto 80px;
     }
 
-    input[type="radio"]:not(:checked) + label:after,
-    input[type="radio"]:checked + label:after {
+    input[type="checkbox"]:not(:checked) + label:after,
+    input[type="checkbox"]:checked + label:after {
       content: '';
       position: absolute;
       top: 50%;
@@ -290,7 +284,7 @@ section.section {
       height: 15px;
     }
 
-    input[type="radio"]:checked ~ .project-details {
+    input[type="checkbox"]:checked ~ .project-details {
       max-height: 900px;
     }
 
@@ -337,7 +331,7 @@ section.section {
         }
 
         .project-carousel {
-          margin: 50px auto 50px;
+          margin: 50px auto;
 
           figure.project-img {
             img {
@@ -374,14 +368,6 @@ section.section {
               border-bottom-width: 5px;
               border-right-width: 5px;
             }
-          }
-        }
-
-        .project-map {
-          .project-map-img {
-            width: 300%;
-            left: 50%;
-            transform: translateX(-50%);
           }
         }
       }

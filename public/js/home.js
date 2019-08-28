@@ -1,13 +1,24 @@
 
 import '../css/home.css';
-import { sliceArray } from './util.js';
 import fullpage from 'fullpage.js';
 import { TweenMax, TimelineMax } from "gsap/TweenMax";
+import {
+  sliceArray,
+  mobileNavHandler,
+} from './util.js';
+
+/**
+ * Moible Nav Handler
+ */
+const hamburger = document.querySelector('.hamburger');
+const mobileNavList = document.querySelector('.mobile-nav-list');
+
+mobileNavHandler(hamburger, mobileNavList);
+
 
 /**
  * Tween Full page Handlers
  */
-
 const tweenClipPath = function(element, duration) {
   const targetElem = `${element} .text-wrapper`
 
@@ -36,18 +47,13 @@ const timelineMaster = {
 
       timeline
         .add([
-          TweenMax.fromTo('.cloud-left', 2, { yPercent: -50, xPercent: 0 }, { yPercent: -50, xPercent: -50, ease: Power2.easeInOut }),
-          TweenMax.fromTo('.cloud-right', 2, { yPercent: -50, xPercent: 0 }, { yPercent: -50, xPercent: 50, ease: Power2.easeInOut })
+          TweenMax.fromTo('#cloud-left-1', 2, { yPercent: -50, xPercent: 0 }, { yPercent: -50, xPercent: -50, ease: Power2.easeInOut }),
+          TweenMax.fromTo('#cloud-right-1', 2, { yPercent: -50, xPercent: 0 }, { yPercent: -50, xPercent: 50, ease: Power2.easeInOut })
         ])
-        .add([
-          TweenMax.fromTo('#slogan-1-1', 1, { autoAlpha: 0, scale: 3 }, { autoAlpha: 1, scale: 1 }),
-          TweenMax.fromTo('#slogan-1-2', 1, { autoAlpha: 0, scale: 3 }, { autoAlpha: 1, scale: 1 }),
-          TweenMax.fromTo('#slogan-1-3', 1, { autoAlpha: 0, scale: 3 }, { autoAlpha: 1, scale: 1 }),
-        ], 'labelA', 'sequence')
         .fromTo('#cloud-logo', 1.5, { y: 100, autoAlpha: 0 }, { y: 0, autoAlpha: 1 })
         .add([
-          TweenMax.fromTo('.cloud-container', 1.5, { autoAlpha: 1, scale: 1 }, { autoAlpha: 0, scale: 2 }),
-          TweenMax.fromTo('#cloud-logo', 1.5, { scale: .7 }, { scale: 1 }),
+          TweenMax.fromTo('#cloud-container-1', 1.5, { scale: 1 }, { scale: 1.2 }),
+          TweenMax.fromTo('#cloud-logo', 1.5, { scale: .6 }, { scale: 1 }),
         ])
         .fromTo('#chevron-one', 1, { autoAlpha: 0 }, { autoAlpha: 1 })
     }
@@ -301,15 +307,17 @@ const timelineMaster = {
         .fromTo('#chevron-six', 1, { autoAlpha: 0 }, { autoAlpha: 1 })
     }
   }
-
 }
 
+/**
+ * Init Fullpage
+ */
 const pgeFullpage = new fullpage('#fullpage', {
-  anchors: ['chapterOne', 'chapterTwo', 'chapterThree', 'chapterFour', 'chapterFive', 'chapterSix', 'chapterSeven'],
+  anchors: ['chapterOne', 'chapterTwo', 'chapterThree', 'chapterFour', 'chapterFive', 'chapterSix'],
   recordHistory: false,
   navigation: true,
   navigationPosition: 'right',
-  navigationTooltips: ['第一章', '第二章', '第三章', '第四章', '第五章', '第六章', '第七章', ],
+  navigationTooltips: ['第一章', '第二章', '第三章', '第四章', '第五章', '第六章'],
   afterLoad: function(origin, destination, direction) {
     const { anchor: destinationAnchor } = destination;
     const originAnchor = origin && origin.anchor || null;
@@ -321,97 +329,19 @@ const pgeFullpage = new fullpage('#fullpage', {
 })
 
 /**
- * Handle radio events
- */
-
-sliceArray(document.querySelectorAll('.pge-radio')).forEach(radio => {
-  radio.addEventListener('click', (e) => {
-    const inputId = e.target.getAttribute('id')
-    const allInputs = document.querySelectorAll('.radio-inputs');
-
-    sliceArray(allInputs).forEach(node => {
-      let newClassName = node.className;
-
-      if (node.className.indexOf('hidden') > -1) {
-        newClassName = newClassName.split(' ');
-        newClassName.pop()
-        newClassName = newClassName.join(' ');
-      } else {
-        newClassName = `${node.className} hidden`
-      }
-
-      node.className = newClassName
-    })
-
-  })
-})
-
-/**
- * Form button submit handler
- */
-window.addEventListener('load', function(e) {
-  $('#form-button').click(function(e) {
-    e.preventDefault();
-
-    const formBase = {
-      name: '姓名',
-      phone: '聯絡電話',
-      email: '電子信箱',
-      city: '縣市',
-      estate: '我有',
-    }
-
-    const formLand = {
-      town: '鎮市區',
-      lot: '地段',
-      number: '地號',
-    }
-
-    const formStructure = {
-      address: '門牌地址',
-    }
-
-    let hasError = true;
-    // const captchaResponse = grecaptcha.getResponse();
-    const checkedRadio = document.querySelector('.pge-radio:checked').getAttribute('id');
-
-    const formNames = checkedRadio === 'land' ? {...formBase, ...formLand} : {...formBase, ...formStructure}
-    const formData = $('#pge-form').serializeArray()
-
-    const mailTarget = 'ccheng.pge@gmail.com';
-    const mailSubject = `我要支持綠能 - ${formData[0].value}`;
-
-    const mailBody = formData.reduce((acc, cur) => {
-      if (checkedRadio === 'land' && cur.name === 'number') {
-        hasError = !cur.value
-      }
-      if (checkedRadio === 'structure' && cur.name === 'address') {
-        hasError = !cur.value
-      }
-
-      return formNames.hasOwnProperty(cur.name)
-        ? acc + `${formNames[cur.name]}: ${cur.value}\n`
-        : acc;
-    }, '')
-
-    // hasError = !!captchaResponse;
-
-    if (!hasError) {
-      $('#pge-form-submit').attr('href', `mailto:${mailTarget}?subject=${mailSubject}&body=${mailBody}`);
-      $('#pge-form-submit')[0].click()
-    } else {
-      Swal.fire({
-        type: 'error',
-        title: '發生問題',
-        text: '請務必填寫完整門牌地址或地號',
-      })
-    }
-  });
-})
-
-/**
  * Init all timelines
  */
 Object.keys(timelineMaster).forEach((key, index) => {
   timelineMaster[key].init()
+})
+
+/**
+ * Event Handlers
+ */
+
+const nextPage = sliceArray(document.querySelectorAll('.chevron-container'));
+nextPage.forEach(node => {
+  node.addEventListener('click', () => {
+    fullpage_api.moveSectionDown();
+  })
 })

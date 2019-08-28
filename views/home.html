@@ -36,16 +36,69 @@
 </head>
 <body id="pge-body">
 
+    <div class="mobile-nav-list">
+        <ul>
+            <li>
+                <a class="navLink" data-hover-text="首頁" href="/">首頁</a>
+            </li>
+            <li>
+                <a class="navLink" data-hover-text="經營理念" href="/about">經營理念</a>
+            </li>
+            <li>
+                <a class="navLink" data-hover-text="工程實績" href="/projects">工程實績</a>
+            </li>
+            <li>
+                <a class="navLink" data-hover-text="常見問題" href="/faq">常見問題</a>
+            </li>
+            <li>
+                <a class="navLink" data-hover-text="聯繫我們" href="/contact">聯繫我們</a>
+            </li>
+        </ul>
+    </div>
+
     <div class="wrapper">
+        <nav class="main-navigation">
+            <div class="navigation-logo-wrapper">
+                <a href="/">
+                    <figure class="heading-logo-image">
+                        <img src="/images/pge-logo-color.png" alt="">
+                    </figure>
+                </a>
+            </div>
+
+            <div class="navigation-list-wrapper">
+                <ul>
+                    <li>
+                        <a class="navLink" data-hover-text="經營理念" href="/about"><span>經營理念</span></a>
+                    </li>
+                    <li>
+                        <a class="navLink" data-hover-text="工程實績" href="/projects"><span>工程實績</span></a>
+                    </li>
+                    <li>
+                        <a class="navLink" data-hover-text="常見問題" href="/faq"><span>常見問題</span></a>
+                    </li>
+                    <li>
+                        <a class="navLink" data-hover-text="聯繫我們" href="/contact"><span>聯繫我們</span></a>
+                    </li>
+                </ul>
+            </div>
+
+            <button class="hamburger hamburger--elastic">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </nav>
+
         <div class="storyboard" id="fullpage">
 
             <section class="section chapter-one" id="chapter-one">
                 <div class="act-view-panel ocean-clean-background" id="act-one-view">
-                    <div class="cloud-container">
-                        <figure class="cloud-left pge-cloud-img">
+                    <div class="cloud-container" id="cloud-container-1">
+                        <figure class="cloud-left pge-cloud-img" id="cloud-left-1">
                             <img src="/images/PGE-cloud-left.png" alt="">
                         </figure>
-                        <figure class="cloud-right pge-cloud-img">
+                        <figure class="cloud-right pge-cloud-img" id="cloud-right-1">
                             <img src="/images/PGE-cloud-right.png" alt="">
                         </figure>
                     </div>
@@ -54,13 +107,6 @@
                         <figure class="pge-logo-img large-logo" id="cloud-logo">
                             <img src="/images/PGE-logo.png" alt="">
                         </figure>
-
-                        <h2 id="cloud-text">
-                            <span class="slogan-text" id="slogan-1-1">我們的寶島，</span>
-                            <span class="slogan-text" id="slogan-1-2">我們來守護。</span>
-                            <span class="br-mobile"></span>
-                            <span class="slogan-text" id="slogan-1-3">我支持綠能!</span>
-                        </h2>
                     </div>
 
                     <div class="chevron-container" id="chevron-one"><div class="chevron bouncing"></div></div>
@@ -71,6 +117,14 @@
 
             <section class="section chapter-two" id="chapter-two">
                 <div class="act-view-panel ocean-clean-background" id="act-two-view">
+                    <div class="cloud-container" id="cloud-container-2">
+                        <figure class="cloud-left pge-cloud-img" id="cloud-left-2">
+                            <img src="/images/PGE-cloud-left.png" alt="">
+                        </figure>
+                        <figure class="cloud-right pge-cloud-img" id="cloud-right-2">
+                            <img src="/images/PGE-cloud-right.png" alt="">
+                        </figure>
+                    </div>
 
                     <div class="clouds-header-container">
                         <h1 class="large-heading" id="heading-tw">
@@ -218,7 +272,7 @@
                         </div>
                     </div>
 
-                    <div class="chevron-container" id="chevron-three"><div class bouncing="chevron"></div></div>
+                    <div class="chevron-container" id="chevron-three"><div class="chevron bouncing"></div></div>
                 </div>
             </section>
 
@@ -313,7 +367,7 @@
                     <div class="phone-text-main-container">
                         <div class="phone-text-container flex-text-container" id="phone-text-container-one">
                             <p class="phone-text typewrite" id="phone-text-one">
-                                <span class="text-wrapper"><span class="medium-bold">台灣</span>的</span>
+                                <span class="text-wrapper"><span class="medium-bold">台灣</span></span>
                             </p>
                             <span class="flex-new-line"></span>
                             <h2 class="medium-bold" id="phone-bold-one">農地總面積是58萬公頃</h2>
@@ -455,65 +509,6 @@
                             <div class="pge-people sprite-img pge-people-sprite" id="pge-people4"></div>
                             <div class="pge-people sprite-img pge-people-sprite" id="pge-people5"></div>
                         </div>
-                    </div>
-
-                    <div class="chevron-container" id="chevron-six"><div class="chevron bouncing"></div></div>
-                </div>
-            </section>
-
-            <!--  -->
-
-            <section class="section chapter-seven" id="chapter-seven">
-                <div class="act-view-panel solar-panel-background" id="act-seven-view">
-                    <div class="form-container">
-                        <h2 class="medium-bold">聯繫我們</h2>
-                        <p>若欲索取詳細評估報告，<span class="br-mobile"></span>請務必填寫完整門牌地址或地號</p>
-                        <p>請留下您的資料，我們將有專人與您聯繫</p>
-
-                        <form action="" id="pge-form">
-                            <div class="form-group">
-                                <input placeholder="姓名" class="pge-form-input" id="name" name="name" type="text">
-                            </div>
-                            <div class="form-group">
-                                <input placeholder="聯絡電話" class="pge-form-input" id="phone" name="phone" type="phone">
-                            </div>
-                            <div class="form-group">
-                                <input placeholder="電子信箱" class="pge-form-input" id="email" name="email" type="email">
-                            </div>
-                            <div class="form-group">
-                                <input placeholder="縣市" class="pge-form-input" id="city" name="city" type="text">
-                            </div>
-                            <div class="form-group">
-                                <span>我有：</span>
-                                <span>
-                                    <input class="pge-radio" type="radio" name="estate" id="structure" value="建築" checked>
-                                    <label for="structure">建築</label>
-
-                                </span>
-                                <span>
-                                    <input class="pge-radio" type="radio" name="estate" id="land" value="土地" >
-                                    <label for="land">土地</label>
-                                </span>
-                            </div>
-                            <div class="form-group shared-inputs radio-inputs land-inputs hidden">
-                                <input placeholder="鎮市區" class="pge-form-input" id="town" name="town" type="text">
-
-                                <input placeholder="地段" class="pge-form-input" id="lot" name="lot" type="text">
-                            </div>
-                            <div class="form-group radio-inputs land-inputs hidden">
-                                <input placeholder="地號" class="pge-form-input" id="number" name="number" type="text">
-                            </div>
-                            <div class="form-group radio-inputs structure-inputs">
-                                <input placeholder="門牌地址" class="pge-form-input" id="address" name="address" type="text">
-                            </div>
-                            <!-- <div class="form-group">
-                                <div class="g-recaptcha" data-sitekey="6LdOMa8UAAAAAKk760zxJcWuGXJ32Ba2Y5ITRRyh"></div>
-                            </div> -->
-                            <div class="form-group">
-                                <span id="form-button">送出</span>
-                                <a style="display:none;" href="" id="pge-form-submit"></a>
-                            </div>
-                        </form>
                     </div>
                 </div>
             </section>
