@@ -1,5 +1,7 @@
 
 import '../css/contact.css';
+import 'animation.gsap';
+import ScrollMagic from 'scrollmagic';
 import {
   sliceArray,
   hotReload,
@@ -103,10 +105,22 @@ window.addEventListener('load', function(e) {
   });
 })
 
+const controller = new ScrollMagic.Controller({
+  // globalSceneOptions: { reverse: false }
+});
+
 /**
  * Event Handlers
  */
 window.addEventListener('load', function(e) {
+  const halfHeight = window.innerHeight/2;
+
+  controller.addScene([
+    new ScrollMagic.Scene({
+      triggerElement: '.section-footer',
+      offset: -halfHeight,
+    }).setClassToggle('.call-to-action', 'stick-footer'),
+  ])
 })
 
 hotReload();

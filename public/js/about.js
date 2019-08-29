@@ -52,20 +52,26 @@ const timelineMaster = {
     timeline.add(animalTweens, 0, 'sequence')
 
     return timeline
-  }
+  },
 }
 
 const controller = new ScrollMagic.Controller({
-  globalSceneOptions: { reverse: false }
+  // globalSceneOptions: { reverse: false }
 });
 
 /**
  * Event Handlers
  */
 window.addEventListener('load', function(e) {
+  const halfHeight = window.innerHeight/2;
+
   controller.addScene([
     new ScrollMagic.Scene({ triggerElement: '#powerplants-trigger' }).setTween(timelineMaster.timelineA()),
     new ScrollMagic.Scene({ triggerElement: '.about-section-two' }).setTween(timelineMaster.timelineB()),
+    new ScrollMagic.Scene({
+      triggerElement: '.section-footer',
+      offset: -halfHeight,
+    }).setClassToggle('.call-to-action', 'stick-footer'),
   ])
 })
 

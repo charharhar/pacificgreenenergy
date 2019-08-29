@@ -61,12 +61,12 @@ header.section-header {
       flex-flow: row nowrap;
 
       &.people-container-left {
-        left: 0;
+        left: -30px;
         transform: translateX(-100%);
       }
 
       &.people-container-right {
-        right: 0;
+        right: -30px;
         transform: translateX(100%);
       }
 
@@ -119,9 +119,14 @@ header.section-header {
       }
 
       .people-container {
-        &.people-container-left,
+        &.people-container-left {
+          left: 0;
+          transform: translateX(0);
+        }
+
         &.people-container-right {
-          transform: translate(0);
+          right: 0;
+          transform: translateX(0);
         }
 
         .sprite-img.pge-people-sprite {

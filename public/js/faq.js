@@ -45,8 +45,14 @@ const controller = new ScrollMagic.Controller({
  * Event Handlers
  */
 window.addEventListener('load', function(e) {
+  const halfHeight = window.innerHeight/2;
+
   controller.addScene([
     new ScrollMagic.Scene({ triggerElement: '.faq-section-one' }).setTween(timelineMaster.timelineA()),
+    new ScrollMagic.Scene({
+      triggerElement: '.section-footer',
+      offset: -halfHeight,
+    }).setClassToggle('.call-to-action', 'stick-footer'),
   ])
 })
 

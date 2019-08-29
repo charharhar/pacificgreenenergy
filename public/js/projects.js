@@ -81,6 +81,7 @@ const controller = new ScrollMagic.Controller({
  * Event Handlers
  */
 window.addEventListener('load', function(e) {
+  const halfHeight = window.innerHeight/2;
   const projectCarousel = sliceArray(document.querySelectorAll('.project-carousel'))
 
   projectCarousel.forEach(carousel => {
@@ -89,6 +90,10 @@ window.addEventListener('load', function(e) {
 
   controller.addScene([
     new ScrollMagic.Scene({ triggerElement: '#project-details-one' }).setTween(timelineMaster.timelineA()),
+    new ScrollMagic.Scene({
+      triggerElement: '.section-footer',
+      offset: -halfHeight,
+    }).setClassToggle('.call-to-action', 'stick-footer'),
   ])
 })
 
