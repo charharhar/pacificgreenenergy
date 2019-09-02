@@ -2,7 +2,7 @@
 
 $noto-reg: 'Noto Sans TC';
 $main-white: #ffffff;
-$main-black: #222;
+$main-black: #404040;
 $footer-blue: #20529f;
 $text-blue: #000d54;
 $ocean-blue: #00B8CE;
@@ -258,8 +258,8 @@ a.call-to-action {
   height: 89px;
   width: 170px;
   position: fixed;
-  bottom: 40px;
-  left: 40px;
+  bottom: 30px;
+  left: 30px;
   background: url(/images/call-to-action.png);
   background-repeat: no-repeat;
   background-size: cover;
