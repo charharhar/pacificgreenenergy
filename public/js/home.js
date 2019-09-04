@@ -55,7 +55,15 @@ const timelineMaster = {
           TweenMax.fromTo('#cloud-container-1', 1.5, { scale: 1 }, { scale: 1.2 }),
           TweenMax.fromTo('#cloud-logo', 1.5, { scale: .6 }, { scale: 1 }),
         ])
-        .fromTo('#chevron-one', 1, { autoAlpha: 0 }, { autoAlpha: 1 })
+        .fromTo('#chevron-one', 1, { autoAlpha: 0 }, { autoAlpha: 1 }, 'endChapterOne')
+        .add([
+          TweenMax.to('.cta-wrapper', .5, { scale: 1.25 }),
+          TweenMax.to('.cta-wrapper', .5, { scale: 1 }),
+        ], 'endChapterOne', 'sequence')
+        .add([
+          TweenMax.to('.hamburger', .5, { scale: 1.25  }),
+          TweenMax.to('.hamburger', .5, { scale: 1 }),
+        ], 'endChapterOne', 'sequence')
     }
   },
   chapterTwo: {
@@ -304,7 +312,14 @@ const timelineMaster = {
         .add(peopleTweens, 0, 'sequence')
         .fromTo('#people-logo', 1.5, { y: 100, autoAlpha: 0 }, { y: 0, autoAlpha: 1 })
         .add(tweenLargeRed('#people-text', 1.5))
-        .fromTo('#chevron-six', 1, { autoAlpha: 0 }, { autoAlpha: 1 })
+        .add([
+          TweenMax.to('.cta-wrapper', .5, { scale: 1.25 }),
+          TweenMax.to('.cta-wrapper', .5, { scale: 1 }),
+        ], 'endChapterOne', 'sequence')
+        .add([
+          TweenMax.to('.hamburger', .5, { scale: 1.25  }),
+          TweenMax.to('.hamburger', .5, { scale: 1 }),
+        ], 'endChapterOne', 'sequence')
     }
   }
 }

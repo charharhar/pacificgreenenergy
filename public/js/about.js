@@ -71,7 +71,7 @@ window.addEventListener('load', function(e) {
     new ScrollMagic.Scene({
       triggerElement: '.section-footer',
       offset: -halfHeight,
-    }).setClassToggle('.call-to-action', 'stick-footer'),
+    }).setClassToggle('.cta-wrapper', 'stick-footer'),
   ])
 })
 
