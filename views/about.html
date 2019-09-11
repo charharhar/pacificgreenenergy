@@ -29,10 +29,11 @@
     <meta name="msapplication-config" content="/images/icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
-    <link rel="stylesheet" href="<%= assetsMap.about.css %>">
-    <!-- <link rel="stylesheet" href="/css/about.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.5/fullpage.css">
+    <link rel="stylesheet" href="<%= assetsMap.home.css %>">
+    <!-- <link rel="stylesheet" href="/css/home.css"> -->
 </head>
-<body>
+<body id="pge-body">
 
     <div class="mobile-nav-list">
         <ul>
@@ -40,7 +41,7 @@
                 <a class="navLink" data-hover-text="首頁" href="/">首頁</a>
             </li>
             <li>
-                <a class="navLink current" data-hover-text="經營理念" href="/about">經營理念</a>
+                <a class="navLink" data-hover-text="經營理念" href="/about">經營理念</a>
             </li>
             <li>
                 <a class="navLink" data-hover-text="工程實績" href="/projects">工程實績</a>
@@ -61,189 +62,470 @@
             </a>
         </div>
 
-        <header class="section-header aspect-natural">
-            <nav class="main-navigation">
-                <div class="navigation-logo-wrapper">
-                    <a href="/">
-                        <figure class="heading-logo-image">
-                            <img src="/images/pge-logo-color.png" alt="">
-                        </figure>
-                    </a>
-                </div>
-
-                <div class="navigation-list-wrapper">
-                    <ul>
-                        <li>
-                            <a class="navLink current" data-hover-text="經營理念" href="/about"><span>經營理念</span></a>
-                        </li>
-                        <li>
-                            <a class="navLink" data-hover-text="工程實績" href="/projects"><span>工程實績</span></a>
-                        </li>
-                        <li>
-                            <a class="navLink" data-hover-text="常見問題" href="/faq"><span>常見問題</span></a>
-                        </li>
-                        <li>
-                            <a class="navLink" data-hover-text="聯繫我們" href="/contact"><span>聯繫我們</span></a>
-                        </li>
-                    </ul>
-                </div>
-
-                <button class="hamburger hamburger--elastic">
-                    <span class="hamburger-box">
-                        <span class="hamburger-inner"></span>
-                    </span>
-                </button>
-            </nav>
-
-            <div class="hero-content">
-                <h1>邁向更光明未<br>來的小步驟</h1>
+        <nav class="main-navigation">
+            <div class="navigation-logo-wrapper">
+                <a href="/">
+                    <figure class="heading-logo-image">
+                        <img src="/images/pge-logo-color.png" alt="">
+                    </figure>
+                </a>
             </div>
 
-            <div class="aspect-hero">
-                <figure class="about-hero">
-                    <img src="/images/about/pge-about-landing.png" alt="">
-                </figure>
-            </div>
-        </header>
-
-        <section class="section about-section-one">
-                <figure class="about-smog">
-                    <img src="/images/about/about-smog.png" alt="">
-                </figure>
-            <div class="section-content">
-
-                <div class="content-wrapper">
-                    <div class="content-text">
-                        <h1 class="underline">經營理念</h1>
-
-                        <p>台灣有很多針對綠能的負面新聞報導的焦點都是綠能太貴，不適合台灣大家都想用便宜的電但很少有人去思考便宜的代價全世界最大單一火力發電廠就在台中台灣火力發電是舊時代的思維，從工業革命就存在火力發電造成的碳排放，環境破壞，空氣污染及社會成本卻沒納入計算但不代表全台灣2300萬人沒有在背負這些負擔
-                        <br><br>
-                        改變永遠是困難的但為了台灣，為了下一代，為了自己我們不得去改變太平洋綠能 就是從這個想法而衍伸出來的我們從自己所能開始改變，開始要求，開始著手協助台灣完成能源改革 成為全球永續發展的指標</p>
-                    </div>
-                </div>
-
-                <div class="content-wrapper">
-                    <div class="content-media" id="powerplants-trigger">
-
-                        <div class="powerplant-wrapper" id="pge-power1">
-                            <figure class="powerplants powerplant-off">
-                                <img src="/images/about/power-off-1.png" alt="">
-                            </figure>
-                            <figure class="powerplants powerplant-on">
-                                <img src="/images/about/power-on-1.png" alt="">
-                            </figure>
-                        </div>
-
-                        <div class="powerplant-wrapper" id="pge-power2">
-                            <figure class="powerplants powerplant-off">
-                                <img src="/images/about/power-off-2.png" alt="">
-                            </figure>
-                            <figure class="powerplants powerplant-on">
-                                <img src="/images/about/power-on-2.png" alt="">
-                            </figure>
-                        </div>
-
-                        <div class="powerplant-wrapper" id="pge-power3">
-                            <figure class="powerplants powerplant-off">
-                                <img src="/images/about/power-off-3.png" alt="">
-                            </figure>
-                            <figure class="powerplants powerplant-on">
-                                <img src="/images/about/power-on-3.png" alt="">
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section about-section-two">
-            <div class="section-content">
-                <div class="content-wrapper">
-                    <div class="content-media">
-                        <div class="taiwan-country" id="taiwan-one">
-                            <figure class="pge-taiwan-img">
-                                <img src="/images/PGE-taiwan-empty.png" alt="">
-                            </figure>
-
-                            <div class="pge-animals animal1 sprite-img pge-animal-sprite" id="pge-animal1"></div>
-                            <div class="pge-animals animal2 sprite-img pge-animal-sprite" id="pge-animal2"></div>
-                            <div class="pge-animals animal3 sprite-img pge-animal-sprite" id="pge-animal3"></div>
-                            <div class="pge-animals animal4 sprite-img pge-animal-sprite" id="pge-animal4"></div>
-                            <div class="pge-animals animal5 sprite-img pge-animal-sprite" id="pge-animal5"></div>
-                            <div class="pge-animals animal6 sprite-img pge-animal-sprite" id="pge-animal6"></div>
-                            <div class="pge-animals animal7 sprite-img pge-animal-sprite" id="pge-animal7"></div>
-                            <div class="pge-animals animal8 sprite-img pge-animal-sprite" id="pge-animal8"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="content-wrapper">
-                    <div class="content-text">
-                        <h1 class="underline">創辦人簡介</h1>
-
-                        <p>
-                            我們是七年級生創業<br>
-                            家裡都是工廠背景<br>
-                            綠能帶給全球電業革命性的改變<br>
-                            我們看見世界的趨勢也看到台灣的未來<br>
-                            台灣這個美麗的寶島 每年有98％的能源需求是向國外進口<br>
-                            台灣有很好的陽光，風，水，地熱<br>
-                            其實只要有心台灣就能自給自足<br>
-                            我們創業就是希望用自己一點小小力量 讓台灣變得更好<br>
-                            <br>
-                            『我們的寶島，我們來守護。我支持綠能。』<br>
-                            <br>
-                            共同創辦人
-                        </p>
-
-                        <div class="founder-profiles">
-                            <div class="profile-container profile-one">
-                                <figure class="founder-avatar">
-                                    <img src="/images/about/pge-founder-1.png" alt="鄭旭捷">
-                                </figure>
-                                <p class="profile-name">鄭旭捷</p>
-                                <p class="profile-title">錢轉高聲驚麼</p>
-                            </div>
-                            <div class="profile-container profile-two">
-                                <figure class="founder-avatar">
-                                    <img src="/images/about/pge-founder-2.png" alt="張家偉">
-                                </figure>
-                                <p class="profile-name">張家偉</p>
-                                <p class="profile-title">錢轉高聲驚麼</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer class="section-footer">
-            <div class="footer-left">
-                <figure class="heading-logo-image">
-                    <img src="/images/pge-white-logo.png" alt="">
-                </figure>
-            </div>
-
-            <div class="footer-center">
-                <p>2019 pacific green energy limited all rights reserved</p>
-            </div>
-
-            <div class="footer-right">
-                <ul class="footer-nav">
-                    <li><a href="" class="footer-social" id="linkedin"><img src="/images/social-facebook.svg" alt=""></a></li>
-                    <li><a href="" class="footer-social" id="linkedin"><img src="/images/social-insta.svg" alt=""></a></li>
-                    <li><a href="" class="footer-social" id="linkedin"><img src="/images/social-linkedin.svg" alt=""></a></li>
+            <div class="navigation-list-wrapper">
+                <ul>
+                    <li>
+                        <a class="navLink" data-hover-text="經營理念" href="/about"><span>經營理念</span></a>
+                    </li>
+                    <li>
+                        <a class="navLink" data-hover-text="工程實績" href="/projects"><span>工程實績</span></a>
+                    </li>
+                    <li>
+                        <a class="navLink" data-hover-text="常見問題" href="/faq"><span>常見問題</span></a>
+                    </li>
+                    <li>
+                        <a class="navLink" data-hover-text="聯繫我們" href="/contact"><span>聯繫我們</span></a>
+                    </li>
                 </ul>
             </div>
-        </footer>
+
+            <button class="hamburger hamburger--elastic">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </nav>
+
+        <div class="storyboard" id="fullpage">
+
+            <section class="section chapter-one" id="chapter-one">
+                <div class="act-view-panel ocean-clean-background" id="act-one-view">
+                    <div class="cloud-container" id="cloud-container-1">
+                        <figure class="cloud-left pge-cloud-img" id="cloud-left-1">
+                            <img src="/images/PGE-cloud-left.png" alt="">
+                        </figure>
+                        <figure class="cloud-right pge-cloud-img" id="cloud-right-1">
+                            <img src="/images/PGE-cloud-right.png" alt="">
+                        </figure>
+                    </div>
+
+                    <div class="logo-container" id="logo-one">
+                        <figure class="pge-logo-img large-logo" id="cloud-logo">
+                            <img src="/images/PGE-logo.png" alt="">
+                        </figure>
+                    </div>
+
+                    <div class="chevron-container" id="chevron-one"><div class="chevron bouncing"></div></div>
+                </div>
+            </section>
+
+            <!--  -->
+
+            <section class="section chapter-two" id="chapter-two">
+                <div class="act-view-panel ocean-clean-background" id="act-two-view">
+                    <div class="cloud-container" id="cloud-container-2">
+                        <figure class="cloud-left pge-cloud-img" id="cloud-left-2">
+                            <img src="/images/PGE-cloud-left.png" alt="">
+                        </figure>
+                        <figure class="cloud-right pge-cloud-img" id="cloud-right-2">
+                            <img src="/images/PGE-cloud-right.png" alt="">
+                        </figure>
+                    </div>
+
+                    <div class="clouds-header-container">
+                        <h1 class="large-heading" id="heading-tw">
+                            <span id="tw-one">台</span>
+                            <span id="tw-two">灣</span>
+                        </h1>
+                    </div>
+
+                    <div class="clouds-text-container">
+                        <p class="ch2-text-one typewrite" id="text-one">
+                            <span class="text-wrapper">我們2300萬人的家</span>
+                        </p>
+
+                        <p class="ch2-text-two typewrite" id="text-two">
+                            <span class="text-wrapper">我們美麗的寶島</span>
+                        </p>
+                    </div>
+
+                    <div class="taiwan-container center-container">
+                        <div class="taiwan-country" id="taiwan-one">
+                            <figure class="pge-taiwan-img">
+                                <img data-src="/images/PGE-taiwan-empty.png" alt="">
+                            </figure>
+
+                            <div class="pge-animals animal1 sprite-img pge-animal-sprite"></div>
+                            <div class="pge-animals animal2 sprite-img pge-animal-sprite"></div>
+                            <div class="pge-animals animal3 sprite-img pge-animal-sprite"></div>
+                            <div class="pge-animals animal4 sprite-img pge-animal-sprite"></div>
+                            <div class="pge-animals animal5 sprite-img pge-animal-sprite"></div>
+                            <div class="pge-animals animal6 sprite-img pge-animal-sprite"></div>
+                            <div class="pge-animals animal7 sprite-img pge-animal-sprite"></div>
+                            <div class="pge-animals animal8 sprite-img pge-animal-sprite"></div>
+                        </div>
+                    </div>
+
+                    <div class="chevron-container" id="chevron-two"><div class="chevron bouncing"></div></div>
+                </div>
+            </section>
+
+            <!-- -->
+
+            <section class="section chapter-three" id="chapter-three">
+                <div class="act-view-panel ocean-clean-background" id="act-three-view">
+
+                    <figure class="pge-ocean-smog" id="ocean-smog">
+                        <img data-src="/images/taipei-night-skyline-1.png" alt="">
+                    </figure>
+
+                    <div class="ocean-text-container flex-text-container" id="ocean-text-container-one">
+                        <p class="typewrite" id="ocean-text-one">
+                            <span class="text-wrapper"><span class="medium-bold">台灣</span>每一年的能源需求</span>
+                        </p>
+                        <span class="flex-new-line"></span>
+                        <span class="large-red" id="ocean-red-one">98％</span>
+                        <p class="typewrite" id="ocean-text-two">
+                            <span class="text-wrapper">是依賴國外進口。</span>
+                        </p>
+                    </div>
+
+                    <div class="ocean-text-container flex-text-container" id="ocean-text-container-two">
+                        <p class="typewrite" id="ocean-text-three">
+                            <span class="text-wrapper">造成每一年超過新台幣</span>
+                        </p>
+                        <span class="flex-new-line"></span>
+                        <span class="large-red" id="ocean-red-two">一兆元</span>
+                        <p class="typewrite" id="ocean-text-four">
+                            <span class="text-wrapper">離開台灣。</span>
+                        </p>
+                    </div>
+
+                    <div class="taiwan-container center-container">
+                        <div class="taiwan-country" id="taiwan-two">
+                            <figure class="pge-taiwan-img">
+                                <img data-src="/images/PGE-taiwan-empty.png" alt="">
+                            </figure>
+
+                            <div class="pge-animals pge-pollute animal1 sprite-img pge-animal-sprite" data-order="1" data-type="animal" id="pge-pollute1"></div>
+                            <div class="pge-animals pge-pollute animal2 sprite-img pge-animal-sprite" data-order="2" data-type="animal" id="pge-pollute2"></div>
+                            <div class="pge-animals pge-pollute animal3 sprite-img pge-animal-sprite" data-order="4" data-type="animal" id="pge-pollute4"></div>
+                            <div class="pge-animals pge-pollute animal4 sprite-img pge-animal-sprite" data-order="6" data-type="animal" id="pge-pollute6"></div>
+                            <div class="pge-animals pge-pollute animal5 sprite-img pge-animal-sprite" data-order="8" data-type="animal" id="pge-pollute8"></div>
+                            <div class="pge-animals pge-pollute animal6 sprite-img pge-animal-sprite" data-order="9" data-type="animal" id="pge-pollute9"></div>
+                            <div class="pge-animals pge-pollute animal7 sprite-img pge-animal-sprite" data-order="11" data-type="animal" id="pge-pollute11"></div>
+                            <div class="pge-animals pge-pollute animal8 sprite-img pge-animal-sprite" data-order="12" data-type="animal" id="pge-pollute12"></div>
+
+                            <div class="pge-powerplants pge-pollute pge-power1" data-order="3" data-type="power" id="pge-pollute3">
+                                <div class="sprite-img pge-powerplant-sprite pge-power-off1 power-off"></div>
+                                <div class="sprite-img pge-powerplant-sprite pge-power-on1 power-on" id="power-on1"></div>
+                            </div>
+                            <div class="pge-powerplants pge-pollute pge-power2" data-order="5" data-type="power" id="pge-pollute5">
+                                <div class="sprite-img pge-powerplant-sprite pge-power-off2 power-off"></div>
+                                <div class="sprite-img pge-powerplant-sprite pge-power-on2 power-on" id="power-on2"></div>
+                            </div>
+                            <div class="pge-powerplants pge-pollute pge-power3" data-order="7" data-type="power" id="pge-pollute7">
+                                <div class="sprite-img pge-powerplant-sprite pge-power-off3 power-off"></div>
+                                <div class="sprite-img pge-powerplant-sprite pge-power-on3 power-on" id="power-on3"></div>
+                            </div>
+                            <div class="pge-powerplants pge-pollute pge-power4" data-order="10" data-type="power" id="pge-pollute10">
+                                <div class="sprite-img pge-powerplant-sprite pge-power-off4 power-off"></div>
+                                <div class="sprite-img pge-powerplant-sprite pge-power-on4 power-on" id="power-on4"></div>
+                            </div>
+                            <div class="pge-powerplants pge-pollute pge-power5" data-order="13" data-type="power" id="pge-pollute13">
+                                <div class="sprite-img pge-powerplant-sprite pge-power-off1 power-off"></div>
+                                <div class="sprite-img pge-powerplant-sprite pge-power-on1 power-on" id="power-on5"></div>
+                            </div>
+                        </div>
+
+                        <div class="ocean-container">
+                            <div class="waves-container">
+                                <div class="pge-wave sprite-img pge-wave-sprite" id="pge-wave1"></div>
+                                <div class="pge-wave sprite-img pge-wave-sprite" id="pge-wave2"></div>
+                                <div class="pge-wave sprite-img pge-wave-sprite" id="pge-wave3"></div>
+                                <div class="pge-wave sprite-img pge-wave-sprite" id="pge-wave4"></div>
+                                <div class="pge-wave sprite-img pge-wave-sprite" id="pge-wave5"></div>
+                                <div class="pge-wave sprite-img pge-wave-sprite" id="pge-wave6"></div>
+                                <div class="pge-wave sprite-img pge-wave-sprite" id="pge-wave7"></div>
+                                <div class="pge-wave sprite-img pge-wave-sprite" id="pge-wave8"></div>
+                            </div>
+
+                            <div class="whale-container">
+                                <figure class="pge-whale" id="pge-whale-1">
+                                    <img src="/images/pge-whale-1.png" alt="">
+                                </figure>
+                            </div>
+
+                            <div class="ocean-partition ocean-left">
+                                <div class="pge-ship sprite-img pge-ship-sprite" id="pge-ship-img-l1">
+                                    <div class="ship-commodity sprite-img pge-commodity-sprite" id="comm-l1"></div>
+                                </div>
+                                <div class="pge-ship sprite-img pge-ship-sprite" id="pge-ship-img-l2">
+                                    <div class="ship-commodity sprite-img pge-commodity-sprite" id="comm-l2"></div>
+                                </div>
+                            </div>
+
+                            <div class="taiwan-placehold"></div>
+
+                            <div class="ocean-partition ocean-right">
+                                <div class="pge-ship sprite-img pge-ship-sprite" id="pge-ship-img-r1">
+                                    <div class="ship-commodity sprite-img pge-commodity-sprite" id="comm-r1"></div>
+                                </div>
+                                <div class="pge-ship sprite-img pge-ship-sprite" id="pge-ship-img-r2">
+                                    <div class="ship-commodity sprite-img pge-commodity-sprite" id="comm-r2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chevron-container" id="chevron-three"><div class="chevron bouncing"></div></div>
+                </div>
+            </section>
+
+            <!-- -->
+
+            <section class="section chapter-four" id="chapter-four">
+                <div class="act-view-panel day-sky-background" id="act-four-view">
+                    <div class="city-text-container flex-text-container" id="city-text-container-one">
+                        <p class="city-text typewrite" id="city-text-one">
+                            <span class="text-wrapper">根據台大公共衛生學院，</span>
+                        </p>
+                        <span class="flex-new-line"></span>
+                        <span class="large-red" id="city-red-one">空汙</span>
+                        <p class="city-text typewrite" id="city-text-two">
+                            <span class="text-wrapper">在<span class="medium-bold">台灣</span>國人</span>
+                        </p>
+                        <span class="br-flex-mobile"></span>
+                        <span class="large-red" id="city-red-two">死亡</span>
+                        <p class="city-text typewrite" id="city-text-three">
+                            <span class="text-wrapper">負擔危險因子中</span>
+                        </p>
+                        <span class="flex-new-line"></span>
+                        <span class="large-red" id="city-red-three">排列第四。</span>
+                    </div>
+
+                    <div class="taipei-sky-elements">
+                        <figure class="pge-sun sun-rotate">
+                            <img data-src="/images/taipei-sun.png" alt="">
+                        </figure>
+
+                        <figure class="pge-skyline-clouds taipei-day-clouds">
+                            <img data-src="/images/taipei-day-clouds.png" alt="">
+                        </figure>
+                    </div>
+
+                    <div class="skyline-container">
+                        <div class="taipei-skyline">
+                            <div class="taipei-day-skyline">
+                                <figure class="pge-night-skyline" id="taipei-night-skyline">
+                                    <img src="/images/taipei-night-skyline-1.png" alt="">
+                                </figure>
+                                <figure class="pge-day-skyline skyline-animate" id="pge-day-sky2">
+                                    <img data-src="/images/taipei-day-skyline-2.png" alt="">
+                                </figure>
+                                <figure class="pge-day-skyline skyline-animate" id="pge-day-sky3">
+                                    <img data-src="/images/taipei-day-skyline-3.png" alt="">
+                                </figure>
+                                <figure class="pge-day-skyline skyline-animate" id="pge-day-sky4">
+                                    <img data-src="/images/taipei-day-skyline-4.png" alt="">
+                                </figure>
+                                <figure class="pge-day-skyline skyline-animate" id="pge-day-sky5">
+                                    <img data-src="/images/taipei-day-skyline-5.png" alt="">
+                                </figure>
+                                <figure class="pge-day-skyline skyline-animate" id="pge-day-sky6">
+                                    <img data-src="/images/taipei-day-skyline-6.png" alt="">
+                                </figure>
+                                <figure class="pge-day-skyline skyline-animate" id="pge-day-sky7">
+                                    <img data-src="/images/taipei-day-skyline-7.png" alt="">
+                                </figure>
+                                <figure class="pge-day-skyline skyline-animate" id="pge-day-sky8">
+                                    <img data-src="/images/taipei-day-skyline-8.png" alt="">
+                                </figure>
+                            </div>
+                        </div>
+
+                        <div class="taipei-solar-panels">
+                            <div class="pge-city-panels pge-city-panels-animate sprite-img pge-city-panel-sprite city-panel1" id="city-panel1"></div>
+                            <div class="pge-city-panels pge-city-panels-animate sprite-img pge-city-panel-sprite city-panel2" id="city-panel2"></div>
+                            <div class="pge-city-panels pge-city-panels-animate sprite-img pge-city-panel-sprite city-panel3" id="city-panel3"></div>
+                            <div class="pge-city-panels pge-city-panels-animate sprite-img pge-city-panel-sprite city-panel4" id="city-panel4"></div>
+                            <div class="pge-city-panels pge-city-panels-animate sprite-img pge-city-panel-sprite city-panel5" id="city-panel5"></div>
+                            <div class="pge-city-panels pge-city-panels-animate sprite-img pge-city-panel-sprite city-panel6" id="city-panel6"></div>
+                            <div class="pge-city-panels pge-city-panels-animate sprite-img pge-city-panel-sprite city-panel7" id="city-panel7"></div>
+                            <div class="pge-city-panels pge-city-panels-animate sprite-img pge-city-panel-sprite city-panel8" id="city-panel8"></div>
+                            <div class="pge-city-panels pge-city-panels-animate sprite-img pge-city-panel-sprite city-panel9" id="city-panel9"></div>
+                            <div class="pge-city-panels pge-city-panels-animate sprite-img pge-city-panel-sprite city-panel10" id="city-panel10"></div>
+                            <div class="pge-city-panels pge-city-panels-animate sprite-img pge-city-panel-sprite city-panel11" id="city-panel11"></div>
+                            <div class="pge-city-panels pge-city-panels-animate sprite-img pge-city-panel-sprite city-panel12" id="city-panel12"></div>
+                            <div class="pge-city-panels pge-city-panels-animate sprite-img pge-city-panel-sprite city-panel13" id="city-panel13"></div>
+                            <div class="pge-city-panels pge-city-panels-animate sprite-img pge-city-panel-sprite city-panel14" id="city-panel14"></div>
+                        </div>
+                    </div>
+
+                    <div class="chevron-container" id="chevron-four"><div class="chevron bouncing"></div></div>
+                </div>
+            </section>
+
+            <!--  -->
+
+            <section class="section chapter-five" id="chapter-five">
+                <div class="act-view-panel day-sky-background" id="act-five-view">
+                    <div class="phone-text-main-container">
+                        <div class="phone-text-container flex-text-container" id="phone-text-container-one">
+                            <p class="phone-text typewrite" id="phone-text-one">
+                                <span class="text-wrapper"><span class="medium-bold">台灣</span></span>
+                            </p>
+                            <span class="flex-new-line"></span>
+                            <h2 class="medium-bold" id="phone-bold-one">農地總面積是58萬公頃</h2>
+                            <span class="flex-new-line"></span>
+                            <p class="phone-text typewrite" id="phone-text-two">
+                                <span class="text-wrapper">但 1/3（19萬公傾）的農地是休耕沒有種植的。</span>
+                            </p>
+                        </div>
+
+                        <div class="phone-text-container flex-text-container" id="phone-text-container-two">
+                            <h2 class="medium-bold" id="phone-bold-two">台灣只需要2萬公傾</h2>
+                            <span class="flex-new-line"></span>
+                            <p class="phone-text typewrite" id="phone-text-three">
+                                <span class="text-wrapper">就可以達成2025年建置20GW太陽能的目標。</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="taipei-sky-elements" id="phone-sky-elements">
+                        <figure class="pge-sun sun-rotate">
+                            <img data-src="/images/taipei-sun.png" alt="">
+                        </figure>
+
+                        <figure class="pge-skyline-clouds taipei-day-clouds">
+                            <img data-src="/images/taipei-day-clouds.png" alt="">
+                        </figure>
+                    </div>
+
+                    <div class="skyline-container" id="hand-phone-skyline">
+                        <div class="taipei-skyline">
+                            <div class="taipei-day-skyline">
+                                <figure class="pge-night-skyline">
+                                    <img data-src="/images/taipei-night-skyline-1.png" alt="">
+                                </figure>
+                                <figure class="pge-day-skyline">
+                                    <img data-src="/images/taipei-day-skyline-2.png" alt="">
+                                </figure>
+                                <figure class="pge-day-skyline">
+                                    <img data-src="/images/taipei-day-skyline-4.png" alt="">
+                                </figure>
+                                <figure class="pge-day-skyline">
+                                    <img data-src="/images/taipei-day-skyline-5.png" alt="">
+                                </figure>
+                                <figure class="pge-day-skyline">
+                                    <img data-src="/images/taipei-day-skyline-6.png" alt="">
+                                </figure>
+                                <figure class="pge-day-skyline">
+                                    <img data-src="/images/taipei-day-skyline-8.png" alt="">
+                                </figure>
+                            </div>
+                        </div>
+
+                        <div class="taipei-solar-panels">
+                            <div class="pge-city-panels sprite-img pge-city-panel-sprite city-panel1"></div>
+                            <div class="pge-city-panels sprite-img pge-city-panel-sprite city-panel2"></div>
+                            <div class="pge-city-panels sprite-img pge-city-panel-sprite city-panel3"></div>
+                            <div class="pge-city-panels sprite-img pge-city-panel-sprite city-panel4"></div>
+                            <div class="pge-city-panels sprite-img pge-city-panel-sprite city-panel5"></div>
+                            <div class="pge-city-panels sprite-img pge-city-panel-sprite city-panel6"></div>
+                            <div class="pge-city-panels sprite-img pge-city-panel-sprite city-panel7"></div>
+                            <div class="pge-city-panels sprite-img pge-city-panel-sprite city-panel8"></div>
+                            <div class="pge-city-panels sprite-img pge-city-panel-sprite city-panel9"></div>
+                            <div class="pge-city-panels sprite-img pge-city-panel-sprite city-panel10"></div>
+                            <div class="pge-city-panels sprite-img pge-city-panel-sprite city-panel11"></div>
+                            <div class="pge-city-panels sprite-img pge-city-panel-sprite city-panel12"></div>
+                            <div class="pge-city-panels sprite-img pge-city-panel-sprite city-panel13"></div>
+                            <div class="pge-city-panels sprite-img pge-city-panel-sprite city-panel14"></div>
+                        </div>
+                    </div>
+
+                    <div class="mobile-phone-container">
+                        <div class="hand-phone-container">
+                            <figure class="mobile-hand-phone">
+                                <img src="/images/mobile-hand-phone.png" alt="">
+                            </figure>
+
+                            <div class="phone-progress-container">
+                                <div class="phone-progress">
+                                    <div class="progress-container">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                </div>
+                                <p id="progress-bar-text"><span>2025目標</span><br>20GW</p>
+                            </div>
+
+                            <div class="taipei-mobile-panels">
+                                <div class="pge-mobile-panels mobile-progress mobile-panel1 sprite-img pge-mobile-panel-sprite" data-type="panel" data-order="2" id="mobile-progress2"></div>
+                                <div class="pge-mobile-panels mobile-progress mobile-panel2 sprite-img pge-mobile-panel-sprite" data-type="panel" data-order="3" id="mobile-progress3"></div>
+                                <div class="pge-mobile-panels mobile-progress mobile-panel3 sprite-img pge-mobile-panel-sprite" data-type="panel" data-order="5" id="mobile-progress5"></div>
+                                <div class="pge-mobile-panels mobile-progress mobile-panel4 sprite-img pge-mobile-panel-sprite" data-type="panel" data-order="6" id="mobile-progress6"></div>
+                                <div class="pge-mobile-panels mobile-progress mobile-panel5 sprite-img pge-mobile-panel-sprite" data-type="panel" data-order="8" id="mobile-progress8"></div>
+                                <div class="pge-mobile-panels mobile-progress mobile-panel6 sprite-img pge-mobile-panel-sprite" data-type="panel" data-order="10" id="mobile-progress10"></div>
+                                <div class="pge-mobile-panels mobile-progress mobile-panel7 sprite-img pge-mobile-panel-sprite" data-type="panel" data-order="12" id="mobile-progress12"></div>
+                                <div class="pge-mobile-panels mobile-progress mobile-panel8 sprite-img pge-mobile-panel-sprite" data-type="panel" data-order="13" id="mobile-progress13"></div>
+                            </div>
+
+                            <div class="taipei-mobile-plants">
+                                <div class="pge-mobile-powerplants mobile-progress pge-power-on1 pge-mobile-power1 sprite-img pge-powerplant-sprite " data-type="power" data-order="1" id="mobile-progress1"></div>
+                                <div class="pge-mobile-powerplants mobile-progress pge-power-on2 pge-mobile-power2 sprite-img pge-powerplant-sprite " data-type="power" data-order="4" id="mobile-progress4"></div>
+                                <div class="pge-mobile-powerplants mobile-progress pge-power-on3 pge-mobile-power3 sprite-img pge-powerplant-sprite " data-type="power" data-order="7" id="mobile-progress7"></div>
+                                <div class="pge-mobile-powerplants mobile-progress pge-power-on4 pge-mobile-power4 sprite-img pge-powerplant-sprite " data-type="power" data-order="9" id="mobile-progress9"></div>
+                                <div class="pge-mobile-powerplants mobile-progress pge-power-on1 pge-mobile-power5 sprite-img pge-powerplant-sprite " data-type="power" data-order="11" id="mobile-progress11"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chevron-container" id="chevron-five"><div class="chevron bouncing"></div></div>
+                </div>
+            </section>
+
+            <!--  -->
+
+            <section class="section chapter-six" id="chapter-six">
+                <div class="act-view-panel day-sky-background" id="act-six-view">
+                    <div class="logo-container" id="logo-three">
+                        <figure class="pge-logo-img small-logo" id="people-logo">
+                            <img src="/images/PGE-logo.png" alt="">
+                        </figure>
+
+                        <h2 id="people-text">我們的寶島，我們來守護。<span class="br-mobile"></span>我支持綠能!</h2>
+                    </div>
+
+                    <div class="taipei-sky-elements" id="people-sky-elements">
+                        <figure class="pge-sun sun-rotate">
+                            <img data-src="/images/taipei-sun.png" alt="">
+                        </figure>
+
+                        <figure class="pge-skyline-clouds taipei-day-clouds">
+                            <img data-src="/images/taipei-day-clouds.png" alt="">
+                        </figure>
+                    </div>
+
+                    <div class="people-scene-container">
+
+                        <div class="people-container">
+                            <div class="pge-people sprite-img pge-people-sprite" id="pge-people1"></div>
+                            <div class="pge-people sprite-img pge-people-sprite" id="pge-people2"></div>
+                            <div class="pge-people sprite-img pge-people-sprite" id="pge-people3"></div>
+                            <div class="pge-people sprite-img pge-people-sprite" id="pge-people4"></div>
+                            <div class="pge-people sprite-img pge-people-sprite" id="pge-people5"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
     </div>
 
     <script
-        async
         src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
-    <script src="<%= assetsMap.about.js %>"></script>
-    <!-- <script src="/js/about.js"></script> -->
+    <script src="<%= assetsMap.home.js %>"></script>
+    <!-- <script src="/js/home.js"></script> -->
 </body>
 </html>

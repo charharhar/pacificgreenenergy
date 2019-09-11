@@ -2,7 +2,9 @@
 
 $noto-reg: 'Noto Sans TC';
 $main-white: #ffffff;
-$main-black: #404040;
+$main-black: #333333;
+$main-green: #004B2C;
+
 $footer-blue: #20529f;
 $text-blue: #000d54;
 $ocean-blue: #00B8CE;
@@ -482,12 +484,14 @@ footer.section-footer {
   display: flex;
   align-items: center;
   transform: translateX(-50%);
+  background: $main-white;
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2);
 
   .navigation-logo-wrapper {
     display: block;
 
     figure.heading-logo-image {
-      max-width: 50px;
+      max-width: 200px;
     }
   }
 
@@ -512,7 +516,7 @@ footer.section-footer {
         a.navLink {
           position: relative;
           display: block;
-          color: $main-white;
+          color: $main-black;
           font-weight: 600;
           font-size: 18px;
           overflow: hidden;
