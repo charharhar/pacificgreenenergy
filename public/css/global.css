@@ -7,7 +7,6 @@ $main-green: #004B2C;
 $main-red: #FF0000;
 $main-orange: #EC952F;
 
-$footer-blue: #20529f;
 $text-blue: #000d54;
 $ocean-blue: #00B8CE;
 $polluted-blue: #257A77;
@@ -284,7 +283,7 @@ figure {
 
   &.stick-footer {
     position: absolute;
-    bottom: 140px;
+    bottom: 385px;
   }
 
   a.call-to-action {
@@ -337,6 +336,10 @@ figure {
   .cta-wrapper {
     bottom: 10px;
     left: 15px;
+
+    &.stick-footer {
+      bottom: 410px;
+    }
 
     a.call-to-action {
       height: 65px;
@@ -414,65 +417,93 @@ header.section-header {
 }
 
 footer.section-footer {
-  padding: 30px 80px;
-  background-color: $footer-blue;
+  padding: 60px 0;
+  background-color: $main-green;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+
+  .footer-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1280px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
 
   .footer-left {
     display: flex;
     align-items: flex-end;
 
-    .footer-social {
-      &#linkedin {
-        margin-right: 10px;
-        img {
-          max-width: 28px;
-        }
-      }
+    figure {
+      width: 40px;
     }
   }
 
-  .footer-center {
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-
+  .footer-right {
+    padding-top: 13px;
     p {
       position: relative;
       font-size: 11px;
       letter-spacing: 0;
       color: $main-white;
       text-transform: uppercase;
+      font-weight: 300;
     }
   }
 
-  .footer-right {
+  .footer-center {
     display: flex;
+    padding-top: 13px;
+    flex-grow: 1;
 
-    ul.footer-nav {
+    .footer-nav {
       display: flex;
-      align-items: center;
-      list-style: none;
+      flex-flow: row nowrap;
+      margin: 0 auto;
+      padding-left: 40px;
+      padding-right: 20px;
 
-      li {
-        position: relative;
-        text-align: center;
-        margin: 0 12px;
+      input[type="checkbox"] {
+        position: absolute;
+        left: -9999px;
+        display: none;
+      }
 
-        &:last-of-type {
-          margin-right: 0;
+      input[type="checkbox"]:not(:checked) + label,
+      input[type="checkbox"]:checked + label {
+        display: none;
+      }
+
+      .nav-container {
+        width: 130px;
+
+        a {
+          display: block;
+          color: $main-white;
+          font-size: 13px;
+          text-transform: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
         }
 
-        a.footer-social {
-          display: flex;
-          transition: .2s all ease;
+        a.nomenu-link {
+          font-weight: 600;
+          margin-bottom: 30px;
+        }
 
-          img {
-            width: 25px;
+        .footer-tab {
+          width: 100%;
+          margin: 0 auto;
+          display: block;
+        }
+
+        .nav-menu {
+          a {
+            line-height: 2.5;
+            font-weight: 300;
           }
         }
       }
@@ -485,38 +516,135 @@ footer.section-footer {
   to { transform: translate3d(0, 8px, 0) rotate(45deg); }
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 991px) {
   footer.section-footer {
-    padding: 40px 65px;
-
-    .footer-left {
-      .footer-social {
-        &#linkedin {
-        }
-      }
-    }
-
-    .footer-center {
+    .footer-right {
+      position: absolute;
       bottom: 5px;
+      left: 50%;
+      transform: translateX(-50%);
       width: 100%;
 
       p {
         text-align: center;
-        font-size: 9px;
+      }
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  footer.section-footer {
+    padding: 20px;
+
+    .footer-container {
+      flex-flow: column nowrap;
+    }
+
+    .footer-center {
+      position: relative;
+      width: 100%;
+      border-top: 1px solid $main-white;
+      margin: 25px auto;
+      padding: 0;
+
+      .footer-nav {
+        flex-flow: column nowrap;
+        width: 100%;
+        padding: 0;
+
+        a.nomenu-link,
+        input[type="checkbox"]:not(:checked) + label,
+        input[type="checkbox"]:checked + label {
+          display: block;
+          position: relative;
+          padding: 15px 0 15px 20px;
+          cursor: pointer;
+          font-size: 16px;
+          color: $main-white;
+          letter-spacing: 1px;
+          font-weight: 400;
+        }
+
+        input[type="checkbox"]:not(:checked) + label:after,
+        input[type="checkbox"]:checked + label:after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          right: 20px;
+          border-right: 3px solid $main-white;
+          border-bottom: 3px solid $main-white;
+          width: 15px;
+          height: 15px;
+          transition: 600ms all cubic-bezier(.25, .1, .25, 1);
+        }
+
+        input[type="checkbox"]:not(:checked) + label:after {
+          transform: translateY(-50%) rotate(-45deg);
+        }
+
+        input[type="checkbox"]:checked + label:after {
+          transform: translateY(-50%) rotate(45deg);
+        }
+
+        input[type="checkbox"] ~ .nav-menu {
+          overflow: hidden;
+          max-height: 0;
+          opacity: 0;
+          transition: all 600ms ease;
+        }
+
+        input[type="checkbox"] {
+          &#footer-1:checked ~ .nav-menu { max-height: 76px; }
+          &#footer-2:checked ~ .nav-menu { max-height: 228px; }
+          &#footer-3:checked ~ .nav-menu { max-height: 76px; }
+        }
+
+        input[type="checkbox"]:checked ~ .nav-menu {
+          margin-bottom: 10px;
+          opacity: 1;
+        }
+
+        .nav-container {
+          width: 100%;
+          border-bottom: 1px solid $main-white;
+
+          &.nomenu {
+            a.nomenu-link {
+              display: block;
+              width: 100%;
+              margin: 0 auto;
+            }
+          }
+
+          a.nomenu-link {
+            display: none;
+          }
+
+          .footer-tab {
+            width: 100%;
+            margin: 0 auto;
+            display: block;
+          }
+
+          .nav-menu {
+            padding-left: 20px;
+
+            a {
+              display: block;
+              color: $main-white;
+              font-size: 16px;
+              line-height: 2.4;
+              font-weight: 400;
+            }
+          }
+        }
       }
     }
 
     .footer-right {
-      ul.footer-nav {
-        li {
-          margin: 0 8px;
-
-          a.footer-social {
-            img {
-              width: 25px;
-            }
-          }
-        }
+      p {
+        text-align: center;
+        font-size: 9px;
       }
     }
   }

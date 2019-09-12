@@ -28,27 +28,15 @@ export function sliceArray(nodeArray) {
 }
 
 export function mobileNavHandler(toggle, mobileNav) {
-  const body = document.querySelector('body');
-
   toggle.addEventListener('click', function(e) {
     e.preventDefault();
 
     if (this.classList.contains('mobile-active') === true) {
       this.classList.remove('mobile-active')
       mobileNav.classList.remove('mobile-active')
-      body.classList.remove('mobile-active')
-
-      const scrollY = body.style.top;
-      body.style.position = '';
-      body.style.top = '';
-      window.scrollTo(0, parseInt(scrollY || '0') * -1);
     } else {
-      const scrollY = window.scrollY;
-      body.style.top = `-${scrollY}px`;
-
       this.classList.add('mobile-active');
       mobileNav.classList.add('mobile-active');
-      body.classList.add('mobile-active')
     }
 
   });

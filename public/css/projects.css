@@ -79,8 +79,8 @@ section.section {
     position: absolute;
     top: 50%;
     right: 20px;
-    border-right: 3px solid orange;
-    border-bottom: 3px solid orange;
+    border-right: 3px solid $main-orange;
+    border-bottom: 3px solid $main-orange;
     width: 15px;
     height: 15px;
   }
@@ -272,17 +272,17 @@ section.section {
       margin: 40px auto 80px;
     }
 
-    input[type="checkbox"]:not(:checked) + label:after,
-    input[type="checkbox"]:checked + label:after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: 20px;
-      border-right: 3px solid orange;
-      border-bottom: 3px solid orange;
-      width: 15px;
-      height: 15px;
-    }
+    // input[type="checkbox"]:not(:checked) + label:after,
+    // input[type="checkbox"]:checked + label:after {
+    //   content: '';
+    //   position: absolute;
+    //   top: 50%;
+    //   right: 20px;
+    //   border-right: 3px solid orange;
+    //   border-bottom: 3px solid orange;
+    //   width: 15px;
+    //   height: 15px;
+    // }
 
     input[type="checkbox"]:checked ~ .project-details {
       max-height: 900px;
