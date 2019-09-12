@@ -10,7 +10,7 @@ header.section-header {
 
   figure.pge-sun {
     position: absolute;
-    top: 55px;
+    top: 90px;
     right: 60px;
     max-width: 130px;
   }
@@ -49,7 +49,23 @@ section.section {
           letter-spacing: 1px;
           font-weight: 400;
         }
+
+        a {
+          font-weight: 400;
+          font-size: 14px;
+          letter-spacing: 1px;
+          text-transform: none;
+          text-decoration: underline;
+        }
       }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  header.section-header {
+    .hero-content {
+      top: 60%;
     }
   }
 }
@@ -59,7 +75,6 @@ section.section {
     .aspect-hero {
       width: 500%;
       left: -180%;
-
     }
 
     figure.pge-sun {
@@ -67,6 +82,7 @@ section.section {
     }
 
     .hero-content {
+      top: 50%;
       h1 {
         font-size: 30px;
       }

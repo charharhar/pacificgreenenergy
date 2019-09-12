@@ -357,6 +357,7 @@ section.section {
 
 header.section-header {
   position: relative;
+  padding-top: 77px;
 
   &.aspect-natural {
     position: relative;
@@ -529,6 +530,12 @@ footer.section-footer {
         text-align: center;
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  header.section-header {
+    padding-top: 64px;
   }
 }
 
