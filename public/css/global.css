@@ -1067,7 +1067,7 @@ section.section {
           input[type="text"] { transition: 300ms background-color ease-in; }
         }
 
-        &.shared-inputs {
+        &#shared-inputs {
           display: flex;
           justify-content: space-between;
 
@@ -1144,7 +1144,7 @@ section.section {
             content: '';
             width: 12px;
             height: 12px;
-            background: #00B8CE;
+            background: $main-green;
             position: absolute;
             top: 3px;
             left: 3px;

@@ -1,7 +1,5 @@
 
 import '../css/contact.css';
-import 'animation.gsap';
-import ScrollMagic from 'scrollmagic';
 import {
   sliceArray,
   hotReload,
@@ -12,7 +10,7 @@ import {
  * Moible Nav Handler
  */
 const hamburger = document.querySelector('.hamburger');
-const mobileNavList = document.querySelector('.mobile-nav-list');
+const mobileNavList = document.querySelector('.main-navigation');
 
 mobileNavHandler(hamburger, mobileNavList);
 
@@ -22,23 +20,21 @@ mobileNavHandler(hamburger, mobileNavList);
 
 sliceArray(document.querySelectorAll('.pge-radio')).forEach(radio => {
   radio.addEventListener('click', (e) => {
+    const targetName = e.target.getAttribute('id');
     const inputId = e.target.getAttribute('id')
-    const allInputs = document.querySelectorAll('.radio-inputs');
+    const allInputs = sliceArray(document.querySelectorAll('.radio-inputs'));
+    let baseClassName = 'form-group radio-inputs';
 
     sliceArray(allInputs).forEach(node => {
-      let newClassName = node.className;
+      const nodeName = node.getAttribute('data-name');
+      let newClassName = baseClassName;
 
-      if (node.className.indexOf('hidden') > -1) {
-        newClassName = newClassName.split(' ');
-        newClassName.pop()
-        newClassName = newClassName.join(' ');
-      } else {
-        newClassName = `${node.className} hidden`
+      if (nodeName !== targetName) {
+        newClassName = `${baseClassName} hidden`;
       }
 
       node.className = newClassName
     })
-
   })
 })
 
@@ -105,22 +101,9 @@ window.addEventListener('load', function(e) {
   });
 })
 
-const controller = new ScrollMagic.Controller({
-  // globalSceneOptions: { reverse: false }
-});
-
 /**
  * Event Handlers
  */
-window.addEventListener('load', function(e) {
-  const halfHeight = window.innerHeight/2;
-
-  controller.addScene([
-    new ScrollMagic.Scene({
-      triggerElement: '.section-footer',
-      offset: -halfHeight,
-    }).setClassToggle('.call-to-action', 'stick-footer'),
-  ])
-})
+window.addEventListener('load', function(e) {})
 
 hotReload();

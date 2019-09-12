@@ -71,8 +71,8 @@ header.section-header {
       }
 
       .sprite-img.pge-people-sprite {
-        width: 165px;
-        height: 348px;
+        width: 130px;
+        height: 270px;
       }
     }
 
@@ -81,7 +81,7 @@ header.section-header {
 
       h2, p {
         position: relative;
-        color: $text-blue;
+        color: $main-black;
         z-index: 3;
       }
 
