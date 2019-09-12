@@ -580,8 +580,8 @@ footer.section-footer {
           right: 20px;
           border-right: 3px solid $main-white;
           border-bottom: 3px solid $main-white;
-          width: 15px;
-          height: 15px;
+          width: 10px;
+          height: 10px;
           transition: 600ms all cubic-bezier(.25, .1, .25, 1);
         }
 
@@ -625,6 +625,7 @@ footer.section-footer {
 
           a.nomenu-link {
             display: none;
+            font-weight: 400;
           }
 
           .footer-tab {

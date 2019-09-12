@@ -39,30 +39,11 @@
 </head>
 <body>
 
-    <div class="mobile-nav-list">
-        <ul>
-            <li>
-                <a class="navLink" data-hover-text="首頁" href="/">首頁</a>
-            </li>
-            <li>
-                <a class="navLink" data-hover-text="經營理念" href="/about">經營理念</a>
-            </li>
-            <li>
-                <a class="navLink current" data-hover-text="工程實績" href="/projects">工程實績</a>
-            </li>
-            <li>
-                <a class="navLink" data-hover-text="常見問題" href="/faq">常見問題</a>
-            </li>
-            <li>
-                <a class="navLink" data-hover-text="聯繫我們" href="/contact">聯繫我們</a>
-            </li>
-        </ul>
-    </div>
-
     <div class="wrapper">
         <div class="cta-wrapper">
             <a href="/contact" class="call-to-action">
-                <span>我要支持綠能！</span>
+                <span class="cta-img hover"></span>
+                <span class="cta-img static"></span>
             </a>
         </div>
 
@@ -71,7 +52,7 @@
                 <div class="navigation-logo-wrapper">
                     <a href="/">
                         <figure class="heading-logo-image">
-                            <img src="/images/pge-logo-color.png" alt="">
+                            <img src="/images/pge-logo-horizontal.svg" alt="">
                         </figure>
                     </a>
                 </div>
@@ -79,10 +60,10 @@
                 <div class="navigation-list-wrapper">
                     <ul>
                         <li>
-                            <a class="navLink" data-hover-text="經營理念" href="/about"><span>經營理念</span></a>
+                            <a class="navLink" data-hover-text="Why太陽能?" href="/about"><span>Why太陽能?</span></a>
                         </li>
-                        <li>
-                            <a class="navLink current" data-hover-text="工程實績" href="/projects"><span>工程實績</span></a>
+                        <li class="current">
+                            <a class="navLink" data-hover-text="工程實績" href="/projects"><span>工程實績</span></a>
                         </li>
                         <li>
                             <a class="navLink" data-hover-text="常見問題" href="/faq"><span>常見問題</span></a>
@@ -102,9 +83,7 @@
 
             <div class="hero-content">
                 <h1 class="underline">工程實績</h1>
-            </div>
 
-            <div class="hero-subcontent">
                 <h2>總建置容量：<span id="total-kw">555</span>kW</h2>
             </div>
 
@@ -113,8 +92,12 @@
                     <img src="/images/projects/projects-landing.png" alt="">
                 </figure>
 
-                <figure class="projects-dots">
-                    <img src="/images/projects/taiwan-dots.png" alt="">
+                <figure class="projects-pins" id="kaohsiung-pin">
+                    <img src="/images/projects/projects-pin.png" alt="">
+                </figure>
+
+                <figure class="projects-pins" id="taoyuan-pin">
+                    <img src="/images/projects/projects-pin.png" alt="">
                 </figure>
             </div>
         </header>
@@ -125,7 +108,7 @@
                 <div class="projects-accordion">
 
                     <div class="project-container" id="kaohsiung">
-                        <input type="checkbox" name="project-accordion" id="project-1" checked>
+                        <input type="checkbox" name="project-accordion" id="project-1">
                         <label class="project-tab" for="project-1">
                             <span class="project-name">高雄、岡山</span>
                         </label>
@@ -200,22 +183,73 @@
         </section>
 
         <footer class="section-footer">
-            <div class="footer-left">
-                <figure class="heading-logo-image">
-                    <img src="/images/pge-white-logo.png" alt="">
-                </figure>
-            </div>
+            <div class="footer-container">
+                <div class="footer-left">
+                    <a href="/">
+                        <figure class="heading-logo-image">
+                            <img src="/images/pge-white-logo.png" alt="">
+                        </figure>
+                    </a>
+                </div>
 
-            <div class="footer-center">
-                <p>2019 pacific green energy limited all rights reserved</p>
-            </div>
+                <div class="footer-center">
+                    <div class="footer-nav">
+                        <div class="nav-container">
+                            <input type="checkbox" name="footer-accordion" id="footer-1">
+                            <label class="footer-tab" for="footer-1">
+                                <span class="footer-name">關於我們</span>
+                            </label>
+                            <a href="/" class="nomenu-link">關於我們</a>
 
-            <div class="footer-right">
-                <ul class="footer-nav">
-                    <li><a href="" class="footer-social" id="linkedin"><img src="/images/social-facebook.svg" alt=""></a></li>
-                    <li><a href="" class="footer-social" id="linkedin"><img src="/images/social-insta.svg" alt=""></a></li>
-                    <li><a href="" class="footer-social" id="linkedin"><img src="/images/social-linkedin.svg" alt=""></a></li>
-                </ul>
+                            <div class="nav-menu">
+                                <a href="/#philosophy">經營理念</a>
+                                <a href="/#founder">創辦人簡介</a>
+                            </div>
+                        </div>
+
+                        <div class="nav-container">
+                            <input type="checkbox" name="footer-accordion" id="footer-2">
+                            <label class="footer-tab" for="footer-2">
+                                <span class="footer-name">Why太陽能?</span>
+                            </label>
+                            <a href="/about" class="nomenu-link">Why太陽能?</a>
+
+                            <div class="nav-menu">
+                                <a href="/about#chapterOne">第一章 — 創立</a>
+                                <a href="/about#chapterTwo">第二章 — 寶島</a>
+                                <a href="/about#chapterThree">第三章 — 能源</a>
+                                <a href="/about#chapterFour">第四章 — 空污</a>
+                                <a href="/about#chapterFive">第五章 — 目標</a>
+                                <a href="/about#chapterSix">第六章 — 希望</a>
+                            </div>
+                        </div>
+
+                        <div class="nav-container">
+                            <input type="checkbox" name="footer-accordion" id="footer-3">
+                            <label class="footer-tab" for="footer-3">
+                                <span class="footer-name">工程實績</span>
+                            </label>
+                            <a href="/projects" class="nomenu-link">工程實績</a>
+
+                            <div class="nav-menu">
+                                <a href="/projects#kaohsiung">高雄、岡山</a>
+                                <a href="/projects#taoyuan">桃園、觀音</a>
+                            </div>
+                        </div>
+
+                        <div class="nav-container nomenu">
+                            <a href="/faq" class="nomenu-link">常見問題</a>
+                        </div>
+
+                        <div class="nav-container nomenu">
+                            <a href="/contact" class="nomenu-link">聯繫我們</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-right">
+                    <p>2019 pacific green energy limited all rights reserved</p>
+                </div>
             </div>
         </footer>
     </div>

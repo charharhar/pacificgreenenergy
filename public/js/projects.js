@@ -12,7 +12,7 @@ import {
  * Moible Nav Handler
  */
 const hamburger = document.querySelector('.hamburger');
-const mobileNavList = document.querySelector('.mobile-nav-list');
+const mobileNavList = document.querySelector('.main-navigation');
 
 mobileNavHandler(hamburger, mobileNavList);
 
@@ -27,8 +27,8 @@ function slickHelper(target) {
     centerPadding: '15%',
     arrows: true,
     fade: false,
-    prevArrow: "<button type='button' class='slick-prev pull-left'><div class='chevron-border black'><span class='chevron left'></span></div></button>",
-    nextArrow: "<button type='button' class='slick-next pull-right'><div class='chevron-border black'><span class='chevron right'></span></div></button>",
+    prevArrow: "<button type='button' class='slick-prev pull-left'><div class='chevron-container black'><span class='chevron left'></span></div></button>",
+    nextArrow: "<button type='button' class='slick-next pull-right'><div class='chevron-container black'><span class='chevron right'></span></div></button>",
     responsive: [
       {
         breakpoint: 576,

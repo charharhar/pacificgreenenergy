@@ -11,8 +11,7 @@ header.section-header {
   &.aspect-5625 .aspect-hero {
     background-color: $ocean-blue;
 
-    .projects-hero,
-    .projects-dots {
+    .projects-hero {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -20,6 +19,21 @@ header.section-header {
       width: 50%;
 
       img { position: relative; }
+    }
+
+    .projects-pins {
+      position: absolute;
+      width: 20px;
+
+      &#kaohsiung-pin {
+        top: 65%;
+        left: 40.5%;
+      }
+
+      &#taoyuan-pin {
+        top: 16%;
+        left: 50.5%;
+      }
     }
   }
 
@@ -31,17 +45,8 @@ header.section-header {
       font-size: 50px;
       line-height: 1.4;
       color: $main-white;
-
-      &:after {
-        width: 100%;
-      }
+      margin-bottom: 20px;
     }
-  }
-
-  .hero-subcontent {
-    position: absolute;
-    bottom: 10%;
-    right: 8%;
 
     h2 {
       color: $main-white;
@@ -207,7 +212,7 @@ section.section {
 
         .slick-next {
           right: 0;
-          .chevron-border {
+          .chevron-container {
             margin-left: auto;
             margin-right: 25px;
           }
@@ -215,20 +220,20 @@ section.section {
 
         .slick-prev {
           left: 0;
-          .chevron-border {
+          .chevron-container {
             margin-right: auto;
             margin-left: 25px;
           }
         }
 
-        .chevron-border {
+        .chevron-container {
           position: relative;
           top: auto;
           bottom: auto;
           left: auto;
           right: auto;
           transform: none;
-          padding: 12px;
+          padding: 8px;
 
           .chevron {
             border-bottom-width: 6px;
@@ -246,43 +251,52 @@ section.section {
       .aspect-hero {
         padding-bottom: 178%;
 
-        .projects-hero,
-        .projects-dots {
+        .projects-hero {
           width: 100%;
+          top: 55%;
+        }
+
+        .projects-pins {
+          width: 15px;
+
+          &#kaohsiung-pin {
+            top: 67%;
+            left: 37.5%;
+          }
+
+          &#taoyuan-pin {
+            top: 34%;
+            left: 50%;
+          }
         }
       }
 
       .hero-content {
-        top: 18%;
+        top: 23%;
         left: 50%;
 
         h1.underline {
           font-size: 32px;
+          margin-bottom: 0;
+        }
+
+        h2 {
+          font-size: 18px;
         }
       }
-    }
-
-    .hero-subcontent h2 {
-      font-size: 18px;
     }
   }
 
   section.section {
+    &.projects-section-one {
+      .section-content {
+        padding-bottom: 40px;
+      }
+    }
+
     .projects-accordion {
       margin: 40px auto 80px;
     }
-
-    // input[type="checkbox"]:not(:checked) + label:after,
-    // input[type="checkbox"]:checked + label:after {
-    //   content: '';
-    //   position: absolute;
-    //   top: 50%;
-    //   right: 20px;
-    //   border-right: 3px solid orange;
-    //   border-bottom: 3px solid orange;
-    //   width: 15px;
-    //   height: 15px;
-    // }
 
     input[type="checkbox"]:checked ~ .project-details {
       max-height: 900px;
@@ -344,19 +358,19 @@ section.section {
           }
 
           .slick-next {
-            .chevron-border {
+            .chevron-container {
               margin-right: 10px;
             }
           }
 
           .slick-prev {
-            .chevron-border {
+            .chevron-container {
               margin-left: 10px;
             }
           }
 
-          .chevron-border {
-            padding: 12px 13px;
+          .chevron-container {
+            padding: 10px;
 
             &.black {
               .chevron {
