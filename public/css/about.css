@@ -98,7 +98,7 @@ section.section {
   }
 
   .large-red {
-    color: red;
+    color: $main-red;
     font-size: 50px;
     font-weight: bold;
   }
