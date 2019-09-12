@@ -1,5 +1,5 @@
 
-import '../css/about.css';
+import '../css/home.css';
 import 'animation.gsap';
 import { TweenMax, TimelineMax } from "gsap/TweenMax";
 import ScrollMagic from 'scrollmagic';
@@ -13,7 +13,7 @@ import {
  * Moible Nav Handler
  */
 const hamburger = document.querySelector('.hamburger');
-const mobileNavList = document.querySelector('.navigation-list-wrapper');
+const mobileNavList = document.querySelector('.main-navigation');
 
 mobileNavHandler(hamburger, mobileNavList);
 

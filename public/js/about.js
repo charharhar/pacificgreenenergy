@@ -1,5 +1,5 @@
 
-import '../css/home.css';
+import '../css/about.css';
 import fullpage from 'fullpage.js';
 import { TweenMax, TimelineMax } from "gsap/TweenMax";
 import {
@@ -14,7 +14,6 @@ const hamburger = document.querySelector('.hamburger');
 const mobileNavList = document.querySelector('.main-navigation');
 
 mobileNavHandler(hamburger, mobileNavList);
-
 
 /**
  * Tween Full page Handlers

@@ -209,22 +209,21 @@ section.section {
       justify-content: center;
 
       .taiwan-country {
-        max-width: 500px;
+        max-width: 350px;
       }
     }
 
   }
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 768px) {
   header.section-header {
     .aspect-hero {
-      width: 318%;
-      left: -10%;
+      width: 200%;
     }
 
-    .hero-content h1 {
-      font-size: 32px;
+    .hero-content {
+      left: 50%;
     }
   }
 
@@ -254,9 +253,31 @@ section.section {
       }
 
       figure.about-smog {
-        width: 420%;
+        width: 250%;
         margin-left: -40%;
-        padding-top: 50px;
+        padding-top: 0;
+      }
+
+      .content-media {
+        .powerplant-wrapper {
+          &#pge-power1 {
+            top: -5%;
+            left: 12%;
+            width: 25%;
+          }
+
+          &#pge-power2 {
+            top: -10%;
+            left: 28%;
+            width: 32%;
+          }
+
+          &#pge-power3 {
+            top: -16%;
+            left: 49%;
+            width: 40%;
+          }
+        }
       }
     }
 
@@ -275,7 +296,6 @@ section.section {
 
       .content-text {
         p {
-          font-size: 15px;
           font-weight: 400;
         }
 
@@ -287,6 +307,114 @@ section.section {
 
           figure {
           }
+
+          p {
+            &.profile-name {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  header.section-header {
+    .aspect-hero {
+      width: 318%;
+      left: -10%;
+    }
+
+    .hero-content {
+      left: 50%;
+
+      h1 {
+        font-size: 32px;
+        span { font-size: 24px; }
+      }
+    }
+  }
+
+  section.section {
+    .section-content {
+      flex-flow: column nowrap;
+      padding: 40px 20px;
+
+      .content-wrapper {
+        .content-text h1.underline {
+          font-size: 32px;
+        }
+      }
+    }
+
+    &.about-section-one {
+      .section-content {
+        padding: 40px 20px;
+      }
+
+      .content-text {
+        margin-left: 0;
+        padding: 0;
+
+        p {
+          font-size: 14px;
+        }
+      }
+
+      figure.about-smog {
+        width: 420%;
+        margin-left: -40%;
+        padding-top: 50px;
+      }
+
+      .content-media {
+        .powerplant-wrapper {
+          &#pge-power1 {
+            top: 13%;
+            left: 3%;
+            width: 30%;
+          }
+
+          &#pge-power2 {
+            top: 12%;
+            left: 22%;
+            width: 37%;
+          }
+
+          &#pge-power3 {
+            top: 10%;
+            left: 49%;
+            width: 45%;
+          }
+        }
+      }
+    }
+
+    &.about-section-two {
+      .section-content {
+        padding: 40px 20px 80px 20px;
+      }
+
+      .content-text {
+        padding: 0;
+      }
+
+      .content-media {
+        margin-bottom: 40px;
+
+        .taiwan-country {
+          width: 60%;
+        }
+      }
+
+      .content-text {
+        p {
+          font-size: 14px;
+        }
+
+        .founder-profiles {
+          margin-top: 50px;
 
           p {
             &.profile-name {
