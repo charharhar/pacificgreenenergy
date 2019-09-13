@@ -208,7 +208,8 @@ span.btn-green {
   border: 2px solid $main-white;
   background: $main-green;
   border-radius: 40px;
-  font-weight: 400;
+  font-weight: 500;
+  letter-spacing: 1px;
   cursor: pointer;
   color: $main-white;
   transition: 200ms all ease;
@@ -703,21 +704,35 @@ footer.section-footer {
         &:last-of-type {
           margin-left: auto;
 
-          a.navLink span,
-          a.navLink:after {
-            padding-right: 0;
-          }
+          // a.navLink span,
+          // a.navLink:after {
+          //   padding-right: 0;
+          // }
         }
 
-        &.current {
-          a.navLink {
-            span {
-              transform: translateY(-100%);
-            }
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: -5px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: $main-orange;
+          height: 2px;
+          transform-origin: 50% 50%;
+          width: 0;
+          transition: 400ms all ease;
+        }
 
-            &:after {
-              transform: translate(-50%, -50%);
-            }
+        &:hover,
+        &.current {
+          &:before {
+            width: 60px;
+          }
+
+          a.navLink {
+            span { transform: translateY(-100%); }
+            &:after { transform: translate(-50%, -50%); }
           }
         }
 
@@ -750,16 +765,6 @@ footer.section-footer {
             padding: 0 20px;
             white-space: nowrap;
             transition: 400ms all ease;
-          }
-
-          &:hover {
-            span {
-              transform: translateY(-100%);
-            }
-
-            &:after {
-              transform: translate(-50%, -50%);
-            }
           }
         }
       }
@@ -1363,8 +1368,8 @@ figure.pge-sun.sun-rotate {
   }
 
   &.pge-people-sprite {
-    width: 190px;
-    height: 402px;
+    width: 160px;
+    height: 335px;
     background-size: 500%;
     background-image: url(/images/pge-people-sprite.png);
 

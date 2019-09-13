@@ -29,7 +29,7 @@ body#pge-body {
     border-radius: 0;
     margin: 0;
     opacity: 1;
-   }
+  }
   #fp-nav ul li a span,
   .fp-slidesNav ul li a span {
     border-radius: 0;
@@ -74,19 +74,8 @@ body#pge-body {
 }
 
 section.section {
-  h1, h2, h3, p, span {
-    color: $text-blue;
-  }
-
-  h1.large-heading {
-    font-weight: bold;
-    font-size: 50px;
-  }
-
-  h2.medium-bold,
-  span.medium-bold {
-    font-size: 30px;
-    font-weight: bold;
+  h1, h2, p, span {
+    color: $main-black;
   }
 
   p.typewrite {
@@ -94,6 +83,7 @@ section.section {
     span.text-wrapper {
       position: relative;
       display: block;
+      font-weight: bold;
     }
   }
 
@@ -124,24 +114,6 @@ section.section {
 
     &.day-sky-background {
       background: linear-gradient(#00B8CE, #A1E2DE);
-    }
-
-    &.solar-panel-background {
-      position: relative;
-      background-image: url(/images/PGE-landing.jpeg);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-
-      &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(255, 255, 255, .45);
-      }
     }
 
     .flex-text-container {
@@ -175,11 +147,7 @@ section.section {
       margin: 0 auto 20px;
 
       &.large-logo {
-        max-width: 240px;
-      }
-
-      &.small-logo {
-        max-width: 170px;
+        max-width: 200px;
       }
     }
 
@@ -202,21 +170,6 @@ section.section {
       width: 100%;
       top: 0;
       z-index: 2;
-
-      &#cloud-container-2 {
-        .pge-cloud-img {
-          transform: translateY(-50%);
-          opacity: .5;
-
-          &.cloud-right {
-            right: -40%;
-          }
-
-          &.cloud-left {
-            left: -40%;
-          }
-        }
-      }
 
       .pge-cloud-img {
         position: absolute;
@@ -243,7 +196,7 @@ section.section {
 
       .taiwan-country {
         position: relative;
-        max-width: 370px;
+        max-width: 270px;
         margin: 0 auto;
 
         .pge-animals {
@@ -334,31 +287,12 @@ section.section {
       }
     }
 
-    .taipei-sky-elements {
+    .pge-sun {
       position: absolute;
-      width: 100%;
-      height: 100%;
+      top: 10%;
+      right: 10%;
+      max-width: 180px;
       z-index: 3;
-      bottom: 0;
-      left: 0;
-
-      .pge-sun {
-        position: absolute;
-        top: 6%;
-        right: 10%;
-        max-width: 200px;
-        z-index: 3;
-      }
-
-      .pge-skyline-clouds {
-        position: absolute;
-        top: 5%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 110%;
-        z-index: 2;
-        opacity: .65;
-      }
     }
 
     .skyline-container {
@@ -437,26 +371,28 @@ section.chapter-one {
 
 section.chapter-two {
   .act-view-panel {
-    .clouds-header-container {
-      position: absolute;
-      left: 25%;
-      top: 20%;
-      z-index: 14;
+    .clouds-text-container {
+      h1.large-heading {
+        font-weight: bold;
+        font-size: 35px;
+        text-align: left;
+        letter-spacing: 0;
+        margin-bottom: 15px;
+        font-size: 35px;
 
-      #heading-tw {
         span {
           display: inline-block;
+
+          &#tw-two { margin-left: -8px; }
         }
       }
-    }
 
-    .clouds-text-container {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       margin-left: 270px;
-      width: 185px;
+      width: 190px;
       z-index: 14;
     }
   }
@@ -484,14 +420,14 @@ section.chapter-three {
       transform: translateX(-50%);
 
       &#ocean-text-container-one {
-        top: 40%;
+        top: 45%;
         width: 295px;
         margin-left: -400px;
         height: 120px;
       }
 
       &#ocean-text-container-two {
-        top: 40%;
+        top: 45%;
         width: 268px;
         margin-left: 400px;
         height: 120px;
@@ -539,7 +475,7 @@ section.chapter-three {
               left: 90%;
             }
             &#pge-wave6 {
-              top: 32%;
+              top: 26%;
               left: 69%;
             }
             &#pge-wave7 {
@@ -669,7 +605,7 @@ section.chapter-four {
     .city-text-container {
       position: absolute;
       height: 180px;
-      top: 40%;
+      top: 45%;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 500px;
@@ -678,10 +614,6 @@ section.chapter-four {
       .city-text,
       .city-text span{
         color: #fff;
-      }
-
-      #city-text-one {
-        margin: 0 auto;
       }
       #city-red-three {
         margin-left: auto;
@@ -712,33 +644,31 @@ section.chapter-five {
 
     .phone-text-main-container {
       position: absolute;
-      top: 30%;
+      top: 37.5%;
       left: 50%;
-      margin-left: -32%;
+      margin-left: -25%;
       transform: translateX(-50%);
-      max-width: 320px;
+      max-width: 480px;
       z-index: 13;
     }
 
     .phone-text-container {
-      max-width: 320px;
-      margin-bottom: 15px;
-
-      p {
-        line-height: 1.1;
+      width: 100%;
+      &:first-of-type {
+        margin-bottom: 35px;
       }
 
       &#phone-text-container-one {
-        height: 125px;
+        height: 85px;
       }
       &#phone-text-container-two {
-        height: 95px;
+        height: 60px;
       }
     }
 
     .mobile-phone-container {
       position: absolute;
-      z-index: 10;
+      top: 0;
       width: 100%;
       height: 100%;
       display: flex;
@@ -747,7 +677,8 @@ section.chapter-five {
 
       .hand-phone-container {
         position: relative;
-        width: 100%;
+        width: 85%;
+        left: 20%;
 
         figure.mobile-hand-phone {
           width: 100%;
@@ -892,31 +823,35 @@ section.chapter-five {
 section.chapter-six {
   .act-view-panel {
 
-    .logo-container {
+    .people-text-container {
+      position: absolute;
       top: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      #final-cta {
+        position: relative;
+        display: block;
+
+        a.btn-green {
+          margin: 0 auto;
+        }
+      }
     }
 
     .people-scene-container {
       position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
+      bottom: 0;
+      left: 0;
       width: 100%;
-      height: 100%;
       z-index: 3;
       display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      flex-flow: column;
-
-      .people-text-container {
-        margin: auto 0;
-        padding-top: 60px;
-
-        h1 {
-          text-align: center;
-        }
-      }
+      justify-content: center;
 
       .people-container {
         display: flex;
@@ -925,13 +860,6 @@ section.chapter-six {
       }
     }
 
-  }
-}
-
-section.chapter-seven {
-  .act-view-panel {
-    display: flex;
-    align-items: center;
   }
 }
 
@@ -971,7 +899,7 @@ section.chapter-seven {
 }
 
 // Small devices (landscape phones, less than 768px)
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
   .sprite-img {
     &.pge-people-sprite {
       width: 125px;
@@ -995,23 +923,12 @@ section.chapter-seven {
        &.large-logo {
          max-width: 150px;
        }
-
-       &.small-logo {
-         max-width: 150px;
-       }
     }
 
-    .taipei-sky-elements {
-      .pge-sun {
-        top: 3%;
-        right: 4%;
-        max-width: 130px;
-      }
-
-      .pge-skyline-clouds {
-        top: 10%;
-        width: 150%;
-      }
+    .pge-sun {
+      top: 6%;
+      right: 4%;
+      max-width: 130px;
     }
 
     .skyline-container {
@@ -1032,17 +949,7 @@ section.chapter-seven {
   }
 
   section.chapter-two .act-view-panel {
-    .clouds-header-container {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      margin-top: -250px;
-    }
 
-    .clouds-text-container {
-      margin-left: 0;
-      margin-top: 260px;
-    }
   }
 
   section.chapter-three .act-view-panel {
@@ -1183,11 +1090,6 @@ section.chapter-seven {
       font-size: 34px;
     }
 
-    h2.medium-bold,
-    span.medium-bold {
-      font-size: 26px;
-    }
-
     h1 {
       font-size: 34px;
     }
@@ -1198,6 +1100,14 @@ section.chapter-seven {
 
     p {
       font-size: 18px;
+    }
+
+    .act-view-panel {
+      // .taiwan-container {
+      //   .taiwan-country {
+      //     max-width: 160px;
+      //   }
+      // }
     }
   }
 
@@ -1218,16 +1128,25 @@ section.chapter-seven {
     }
   }
 
-  section.chapter-one .act-view-panel {
-    .cloud-container {
-      .pge-cloud-img {
-        &.cloud-right {
-          right: -50%;
-        }
+  section.chapter-two .act-view-panel {
+    .clouds-text-container {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      margin-left: 0;
 
-        &.cloud-left {
-          left: -50%;
-        }
+      h1.large-heading {
+        position: absolute;
+        top: 17%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .clouds-bottom-text {
+        position: absolute;
+        bottom: 16%;
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
   }
@@ -1376,34 +1295,18 @@ section.chapter-seven {
       font-size: 16px;
     }
 
-    h2.medium-bold,
-    span.medium-bold {
-      font-size: 18px;
-    }
-
-    p {
-      font-size: 16px;
-    }
-
     span.large-red {
-      font-size: 26px;
+      font-size: 24px;
     }
 
     .taiwan-container {
       .taiwan-country {
-        max-width: 160px;
+        max-width: 130px;
       }
     }
   }
 
   section.chapter-two .act-view-panel {
-    .clouds-header-container {
-      margin-top: -220px;
-    }
-    .clouds-text-container {
-      margin-top: 210px;
-      margin-left: 40px;
-    }
   }
 
   section.chapter-three .act-view-panel {
@@ -1431,7 +1334,9 @@ section.chapter-seven {
   section.chapter-five .act-view-panel {
     .mobile-phone-container {
       .hand-phone-container {
-        top: 10%;
+        top: 13%;
+        left: 0;
+        width: 100%;
 
         figure.mobile-hand-phone {
           width: 135%;
@@ -1468,10 +1373,6 @@ section.chapter-seven {
 
     .logo-container {
       top: 35%;
-
-      figure.pge-logo-img.small-logo {
-        max-width: 120px;
-      }
     }
   }
 }
@@ -1486,14 +1387,18 @@ section.chapter-seven {
   }
 
   section.chapter-three .act-view-panel {
+    .pge-ocean-smog {
+      width: 110%;
+    }
+
     .ocean-text-container {
       &#ocean-text-container-one {
-        top: 3%;
+        top: 15%;
         margin-left: -190px;
       }
 
       &#ocean-text-container-two {
-        top: 3%;
+        top: 15%;
         margin-left: 190px;
       }
     }
@@ -1520,6 +1425,12 @@ section.chapter-seven {
       max-width: none;
     }
 
+    .mobile-phone-container .hand-phone-container {
+      width: 100%;
+      left: 0;
+      top: 7%;
+    }
+
     .phone-text-container {
       position: absolute;
       margin-left: 0;
@@ -1530,13 +1441,13 @@ section.chapter-seven {
 
       &#phone-text-container-one {
         top: 15%;
-        height: 135px;
+        height: 105px;
         margin-left: -180px;
       }
 
       &#phone-text-container-two {
         top: 15%;
-        height: 100px;
+        height: 75px;
         margin-left: 180px;
       }
     }
@@ -1554,6 +1465,10 @@ section.chapter-seven {
       &#ocean-text-container-two {
         margin-left: 320px;
       }
+    }
+
+    .taiwan-container {
+      top: 55%;
     }
   }
 }

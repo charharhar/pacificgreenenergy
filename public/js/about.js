@@ -54,15 +54,12 @@ const timelineMaster = {
           TweenMax.fromTo('#cloud-container-1', 1.5, { scale: 1 }, { scale: 1.2 }),
           TweenMax.fromTo('#cloud-logo', 1.5, { scale: .6 }, { scale: 1 }),
         ])
+        .add([
+          TweenMax.fromTo('#slogan-1-1', 1, { autoAlpha: 0, scale: 3 }, { autoAlpha: 1, scale: 1 }),
+          TweenMax.fromTo('#slogan-1-2', 1, { autoAlpha: 0, scale: 3 }, { autoAlpha: 1, scale: 1 }),
+          TweenMax.fromTo('#slogan-1-3', 1, { autoAlpha: 0, scale: 3 }, { autoAlpha: 1, scale: 1 }),
+        ], 'labelA', 'sequence')
         .fromTo('#chevron-one', 1, { autoAlpha: 0 }, { autoAlpha: 1 }, 'endChapterOne')
-        .add([
-          TweenMax.to('.cta-wrapper', .5, { scale: 1.25 }),
-          TweenMax.to('.cta-wrapper', .5, { scale: 1 }),
-        ], 'endChapterOne', 'sequence')
-        .add([
-          TweenMax.to('.hamburger', .5, { scale: 1.25  }),
-          TweenMax.to('.hamburger', .5, { scale: 1 }),
-        ], 'endChapterOne', 'sequence')
     }
   },
   chapterTwo: {
@@ -222,8 +219,8 @@ const timelineMaster = {
           TweenMax.to('#pge-day-sky3', cityPanelDuration, { autoAlpha: 0 }),
           TweenMax.to('#pge-day-sky7', cityPanelDuration, { autoAlpha: 0 }),
         ], 'cityPanelLabel')
-        .to('.city-text span', cityPanelDuration, { color: '#000d54' }, 'cityPanelLabel')
-        .to('.city-text span', cityPanelDuration, { color: '#000d54' }, 'cityPanelLabel')
+        .to('.city-text span', cityPanelDuration, { color: '#333333' }, 'cityPanelLabel')
+        .to('.city-text span', cityPanelDuration, { color: '#333333' }, 'cityPanelLabel')
         .fromTo('#chevron-four', 1, { autoAlpha: 0 }, { autoAlpha: 1 })
     },
   },
@@ -273,10 +270,10 @@ const timelineMaster = {
         ])
         .add([
           tweenClipPath('#phone-text-one', 1),
-          tweenLargeRed('#phone-bold-one', 1),
-          tweenClipPath('#phone-text-two', 1),
-          tweenLargeRed('#phone-bold-two', 1),
+          tweenLargeRed('#phone-text-two', 1),
           tweenClipPath('#phone-text-three', 1),
+          tweenLargeRed('#phone-text-four', 1),
+          tweenClipPath('#phone-text-five', 1),
         ], 'phoneTextLabel', 'sequence')
         .add(TweenMax.fromTo('.progress-bar', progressBarDuration, { xPercent: -100 }, { xPercent: 0 }), 'phoneTextLabel')
         .add(mobileProgressTweens, 'phoneTextLabel', 'sequence')
@@ -309,16 +306,8 @@ const timelineMaster = {
 
       timeline
         .add(peopleTweens, 0, 'sequence')
-        .fromTo('#people-logo', 1.5, { y: 100, autoAlpha: 0 }, { y: 0, autoAlpha: 1 })
         .add(tweenLargeRed('#people-text', 1.5))
-        .add([
-          TweenMax.to('.cta-wrapper', .5, { scale: 1.25 }),
-          TweenMax.to('.cta-wrapper', .5, { scale: 1 }),
-        ], 'endChapterOne', 'sequence')
-        .add([
-          TweenMax.to('.hamburger', .5, { scale: 1.25  }),
-          TweenMax.to('.hamburger', .5, { scale: 1 }),
-        ], 'endChapterOne', 'sequence')
+        .fromTo('#final-cta', 1, { scale: 0 }, { scale: 1, ease: Back.easeOut })
     }
   }
 }
@@ -340,6 +329,16 @@ const pgeFullpage = new fullpage('#fullpage', {
 
     timelineMaster[destinationAnchor] && timelineMaster[destinationAnchor].timeline.resume()
   },
+  onLeave: function(origin, destination, direction) {
+    console.log(destination);
+    const anchor = destination.anchor;
+
+    if (anchor === 'chapterSix') {
+      TweenMax.to('.cta-wrapper', .5, { autoAlpha: 0 })
+    } else {
+      TweenMax.to('.cta-wrapper', .5, { autoAlpha: 1 })
+    }
+  }
 })
 
 /**

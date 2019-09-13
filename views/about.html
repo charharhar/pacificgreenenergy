@@ -30,35 +30,16 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.5/fullpage.css">
-    <link rel="stylesheet" href="<%= assetsMap.home.css %>">
-    <!-- <link rel="stylesheet" href="/css/home.css"> -->
+    <link rel="stylesheet" href="<%= assetsMap.about.css %>">
+    <!-- <link rel="stylesheet" href="/css/about.css"> -->
 </head>
 <body id="pge-body">
-
-    <div class="mobile-nav-list">
-        <ul>
-            <li>
-                <a class="navLink" data-hover-text="首頁" href="/">首頁</a>
-            </li>
-            <li>
-                <a class="navLink" data-hover-text="經營理念" href="/about">經營理念</a>
-            </li>
-            <li>
-                <a class="navLink" data-hover-text="工程實績" href="/projects">工程實績</a>
-            </li>
-            <li>
-                <a class="navLink" data-hover-text="常見問題" href="/faq">常見問題</a>
-            </li>
-            <li>
-                <a class="navLink" data-hover-text="聯繫我們" href="/contact">聯繫我們</a>
-            </li>
-        </ul>
-    </div>
 
     <div class="wrapper">
         <div class="cta-wrapper">
             <a href="/contact" class="call-to-action">
-                <span>我要支持綠能！</span>
+                <span class="cta-img hover"></span>
+                <span class="cta-img static"></span>
             </a>
         </div>
 
@@ -66,15 +47,15 @@
             <div class="navigation-logo-wrapper">
                 <a href="/">
                     <figure class="heading-logo-image">
-                        <img src="/images/pge-logo-color.png" alt="">
+                        <img src="/images/pge-logo-horizontal.svg" alt="">
                     </figure>
                 </a>
             </div>
 
             <div class="navigation-list-wrapper">
                 <ul>
-                    <li>
-                        <a class="navLink" data-hover-text="經營理念" href="/about"><span>經營理念</span></a>
+                    <li class="current">
+                        <a class="navLink" data-hover-text="Why太陽能?" href="/about"><span>Why太陽能?</span></a>
                     </li>
                     <li>
                         <a class="navLink" data-hover-text="工程實績" href="/projects"><span>工程實績</span></a>
@@ -112,6 +93,13 @@
                         <figure class="pge-logo-img large-logo" id="cloud-logo">
                             <img src="/images/PGE-logo.png" alt="">
                         </figure>
+
+                        <h2 id="cloud-text">
+                            <span class="slogan-text" id="slogan-1-1">我們的寶島，</span>
+                            <span class="slogan-text" id="slogan-1-2">我們來守護。</span>
+                            <span class="br-mobile"></span>
+                            <span class="slogan-text" id="slogan-1-3">我支持綠能!</span>
+                        </h2>
                     </div>
 
                     <div class="chevron-container" id="chevron-one"><div class="chevron bouncing"></div></div>
@@ -122,30 +110,21 @@
 
             <section class="section chapter-two" id="chapter-two">
                 <div class="act-view-panel ocean-clean-background" id="act-two-view">
-                    <div class="cloud-container" id="cloud-container-2">
-                        <figure class="cloud-left pge-cloud-img" id="cloud-left-2">
-                            <img src="/images/PGE-cloud-left.png" alt="">
-                        </figure>
-                        <figure class="cloud-right pge-cloud-img" id="cloud-right-2">
-                            <img src="/images/PGE-cloud-right.png" alt="">
-                        </figure>
-                    </div>
-
-                    <div class="clouds-header-container">
+                    <div class="clouds-text-container">
                         <h1 class="large-heading" id="heading-tw">
                             <span id="tw-one">台</span>
                             <span id="tw-two">灣</span>
                         </h1>
-                    </div>
 
-                    <div class="clouds-text-container">
-                        <p class="ch2-text-one typewrite" id="text-one">
-                            <span class="text-wrapper">我們2300萬人的家</span>
-                        </p>
+                        <div class="clouds-bottom-text">
+                            <p class="ch2-text-one typewrite" id="text-one">
+                                <span class="text-wrapper">我們2300萬人的家</span>
+                            </p>
 
-                        <p class="ch2-text-two typewrite" id="text-two">
-                            <span class="text-wrapper">我們美麗的寶島</span>
-                        </p>
+                            <p class="ch2-text-two typewrite" id="text-two">
+                                <span class="text-wrapper">我們美麗的寶島</span>
+                            </p>
+                        </div>
                     </div>
 
                     <div class="taiwan-container center-container">
@@ -180,7 +159,7 @@
 
                     <div class="ocean-text-container flex-text-container" id="ocean-text-container-one">
                         <p class="typewrite" id="ocean-text-one">
-                            <span class="text-wrapper"><span class="medium-bold">台灣</span>每一年的能源需求</span>
+                            <span class="text-wrapper">台灣每一年的能源需求</span>
                         </p>
                         <span class="flex-new-line"></span>
                         <span class="large-red" id="ocean-red-one">98％</span>
@@ -285,6 +264,11 @@
 
             <section class="section chapter-four" id="chapter-four">
                 <div class="act-view-panel day-sky-background" id="act-four-view">
+
+                    <figure class="pge-sun sun-rotate">
+                        <img data-src="/images/taipei-sun.png" alt="">
+                    </figure>
+
                     <div class="city-text-container flex-text-container" id="city-text-container-one">
                         <p class="city-text typewrite" id="city-text-one">
                             <span class="text-wrapper">根據台大公共衛生學院，</span>
@@ -292,7 +276,7 @@
                         <span class="flex-new-line"></span>
                         <span class="large-red" id="city-red-one">空汙</span>
                         <p class="city-text typewrite" id="city-text-two">
-                            <span class="text-wrapper">在<span class="medium-bold">台灣</span>國人</span>
+                            <span class="text-wrapper">在台灣國人</span>
                         </p>
                         <span class="br-flex-mobile"></span>
                         <span class="large-red" id="city-red-two">死亡</span>
@@ -301,16 +285,6 @@
                         </p>
                         <span class="flex-new-line"></span>
                         <span class="large-red" id="city-red-three">排列第四。</span>
-                    </div>
-
-                    <div class="taipei-sky-elements">
-                        <figure class="pge-sun sun-rotate">
-                            <img data-src="/images/taipei-sun.png" alt="">
-                        </figure>
-
-                        <figure class="pge-skyline-clouds taipei-day-clouds">
-                            <img data-src="/images/taipei-day-clouds.png" alt="">
-                        </figure>
                     </div>
 
                     <div class="skyline-container">
@@ -369,36 +343,34 @@
 
             <section class="section chapter-five" id="chapter-five">
                 <div class="act-view-panel day-sky-background" id="act-five-view">
+                    <figure class="pge-sun sun-rotate">
+                        <img data-src="/images/taipei-sun.png" alt="">
+                    </figure>
+
                     <div class="phone-text-main-container">
                         <div class="phone-text-container flex-text-container" id="phone-text-container-one">
                             <p class="phone-text typewrite" id="phone-text-one">
-                                <span class="text-wrapper"><span class="medium-bold">台灣</span></span>
+                                <span class="text-wrapper">台灣</span>
                             </p>
                             <span class="flex-new-line"></span>
-                            <h2 class="medium-bold" id="phone-bold-one">農地總面積是58萬公頃</h2>
-                            <span class="flex-new-line"></span>
                             <p class="phone-text typewrite" id="phone-text-two">
+                                <span class="text-wrapper">農地總面積是58萬公頃</span>
+                            </p>
+                            <span class="flex-new-line"></span>
+                            <p class="phone-text typewrite" id="phone-text-three">
                                 <span class="text-wrapper">但 1/3（19萬公傾）的農地是休耕沒有種植的。</span>
                             </p>
                         </div>
 
                         <div class="phone-text-container flex-text-container" id="phone-text-container-two">
-                            <h2 class="medium-bold" id="phone-bold-two">台灣只需要2萬公傾</h2>
+                            <p class="phone-text typewrite" id="phone-text-four">
+                                <span class="text-wrapper">台灣只需要2萬公傾</span>
+                            </p>
                             <span class="flex-new-line"></span>
-                            <p class="phone-text typewrite" id="phone-text-three">
+                            <p class="phone-text typewrite" id="phone-text-five">
                                 <span class="text-wrapper">就可以達成2025年建置20GW太陽能的目標。</span>
                             </p>
                         </div>
-                    </div>
-
-                    <div class="taipei-sky-elements" id="phone-sky-elements">
-                        <figure class="pge-sun sun-rotate">
-                            <img data-src="/images/taipei-sun.png" alt="">
-                        </figure>
-
-                        <figure class="pge-skyline-clouds taipei-day-clouds">
-                            <img data-src="/images/taipei-day-clouds.png" alt="">
-                        </figure>
                     </div>
 
                     <div class="skyline-container" id="hand-phone-skyline">
@@ -487,22 +459,16 @@
 
             <section class="section chapter-six" id="chapter-six">
                 <div class="act-view-panel day-sky-background" id="act-six-view">
-                    <div class="logo-container" id="logo-three">
-                        <figure class="pge-logo-img small-logo" id="people-logo">
-                            <img src="/images/PGE-logo.png" alt="">
-                        </figure>
+                    <figure class="pge-sun sun-rotate">
+                        <img data-src="/images/taipei-sun.png" alt="">
+                    </figure>
 
-                        <h2 id="people-text">我們的寶島，我們來守護。<span class="br-mobile"></span>我支持綠能!</h2>
-                    </div>
+                    <div class="people-text-container" id="logo-three">
+                        <h1 id="people-text">我們的寶島，我們來守護。<br></span>我支持綠能!</h1>
 
-                    <div class="taipei-sky-elements" id="people-sky-elements">
-                        <figure class="pge-sun sun-rotate">
-                            <img data-src="/images/taipei-sun.png" alt="">
-                        </figure>
-
-                        <figure class="pge-skyline-clouds taipei-day-clouds">
-                            <img data-src="/images/taipei-day-clouds.png" alt="">
-                        </figure>
+                        <div id="final-cta">
+                            <a href="/contact" class="btn-green">我要支持綠能</a>
+                        </div>
                     </div>
 
                     <div class="people-scene-container">
@@ -525,7 +491,7 @@
         src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
-    <script src="<%= assetsMap.home.js %>"></script>
-    <!-- <script src="/js/home.js"></script> -->
+    <script src="<%= assetsMap.about.js %>"></script>
+    <!-- <script src="/js/about.js"></script> -->
 </body>
 </html>
