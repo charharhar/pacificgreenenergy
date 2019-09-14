@@ -1,6 +1,7 @@
 
 import '../css/faq.css';
 import 'animation.gsap';
+import 'debug.addIndicators';
 import ScrollMagic from 'scrollmagic';
 import {
   sliceArray,
@@ -37,22 +38,19 @@ const timelineMaster = {
   },
 }
 
-const controller = new ScrollMagic.Controller({
-  globalSceneOptions: { reverse: false }
-});
+const controller = new ScrollMagic.Controller();
 
 /**
  * Event Handlers
  */
 window.addEventListener('load', function(e) {
-  const halfHeight = window.innerHeight/2;
+  timelineMaster.timelineA();
 
   controller.addScene([
-    new ScrollMagic.Scene({ triggerElement: '.faq-section-one' }).setTween(timelineMaster.timelineA()),
     new ScrollMagic.Scene({
       triggerElement: '.section-footer',
-      offset: -halfHeight,
-    }).setClassToggle('.cta-wrapper', 'stick-footer'),
+      triggerHook: 1,
+    }).setClassToggle('.cta-wrapper', 'stick-footer').addIndicators(),
   ])
 })
 

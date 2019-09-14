@@ -26,6 +26,7 @@ function slickHelper(target) {
     centerMode: true,
     centerPadding: '15%',
     arrows: true,
+    dots: true,
     fade: false,
     prevArrow: "<button type='button' class='slick-prev pull-left'><div class='chevron-container black'><span class='chevron left'></span></div></button>",
     nextArrow: "<button type='button' class='slick-next pull-right'><div class='chevron-container black'><span class='chevron right'></span></div></button>",
@@ -73,15 +74,12 @@ const timelineMaster = {
   },
 }
 
-const controller = new ScrollMagic.Controller({
-  globalSceneOptions: { reverse: false }
-});
+const controller = new ScrollMagic.Controller();
 
 /**
  * Event Handlers
  */
 window.addEventListener('load', function(e) {
-  const halfHeight = window.innerHeight/2;
   const projectCarousel = sliceArray(document.querySelectorAll('.project-carousel'))
 
   projectCarousel.forEach(carousel => {
@@ -89,10 +87,9 @@ window.addEventListener('load', function(e) {
   })
 
   controller.addScene([
-    new ScrollMagic.Scene({ triggerElement: '#project-details-one' }).setTween(timelineMaster.timelineA()),
     new ScrollMagic.Scene({
       triggerElement: '.section-footer',
-      offset: -halfHeight,
+      triggerHook: 1,
     }).setClassToggle('.cta-wrapper', 'stick-footer'),
   ])
 })

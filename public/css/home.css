@@ -216,6 +216,31 @@ section.section {
   }
 }
 
+@meda (max-width: 991px) {
+  section.section.about-section-one {
+    figure.about-smog {
+      width: 125%;
+      padding-top: 150px;
+    }
+
+    .content-media .powerplant-wrapper {
+      &#pge-power1 {
+        top: 25%;
+        width: 30%;
+      }
+
+      &#pge-power2 {
+        top: 21%;
+        width: 38%;
+      }
+
+      &#pge-power3 {
+        top: 17%;
+      }
+    }
+  }
+}
+
 @media (max-width: 768px) {
   header.section-header {
     .aspect-hero {

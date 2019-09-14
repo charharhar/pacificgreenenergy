@@ -491,7 +491,7 @@ section.chapter-three {
 
         .taiwan-placehold {
           height: 100%;
-          max-width: 370px;
+          max-width: 270px;
           width: 100%;
         }
 
@@ -865,8 +865,8 @@ section.chapter-six {
 
 @keyframes shipMovementOne {
   0%, 100% { left: -30%; transform: rotateY(0deg); }
-  40% { left: 103%; transform: rotateY(0deg); }
-  50% { left: 103%; transform: rotateY(180deg); }
+  40% { left: 95%; transform: rotateY(0deg); }
+  50% { left: 95%; transform: rotateY(180deg); }
   90% { left: -30%; transform: rotateY(180deg); }
 }
 
@@ -886,8 +886,8 @@ section.chapter-six {
 
 @keyframes shipMovementFour {
   0%, 100% { right: -30%; transform: rotateY(0deg); }
-  40% { right: 103%; transform: rotateY(0deg); }
-  50% { right: 103%; transform: rotateY(180deg); }
+  40% { right: 95%; transform: rotateY(0deg); }
+  50% { right: 95%; transform: rotateY(180deg); }
   90% { right: -30%; transform: rotateY(180deg); }
 }
 
@@ -926,9 +926,9 @@ section.chapter-six {
     }
 
     .pge-sun {
-      top: 6%;
+      top: 12%;
       right: 4%;
-      max-width: 130px;
+      max-width: 110px;
     }
 
     .skyline-container {
@@ -1075,23 +1075,24 @@ section.chapter-six {
 
   section.section {
     .chevron-container {
-      left: 90%;
-      bottom: 50px;
-      height: 35px;
-      width: 35px;
+      left: auto;
+      right: 20px;
+      bottom: 35px;
+      height: 20px;
+      width: 20px;
 
       .chevron {
-        border-right-width: 3px;
-        border-bottom-width: 3px;
+        border-right-width: 4px;
+        border-bottom-width: 4px;
       }
     }
 
     span.large-red {
-      font-size: 34px;
+      font-size: 24px;
     }
 
     h1 {
-      font-size: 34px;
+      font-size: 24px;
     }
 
     h2 {
@@ -1179,11 +1180,11 @@ section.chapter-six {
         .ocean-partition {
           width: 350px;
           &.ocean-left {
-            right: 25%;
+            right: 10%;
           }
 
           &.ocean-right {
-            left: 25%;
+            left: 10%;
           }
         }
 
@@ -1316,12 +1317,12 @@ section.chapter-six {
 
     .ocean-text-container {
       &#ocean-text-container-one {
-        top: 10%;
-        height: 65px;
+        top: 15%;
+        height: 55px;
       }
 
       &#ocean-text-container-two {
-        top: 23%;
+        top: 25%;
         height: 55px;
       }
     }

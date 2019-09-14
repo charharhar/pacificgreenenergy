@@ -55,22 +55,18 @@ const timelineMaster = {
   },
 }
 
-const controller = new ScrollMagic.Controller({
-  // globalSceneOptions: { reverse: false }
-});
+const controller = new ScrollMagic.Controller();
 
 /**
  * Event Handlers
  */
 window.addEventListener('load', function(e) {
-  const halfHeight = window.innerHeight/2;
-
   controller.addScene([
     new ScrollMagic.Scene({ triggerElement: '#powerplants-trigger' }).setTween(timelineMaster.timelineA()),
     new ScrollMagic.Scene({ triggerElement: '.about-section-two' }).setTween(timelineMaster.timelineB()),
     new ScrollMagic.Scene({
       triggerElement: '.section-footer',
-      offset: -halfHeight,
+      triggerHook: 1,
     }).setClassToggle('.cta-wrapper', 'stick-footer'),
   ])
 })

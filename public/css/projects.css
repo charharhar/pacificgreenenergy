@@ -8,15 +8,20 @@ section.section {
 }
 
 header.section-header {
-  &.aspect-5625 .aspect-hero {
+  &.aspect-500 .aspect-hero {
     background-color: $ocean-blue;
 
-    .projects-hero {
+    .taiwan-container {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 50%;
+      width: 230px;
+
+      .projects-hero {
+        position: relative;
+        width: 100%;
+      }
 
       img { position: relative; }
     }
@@ -26,13 +31,13 @@ header.section-header {
       width: 20px;
 
       &#kaohsiung-pin {
-        top: 65%;
-        left: 40.5%;
+        top: 70%;
+        left: 22%;
       }
 
       &#taoyuan-pin {
-        top: 16%;
-        left: 50.5%;
+        top: 20%;
+        left: 46%;
       }
     }
   }
@@ -196,6 +201,38 @@ section.section {
           }
         }
 
+        .slick-dots li {
+          width: 12px;
+          height: 12px;
+
+          button {
+            width: 12px;
+            height: 12px;
+
+            &:hover:before,
+            &:hover:focus {
+              background: rgba($main-green, .3);
+            }
+
+            &:before {
+              color: transparent;
+              background: #eee;
+              border: 1px solid $main-green;
+              border-radius: 50%;
+              width: 12px;
+              height: 12px;
+              opacity: 1;
+              transition: 300ms all ease;
+            }
+          }
+
+          &.slick-active {
+            button:before {
+              background: $main-green;
+            }
+          }
+        }
+
         .slick-next:before,
         .slick-prev:before {
           content: '';
@@ -245,29 +282,39 @@ section.section {
   }
 }
 
+@media (max-width: 768px) {
+  header.section-header {
+    &.aspect-500 {
+      .aspect-hero {
+        .taiwan-container {
+          left: 65%;
+        }
+      }
+    }
+  }
+
+  section.section {
+    &.projects-section-one {
+      .section-content {
+        padding-bottom: 40px;
+      }
+    }
+
+    .projects-accordion {
+      margin: 40px auto 80px;
+    }
+  }
+}
+
 @media (max-width: 575.98px) {
   header.section-header {
-    &.aspect-5625 {
+    &.aspect-500 {
       .aspect-hero {
         padding-bottom: 178%;
 
-        .projects-hero {
-          width: 100%;
+        .taiwan-container {
           top: 55%;
-        }
-
-        .projects-pins {
-          width: 15px;
-
-          &#kaohsiung-pin {
-            top: 67%;
-            left: 37.5%;
-          }
-
-          &#taoyuan-pin {
-            top: 34%;
-            left: 50%;
-          }
+          left: 50%;
         }
       }
 
@@ -288,16 +335,6 @@ section.section {
   }
 
   section.section {
-    &.projects-section-one {
-      .section-content {
-        padding-bottom: 40px;
-      }
-    }
-
-    .projects-accordion {
-      margin: 40px auto 80px;
-    }
-
     input[type="checkbox"]:checked ~ .project-details {
       max-height: 900px;
     }

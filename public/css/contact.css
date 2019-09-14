@@ -31,7 +31,7 @@ header.section-header {
     top: 0;
     left: 0;
     transform: none;
-    padding-top: 12%;
+    padding-top: 8%;
 
     h1.underline {
       z-index: 2;
@@ -48,7 +48,6 @@ header.section-header {
 
     figure.pge-sun {
       position: absolute;
-      max-width: 200px;
       z-index: 2;
       top: 15%;
       right: 5%;
