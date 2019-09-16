@@ -80,6 +80,30 @@ const controller = new ScrollMagic.Controller();
  * Event Handlers
  */
 window.addEventListener('load', function(e) {
+  $('#project-tab-1').click(function() {
+    const checkInput = document.querySelector('#project-1');
+    if (!checkInput.checked) {
+      $('html, body').animate({
+        scrollTop: $('#kaohsiung').offset().top
+      }, 500);
+    }
+  });
+
+  $('#project-tab-2').click(function() {
+    const checkInput = document.querySelector('#project-2');
+    if (!checkInput.checked) {
+      $('html, body').animate({
+        scrollTop: $('#taoyuan').offset().top
+      }, 500);
+    }
+  });
+
+  $('.backtop-wrapper').click(function() {
+    $('html, body').animate({
+      scrollTop: $('body').offset().top
+    }, 500);
+  });
+
   const projectCarousel = sliceArray(document.querySelectorAll('.project-carousel'))
 
   projectCarousel.forEach(carousel => {

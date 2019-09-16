@@ -1,7 +1,6 @@
 
 import '../css/faq.css';
 import 'animation.gsap';
-import 'debug.addIndicators';
 import ScrollMagic from 'scrollmagic';
 import {
   sliceArray,
@@ -43,6 +42,7 @@ const controller = new ScrollMagic.Controller();
 /**
  * Event Handlers
  */
+
 window.addEventListener('load', function(e) {
   timelineMaster.timelineA();
 
@@ -50,8 +50,14 @@ window.addEventListener('load', function(e) {
     new ScrollMagic.Scene({
       triggerElement: '.section-footer',
       triggerHook: 1,
-    }).setClassToggle('.cta-wrapper', 'stick-footer').addIndicators(),
+    }).setClassToggle('.cta-wrapper', 'stick-footer'),
   ])
+
+  $('.backtop-wrapper').click(function() {
+    $('html, body').animate({
+      scrollTop: $('body').offset().top
+    }, 500);
+  });
 })
 
 hotReload();

@@ -104,6 +104,12 @@ window.addEventListener('load', function(e) {
 /**
  * Event Handlers
  */
-window.addEventListener('load', function(e) {})
+window.addEventListener('load', function(e) {
+  $('.backtop-wrapper').click(function() {
+    $('html, body').animate({
+      scrollTop: $('body').offset().top
+    }, 500);
+  });
+})
 
 hotReload();

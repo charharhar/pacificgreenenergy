@@ -330,7 +330,6 @@ const pgeFullpage = new fullpage('#fullpage', {
     timelineMaster[destinationAnchor] && timelineMaster[destinationAnchor].timeline.resume()
   },
   onLeave: function(origin, destination, direction) {
-    console.log(destination);
     const anchor = destination.anchor;
 
     if (anchor === 'chapterSix') {

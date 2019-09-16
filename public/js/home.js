@@ -60,7 +60,14 @@ const controller = new ScrollMagic.Controller();
 /**
  * Event Handlers
  */
+
 window.addEventListener('load', function(e) {
+  $('.backtop-wrapper').click(function() {
+    $('html, body').animate({
+      scrollTop: $('body').offset().top
+    }, 500);
+  });
+
   controller.addScene([
     new ScrollMagic.Scene({ triggerElement: '#powerplants-trigger' }).setTween(timelineMaster.timelineA()),
     new ScrollMagic.Scene({ triggerElement: '.about-section-two' }).setTween(timelineMaster.timelineB()),

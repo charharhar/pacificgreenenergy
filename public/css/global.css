@@ -309,7 +309,8 @@ figure {
 
   &.stick-footer {
     position: absolute;
-    bottom: 385px;
+    top: -80px;
+    bottom: auto;
   }
 
   a.call-to-action {
@@ -364,7 +365,6 @@ figure {
     left: 15px;
 
     &.stick-footer {
-      bottom: 410px;
     }
 
     a.call-to-action {
