@@ -253,6 +253,7 @@ figure {
   }
 
   &.backtop-wrapper {
+    display: none; // hide for now;
     position: fixed;
     background: $main-orange;
     transform: none;
