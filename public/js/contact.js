@@ -70,7 +70,7 @@ window.addEventListener('load', function(e) {
     const formNames = checkedRadio === 'land' ? {...formBase, ...formLand} : {...formBase, ...formStructure}
     const formData = $('#pge-form').serializeArray()
 
-    const mailTarget = 'ccheng.pge@gmail.com';
+    const mailTarget = 'sales@pacgenergy.com';
     const mailSubject = `我要支持綠能 - ${formData[0].value}`;
 
     const mailBody = formData.reduce((acc, cur) => {

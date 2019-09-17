@@ -425,3 +425,14 @@ section.section {
     }
   }
 }
+
+@media (max-width: 375px) {
+  html,
+  body,
+  .wrapper,
+  header.section-header,
+  header.section-header.aspect-500 .aspect-hero {
+    padding-bottom: 0;
+    height: 100%;
+  }
+}

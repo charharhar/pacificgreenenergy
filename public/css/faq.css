@@ -90,11 +90,11 @@ section.section {
 
   section.section {
     .section-content {
-      padding: 40px 20px 80px;
+      padding: 40px 20px 120px;
     }
 
     .faq-container {
-      padding: 20px;
+      padding: 15px;
 
       .faq-content {
         span {
@@ -104,7 +104,7 @@ section.section {
           }
 
           &.faq-answer {
-            padding-left: 20px;
+            padding-left: 15px;
             font-size: 14px;
             letter-spacing: 1px;
           }

@@ -31,10 +31,17 @@ header.section-header {
     top: 0;
     left: 0;
     transform: none;
-    padding-top: 8%;
+    padding-top: 10%;
 
     h1.underline {
+      font-size: 50px;
+      line-height: 1.4;
       z-index: 2;
+    }
+
+    h2.medium-bold {
+      font-size: 24px;
+      margin-bottom: 30px;
     }
 
     figure.form-clouds {
@@ -111,10 +118,18 @@ header.section-header {
     }
 
     .hero-content {
-      h1.underline,
       figure.form-clouds,
       figure.pge-sun {
         display: none;
+      }
+
+      h1.underline {
+        font-size: 32px;
+      }
+
+      h2.medium-bold {
+        font-size: 17px;
+        margin-bottom: 30px;
       }
 
       .people-container {
@@ -135,7 +150,7 @@ header.section-header {
       }
 
       .form-container {
-        padding: 70px 40px 180px;
+        padding: 10px 15px 180px;
 
         form {
           margin: 15px auto;
