@@ -216,7 +216,7 @@ section.section {
   }
 }
 
-@meda (max-width: 991px) {
+@media (max-width: 991px) {
   section.section.about-section-one {
     figure.about-smog {
       width: 125%;
@@ -267,6 +267,10 @@ section.section {
     &.about-section-one {
       .section-content {
         padding: 40px 20px;
+
+        .content-wrapper:first-of-type {
+          order: 1;
+        }
       }
 
       .content-text {
@@ -286,19 +290,19 @@ section.section {
       .content-media {
         .powerplant-wrapper {
           &#pge-power1 {
-            top: -5%;
+            top: 3%;
             left: 12%;
             width: 25%;
           }
 
           &#pge-power2 {
-            top: -10%;
+            top: -2%;
             left: 28%;
             width: 32%;
           }
 
           &#pge-power3 {
-            top: -16%;
+            top: -5%;
             left: 49%;
             width: 40%;
           }
@@ -376,6 +380,10 @@ section.section {
     &.about-section-one {
       .section-content {
         padding: 40px 20px;
+
+        .content-wrapper:last-of-type {
+          flex: 0 0 40%;
+        }
       }
 
       .content-text {
