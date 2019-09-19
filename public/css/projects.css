@@ -315,6 +315,7 @@ section.section {
         .taiwan-container {
           top: 55%;
           left: 50%;
+          width: 180px;
         }
       }
 

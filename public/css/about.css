@@ -29,13 +29,14 @@ body#pge-body {
     margin: 0;
     opacity: 1;
     border-radius: 4px;
+    background: $main-orange;
   }
   #fp-nav ul li a span,
   .fp-slidesNav ul li a span {
     border-radius: 4px;
     width: 5px;
     height: 22px;
-    background: $main-orange;
+    background: $main-white;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -829,6 +830,7 @@ section.chapter-six {
       left: 50%;
       transform: translateX(-50%);
       width: 100%;
+      z-index: 4;
 
       h1 {
         margin-bottom: 20px;
@@ -1184,11 +1186,11 @@ section.chapter-six {
         .ocean-partition {
           width: 350px;
           &.ocean-left {
-            right: 10%;
+            right: 15%;
           }
 
           &.ocean-right {
-            left: 10%;
+            left: 15%;
           }
         }
 
@@ -1205,13 +1207,13 @@ section.chapter-six {
 
   section.chapter-four .act-view-panel {
     .city-text-container {
-      height: 170px;
+      height: 130px;
       width: 300px;
-      top: 35%;
+      top: 30%;
 
       #city-text-one { margin: 0 }
-      #city-red-one, #city-red-two { margin-left: 0; }
-      #city-red-three { margin-left: 0; }
+      #city-red-one, #city-red-two { margin-left: 15px; }
+      #city-red-three { margin-left: 15px; }
     }
   }
 
