@@ -80,6 +80,16 @@ const controller = new ScrollMagic.Controller();
  * Event Handlers
  */
 window.addEventListener('load', function(e) {
+  // Location hash handlers
+  const hash = window.location.hash;
+  if (hash) {
+    document.querySelector(`${hash} input[type="checkbox"]`).checked = true
+
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 0);
+  }
+
   $('#project-tab-1').click(function() {
     const checkInput = document.querySelector('#project-1');
     if (!checkInput.checked) {

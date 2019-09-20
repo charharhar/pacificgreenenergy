@@ -54,11 +54,6 @@ const timelineMaster = {
           TweenMax.fromTo('#cloud-container-1', 1.5, { scale: 1 }, { scale: 1.2 }),
           TweenMax.fromTo('#cloud-logo', 1.5, { scale: .6 }, { scale: 1 }),
         ])
-        .add([
-          TweenMax.fromTo('#slogan-1-1', 1, { autoAlpha: 0, scale: 3 }, { autoAlpha: 1, scale: 1 }),
-          TweenMax.fromTo('#slogan-1-2', 1, { autoAlpha: 0, scale: 3 }, { autoAlpha: 1, scale: 1 }),
-          TweenMax.fromTo('#slogan-1-3', 1, { autoAlpha: 0, scale: 3 }, { autoAlpha: 1, scale: 1 }),
-        ], 'labelA', 'sequence')
         .fromTo('#chevron-one', 1, { autoAlpha: 0 }, { autoAlpha: 1 }, 'endChapterOne')
     }
   },
@@ -151,15 +146,15 @@ const timelineMaster = {
         .add(powerOnTweens, 'powerOnLabel', 'sequence')
         .add(TweenMax.fromTo('#act-three-view', powerOnDuration, backgroundTweens.from, backgroundTweens.to), 'powerOnLabel')
         .add([
-          TweenMax.fromTo('.ocean-right', 1, { autoAlpha: 0 }, { autoAlpha: 1 }),
-          TweenMax.fromTo('.ocean-left', 1, { autoAlpha: 0 }, { autoAlpha: 1 }),
-          TweenMax.to('.pge-ship', 0, { className: '+=animate' }),
-        ])
-        .add([
           tweenClipPath('#ocean-text-three', 1),
           tweenLargeRed('#ocean-red-two', 1),
           tweenClipPath('#ocean-text-four', 1),
-        ], 'oceanTextTwoLabel', 'sequence')
+        ], 'powerOnLabel+=.5', 'sequence')
+        .add([
+          TweenMax.fromTo('.ocean-right', 1, { autoAlpha: 0 }, { autoAlpha: 1 }),
+          TweenMax.fromTo('.ocean-left', 1, { autoAlpha: 0 }, { autoAlpha: 1 }),
+          TweenMax.to('.pge-ship', 0, { className: '+=animate' }),
+        ], 'shipsEnterLabel')
         .fromTo('#ocean-smog', 4, { yPercent: 100 }, { yPercent: 0, ease: Power2.easeOut }, 'smogEnterLabel+=1')
         .add([
           TweenMax.to('#ocean-text-one span', 1, { color: '#fff' }),
@@ -306,7 +301,11 @@ const timelineMaster = {
 
       timeline
         .add(peopleTweens, 0, 'sequence')
-        .add(tweenLargeRed('#people-text', 1.5))
+        .add([
+          TweenMax.fromTo('#slogan-1-1', 1, { autoAlpha: 0, scale: 3 }, { autoAlpha: 1, scale: 1 }),
+          TweenMax.fromTo('#slogan-1-2', 1, { autoAlpha: 0, scale: 3 }, { autoAlpha: 1, scale: 1 }),
+          TweenMax.fromTo('#slogan-1-3', 1, { autoAlpha: 0, scale: 3 }, { autoAlpha: 1, scale: 1 }),
+        ], 'peopleTextLabel', 'sequence')
         .fromTo('#final-cta', 1, { scale: 0 }, { scale: 1, ease: Back.easeOut })
     }
   }
@@ -320,7 +319,7 @@ const pgeFullpage = new fullpage('#fullpage', {
   recordHistory: false,
   navigation: true,
   navigationPosition: 'right',
-  navigationTooltips: ['第一章', '第二章', '第三章', '第四章', '第五章', '第六章'],
+  navigationTooltips: ['第一章 — 創立', '第二章 — 寶島', '第三章 — 能源', '第四章 — 空污', '第五章 — 目標', '第六章 — 希望'],
   afterLoad: function(origin, destination, direction) {
     const { anchor: destinationAnchor } = destination;
     const originAnchor = origin && origin.anchor || null;
