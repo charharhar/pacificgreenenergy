@@ -610,8 +610,8 @@ section.chapter-four {
     .city-text-container {
       position: absolute;
       height: 230px;
-      top: 30%;
-      left: 50%;
+      top: 40%;
+      left: 55%;
       transform: translate(-50%, -50%);
       width: 500px;
       margin-left: 180px;
@@ -651,21 +651,24 @@ section.chapter-five {
       left: 50%;
       margin-left: -25%;
       transform: translateX(-50%);
-      max-width: 480px;
       z-index: 13;
-    }
 
-    .phone-text-container {
-      width: 100%;
-      &:first-of-type {
-        margin-bottom: 35px;
+      span.phone-text-margin {
+        display: block;
+        height: 30px;
       }
 
-      &#phone-text-container-one {
-        height: 85px;
-      }
-      &#phone-text-container-two {
-        height: 60px;
+      p.typewrite {
+        height: 34px;
+        text-align: justify;
+
+        span:after {
+          content: '';
+          display: inline-block;
+          width: 100%;
+          visibility: hidden;
+          font-size: 0;
+        }
       }
     }
 
@@ -911,9 +914,9 @@ section.chapter-six {
   99.9999% { background-position: 100% 0%; }
 }
 
-@media (min-width: 768px) and (max-height: 880px) {
+@media (min-width: 768px) {
   section.section .act-view-panel .skyline-container {
-    bottom: -3.5%;
+    bottom: -10%;
   }
 }
 
@@ -1015,53 +1018,19 @@ section.chapter-six {
 
   section.chapter-five .act-view-panel {
     .phone-text-main-container {
-      height: 100%;
-      width: 100%;
-      top: 0;
-      left: 0;
-      margin-left: 0;
-      transform: none;
-      max-width: none;
-    }
-
-    .phone-text-container {
-      position: absolute;
-      margin-left: 0;
-      width: 100%;
+      top: 12.5%;
       left: 50%;
-      transform: translateX(-50%);
-      max-width: 320px;
-
-      &#phone-text-container-one {
-        top: 6%;
-        height: 135px;
-      }
-
-      &#phone-text-container-two {
-        top: auto;
-        bottom: 7%;
-        height: 100px;
-      }
+      margin-left: 0;
     }
 
     .mobile-phone-container {
       .hand-phone-container {
-        figure.mobile-hand-phone {
-          width: 120%;
-          transform: translateX(-7.5%);
-        }
-
-        .taipei-mobile-panels .pge-mobile-panels,
-        .taipei-mobile-plants {
-          width: 32%;
-          left: 33%;
-          top: 5%;
-        }
+        width: 100%;
+        top: 12%;
+        left: 0;
 
         .phone-progress-container {
-          width: 27.5%;
-          left: 49.5%;
-          height: 30px;
+          height: 25px;
           border: 2px solid #000;
 
           p {
@@ -1240,18 +1209,17 @@ section.chapter-six {
       background: linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.7)) 100%;
     }
 
-    .phone-text-container {
-      margin: 0;
+    .phone-text-main-container {
+      top: 14%;
+      max-width: 221px;
+      left: 35%;
 
-      &#phone-text-container-one {
-        top: 13%;
-        height: 75px;
-        width: 100%;
+      p.typewrite {
+        height: 26px;
       }
-      &#phone-text-container-two {
-        top: 30%;
-        height: 55px;
-        width: 100%;
+
+      span.phone-text-margin {
+        height: 10px;
       }
     }
 
@@ -1274,57 +1242,6 @@ section.chapter-six {
           left: 50%;
           height: 23px;
           border: 2px solid #000;
-        }
-      }
-    }
-  }
-}
-
-
-@media (max-width: 375px) and (max-height: 667px) {
-  section.section .act-view-panel {
-    .taiwan-container .taiwan-country {
-      // max-width: 230px;
-    }
-  }
-
-  section.chapter-three .act-view-panel {
-    .taiwan-container {
-      .ocean-container .taiwan-placehold {
-        // max-width: 230px;
-      }
-    }
-  }
-
-  section.chapter-five .act-view-panel {
-    .mobile-phone-container {
-      .hand-phone-container {
-        top: 13%;
-        left: 0;
-        width: 100%;
-
-        figure.mobile-hand-phone {
-          width: 135%;
-          transform: translateX(-14.5%);
-        }
-
-        .taipei-mobile-panels .pge-mobile-panels,
-        .taipei-mobile-plants {
-          width: 37%;
-          left: 27.5%;
-          top: 5%;
-        }
-
-        .phone-progress-container {
-          width: 32%;
-          left: 46%;
-          height: 18px;
-
-          p {
-            font-size: 20px;
-            right: -6px;
-            top: -46px;
-          }
         }
       }
     }
@@ -1438,7 +1355,7 @@ section.chapter-six {
   section.chapter-five .act-view-panel {
     .mobile-phone-container {
       .hand-phone-container {
-        top: 10%;
+        top: 14%;
 
         figure.mobile-hand-phone {
           width: 145%;
@@ -1505,49 +1422,6 @@ section.chapter-six {
       left: 40%;
     }
   }
-
-  section.chapter-five .act-view-panel {
-    &:before {
-      background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
-    }
-
-    .phone-text-main-container {
-      height: 100%;
-      width: 100%;
-      top: 0;
-      left: 0;
-      margin-left: 0;
-      transform: none;
-      max-width: none;
-    }
-
-    .mobile-phone-container .hand-phone-container {
-      width: 100%;
-      left: 0;
-      top: 7%;
-    }
-
-    .phone-text-container {
-      position: absolute;
-      margin-left: 0;
-      width: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      max-width: 320px;
-
-      &#phone-text-container-one {
-        top: 15%;
-        height: 105px;
-        margin-left: -180px;
-      }
-
-      &#phone-text-container-two {
-        top: 15%;
-        height: 75px;
-        margin-left: 180px;
-      }
-    }
-  }
 }
 
 // Large devices (desktops, less than 1200px)
@@ -1565,6 +1439,44 @@ section.chapter-six {
 
     .taiwan-container {
       top: 55%;
+    }
+  }
+}
+
+@media (max-width: 375px) and (max-height: 667px) {
+  section.chapter-five .act-view-panel {
+    .mobile-phone-container {
+      .hand-phone-container {
+        top: 16%;
+        left: 6%;
+        width: 90%;
+
+        figure.mobile-hand-phone {
+          width: 135%;
+          transform: translateX(-14.5%);
+        }
+
+        .taipei-mobile-panels .pge-mobile-panels,
+        .taipei-mobile-plants {
+          width: 37%;
+          left: 27.5%;
+          top: 5%;
+        }
+
+        .phone-progress-container {
+          width: 32%;
+          left: 46%;
+          height: 18px;
+
+          p {
+            font-size: 16px;
+            right: -6px;
+            top: -46px;
+
+            span { font-size: 10px; }
+          }
+        }
+      }
     }
   }
 }

@@ -269,6 +269,7 @@ const timelineMaster = {
           tweenClipPath('#phone-text-three', 1),
           tweenLargeRed('#phone-text-four', 1),
           tweenClipPath('#phone-text-five', 1),
+          tweenLargeRed('#phone-text-six', 1),
         ], 'phoneTextLabel', 'sequence')
         .add(TweenMax.fromTo('.progress-bar', progressBarDuration, { xPercent: -100 }, { xPercent: 0 }), 'phoneTextLabel')
         .add(mobileProgressTweens, 'phoneTextLabel', 'sequence')
