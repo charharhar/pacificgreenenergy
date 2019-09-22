@@ -955,14 +955,8 @@ section.chapter-six {
   }
 
   section.chapter-one .act-view-panel {
-    .hero-content {
-      figure.hero-logo {
-        margin-bottom: 20px;
-      }
-
-      .hero-text {
-        max-width: 340px;
-      }
+    .logo-container figure.pge-logo-img.large-logo {
+      max-width: 170px;
     }
   }
 
