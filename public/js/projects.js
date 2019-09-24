@@ -90,7 +90,23 @@ window.addEventListener('load', function(e) {
     }, 0);
   }
 
-  $('#project-tab-1').click(function() {
+  document.querySelector('#footer-nav-kaohsiung').addEventListener('click', () => {
+    document.querySelector('#kaohsiung input[type="checkbox"]').checked = true
+
+    $('html, body').animate({
+      scrollTop: $('#kaohsiung').offset().top
+    }, 0);
+  })
+
+  document.querySelector('#footer-nav-taoyuan').addEventListener('click', () => {
+    document.querySelector('#taoyuan input[type="checkbox"]').checked = true
+
+    $('html, body').animate({
+      scrollTop: $('#taoyuan').offset().top
+    }, 0);
+  })
+
+  document.querySelector('#project-tab-1').addEventListener('click', () => {
     const checkInput = document.querySelector('#project-1');
     if (!checkInput.checked) {
       $('html, body').animate({
@@ -99,7 +115,7 @@ window.addEventListener('load', function(e) {
     }
   });
 
-  $('#project-tab-2').click(function() {
+  document.querySelector('#project-tab-2').addEventListener('click', () => {
     const checkInput = document.querySelector('#project-2');
     if (!checkInput.checked) {
       $('html, body').animate({
@@ -108,7 +124,7 @@ window.addEventListener('load', function(e) {
     }
   });
 
-  $('.backtop-wrapper').click(function() {
+  document.querySelector('.backtop-wrapper').addEventListener('click', () => {
     $('html, body').animate({
       scrollTop: $('body').offset().top
     }, 500);
