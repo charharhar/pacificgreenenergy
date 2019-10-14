@@ -29,6 +29,8 @@
     <meta name="msapplication-config" content="/images/icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <link rel="stylesheet" href="<%= assetsMap.contact.css %>">
     <!-- <link rel="stylesheet" href="/css/contact.css"> -->
 </head>
@@ -135,6 +137,11 @@
                         <div class="form-group radio-inputs" data-name="structure">
                             <input placeholder="門牌地址" class="pge-form-input" id="address" name="address" type="text">
                         </div>
+
+                        <div class="form-group recaptcha-group">
+                            <div class="g-recaptcha" data-sitekey="6LdOMa8UAAAAAKk760zxJcWuGXJ32Ba2Y5ITRRyh"></div>
+                        </div>
+
                         <div class="form-group">
                             <span class="btn-green" id="form-button">送出</span>
                             <a style="display:none;" href="" id="pge-form-submit"></a>

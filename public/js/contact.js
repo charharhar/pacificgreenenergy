@@ -64,7 +64,7 @@ window.addEventListener('load', function(e) {
     }
 
     let hasError = true;
-    // const captchaResponse = grecaptcha.getResponse();
+    const captchaResponse = grecaptcha.getResponse();
     const checkedRadio = document.querySelector('.pge-radio:checked').getAttribute('id');
 
     const formNames = checkedRadio === 'land' ? {...formBase, ...formLand} : {...formBase, ...formStructure}
@@ -86,7 +86,7 @@ window.addEventListener('load', function(e) {
         : acc;
     }, '')
 
-    // hasError = !!captchaResponse;
+    hasError = !!captchaResponse;
 
     if (!hasError) {
       $('#pge-form-submit').attr('href', `mailto:${mailTarget}?subject=${mailSubject}&body=${mailBody}`);

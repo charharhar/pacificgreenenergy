@@ -104,6 +104,14 @@ header.section-header {
             background: #fff;
             border: none;
           }
+
+          &.recaptcha-group {
+            text-align: center;
+
+            .g-recaptcha {
+              display: inline-block;
+            }
+          }
         }
       }
     }
