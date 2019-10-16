@@ -16,3 +16,6 @@ logs
 
 # OSX Files
 .DS_Store
+
+# Ignore Lambda folder to hide secrets
+/lambda-email-service/
